@@ -1,3 +1,5 @@
+*.FCStd
+*.FCBak
 # file types to ignore
 .*
 !*.gitattributes
