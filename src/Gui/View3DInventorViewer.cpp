@@ -176,17 +176,29 @@ static std::array<float, 3> skyboxCubeDir(int face, float s, float t)
     float u = 2.0f * s - 1.0f;
     float v = 2.0f * t - 1.0f;
     switch (face) {
-        case 0: return {1.0f, -v, -u};
-        case 1: return {-1.0f, -v, u};
-        case 2: return {u, 1.0f, v};
-        case 3: return {u, -1.0f, -v};
-        case 4: return {u, -v, 1.0f};
-        default: return {-u, -v, -1.0f};
+        case 0:
+            return {1.0f, -v, -u};
+        case 1:
+            return {-1.0f, -v, u};
+        case 2:
+            return {u, 1.0f, v};
+        case 3:
+            return {u, -1.0f, -v};
+        case 4:
+            return {u, -v, 1.0f};
+        default:
+            return {-u, -v, -1.0f};
     }
 }
 
-static std::array<uint8_t, 3>
-skyboxSampleEquirect(const float* hdr, int w, int h, float dx, float dy, float dz)
+static std::array<uint8_t, 3> skyboxSampleEquirect(
+    const float* hdr,
+    int w,
+    int h,
+    float dx,
+    float dy,
+    float dz
+)
 {
     float len = sqrtf(dx * dx + dy * dy + dz * dz);
     dx /= len;
@@ -232,9 +244,12 @@ static SoSeparator* buildHdriSkybox(const char* hdrPath, SoTextureCubeMap*& cube
     cubeMap->wrapT = SoTextureCubeMap::CLAMP;
 
     SoSFImage* faces[6] = {
-        &cubeMap->imagePosX, &cubeMap->imageNegX,
-        &cubeMap->imagePosY, &cubeMap->imageNegY,
-        &cubeMap->imagePosZ, &cubeMap->imageNegZ,
+        &cubeMap->imagePosX,
+        &cubeMap->imageNegX,
+        &cubeMap->imagePosY,
+        &cubeMap->imageNegY,
+        &cubeMap->imagePosZ,
+        &cubeMap->imageNegZ,
     };
 
     std::vector<uint8_t> buf(FS * FS * 3);
@@ -244,7 +259,7 @@ static SoSeparator* buildHdriSkybox(const char* hdrPath, SoTextureCubeMap*& cube
                 auto dir = skyboxCubeDir(f, (x + 0.5f) / FS, (y + 0.5f) / FS);
                 auto rgb = skyboxSampleEquirect(hdr, w, h, dir[0], dir[1], dir[2]);
                 int i = (y * FS + x) * 3;
-                buf[i]     = rgb[0];
+                buf[i] = rgb[0];
                 buf[i + 1] = rgb[1];
                 buf[i + 2] = rgb[2];
             }
@@ -256,7 +271,7 @@ static SoSeparator* buildHdriSkybox(const char* hdrPath, SoTextureCubeMap*& cube
     SoSeparator* sep = new SoSeparator;
 
     SoDepthBuffer* db = new SoDepthBuffer;
-    db->test  = FALSE;
+    db->test = FALSE;
     db->write = FALSE;
     sep->addChild(db);
 
@@ -267,9 +282,9 @@ static SoSeparator* buildHdriSkybox(const char* hdrPath, SoTextureCubeMap*& cube
     cubeMapOut = cubeMap;
     sep->addChild(cubeMap);
 
-    SoShaderProgram*  prog = new SoShaderProgram;
-    SoVertexShader*   vs   = new SoVertexShader;
-    SoFragmentShader* fs   = new SoFragmentShader;
+    SoShaderProgram* prog = new SoShaderProgram;
+    SoVertexShader* vs = new SoVertexShader;
+    SoFragmentShader* fs = new SoFragmentShader;
     vs->sourceType.setValue(SoShaderObject::GLSL_PROGRAM);
     vs->sourceProgram.setValue(skyboxVert);
     fs->sourceType.setValue(SoShaderObject::GLSL_PROGRAM);
@@ -290,9 +305,9 @@ static SoSeparator* buildHdriSkybox(const char* hdrPath, SoTextureCubeMap*& cube
     // perspective and orthographic cameras.
     SoCoordinate3* coords = new SoCoordinate3;
     coords->point.set1Value(0, SbVec3f(-1.0f, -1.0f, 0.0f));
-    coords->point.set1Value(1, SbVec3f( 1.0f, -1.0f, 0.0f));
-    coords->point.set1Value(2, SbVec3f( 1.0f,  1.0f, 0.0f));
-    coords->point.set1Value(3, SbVec3f(-1.0f,  1.0f, 0.0f));
+    coords->point.set1Value(1, SbVec3f(1.0f, -1.0f, 0.0f));
+    coords->point.set1Value(2, SbVec3f(1.0f, 1.0f, 0.0f));
+    coords->point.set1Value(3, SbVec3f(-1.0f, 1.0f, 0.0f));
     sep->addChild(coords);
 
     SoFaceSet* quad = new SoFaceSet;
@@ -1562,7 +1577,7 @@ void View3DInventorViewer::applySkyboxPreference()
         }
         skyboxSeparator->unref();
         skyboxSeparator = nullptr;
-        skyboxCubeMap   = nullptr;
+        skyboxCubeMap = nullptr;
         // Restore gradient background if we previously hid it
         if (skyboxHidGradient && backgroundroot->findChild(pcBackGround) == -1) {
             backgroundroot->addChild(pcBackGround);
@@ -1580,15 +1595,15 @@ void View3DInventorViewer::applySkyboxPreference()
         return;
     }
 
-    SoTextureCubeMap* cm  = nullptr;
-    SoSeparator*      sep = buildHdriSkybox(hdrPath.c_str(), cm);
+    SoTextureCubeMap* cm = nullptr;
+    SoSeparator* sep = buildHdriSkybox(hdrPath.c_str(), cm);
     if (!sep) {
         return;
     }
 
     sep->ref();
     skyboxSeparator = sep;
-    skyboxCubeMap   = cm;
+    skyboxCubeMap = cm;
 
     // Insert as the first child of the main scene root so it renders
     // behind all geometry (depth write is disabled inside the separator).
