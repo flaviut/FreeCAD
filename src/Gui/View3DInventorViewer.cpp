@@ -1571,9 +1571,9 @@ void View3DInventorViewer::applySkyboxPreference()
 {
     // Remove any existing skybox
     if (skyboxSeparator) {
-        int idx = pcViewProviderRoot->findChild(skyboxSeparator);
+        int idx = backgroundroot->findChild(skyboxSeparator);
         if (idx != -1) {
-            pcViewProviderRoot->removeChild(idx);
+            backgroundroot->removeChild(idx);
         }
         skyboxSeparator->unref();
         skyboxSeparator = nullptr;
@@ -1605,9 +1605,26 @@ void View3DInventorViewer::applySkyboxPreference()
     skyboxSeparator = sep;
     skyboxCubeMap = cm;
 
-    // Insert as the first child of the main scene root so it renders
-    // behind all geometry (depth write is disabled inside the separator).
-    pcViewProviderRoot->insertChild(sep, 0);
+    // backgroundroot uses a fixed orthographic camera that doesn't track the
+    // user's view. Insert a callback that applies the real scene camera
+    // transforms before the skybox shader runs, so gl_ModelViewMatrix and
+    // gl_ProjectionMatrix reflect the actual view direction and FOV.
+    SoCallback* camCb = new SoCallback;
+    camCb->setCallback([](void* userData, SoAction* action) {
+        if (!action->isOfType(SoGLRenderAction::getClassTypeId())) {
+            return;
+        }
+        auto* viewer = static_cast<View3DInventorViewer*>(userData);
+        SoCamera* cam = viewer->getSoRenderManager()->getCamera();
+        if (cam) {
+            cam->GLRender(static_cast<SoGLRenderAction*>(action));
+        }
+    }, this);
+    sep->insertChild(camCb, 0);
+
+    // Add to backgroundroot so it renders before any scene geometry and is
+    // never frustum-culled
+    backgroundroot->addChild(sep);
 
     // Remove the gradient background to avoid double-drawing behind the skybox.
     if (backgroundroot->findChild(pcBackGround) != -1) {
