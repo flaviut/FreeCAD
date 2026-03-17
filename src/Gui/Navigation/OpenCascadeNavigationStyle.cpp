@@ -175,6 +175,7 @@ SbBool OpenCascadeNavigationStyle::processSoEvent(const SoEvent* const ev)
                     this->centerTime = ev->getTime();
                     setupPanningPlane(getCamera());
                     this->lockrecenter = false;
+                    processed = true;
                 }
                 else if (this->currentmode == NavigationStyle::PANNING) {
                     newmode = NavigationStyle::IDLE;
