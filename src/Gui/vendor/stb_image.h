@@ -3932,8 +3932,9 @@ static int stbi__process_marker(stbi__jpeg* z, int m)
                     n += sizes[i];
                 }
                 if (n > 256) {
-                    return stbi__err("bad DHT header", "Corrupt JPEG");  // Loop over i < n would write
-                                                                         // past end of values!
+                    return stbi__err("bad DHT header", "Corrupt JPEG");  // Loop over i < n would
+                                                                         // write past end of
+                                                                         // values!
                 }
                 L -= 17;
                 if (tc == 0) {
@@ -9785,28 +9786,23 @@ STBIDEF int stbi_is_16_bit_from_callbacks(stbi_io_callbacks const* c, void* user
               use STBI_NOTUSED in stbi__resample_row_generic(), fix one more leak in tga failure
    case 1.33  (2011-07-14) make stbi_is_hdr work in STBI_NO_HDR (as specified), minor
    compiler-friendly improvements 1.32  (2011-07-13) support for "info" function for all supported
-   filetypes (SpartanJ) 1.31  (2011-06-20) a few more leak fixes, bug in PNG handling (SpartanJ) 1.30
-   (2011-06-11) added ability to load files via callbacks to accomidate custom input streams (Ben
-   Wenger) removed deprecated format-specific test/load functions removed support for installable
-   file formats (stbi_loader) -- would have been broken for IO callbacks anyway error cases in bmp
-   and tga give messages and don't leak (Raymond Barbiero, grisha) fix inefficiency in decoding
-   32-bit BMP (David Woo) 1.29  (2010-08-16) various warning fixes from Aurelien Pocheville 1.28
-   (2010-08-01) fix bug in GIF palette transparency (SpartanJ) 1.27  (2010-08-01) cast-to-stbi_uc to
-   fix warnings 1.26  (2010-07-24) fix bug in file buffering for PNG reported by SpartanJ 1.25
-   (2010-07-17) refix trans_data warning (Won Chun) 1.24  (2010-07-12) perf improvements reading
-   from files on platforms with lock-heavy fgetc() minor perf improvements for jpeg deprecated
-   type-specific functions so we'll get feedback if they're needed attempt to fix trans_data warning
-   (Won Chun) 1.23    fixed bug in iPhone support 1.22  (2010-07-10) removed image *writing* support
-              stbi_info support from Jetro Lauha
-              GIF support from Jean-Marc Lienher
-              iPhone PNG-extensions from James Brown
-              warning-fixes from Nicolas Schulz and Janez Zemva (i.stbi__err. Janez (U+017D)emva)
-      1.21    fix use of 'stbi_uc' in header (reported by jon blow)
-      1.20    added support for Softimage PIC, by Tom Seddon
-      1.19    bug in interlaced PNG corruption check (found by ryg)
-      1.18  (2008-08-02)
-              fix a threading bug (local mutable static)
-      1.17    support interlaced PNG
+   filetypes (SpartanJ) 1.31  (2011-06-20) a few more leak fixes, bug in PNG handling
+   (SpartanJ) 1.30 (2011-06-11) added ability to load files via callbacks to accomidate custom input
+   streams (Ben Wenger) removed deprecated format-specific test/load functions removed support for
+   installable file formats (stbi_loader) -- would have been broken for IO callbacks anyway error
+   cases in bmp and tga give messages and don't leak (Raymond Barbiero, grisha) fix inefficiency in
+   decoding 32-bit BMP (David Woo) 1.29  (2010-08-16) various warning fixes from Aurelien
+   Pocheville 1.28 (2010-08-01) fix bug in GIF palette transparency (SpartanJ) 1.27  (2010-08-01)
+   cast-to-stbi_uc to fix warnings 1.26  (2010-07-24) fix bug in file buffering for PNG reported by
+   SpartanJ 1.25 (2010-07-17) refix trans_data warning (Won Chun) 1.24  (2010-07-12) perf
+   improvements reading from files on platforms with lock-heavy fgetc() minor perf improvements for
+   jpeg deprecated type-specific functions so we'll get feedback if they're needed attempt to fix
+   trans_data warning (Won Chun) 1.23    fixed bug in iPhone support 1.22  (2010-07-10) removed
+   image *writing* support stbi_info support from Jetro Lauha GIF support from Jean-Marc Lienher iPhone
+   PNG-extensions from James Brown warning-fixes from Nicolas Schulz and Janez Zemva (i.stbi__err.
+   Janez (U+017D)emva) 1.21    fix use of 'stbi_uc' in header (reported by jon blow) 1.20    added
+   support for Softimage PIC, by Tom Seddon 1.19    bug in interlaced PNG corruption check (found by
+   ryg) 1.18  (2008-08-02) fix a threading bug (local mutable static) 1.17    support interlaced PNG
       1.16    major bugfix - stbi__convert_format converted one too many pixels
       1.15    initialize some fields for thread safety
       1.14    fix threadsafe conversion bug

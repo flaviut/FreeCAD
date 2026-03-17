@@ -1610,16 +1610,19 @@ void View3DInventorViewer::applySkyboxPreference()
     // transforms before the skybox shader runs, so gl_ModelViewMatrix and
     // gl_ProjectionMatrix reflect the actual view direction and FOV.
     SoCallback* camCb = new SoCallback;
-    camCb->setCallback([](void* userData, SoAction* action) {
-        if (!action->isOfType(SoGLRenderAction::getClassTypeId())) {
-            return;
-        }
-        auto* viewer = static_cast<View3DInventorViewer*>(userData);
-        SoCamera* cam = viewer->getSoRenderManager()->getCamera();
-        if (cam) {
-            cam->GLRender(static_cast<SoGLRenderAction*>(action));
-        }
-    }, this);
+    camCb->setCallback(
+        [](void* userData, SoAction* action) {
+            if (!action->isOfType(SoGLRenderAction::getClassTypeId())) {
+                return;
+            }
+            auto* viewer = static_cast<View3DInventorViewer*>(userData);
+            SoCamera* cam = viewer->getSoRenderManager()->getCamera();
+            if (cam) {
+                cam->GLRender(static_cast<SoGLRenderAction*>(action));
+            }
+        },
+        this
+    );
     sep->insertChild(camCb, 0);
 
     // Add to backgroundroot so it renders before any scene geometry and is
