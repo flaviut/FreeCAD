@@ -175,6 +175,7 @@ SbBool SolidWorksNavigationStyle::processSoEvent(const SoEvent* const ev)
                     this->centerTime = ev->getTime();
                     setupPanningPlane(getCamera());
                     this->lockrecenter = false;
+                    processed = true;
                 }
                 else {
                     SbTime tmp = (ev->getTime() - this->centerTime);

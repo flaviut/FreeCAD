@@ -174,6 +174,7 @@ SbBool OpenSCADNavigationStyle::processSoEvent(const SoEvent* const ev)
                     this->centerTime = ev->getTime();
                     setupPanningPlane(getCamera());
                     this->lockrecenter = false;
+                    processed = true;
                 }
                 else if (curmode == NavigationStyle::PANNING) {
                     newmode = NavigationStyle::IDLE;
