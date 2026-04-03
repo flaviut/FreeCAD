@@ -66,6 +66,7 @@
 #include "FaceMaker.h"
 #include "FaceMakerBullseye.h"
 #include "FaceMakerCheese.h"
+#include "WireJoiner.h"
 #include "FeatureChamfer.h"
 #include "FeatureCompound.h"
 #include "FeatureExtrusion.h"
