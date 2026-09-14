@@ -288,6 +288,7 @@ SET(FreeCADBase_CPP_SRCS
     UniqueNameManager.cpp
     Uuid.cpp
     Vector3D.cpp
+    Version.cpp
     VectorPyImp.cpp
     Version.cpp
     ViewProj.cpp
