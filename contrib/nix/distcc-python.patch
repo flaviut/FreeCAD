@@ -1,0 +1,17 @@
+--- a/include_server/c_extensions/distcc_pump_c_extensions_module.c
++++ b/include_server/c_extensions/distcc_pump_c_extensions_module.c
+@@ -58,3 +58,3 @@
+   const char *in_buf;
+-  int in_len;
++  Py_ssize_t in_len;
+   char *out_buf;
+@@ -243,3 +243,3 @@
+   const char *in;
+-  int len;
++  Py_ssize_t len;
+   int res;
+@@ -277,3 +277,3 @@
+   const char *in;
+-  int len;
++  Py_ssize_t len;
+   int res;
