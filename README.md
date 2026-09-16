@@ -57,6 +57,43 @@ Compiling
 See the [Developers Handbook – Getting Started](https://freecad.github.io/DevelopersHandbook/gettingstarted/)
 for build instructions.
 
+### Build with a local OCCT checkout
+
+From the FreeCAD root in the Nix development shell, run either:
+
+```sh
+FREECAD_OCCT_SOURCE=~/dev/OCCT fc-build
+FREECAD_OCCT_SOURCE=~/dev/OCCT fc-macro /path/to/check.FCMacro  # Linux only
+```
+
+Both commands build and stage OCCT before building FreeCAD, without changing
+either checkout's normal build directory.
+
+### CLion with Nix and direnv
+
+In the repository root, run `direnv allow` and `direnv exec . true` to load the
+development shell and create the tool links in `.cache/bin`. Then configure CLion:
+
+1. Open **Settings → Build, Execution, Deployment → Toolchains** and add a
+   **System** toolchain. Choose **Add environment → From file** and select
+   `contrib/clion/direnv-env.sh` from this checkout.
+2. Set **CMake** to `.cache/bin/cmake`, **Build Tool** to `.cache/bin/ninja`,
+   **C Compiler** to `.cache/bin/gcc`, and **C++ Compiler** to
+   `.cache/bin/g++`. Select these files from this checkout.
+3. Under **Settings → Build, Execution, Deployment → CMake**, add a new profile
+   using that toolchain. To use the existing `build` directory, set the build
+   type to **Release**, the build directory to `$PROJECT_DIR$/build`, and the
+   generator to **Ninja**. Select this profile and disable the automatically
+   imported presets you are not using.
+
+Check the CMake output after reloading: it should use `.cache/bin/cmake` (the
+Nix CMake), not CLion's bundled CMake. The bundled CMake cannot find packages
+such as `yaml-cpp` from this Nix development shell.
+
+To make CLion reload the Nix environment after `flake.nix` changes, disable
+**Cache environment from environment file based on file modified timestamps**
+under **Settings → Advanced Settings**.
+
 
 Reporting Issues
 ---------
