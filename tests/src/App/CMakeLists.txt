@@ -8,6 +8,7 @@ add_executable(App_tests_run
         BackupPolicy.cpp
         Branding.cpp
         ComplexGeoData.cpp
+        CommandLine.cpp
         Document.cpp
         DocumentObject.cpp
         DocumentObserver.cpp
@@ -28,6 +29,7 @@ add_executable(App_tests_run
         Property.cpp
         PropertyExpressionEngine.cpp
         StringHasher.cpp
+        StartupConfiguration.cpp
         VarSet.cpp
         VRMLObject.cpp
 )
