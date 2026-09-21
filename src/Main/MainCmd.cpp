@@ -43,7 +43,8 @@
 
 // FreeCAD doc header
 #include <App/Application.h>
-#include <App/ProgramInformation.h>
+#include <App/CommandLine.h>
+#include <App/ProcessArguments.h>
 
 using App::Application;
 using Base::Console;
@@ -56,6 +57,9 @@ const auto sBanner = std::format(
 
 int main(int argc, char** argv)
 {
+    const App::ProcessArguments processArguments(std::vector<std::string>(argv, argv + argc));
+    auto pythonArguments = processArguments;
+
     // Make sure that we use '.' as decimal point
     setlocale(LC_ALL, "");
     setlocale(LC_NUMERIC, "C");
@@ -83,8 +87,15 @@ int main(int argc, char** argv)
         App::Application::Config()["RunMode"] = "Exit";
         App::Application::Config()["LoggingConsole"] = "1";
 
-        // Inits the Application
-        App::Application::init(argc, argv);
+        const auto options
+            = App::parseCommandLine(processArguments, App::Application::Config()["ExeName"]);
+
+        // Inits the Application from the already parsed command line.
+        const App::StartupResult startup = App::Application::init(options, pythonArguments);
+        if (startup.shouldExit()) {
+            std::cout << startup.message;
+            exit(0);
+        }
 #ifdef _MSC_VER
         Base::CrashReporter::WindowsCrashReporter::install(
             App::Application::getUserAppDataDir() + "CrashReports"
@@ -95,27 +106,17 @@ int main(int argc, char** argv)
         std::cerr << e.what();
         exit(1);
     }
-    catch (const Base::ProgramInformation& e) {
-        if (std::strcmp(e.what(), App::ProgramInformation::verboseVersionEmitMessage) == 0) {
-            std::stringstream str;
-            const std::map<std::string, std::string> config = App::Application::Config();
-
-            App::ProgramInformation::getVerboseCommonInfo(str, config);
-            App::ProgramInformation::getVerboseAddOnsInfo(str, config);
-
-            std::cout << str.str();
-        }
-        else {
-            std::cout << e.what();
-        }
-        exit(0);
-    }
     catch (const Base::Exception& e) {
         std::string appName = App::Application::getExecutableName();
         std::cout << "While initializing " << appName << " the following exception occurred: '"
                   << e.what() << "'\n\n";
-        std::cout << "Python is searching for its runtime files in the following directories:\n"
-                  << Base::Interpreter().getPythonPath() << "\n\n";
+        if (Py_IsInitialized()) {
+            std::cout << "Python is searching for its runtime files in the following directories:\n"
+                      << Base::Interpreter().getPythonPath() << "\n\n";
+        }
+        else {
+            std::cout << "Python has not initialized yet.\n\n";
+        }
         std::cout << "Python version information:\n" << Py_GetVersion() << "\n";
         const char* pythonhome = getenv("PYTHONHOME");
         if (pythonhome) {

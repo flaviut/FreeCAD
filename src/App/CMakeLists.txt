@@ -314,6 +314,7 @@ SET(FreeCADApp_CPP_SRCS
     Branding.cpp
     ByteArray.cpp
     CleanupProcess.cpp
+    CommandLine.cpp
     ColorModel.cpp
     ComplexGeoData.cpp
     ComplexGeoDataPyImp.cpp
@@ -336,6 +337,7 @@ SET(FreeCADApp_CPP_SRCS
     Services.cpp
     StringHasher.cpp
     StringHasherPyImp.cpp
+    StartupConfiguration.cpp
     StringIDPyImp.cpp
 )
 
@@ -348,6 +350,8 @@ SET(FreeCADApp_HPP_SRCS
     Branding.h
     ByteArray.h
     CleanupProcess.h
+    CommandLine.h
+    ProcessArguments.h
     ColorModel.h
     ComplexGeoData.h
     ElementMap.h
@@ -362,6 +366,7 @@ SET(FreeCADApp_HPP_SRCS
     ProgramInformation.h
     Services.h
     StringHasher.h
+    StartupConfiguration.h
     MainThreadSignal.h
 )
 
