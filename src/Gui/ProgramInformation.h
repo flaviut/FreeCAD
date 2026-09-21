@@ -37,6 +37,7 @@ namespace Gui
 class GuiExport ProgramInformation
 {
 public:
+    static void getStylePreferenceInformation(std::stringstream& str);
     static void getStyleInformation(std::stringstream& str);
     static void getNavigationStyleInformation(std::stringstream& str);
     static void getDpiInformation(std::stringstream& str);
