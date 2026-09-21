@@ -36,37 +36,48 @@
 
 using namespace Gui;
 
-void ProgramInformation::getStyleInformation(std::stringstream& str)
+namespace
 {
-    ParameterGrp::handle hGrp = App::GetApplication().GetParameterGroupByPath(
-        "User parameter:BaseApp/Preferences/MainWindow"
+std::pair<std::string, std::string> getStylePreferences()
+{
+    ParameterGrp::handle hGrp = App::Application::GetUserParameter().GetGroup(
+        "BaseApp/Preferences/MainWindow"
     );
 
-    // Add Stylesheet/Theme/Qtstyle information
     std::string styleSheet = hGrp->GetASCII("StyleSheet");
     std::string theme = hGrp->GetASCII("Theme");
+    return {styleSheet.empty() ? "unset" : styleSheet, theme.empty() ? "unset" : theme};
+}
+}  // namespace
+
+void ProgramInformation::getStylePreferenceInformation(std::stringstream& str)
+{
+    const auto [styleSheet, theme] = getStylePreferences();
+    str << "Stylesheet/Theme: " << styleSheet << "/" << theme << "\n";
+}
+
+void ProgramInformation::getStyleInformation(std::stringstream& str)
+{
+    // Add Stylesheet/Theme/Qtstyle information
+    const auto [styleSheet, theme] = getStylePreferences();
 #if QT_VERSION >= QT_VERSION_CHECK(6, 1, 0)
     std::string style = qApp->style()->name().toStdString();
 #else
+    ParameterGrp::handle hGrp = App::Application::GetUserParameter().GetGroup(
+        "BaseApp/Preferences/MainWindow"
+    );
     std::string style = hGrp->GetASCII("QtStyle");
     if (style.empty()) {
         style = "Qt default";
     }
 #endif
-    if (styleSheet.empty()) {
-        styleSheet = "unset";
-    }
-    if (theme.empty()) {
-        theme = "unset";
-    }
-
     str << "Stylesheet/Theme/QtStyle: " << styleSheet << "/" << theme << "/" << style << "\n";
 }
 
 void ProgramInformation::getNavigationStyleInformation(std::stringstream& str)
 {
-    ParameterGrp::handle hGrp = App::GetApplication().GetParameterGroupByPath(
-        "User parameter:BaseApp/Preferences/View"
+    ParameterGrp::handle hGrp = App::Application::GetUserParameter().GetGroup(
+        "BaseApp/Preferences/View"
     );
 
     const std::string navStyle = hGrp->GetASCII("NavigationStyle", "Gui::CADNavigationStyle");
