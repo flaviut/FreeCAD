@@ -26,6 +26,7 @@
 
 # include <QFileInfo>
 # include <QGraphicsView>
+# include <QGraphicsSceneMouseEvent>
 # include <QPainter>
 # include <QPainterPath>
 # include <QPointF>
@@ -45,6 +46,7 @@
 #include "QGCustomImage.h"
 #include "QGICMark.h"
 #include "QGIPrimPath.h"
+#include "QGIView.h"
 #include "QGSPage.h"
 #include "Rez.h"
 #include "ZVALUE.h"
@@ -90,6 +92,16 @@ QGIFace::~QGIFace()
 {
     delete m_sharedRender;
     delete m_patMaker;
+}
+
+void QGIFace::mousePressEvent(QGraphicsSceneMouseEvent* event)
+{
+    if (event->button() == Qt::LeftButton) {
+        // Keep the click position for the context menu's source lookup.
+        // Selection itself belongs to this projected TechDraw face.
+        m_lastPressPoint = event->pos();
+    }
+    QGIPrimPath::mousePressEvent(event);
 }
 
 QColor QGIFace::getDefaultFillColor()

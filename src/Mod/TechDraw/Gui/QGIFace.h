@@ -33,6 +33,7 @@
 #include <App/Material.h>
 
 #include <Mod/TechDraw/App/HatchLine.h>
+#include <optional>
 
 #include "PATPathMaker.h"
 #include "QGIPrimPath.h"
@@ -75,6 +76,7 @@ public:
     };
     std::string SVGCOLPREFIX = ""; // will be determined on runtime
     int getProjIndex() const { return projIndex; }
+    std::optional<QPointF> lastPressPoint() const { return m_lastPressPoint; }
 
     void draw();
     void setPrettyNormal() override;
@@ -130,6 +132,7 @@ public:
     }
 
 protected:
+    void mousePressEvent(QGraphicsSceneMouseEvent* event) override;
     void makeMark(double x, double y);  // NOLINT readability-identifier-length
     double getXForm();
     void getParameters();
@@ -150,6 +153,7 @@ protected:
 
 
 private:
+    std::optional<QPointF> m_lastPressPoint;
     std::vector<TechDraw::LineSet> m_lineSets;
     long int m_maxTile{0};
 
