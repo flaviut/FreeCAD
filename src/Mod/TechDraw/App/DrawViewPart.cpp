@@ -39,9 +39,11 @@
 
 #include <BOPAlgo_Builder.hxx>
 #include <BRepAlgo_NormalProjection.hxx>
-#include <BRepClass_FaceClassifier.hxx>
+#include <BRepAlgoAPI_Cut.hxx>
 #include <BRepBndLib.hxx>
 #include <BRepCheck_Analyzer.hxx>
+#include <BRepClass_FaceClassifier.hxx>
+#include <BRepClass3d_SolidExplorer.hxx>
 #include <BRepIntCurveSurface_Inter.hxx>
 #include <BRepBuilderAPI_Copy.hxx>
 #include <BRepBuilderAPI_MakeFace.hxx>
@@ -450,6 +452,10 @@ TopoDS_Shape DrawViewPart::getShapeForGeometryBuild() const
 TechDraw::GeometryObjectPtr DrawViewPart::buildGeometryObject(const TopoDS_Shape& shape,
                                                               const gp_Ax2& viewAxis)
 {
+    m_faceSourceShape = shape;
+    m_faceProjector = Perspective.getValue()
+        ? HLRAlgo_Projector(viewAxis, std::max(Precision::Confusion(), Focus.getValue()))
+        : HLRAlgo_Projector(viewAxis);
     TechDraw::GeometryObjectPtr go(
         std::make_shared<TechDraw::GeometryObject>(getNameInDocument(), this));
     go->setIsoCount(IsoCount.getValue());
@@ -642,6 +648,7 @@ void DrawViewPart::extractFaces()
                                     static_cast<int>(Preferences::faceFinderVersion()));
             return;
     }
+    removeEmptyFaceRegions();
 }
 
 void DrawViewPart::findFacesV26_3(const std::vector<BaseGeomPtr> &goEdges)
@@ -723,6 +730,88 @@ void DrawViewPart::findFacesV26_3(const std::vector<BaseGeomPtr> &goEdges)
             Base::Console().warning("FaceFinder v26.3: Failed to determine how to display face %s.Face%d\n",
                                     getNameInDocument(), i);
         }
+    }
+}
+
+// Closed HLR wires bound regions of the drawing, including empty space. Split
+// overlapping/nested candidates before testing them: the center of an outer
+// wire can lie in a hole even though the surrounding region is a real surface.
+void DrawViewPart::removeEmptyFaceRegions()
+{
+    if (m_faceSourceShape.IsNull()
+        || !TopExp_Explorer(m_faceSourceShape, TopAbs_FACE).More()) {
+        // Preserve closed regions for wire-only sources such as sketches.
+        return;
+    }
+    const auto faces = geometryObject->getFaceGeometry();
+    if (faces.empty()) {
+        return;
+    }
+
+    BOPAlgo_Builder splitter;
+    splitter.SetNonDestructive(true);
+    for (const auto& face : faces) {
+        splitter.AddArgument(face->toOccFace());
+    }
+    TopoDS_Shape regions = faces.front()->toOccFace();
+    if (faces.size() > 1) {
+        splitter.Perform();
+        if (splitter.HasErrors()) {
+            throw Base::RuntimeError("Cannot split projected face regions");
+        }
+        regions = splitter.Shape();
+    }
+
+    TopTools_ListOfShape emptyRegions;
+    for (TopExp_Explorer it(regions, TopAbs_FACE); it.More(); it.Next()) {
+        const auto region = TopoDS::Face(it.Current());
+        gp_Pnt point;
+        if (!BRepClass3d_SolidExplorer::FindAPointInTheFace(region, point)) {
+            continue;
+        }
+        // Face geometry uses Qt's inverted Y axis. Shoot into the same shape
+        // and coordinate system that HLR used, including link placements.
+        const gp_Lin ray = m_faceProjector.Shoot(point.X(), -point.Y());
+        BRepIntCurveSurface_Inter hits;
+        hits.Init(m_faceSourceShape, ray, Precision::Confusion());
+        if (!hits.More()) {
+            emptyRegions.Append(region);
+        }
+    }
+    if (emptyRegions.IsEmpty()) {
+        return;
+    }
+
+    std::vector<FacePtr> result;
+    for (const auto& face : faces) {
+        TopTools_ListOfShape arguments;
+        arguments.Append(face->toOccFace());
+        BRepAlgoAPI_Cut cut;
+        cut.SetArguments(arguments);
+        cut.SetTools(emptyRegions);
+        cut.SetNonDestructive(true);
+        cut.Build();
+        if (!cut.IsDone()) {
+            throw Base::RuntimeError("Cannot remove empty projected face regions");
+        }
+        for (TopExp_Explorer it(cut.Shape(), TopAbs_FACE); it.More(); it.Next()) {
+            const auto trimmed = TopoDS::Face(it.Current());
+            auto replacement = std::make_shared<TechDraw::Face>();
+            // Outer wire must come first for Face::toOccFace(). Retain inner
+            // wires as holes so a surrounding face cannot cover the void again.
+            const auto outer = BRepTools::OuterWire(trimmed);
+            replacement->wires.push_back(new TechDraw::Wire(outer));
+            for (TopExp_Explorer wire(trimmed, TopAbs_WIRE); wire.More(); wire.Next()) {
+                if (!wire.Current().IsSame(outer)) {
+                    replacement->wires.push_back(new TechDraw::Wire(TopoDS::Wire(wire.Current())));
+                }
+            }
+            result.push_back(replacement);
+        }
+    }
+    geometryObject->clearFaceGeom();
+    for (const auto& face : result) {
+        geometryObject->addFaceGeom(face);
     }
 }
 
