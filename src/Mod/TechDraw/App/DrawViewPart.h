@@ -29,6 +29,7 @@
 #include <QFuture>
 #include <QFutureWatcher>
 
+#include <HLRAlgo_Projector.hxx>
 #include <TopoDS_Edge.hxx>
 #include <TopoDS_Wire.hxx>
 
@@ -277,6 +278,7 @@ protected:
     // Attempt to decide whether each face represents either the material or a hole
     virtual void assignFaceRepresentations(const std::vector<TechDraw::FacePtr>& faces,
                                            const std::vector<TopoDS_Face>& occFaces);
+    void removeEmptyFaceRegions();
 
     Base::Vector3d shapeCentroid;
 
@@ -284,6 +286,10 @@ protected:
 
     TopoDS_Shape m_saveShape;     //TODO: make this a Property.  Part::TopoShapeProperty??
     Base::Vector3d m_saveCentroid;//centroid before centering shape in origin
+
+    // The shape and projector used by HLR, also for section and detail views.
+    TopoDS_Shape m_faceSourceShape;
+    HLRAlgo_Projector m_faceProjector;
 
     std::vector<TechDraw::VertexPtr> m_referenceVerts;
 
