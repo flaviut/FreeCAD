@@ -2001,4 +2001,3 @@ opencascade::handle<Geom_TrimmedCurve> GeometryUtils::bestFitArc(opencascade::ha
     return circleArc1;
 }
 
-
