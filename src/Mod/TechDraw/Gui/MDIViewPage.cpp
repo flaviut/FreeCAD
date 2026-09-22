@@ -57,6 +57,8 @@
 #include <Gui/MainWindow.h>
 #include <Gui/Selection/Selection.h>
 #include <Gui/Selection/SelectionObject.h>
+#include <Gui/Tree.h>
+#include <Gui/View3DInventor.h>
 #include <Gui/ViewProvider.h>
 #include <Gui/WaitCursor.h>
 #include <Gui/Window.h>
@@ -82,6 +84,7 @@
 #include "QGMText.h"
 #include "QGSPage.h"
 #include "QGVPage.h"
+#include "Rez.h"
 #include "ViewProviderPage.h"
 #include "PagePrinter.h"
 #include "PreferencesGui.h"
@@ -563,6 +566,52 @@ bool MDIViewPage::addSelectionGroups(QMenu& menu)
     }
 
     if (ctx.hasFace) {
+        QGIFace* selectedFace = nullptr;
+        for (auto* item : m_scene->selectedItems()) {
+            if (auto* face = dynamic_cast<QGIFace*>(item)) {
+                if (selectedFace) {
+                    selectedFace = nullptr;
+                    break;
+                }
+                selectedFace = face;
+            }
+        }
+        auto* view = selectedFace ? dynamic_cast<QGIView*>(selectedFace->parentItem()) : nullptr;
+        auto* partView = view ? dynamic_cast<DrawViewPart*>(view->getViewObject()) : nullptr;
+        if (partView) {
+            std::optional<Base::Vector3d> clickPoint;
+            if (selectedFace->lastPressPoint()) {
+                const QPointF position = Rez::appX(
+                    selectedFace->mapToParent(*selectedFace->lastPressPoint()));
+                clickPoint.emplace(position.x(), position.y(), 0);
+            }
+            auto [source, sourceFace] = partView->findSourceFace(
+                selectedFace->getProjIndex(), clickPoint ? &*clickPoint : nullptr);
+            if (source) {
+                const std::string docName = source->getDocument()->getName();
+                const std::string objName = source->getNameInDocument();
+                auto* action = menu.addAction(tr("Jump to source"));
+                action->setToolTip(tr("Select the source object and reveal it in the model tree"));
+                connect(action, &QAction::triggered, this, [docName, objName] {
+                    auto* doc = App::GetApplication().getDocument(docName.c_str());
+                    if (!doc || !doc->getObject(objName.c_str())) {
+                        return;
+                    }
+                    Gui::Selection().clearSelection();
+                    Gui::Selection().addSelection(docName.c_str(), objName.c_str());
+                    Gui::TreeWidget::scrollItemToTop();
+                    if (auto* guiDoc = Gui::Application::Instance->getDocument(doc)) {
+                        const auto views = guiDoc->getMDIViewsOfType(
+                            Gui::View3DInventor::getClassTypeId());
+                        if (!views.empty()) {
+                            guiDoc->setActiveWindow(views.front());
+                        }
+                    }
+                });
+                menu.addSeparator();
+                added = true;
+            }
+        }
         if (addCommandsByName(menu, {
                 "TechDraw_AreaDimension",
                 "TechDraw_Hatch",

@@ -39,6 +39,9 @@
 
 #include <BRepAlgo_NormalProjection.hxx>
 #include <BRepBndLib.hxx>
+#include <BRepCheck_Analyzer.hxx>
+#include <BRepClass_FaceClassifier.hxx>
+#include <BRepIntCurveSurface_Inter.hxx>
 #include <BRepBuilderAPI_Copy.hxx>
 #include <BRepBuilderAPI_MakeFace.hxx>
 #include <BRepBuilderAPI_MakeWire.hxx>
@@ -62,7 +65,12 @@
 #include <gp_Dir.hxx>
 #include <gp_Pln.hxx>
 #include <gp_Pnt.hxx>
+#include <gp_Lin.hxx>
+#include <gp_Trsf.hxx>
+#include <Precision.hxx>
 #include <sstream>
+#include <cmath>
+#include <limits>
 
 
 #include <App/Document.h>
@@ -181,6 +189,100 @@ TopoDS_Shape DrawViewPart::getSourceShape(bool fuse, bool allow2d) const
         return ShapeExtractor::getShapesFused(links);
     }
     return ShapeExtractor::getShapes(links, allow2d);
+}
+
+// Find the source face under a point in a projected face. The projected faces
+// are reconstructed from HLR edges, so their indices do not identify source faces.
+std::pair<App::DocumentObject*, int> DrawViewPart::findSourceFace(
+    int projectedFace, const Base::Vector3d* projectedPoint) const
+{
+    if (Perspective.getValue() || waitingForResult() || projectedFace < 0 || getScale() <= 0) {
+        return {nullptr, -1};
+    }
+    const auto faces = getFaceGeometry();
+    if (static_cast<size_t>(projectedFace) >= faces.size()) {
+        return {nullptr, -1};
+    }
+    const auto sources = getAllSources();
+    if (sources.empty()) {
+        return {nullptr, -1};
+    }
+    TopoDS_Shape shape = getSourceShape();
+    if (shape.IsNull()) {
+        return {nullptr, -1};
+    }
+
+    const TopoDS_Face projectedShape = faces[projectedFace]->toOccFace();
+    if (projectedShape.IsNull()) {
+        return {nullptr, -1};
+    }
+    const Base::Vector3d point2d = projectedPoint ? *projectedPoint : faces[projectedFace]->getCenter();
+    BRepClass_FaceClassifier classifier(projectedShape, gp_Pnt(point2d.x, point2d.y, 0),
+                                       Precision::Confusion());
+    // A GUI click has already been accepted by QGIFace::shape(), whose Qt path
+    // can disagree with the OCC face reconstructed from the same HLR edges.
+    // Only validate the fallback center here; otherwise a valid click on a
+    // source face can be rejected before the source ray is tested.
+    if (!projectedPoint && classifier.State() != TopAbs_IN) {
+        return {nullptr, -1};
+    }
+    const gp_Ax2 cs = getProjectionCS();
+    // HLR face coordinates use the drawing's inverted Y axis.
+    gp_Vec offset = gp_Vec(cs.XDirection()) * point2d.x - gp_Vec(cs.YDirection()) * point2d.y;
+    gp_Trsf undoRotation;
+    undoRotation.SetRotation(cs.Axis(), -Base::toRadians(Rotation.getValue()));
+    offset.Transform(undoRotation);
+    offset /= getScale();
+    const Base::Vector3d origin = getOriginalCentroid();
+    gp_Pnt point(origin.x, origin.y, origin.z);
+    point.Translate(offset);
+
+    Bnd_Box bounds;
+    BRepBndLib::Add(shape, bounds);
+    if (bounds.IsVoid()) {
+        return {nullptr, -1};
+    }
+    double xmin, ymin, zmin, xmax, ymax, zmax;
+    bounds.Get(xmin, ymin, zmin, xmax, ymax, zmax);
+    const double reach = std::hypot(std::hypot(xmax - xmin, ymax - ymin), zmax - zmin)
+        + point.Distance(gp_Pnt((xmin + xmax) / 2, (ymin + ymax) / 2, (zmin + zmax) / 2)) + 1;
+    point.Translate(gp_Vec(cs.Direction()) * reach);
+    const gp_Lin ray(point, cs.Direction().Reversed());
+    BRepIntCurveSurface_Inter hits;
+    TopoDS_Face nearestFace;
+    double nearest = std::numeric_limits<double>::infinity();
+    for (hits.Init(shape, ray, Precision::Confusion()); hits.More(); hits.Next()) {
+        if (hits.W() < 0 || hits.W() >= nearest) {
+            continue;
+        }
+        nearest = hits.W();
+        nearestFace = hits.Face();
+    }
+    if (nearestFace.IsNull()) {
+        return {nullptr, -1};
+    }
+    int compoundIndex = 1;
+    for (TopExp_Explorer explorer(shape, TopAbs_FACE); explorer.More(); explorer.Next(), ++compoundIndex) {
+        if (explorer.Current().IsSame(nearestFace)) {
+            break;
+        }
+    }
+    int firstFace = 1;
+    for (auto* source : sources) {
+        if (!source) {
+            continue;
+        }
+        const TopoDS_Shape sourceShape = ShapeExtractor::getShapes({source});
+        int faceCount = 0;
+        for (TopExp_Explorer explorer(sourceShape, TopAbs_FACE); explorer.More(); explorer.Next()) {
+            ++faceCount;
+        }
+        if (compoundIndex < firstFace + faceCount) {
+            return {source, compoundIndex - firstFace + 1};
+        }
+        firstFace += faceCount;
+    }
+    return {nullptr, -1};
 }
 
 //! deliver a shape appropriate for making a detail view based on this view
@@ -520,6 +622,17 @@ void DrawViewPart::extractFaces()
         findFacesNew(goEdges);
     } else {
         findFacesOld(goEdges);
+        // The legacy splitter only finds intersections at edge endpoints. Interior
+        // crossings can therefore produce self-intersecting wires that join
+        // otherwise separate regions. Keep legacy face numbering when it is
+        // valid, but use the full intersection splitter to recover invalid faces.
+        for (const auto& face : geometryObject->getFaceGeometry()) {
+            const TopoDS_Face shape = face->toOccFace();
+            if (shape.IsNull() || !BRepCheck_Analyzer(shape).IsValid()) {
+                findFacesNew(goEdges);
+                break;
+            }
+        }
     }
 }
 

@@ -214,6 +214,8 @@ public:
     bool isUnsetting() { return nowUnsetting; }
 
     virtual TopoDS_Shape getSourceShape(bool fuse = false, bool allow2d = true) const;
+    std::pair<App::DocumentObject*, int> findSourceFace(
+        int projectedFace, const Base::Vector3d* projectedPoint = nullptr) const;
     virtual TopoDS_Shape getShapeForDetail() const;
     std::vector<App::DocumentObject*> getAllSources() const;
 
