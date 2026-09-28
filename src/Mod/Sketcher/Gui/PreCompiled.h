@@ -34,7 +34,6 @@
 #include <algorithm>
 #include <bitset>
 #include <functional>
-#include <format>
 #include <limits>
 #include <map>
 #include <memory>
@@ -65,6 +64,7 @@
 #include <gp_Pnt.hxx>
 
 // Qt
+#include <QtCore>
 #include <Gui/QtAll.h>
 
 #include <QWidgetAction>
