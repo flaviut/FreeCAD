@@ -30,7 +30,6 @@
 #include <QStringList>
 #include <QTextStream>
 
-#include <App/Application.h>
 #include <Base/Color.h>
 #include <App/Material.h>
 #include <Base/BaseClass.h>
