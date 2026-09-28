@@ -413,3 +413,86 @@ runs the target rebuild and the two header-touch rebuilds using `fc-build`.
 It preserves the live Ninja log and archives only changed output records and
 traces. Run the shared analyzer on each resulting provenance dataset. Avoid
 other compilation or analysis jobs during the measured series.
+
+
+## 04 — Separate value and document Qt metatypes
+
+Date: 2026-09-28. Status: proposed; not executed.
+
+### Initial analysis
+
+Experiment 03 removed 141 recompilations after a `Gui/MetaTypes.h` edit, but
+material implementation files still include that header for value conversions.
+The header combines declarations for Base vectors, matrices, placements,
+rotations, and quantities with `App::SubObjectT` and `App::DocumentObject*`.
+It includes both `App/DocumentObject.h` and `App/DocumentObserver.h` to supply
+the document types. A consumer needing only quantity conversion therefore
+also receives document dependencies.
+
+The remaining material consumers include `MaterialValue.cpp`, `Materials.cpp`,
+`PyVariants.h`, and the three delegates updated in experiment 03. The delegates
+use `Base::Quantity` QVariant conversions; audit their other dependencies before
+migrating them. `Gui/CMakeLists.txt` explicitly lists `MetaTypes.h`, so the new
+header should follow that source-list convention.
+
+### Hypothesis
+
+Extract the Base value metatype declarations into a small companion header,
+initially beside `Gui/MetaTypes.h`, and keep the existing header as a compatible
+umbrella that includes it. Switch material consumers that need only these value
+metatypes to the companion header. This should reduce their frontend work and
+rebuild scope after edits to document headers or the remaining umbrella.
+Alternative include paths and PCH may limit the gain; measure dependency removal
+instead of assuming that changing an include removes it.
+
+This tests the broader metatype split deferred by experiment 03 without changing
+material storage, solver ownership, or PCH contents. The post-experiment-03
+[target profile](03-material-headers/reduced-targets/analysis.md) still attributes
+39.9 inclusive seconds to `DocumentObject.h`; this is a ranking signal, not an
+estimate of recoverable time or evidence that all of it comes from metatypes.
+
+### Procedure
+
+1. Record the current source revision and preserve experiment 03 artifacts.
+   Keep Clang 21, Release flags, PCH enabled, time tracing, disabled ccache,
+   dependencies, and eight jobs fixed. Use fresh datasets under
+   `04-metatype-split/`; run every build through `fc-build`.
+2. Audit `Gui/MetaTypes.h` consumers in `Materials` and `MatGui`, including
+   shared headers such as `PyVariants.h`. Identify the metatypes each actually
+   uses and record existing dependency membership for `DocumentObject.h`,
+   `DocumentObserver.h`, and `Gui/MetaTypes.h`. Leave consumers requiring
+   document metatypes on the umbrella. Check PCH and alternate include paths.
+3. Move the Base declarations, with their direct type and Qt includes, into
+   the companion header. Keep each `Q_DECLARE_METATYPE` in exactly one place;
+   preserve the existing type names and registrations. Include the companion
+   from the umbrella and update only audited material consumers. Add missing
+   direct includes where needed. Register the header in the relevant CMake
+   source/install lists if required by their existing conventions.
+4. After compatibility builds, compare baseline and candidate using the same
+   requested targets: `Materials`, `MatGui`, `Part`, and `SketcherGui`. Bring
+   prerequisites up to date before each series. Measure deletion-only rebuilds
+   of those targets' objects and PCH files, then separate touches of the three
+   audited headers. Preserve the live Ninja log and capture only each run's
+   changed output records and traces, including prerequisite work.
+5. Run at least three series per variant, alternating baseline and candidate.
+   Settle source-switch rebuilds before timing. Report individual wall times,
+   medians and ranges, combined TU/PCH frontend costs, and exact changed output
+   sets. Keep other compilation and analysis jobs idle during measurements.
+   Record trace coverage and exclude failed/resumed runs from comparisons.
+6. Validate complete builds with PCH disabled and then restored. Run relevant
+   headless checks through `fc-test` with display variables unset and Qt's
+   offscreen platform, excluding `CommandLine_characterization`. Exercise
+   quantity/list QVariant round trips and existing document metatype consumers;
+   add a focused regression test only if existing tests lack this coverage.
+   Never start the GUI. Record compiler and Qt configurations actually checked.
+
+### Decision criteria
+
+Retain the split if correctness checks pass and it removes document-header
+dependencies from audited consumers or produces a repeatable frontend/wall-time
+gain without a material rebuild regression. Report scope reductions separately
+from timing improvements. If alternate paths preserve all dependencies and
+timing differences remain within observed variation, reject or narrow the trial.
+Do not infer a whole-project clean-build speedup from these target measurements.
+Record results and source change IDs here before considering migration of
+additional modules or further splitting individual value metatypes.
