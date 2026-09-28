@@ -1,0 +1,4 @@
+output,ninja_s,trace_s,frontend_s,backend_s,source_s,instantiate_function_s,instantiate_class_s,optimizer_s,codegen_s
+src/Mod/Sketcher/Gui/CMakeFiles/SketcherGui.dir/cmake_pch.hxx.pch,7.273,7.180471,5.988733,0.0,0.0,0.9915,1.224147,0.0,0.0
+src/Mod/Part/App/CMakeFiles/Part.dir/cmake_pch.hxx.pch,4.41,4.331136,3.476071,0.0,0.0,0.595085,0.526963,0.0,0.0
+src/Mod/Material/App/CMakeFiles/Materials.dir/cmake_pch.hxx.pch,3.264,3.202329,2.678686,0.0,2.391339,0.512139,0.525263,0.0,0.0

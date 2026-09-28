@@ -1,0 +1,35 @@
+{
+  "source_changes": {
+    "application_header": "tkkwtqno",
+    "material_value_header": "onqurqry"
+  },
+  "compiler": "Clang 21.1.8",
+  "build_type": "Release",
+  "jobs": 8,
+  "ccache": false,
+  "measured_targets": [
+    "Materials",
+    "Part",
+    "SketcherGui"
+  ],
+  "baseline_source": "uzptwqwt",
+  "measurement_source": "onqurqry",
+  "no_pch_validation": {
+    "exit_code": 0,
+    "compile_commands": 3857,
+    "pch_consuming_commands": 0,
+    "rebuilt_objects": 2109,
+    "rebuilt_pch": 0
+  },
+  "limitations": [
+    "Single run per configuration and scenario.",
+    "Target results include prerequisite work; no whole-project clean-build comparison.",
+    "Measurements quantify the two source changes together.",
+    "Full validation builds are not controlled performance measurements."
+  ],
+  "final_pch_validation": {
+    "exit_code": 0,
+    "pch_enabled": true,
+    "test_exit_code": 0
+  }
+}

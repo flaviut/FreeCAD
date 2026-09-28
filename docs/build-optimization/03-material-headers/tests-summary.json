@@ -1,0 +1,35 @@
+{
+  "command": [
+    "fc-test",
+    "-j",
+    "8",
+    "--timeout",
+    "120",
+    "-E",
+    "^CommandLine_characterization$",
+    "--output-junit",
+    "/home/user/dev/FreeCAD/docs/build-optimization/03-material-headers/provenance/tests.xml"
+  ],
+  "exit_code": 0,
+  "elapsed_s": 26.951516718021594,
+  "environment": {
+    "DISPLAY": null,
+    "WAYLAND_DISPLAY": null,
+    "QT_QPA_PLATFORM": "offscreen"
+  },
+  "junit_summary": {
+    "name": "Linux-clang++",
+    "tests": "2197",
+    "failures": "0",
+    "disabled": "8",
+    "skipped": "2",
+    "hostname": "tight-seat",
+    "time": "25",
+    "timestamp": "2026-09-28T16:54:51"
+  },
+  "ctest_reported_tests": 2189,
+  "passed": 2187,
+  "skipped": 2,
+  "disabled": 8,
+  "failed": 0
+}

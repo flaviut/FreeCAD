@@ -244,7 +244,7 @@ not revalidated here.
 
 ## 03 — Reduce material header dependencies
 
-Date: 2026-09-28. Status: planned; hypothesis recorded before implementation.
+Date: 2026-09-28. Status: complete; both header dependency reductions retained.
 
 ### Initial analysis
 
@@ -311,3 +311,105 @@ the rebuild benefit; measure that explicitly.
    Keep the two source changes independently identifiable; make no whole-project
    clean-build speedup claim from target-only measurements. Single runs provide
    directional evidence, not a statistically established speedup.
+
+
+### Results
+
+Both changes passed the selected-target compatibility builds with PCH enabled:
+
+- `tkkwtqno` (`9a779000`): remove `App/Application.h` from `Materials.h`.
+  `Materials.cpp` already includes it directly.
+- `onqurqry` (`48b06005`): replace `Gui/MetaTypes.h` in `MaterialValue.h` with
+  direct Base and Qt type headers and `<utility>`. Add explicit metatype includes
+  to three material GUI delegate implementations that convert quantities.
+
+No inline operations needed moving: the inline list conversions use Qt's
+`QList<QVariant>` metatype, while quantity conversions already live in `.cpp`
+files. No new metatype header or duplicate declarations were introduced.
+
+The target rebuild deletes exactly 287 objects (32 Materials, 203 Part, 52
+SketcherGui) and three PCH files. Baseline and reduced configurations rebuilt
+identical compilation output sets. Header touches request the same three targets
+and include their prerequisite targets; the TU counts below include that work.
+Neither header-touch case rebuilt a PCH. All six datasets have complete valid
+trace coverage, with no missing or invalid traces.
+
+| Measurement | Baseline | Reduced headers | Change |
+| --- | ---: | ---: | ---: |
+| Target rebuild elapsed, including PCH | 142.254 s | 128.084 s | -10.0% |
+| Target combined compiler time | 848.759 s | 748.883 s | -11.8% |
+| Target combined frontend time | 630.213 s | 544.680 s | -13.6% |
+| `Application.h` touch elapsed | 253.338 s | 236.520 s | -6.6% |
+| `Application.h` touch TUs | 515 | 500 | -2.9% |
+| `Gui/MetaTypes.h` touch elapsed | 180.986 s | 104.993 s | -42.0% |
+| `Gui/MetaTypes.h` touch TUs | 293 | 152 | -48.1% |
+| `Gui/MetaTypes.h` touch frontend time | 867.651 s | 382.544 s | -55.9% |
+
+The strongest result is reduced rebuild scope after the GUI metatype header
+changes. Of the 141 eliminated recompilations, 54 are in Part, 38 in PartGui,
+21 in SketcherGui, 15 in Materials, 12 in Sketcher, and one in MatGui. No new TUs
+were added to that rebuild. The application header removes only 15 recompilations
+(five Materials and ten MatGui); other include paths preserve the dependency in
+the remaining targets. This confirms why removing a direct include does not
+necessarily eliminate the corresponding rebuild dependency.
+
+See [comparison and exact TU differences](03-material-headers/comparison.json),
+[target baseline](03-material-headers/baseline-targets/analysis.md),
+[target result](03-material-headers/reduced-targets/analysis.md), and
+[metatype touch result](03-material-headers/reduced-metatypes-touch/analysis.md).
+Per-run metrics, TU/PCH CSVs and trace summaries are retained alongside them.
+Raw traces, logs, dependency snapshots, configuration, compilation database, and
+the measurement scripts remain local under `03-material-headers/provenance/`.
+
+A focused Clang 21 `misc-include-cleaner` audit analyzed both headers as main
+files with a filtered compilation database without PCH. It did not recommend
+restoring either expensive include. It identified additional direct-include
+hygiene opportunities (`QtGlobal` for `Q_UNUSED`, and providers for several
+container and value types in `Materials.h`), plus a `QStringList` provider
+warning despite that header already being included. These suggestions were
+reviewed and left outside this experiment's two dependency removals. IWYU was
+not run: the pinned Nix package provides IWYU 0.26 with Clang 22; the matched
+Clang 21 include cleaner was readily available instead. Audit logs are preserved
+in provenance.
+
+The measurements compare the combined changes, not their separate performance
+contributions. These are single runs under the same PCH configuration and eight
+jobs. No whole-project clean-build speedup is inferred, and rebuild counts apply
+to the selected target dependency closure. The final full builds and tests are
+correctness checks rather than controlled performance measurements.
+
+
+### Validation and decision
+
+The complete build with PCH disabled passed without further source fixes. It
+rebuilt 2,109 objects; all 3,857 commands in the compilation database were free
+of `-include-pch`. Objects unaffected by the configuration and header changes
+were reused, so this is a full build validation, not a clean-build measurement.
+The subsequent complete build after restoring `FREECAD_USE_PCH=ON` also passed.
+The existing `build/clang-profile` directory was reused for these validation
+configurations; the measured baseline and reduced-header series both used PCH.
+
+Headless CTest validation passed: 2,189 reported tests, including two skipped
+tests, with zero failures; eight additional tests were disabled. Runtime was
+26.95 s including the wrapper. `CommandLine_characterization` was excluded
+because it invokes the main executable. `DISPLAY` and `WAYLAND_DISPLAY` were
+unset and Qt used the offscreen platform. See
+[test summary](03-material-headers/tests-summary.json) and the local test log
+and JUnit report under provenance. No GUI was started. GCC, MSVC, and other Qt
+configurations were not revalidated.
+
+Decision: retain both source commits. The measurements support the frontend
+cost hypothesis and show a substantial reduction in rebuild scope for
+`Gui/MetaTypes.h`; the application-header scope reduction is smaller. Preserve
+the changes separately for later isolation. Clang's include cleaner is useful
+as an advisory audit, with provider warnings reviewed before applying fixes.
+Further direct-include cleanup and broader metatype-header splitting remain
+separate experiments.
+
+To repeat the selected-target measurements after bringing dependencies up to
+date, use the preserved `provenance/run-series.py` with a fresh label. It records
+Ninja dependencies, removes only the selected targets' object/PCH files, then
+runs the target rebuild and the two header-touch rebuilds using `fc-build`.
+It preserves the live Ninja log and archives only changed output records and
+traces. Run the shared analyzer on each resulting provenance dataset. Avoid
+other compilation or analysis jobs during the measured series.

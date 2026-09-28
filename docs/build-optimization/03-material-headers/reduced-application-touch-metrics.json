@@ -1,0 +1,20 @@
+{
+  "label": "reduced-application-touch",
+  "command": [
+    "fc-build",
+    "--target",
+    "Materials",
+    "Part",
+    "SketcherGui"
+  ],
+  "started_utc": "2026-09-28T20:13:53.704162+00:00",
+  "elapsed_s": 236.52047468704404,
+  "exit_code": 0,
+  "jobs": 8,
+  "changed_ninja_outputs": 525,
+  "build_dir": "/home/user/dev/FreeCAD/build/clang-profile",
+  "children_user_s": 1584.893568,
+  "children_system_s": 114.323224,
+  "max_child_rss_kib": 852064,
+  "memory_note": "Largest individual child RSS, not aggregate concurrent build memory."
+}
