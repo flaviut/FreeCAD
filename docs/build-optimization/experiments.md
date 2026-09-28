@@ -240,3 +240,74 @@ coupling (`ViewProviderSketch.h`, `SketchObject.h`, and related geometry headers
 which merits a separate header-dependency experiment. Defaults outside MSVC
 remain off; this experiment opts Clang in explicitly. GCC and MSVC builds were
 not revalidated here.
+
+
+## 03 — Reduce material header dependencies
+
+Date: 2026-09-28. Status: planned; hypothesis recorded before implementation.
+
+### Initial analysis
+
+With PCH enabled, project headers account for much of the remaining repeated
+parsing. The experiment 02 profile reports cumulative inclusive times of 472 s
+for `DocumentObject.h`, 428 s for `PartFeature.h`, 327 s for `Application.h`,
+274 s for `PropertyMaterial.h`, and 272 s for `Materials.h`. These times overlap
+and must not be added as independent savings.
+
+One dependency path is `PartFeature.h` → `PropertyMaterial.h` → `Materials.h`.
+`Materials.h` includes `App/Application.h` and `MaterialValue.h`; the latter
+includes `Gui/MetaTypes.h`, which brings in document objects, observers, geometry
+and Qt metatype declarations. The material implementation files already include
+several of these dependencies directly. Inspect which declarations the public
+headers actually need before changing the implementation boundary.
+
+Include What You Use (IWYU) can suggest missing and unnecessary includes and
+forward declarations. Clangd Include Cleaner provides editor diagnostics;
+clang-tidy's `misc-include-cleaner` provides batch diagnostics for the main file.
+These tools check symbol dependencies, not build cost, and cannot decide which
+inline operations should move into implementation files. IWYU rejects PCH
+invocations; a separate configuration without PCH is needed for its analysis.
+For Clang 21, the corresponding IWYU release is 0.25. Tool suggestions require
+review for Qt metatype declarations, generated code, and conditional builds.
+
+References: [IWYU](https://include-what-you-use.org/),
+[clangd Include Cleaner](https://clangd.llvm.org/guides/include-cleaner), and
+[clang-tidy include cleaner](https://clang.llvm.org/extra/clang-tidy/checks/misc/include-cleaner.html).
+
+### Hypothesis
+
+Removing `Application.h` from `Materials.h` and replacing `Gui/MetaTypes.h` in
+`MaterialValue.h` with its specific required type headers will reduce frontend
+work in material consumers. Moving metatype-dependent inline operations into
+implementation files is an additional candidate only if required by the audit.
+Expect a smaller compilation gain than enabling PCH, but potentially fewer
+recompiled translation units after editing common application or GUI headers.
+Alternative paths and PCH contents may preserve these dependencies and limit
+the rebuild benefit; measure that explicitly.
+
+### Procedure
+
+1. Preserve the current PCH configuration and source baseline. Keep Clang 21,
+   Release flags, disabled ccache, time tracing, and eight jobs fixed.
+2. Bring the selected targets (`Materials`, `Part`, and `SketcherGui`) up to date.
+   Measure a rebuild after deleting only their object and PCH outputs, preserving
+   Ninja command history. Include prerequisite work and report actual TU/PCH sets.
+3. Touch `src/App/Application.h` and `src/Gui/MetaTypes.h` separately and build
+   those same targets. Capture elapsed time, changed Ninja outputs and traces.
+   Record dependency membership to distinguish alternate include paths from
+   actual removal of header dependencies.
+4. Audit material headers and consumers. Remove `Application.h` in one Jujutsu
+   commit, then replace the broad metatype include in a separate commit. Add
+   direct includes where consumers previously relied on transitive declarations.
+   Format before committing; preserve each change ID in the results.
+5. Build after each change. Once stable, repeat the identical target deletion
+   and header-touch measurements with PCH enabled. Archive failed attempts but
+   exclude them from performance comparisons.
+6. Verify a complete build with PCH disabled to expose dependencies masked by
+   PCH, then restore PCH and verify the complete build. Run relevant headless
+   CTest checks through `fc-test`, excluding `CommandLine_characterization`.
+   Never start the GUI. Use `fc-build` for every build.
+7. Record results, source revisions, actual compilation coverage, and limitations.
+   Keep the two source changes independently identifiable; make no whole-project
+   clean-build speedup claim from target-only measurements. Single runs provide
+   directional evidence, not a statistically established speedup.
