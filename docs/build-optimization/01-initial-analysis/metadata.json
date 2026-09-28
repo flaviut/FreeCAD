@@ -1,0 +1,13 @@
+{
+  "source_change": "tmllswqn",
+  "source_commit": "11eaf92b",
+  "build_directory": "/home/user/dev/FreeCAD/build/clang-profile",
+  "compiler": "Clang 21.1.8",
+  "configuration": "Release",
+  "jobs": 8,
+  "ccache": false,
+  "pch": false,
+  "trace_count": 3857,
+  "trace_bytes": 2309811473,
+  "note": "Source identifier captured when archiving; original profiling may precede latest TechDraw edits. Raw traces and provenance are retained locally and ignored by VCS."
+}
