@@ -1,0 +1,12 @@
+FAILED: [code=1] clean 
+/nix/store/r1r1ls8j4ca1vbsysajrq99qc1zgxn41-ninja-1.13.2/bin/ninja  -t clean 
+Cleaning... ninja: error: remove(share/Gui/PreferencePacks/FreeCAD Classic): Directory not empty
+ninja: error: remove(/home/user/dev/FreeCAD/build/clang-profile/share/Gui/PreferencePacks/FreeCAD Classic): Directory not empty
+ninja: error: remove(share/Gui/PreferencePacks/Dark behave): Directory not empty
+ninja: error: remove(/home/user/dev/FreeCAD/build/clang-profile/share/Gui/PreferencePacks/Dark behave): Directory not empty
+ninja: error: remove(share/Gui/PreferencePacks/FreeCAD Light): Directory not empty
+ninja: error: remove(/home/user/dev/FreeCAD/build/clang-profile/share/Gui/PreferencePacks/FreeCAD Light): Directory not empty
+ninja: error: remove(share/Gui/PreferencePacks/FreeCAD Dark): Directory not empty
+ninja: error: remove(/home/user/dev/FreeCAD/build/clang-profile/share/Gui/PreferencePacks/FreeCAD Dark): Directory not empty
+8620 files.
+ninja: build stopped: subcommand failed.

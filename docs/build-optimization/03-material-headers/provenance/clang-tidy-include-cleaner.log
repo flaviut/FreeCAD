@@ -1,0 +1,29 @@
+warning: Git tree '/home/user/dev/FreeCAD' has uncommitted changes
+[1/2] Processing file /home/user/dev/FreeCAD/src/Mod/Material/App/MaterialValue.h.
+3 warnings generated.
+[2/2] Processing file /home/user/dev/FreeCAD/src/Mod/Material/App/Materials.h.
+12 warnings generated.
+/home/user/dev/FreeCAD/src/Mod/Material/App/MaterialValue.h:103:9: warning: no header providing "Q_UNUSED" is directly included [misc-include-cleaner]
+   27 |         Q_UNUSED(value);
+      |         ^
+/home/user/dev/FreeCAD/src/Mod/Material/App/Materials.h:70:5: warning: no header providing "QList" is directly included [misc-include-cleaner]
+   38 |     QList<QVariant> getList()
+      |     ^
+/home/user/dev/FreeCAD/src/Mod/Material/App/Materials.h:103:17: warning: no header providing "Base::Quantity" is directly included [misc-include-cleaner]
+   39 |     const Base::Quantity& getQuantity() const;
+      |                 ^
+/home/user/dev/FreeCAD/src/Mod/Material/App/Materials.h:115:16: warning: no header providing "std::vector" is directly included [misc-include-cleaner]
+   38 |     const std::vector<MaterialProperty>& getColumns() const
+      |                ^
+/home/user/dev/FreeCAD/src/Mod/Material/App/Materials.h:126:31: warning: no header providing "std::string" is directly included [misc-include-cleaner]
+   38 |     void setString(const std::string& value);
+      |                               ^
+/home/user/dev/FreeCAD/src/Mod/Material/App/Materials.h:356:10: warning: no header providing "std::map" is directly included [misc-include-cleaner]
+   26 |     std::map<QString, std::shared_ptr<MaterialProperty>>& getPhysicalProperties()
+      |          ^
+/home/user/dev/FreeCAD/src/Mod/Material/App/Materials.h:403:12: warning: no header providing "QStringList" is directly included [misc-include-cleaner]
+   38 |     static QStringList normalizeModels(const QStringList& models);
+      |            ^
+/home/user/dev/FreeCAD/src/Mod/Material/App/Materials.h:495:26: warning: no header providing "Materials::FolderTreeNode" is directly included [misc-include-cleaner]
+   39 | using MaterialTreeNode = FolderTreeNode<Material>;
+      |                          ^

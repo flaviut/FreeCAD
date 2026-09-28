@@ -1,0 +1,666 @@
+-- Compiler: Clang, version: 21.1.8
+-- Force BOOST_PP_VARIADICS=1 for clang
+-- prefix: /usr/local
+-- bindir: bin
+-- datadir: share
+-- docdir: share/doc/FreeCAD
+-- includedir: include
+-- libdir: lib64
+-- cmake: 4.1.6
+-- Found pybind11: /nix/store/379d7crw7gl5320y8v0x9i162321hw1p-python3.13-pybind11-3.0.4/include (found version "3.0.4")
+-- Found XercesC: /nix/store/s9k3wqxph2axp6xr2xia5acrmx4rgl4v-xerces-c-3.3.0/lib/libxerces-c.so (found version "3.3.0")
+-- PyCXX found:
+--   Headers:  /home/user/dev/FreeCAD/src/3rdParty/PyCXX
+--   Sources:  /home/user/dev/FreeCAD/src/3rdParty/PyCXX/CXX
+--   Version:  7.1.11
+-- Found OpenCASCADE version: 7.9.3
+--   OpenCASCADE include directory: /nix/store/njpvi46a41av7k4xqanvf94nawfci0f0-opencascade-occt-7.9.3/include/opencascade
+--   OpenCASCADE shared libraries directory: /nix/store/njpvi46a41av7k4xqanvf94nawfci0f0-opencascade-occt-7.9.3/lib
+-- VTK components: CommonCore;CommonDataModel;FiltersVerdict;IOXML;FiltersCore;FiltersGeneral;IOLegacy;FiltersExtraction;FiltersSources;FiltersGeometry;hdf5;FiltersParallelDIY2;RenderingCore;InteractionStyle;RenderingFreeType;RenderingOpenGL2
+-- HDF5 C compiler wrapper is unable to compile a minimal HDF5 program.
+-- Passed find_package(HDF5) through (module mode)
+-- Found EXPAT: /nix/store/x99x6r4wr8bm9s4k2363xrl8n3palbv2-expat-2.8.3/lib/libexpat.so (found suitable version "2.8.3", minimum required is "2.5.0")
+-- Found OpenMP_C: -fopenmp
+-- Found OpenMP_CXX: -fopenmp
+-- Found OpenMP: TRUE
+CMake Warning at cMake/FreeCAD_Helpers/SetupSalomeSMESH.cmake:74 (message):
+  VTK python wrapper: NOT available
+Call Stack (most recent call first):
+  CMakeLists.txt:110 (SetupSalomeSMESH)
+
+
+-- Passed find_package(MEDFile) through (config mode)
+-- Skipping SWIG/Pivy runtime compatibility check for bundled Pivy
+-- swig binary version building bundled pivy: 4.4.1
+-- Set up to compile with Qt 6.11.1
+-- Bundled Coin will use system Expat 2.8.3
+-- Setting C++ standard: '23', which is the minimum needed to compile Coin.
+-- Found EXPAT: /nix/store/x99x6r4wr8bm9s4k2363xrl8n3palbv2-expat-2.8.3/lib/libexpat.so (found version "2.8.3")
+-- Using system Expat
+-- /nix/store/2xc76y8jf3wnazrvmqc7ivc811jpx6q3-xorgproto-2025.1/include;/nix/store/gi5xksz4gd77q6rhvsaids0jbkxdpk0d-libx11-1.8.13-dev/include;/nix/store/rr5a618vbixmy0x7d8agh44rwa186svg-libxext-1.3.7-dev/include;/nix/store/vyrvc8xriim3y7i33i7z62zxa9kkcjvr-libxdmcp-1.1.5-dev/include;/nix/store/3fq7zcfhchah6dvq9nr1mykykl7pz573-libxcomposite-0.4.7-dev/include;/nix/store/amf11083frs2dcx1r3caai74lrpw87s6-libxdamage-1.1.7-dev/include;/nix/store/5mk39sm49qmd1b899lm0fbrr0ldkd2mc-libxtst-1.2.5/include;/nix/store/fki3lrr5p5741sgr4b7yzrja236rh4km-libxi-1.8.3-dev/include;/nix/store/251ijhk6qqbhivknb104xl7sapcg2a2c-libxfixes-6.0.2-dev/include;/nix/store/f3p9hzcrcz6ifsv8ipw1nmxsns3m1ij9-libxrender-0.9.12-dev/include;/nix/store/f1hgjrhpi5ixh7y1m1w8iv0daysg01xs-libxrandr-1.5.5-dev/include;/nix/store/5ry9xdy9rplksmvapz784p6yibls8al1-libxcursor-1.2.3-dev/include;/nix/store/gba7kkjf0if1f2n217nbsndqnizl2933-libxscrnsaver-1.2.5/include;/nix/store/5g1afl77kslrrp3apklzn5ay21c88nnm-libxkbfile-1.1.3-dev/include;/nix/store/ld2dhya42wwnp6adcvdqmsyimi5m76kp-libxmu-1.3.1-dev/include
+-- /nix/store/vwz96bkri7fphy8br1isqh3pqzw2zk1r-libsm-1.2.6/lib/libSM.so;/nix/store/rpb8jg53s0zdlgbpwla0k3fp2k14y2is-libice-1.1.2/lib/libICE.so;/nix/store/2g9xwk5kis01003gynr7xfca667dpgv8-libx11-1.8.13/lib/libX11.so;/nix/store/c9asg9zdzspijnqay6jz1ddsxpaa2dvw-libxext-1.3.7/lib/libXext.so;OpenGL::EGL;OpenGL::GL;Threads::Threads;EXPAT::EXPAT;Freetype::Freetype
+-- Found Python: /nix/store/h3l4z7p6wny3phbckwwhy1i2g52pdnj4-python3-3.13.15/bin/python3.13 (found version "3.13.15") found components: Interpreter Development Development.Module Development.Embed
+-- Python_FOUND: TRUE
+-- PIVY_PACKAGE_INSTALL_DIR: Mod/pivy
+-- COIN_FOUND: TRUE
+-- COIN_INCLUDE_DIR: /home/user/dev/FreeCAD/src/3rdParty/coin/include
+-- COIN_LIB_DIR: /home/user/dev/FreeCAD/build/clang-profile/lib
+-- COIN_VERSION: 4.0.10
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/SbBox2d.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/SbBox2f.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/SbBox2s.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/SbBox3f.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/SbBox3s.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/SbColor.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/SbColor4f.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/SbDPMatrix.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/SbDPPlane.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/SbDPRotation.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/SbDict.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/SbImage.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/SbMatrix.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/SbName.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/SbPlane.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/SbRotation.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/SbString.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/SbTime.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/SbVec2d.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/SbVec2f.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/SbVec3d.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/SbVec3f.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/SbVec4d.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/SbVec4f.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/SbViewVolume.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/SbViewportRegion.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/SbXfBox3f.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/SoFullPath.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/SoInput.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/SoNodeKitPath.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/SoOffscreenRenderer.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/SoPath.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/SoRenderManager.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/SoSceneManager.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/SoType.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/SbVec2s.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/SbVec3s.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/actions/SoCallbackAction.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/actions/SoGLRenderAction.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/collision/SoIntersectionDetectionAction.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/draggers/SoDragger.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/elements/SoDiffuseColorElement.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/elements/SoLazyElement.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/engines/SoEngine.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/fields/SoField.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/fields/SoFieldContainer.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/fields/SoMFBool.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/fields/SoMFColor.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/fields/SoMFEngine.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/fields/SoMFEnum.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/fields/SoMFFloat.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/fields/SoMFInt32.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/fields/SoMFMatrix.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/fields/SoMFName.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/fields/SoMFNode.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/fields/SoMFPath.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/fields/SoMFPlane.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/fields/SoMFRotation.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/fields/SoMFShort.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/fields/SoMFString.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/fields/SoMFTime.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/fields/SoMFUInt32.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/fields/SoMFUShort.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/fields/SoMFVec2f.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/fields/SoMFVec3d.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/fields/SoMFVec3f.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/fields/SoMFVec4f.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/fields/SoMField.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/fields/SoSFBool.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/fields/SoSFColor.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/fields/SoSFEngine.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/fields/SoSFEnum.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/fields/SoSFFloat.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/fields/SoSFImage.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/fields/SoSFImage3.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/fields/SoSFInt32.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/fields/SoSFMatrix.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/fields/SoSFName.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/fields/SoSFNode.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/fields/SoSFPath.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/fields/SoSFPlane.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/fields/SoSFRotation.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/fields/SoSFShort.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/fields/SoSFString.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/fields/SoSFTime.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/fields/SoSFTrigger.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/fields/SoSFUInt32.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/fields/SoSFUShort.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/fields/SoSFVec2f.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/fields/SoSFVec3f.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/fields/SoSFVec4f.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/lists/SbIntList.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/lists/SbPList.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/lists/SbStringList.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/lists/SbVec3fList.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/lists/SoActionMethodList.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/lists/SoBaseList.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/lists/SoDetailList.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/lists/SoEngineList.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/lists/SoEngineOutputList.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/lists/SoFieldList.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/lists/SoNodeList.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/lists/SoPathList.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/lists/SoPickedPointList.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/lists/SoTypeList.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/misc/SoBase.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/nodekits/SoBaseKit.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/nodes/SoCallback.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/nodes/SoEventCallback.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/nodes/SoGroup.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/nodes/SoMarkerSet.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/nodes/SoSelection.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/scxml/ScXMLStateMachine.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/sensors/SoAlarmSensor.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/sensors/SoDataSensor.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/sensors/SoDelayQueueSensor.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/sensors/SoFieldSensor.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/sensors/SoIdleSensor.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/sensors/SoNodeSensor.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/sensors/SoOneShotSensor.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/sensors/SoPathSensor.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/sensors/SoSensor.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/sensors/SoSensorManager.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/sensors/SoTimerQueueSensor.h
+create swigified header: /home/user/dev/FreeCAD/src/3rdParty/pivy/Inventor/sensors/SoTimerSensor.h
+CMake Warning at src/3rdParty/pivy/CMakeLists.txt:180 (message):
+  stubgen is not available; Pivy .pyi stubs will not be generated
+
+
+-- Shiboken6Config: Using default python: .abi3
+-- Found Python: /nix/store/h3l4z7p6wny3phbckwwhy1i2g52pdnj4-python3-3.13.15/bin/python3.13 (found suitable version "3.13.15", minimum required is "3") found components: Interpreter Development.Module
+-- PYTHON_LIMITED_LIBRARIES: 
+-- SHIBOKEN_PYTHON_INCLUDE_DIRS computed to value: '/nix/store/h3l4z7p6wny3phbckwwhy1i2g52pdnj4-python3-3.13.15/include/python3.13'
+-- SHIBOKEN_PYTHON_LIBRARIES computed to value: ''
+-- libshiboken built for Release
+-- Qt version: 6.11.1
+-- PySide version: 6.11.0
+-- PySide/Qt version check passed (6.11)
+-- Found PYSIDE6 tools: /nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/libexec/uic, /nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/libexec/rcc
+-- PySide 6.11.0 Python module found at /nix/store/qyxanf06z79i3y90ks5qmqi6h3c986gr-pyside6-6.11.0/lib/python3.13/site-packages/PySide6.
+
+-- Found Matplotlib: /nix/store/n42pvvmm2l2yabyr0kkacs8hfnln8g0m-python3.13-matplotlib-3.10.9/lib/python3.13/site-packages/matplotlib (found version "3.10.9")
+-- FindLark: Using Python3_EXECUTABLE = /nix/store/h3l4z7p6wny3phbckwwhy1i2g52pdnj4-python3-3.13.15/bin/python3.13
+-- Found Lark: version 1.3.1
+/nix/store/h3l4z7p6wny3phbckwwhy1i2g52pdnj4-python3-3.13.15/bin/python3.13: No module named pip
+CMake Warning at cMake/FreeCadMacros.cmake:423 (message):
+  Could not find ifcopenshell Python package runtime dependency.  IFC files
+  support disabled.
+Call Stack (most recent call first):
+  CMakeLists.txt:136 (find_python_runtime_dep)
+
+
+/nix/store/h3l4z7p6wny3phbckwwhy1i2g52pdnj4-python3-3.13.15/bin/python3.13: No module named pip
+CMake Warning at cMake/FreeCadMacros.cmake:423 (message):
+  Could not find av Python package runtime dependency.  Assembly simulation
+  video export will not work properly.
+Call Stack (most recent call first):
+  CMakeLists.txt:139 (find_python_runtime_dep)
+
+
+/nix/store/h3l4z7p6wny3phbckwwhy1i2g52pdnj4-python3-3.13.15/bin/python3.13: No module named pip
+CMake Warning at cMake/FreeCadMacros.cmake:423 (message):
+  Could not find pillow Python package runtime dependency.  Assembly
+  simulation video export will not work properly.
+Call Stack (most recent call first):
+  CMakeLists.txt:140 (find_python_runtime_dep)
+
+
+-- Platform is 64-bit, set -D_OCC64
+-- Using CMake 4.1.6
+-- Found XercesC: /nix/store/s9k3wqxph2axp6xr2xia5acrmx4rgl4v-xerces-c-3.3.0/lib/libxerces-c.so (found suitable version "3.3.0", minimum required is "3.2")
+-- [E57Format] Revision ID: E57Format-3.3.0-x86_64-Clang211
+-- [E57Format] Building static library
+-- [E57Format] Setting validation level to 1
+-- [E57Format] Using ccache: /nix/store/28db00s7dzv8krxlpgqxbsi4sglm3yhx-ccache-4.13.6/bin/ccache
+-- [E57Format] CMake files install to /usr/local/lib64/cmake/E57Format
+-- [OndselSolver] Building shared library
+-- Found OpenMP_C: -fopenmp (Required is at least version "4.0")
+-- Found OpenMP_CXX: -fopenmp (Required is at least version "4.0")
+-- Found OpenMP: TRUE (Required is at least version "4.0")
+-- area module (for Path Workbench) will be installed to: lib64
+
+   ==============
+     System
+   ==============
+
+-- bindir:                      bin
+-- BLAS:                        -undefined-
+-- ccache:                      /nix/store/28db00s7dzv8krxlpgqxbsi4sglm3yhx-ccache-4.13.6/bin/ccache
+-- CMAKE_VERSION:               4.1.6
+-- Compiler:                    /nix/store/5ivvhzl37ci5sfdmyxc62s0yq56gs0gf-clang-wrapper-21.1.8/bin/clang++ (21.1.8)
+-- datadir:                     share
+-- docdir:                      share/doc/FreeCAD
+-- includedir:                  include
+-- libdir:                      lib64
+-- prefix:                      /usr/local
+-- Python:                      3.13.15 [/nix/store/h3l4z7p6wny3phbckwwhy1i2g52pdnj4-python3-3.13.15/bin/python3.13] Suffix: [.abi3]
+
+   ==============
+     Config
+   ==============
+
+-- BUILD_ADDONMGR:              ON
+-- BUILD_ASSEMBLY:              ON
+-- BUILD_BIM:                   ON
+-- BUILD_CAM:                   ON
+-- BUILD_DRAFT:                 ON
+-- BUILD_FEM:                   ON
+-- BUILD_GUI:                   ON
+-- BUILD_HELP:                  ON
+-- BUILD_IMPORT:                ON
+-- BUILD_INSPECTION:            ON
+-- BUILD_JTREADER:              OFF 
+-- BUILD_MATERIAL:              ON
+-- BUILD_MATERIAL_EXTERNAL:     OFF 
+-- BUILD_MEASURE:               ON
+-- BUILD_MESH:                  ON
+-- BUILD_MESH_PART:             ON
+-- BUILD_OPENSCAD:              ON
+-- BUILD_PART:                  ON
+-- BUILD_PART_DESIGN:           ON
+-- BUILD_PLOT:                  ON
+-- BUILD_POINTS:                ON
+-- BUILD_REVERSEENGINEERING:    ON
+-- BUILD_ROBOT:                 ON
+-- BUILD_SHOW:                  ON
+-- BUILD_SKETCHER:              ON
+-- BUILD_SMESH:                 ON
+-- BUILD_SPREADSHEET:           ON
+-- BUILD_START:                 ON
+-- BUILD_SURFACE:               ON
+-- BUILD_TECHDRAW:              ON
+-- BUILD_TEST:                  ON
+-- BUILD_TUX:                   ON
+-- BUILD_WEB:                   ON
+-- CMAKE_BUILD_TYPE:            Release
+-- CMAKE_CXX_FLAGS:             -Wall -Wextra -Wpedantic -Wno-write-strings -fdiagnostics-color  -ftime-trace -Wno-undefined-var-template
+-- CMAKE_CXX_STANDARD:          23
+-- CMAKE_INSTALL_PREFIX:        /usr/local
+-- CMAKE_PREFIX_PATH:           OFF 
+-- ENABLE_DEVELOPER_TESTS:      ON
+-- FREECAD_CREATE_MAC_APP:      -undefined-
+-- FREECAD_LIBPACK_USE:         -undefined-
+-- FREECAD_USE_EXTERNAL_KDL:    OFF 
+-- FREECAD_USE_EXTERNAL_SMESH:  OFF 
+-- FREECAD_USE_FREETYPE:        ON
+-- FREECAD_USE_PYSIDE:          ON
+-- FREECAD_USE_SANITIZER_ASAN:  OFF 
+-- FREECAD_USE_SANITIZER_LSAN:  OFF 
+-- FREECAD_USE_SANITIZER_MSAN:  OFF 
+-- FREECAD_USE_SANITIZER_TSAN:  OFF 
+-- FREECAD_USE_SANITIZER_UBSAN: OFF 
+-- FREECAD_USE_SHIBOKEN:        ON
+-- FREECAD_VCS_PROVENANCE:      OFF 
+-- Python3_EXECUTABLE:          /nix/store/h3l4z7p6wny3phbckwwhy1i2g52pdnj4-python3-3.13.15/bin/python3.13
+-- PYTHON_LIBRARY:              -undefined-
+-- USE_CUDA:                    -undefined-
+
+   ==============
+     Libraries
+   ==============
+
+-- Boost:                       1.89.0
+-- Coin3D:                      4.0.10 [] []
+-- Coin3D_DOC:                  not found
+-- Coin3D_Expat:                external (2.8.3)
+-- Coin3D_Source:               bundled
+-- cpptrace:                    not found
+-- DesignerPlugin:              not built (BUILD_DESIGNER_PLUGIN is OFF)
+-- Doxygen:                     1.16.1 Language: English
+-- Eigen3:                      3.4.1
+-- Freetype:                    2.14.3
+-- GTest:                       1.17.0
+-- HDF5:                        1.14.6
+-- ICU:                         76.1
+-- IfcOpenShell:                not found
+-- Lark:                        1.3.1
+-- Matplotlib:                  3.10.9 PathDirs: /nix/store/n42pvvmm2l2yabyr0kkacs8hfnln8g0m-python3.13-matplotlib-3.10.9/lib/python3.13/site-packages/matplotlib
+-- MEDFile:                     6.0.1 [medC;medfwrap;med] [/nix/store/qqissis5hr5pmgs0y5c2w66ma6dbls5x-medfile-6.0.1/include]
+-- NETGEN:                      not enabled
+-- OCC:                         7.9.3 [/nix/store/njpvi46a41av7k4xqanvf94nawfci0f0-opencascade-occt-7.9.3/lib] [/nix/store/njpvi46a41av7k4xqanvf94nawfci0f0-opencascade-occt-7.9.3/include/opencascade]
+-- OCC_Libs:                    [TKFillet;TKMesh;TKernel;TKG2d;TKG3d;TKMath;TKShHealing;TKXSBase;TKBool;TKBO;TKBRep;TKTopAlgo;TKGeomAlgo;TKGeomBase;TKOffset;TKPrim;TKHLR;TKFeat;TKExpress;TKDESTEP;TKDEIGES;TKDEGLTF;TKDESTL]
+-- OpenGL_Lib:                  [/nix/store/ji9sy2cadldwn33hm0aiiq8jld29rbq5-libglvnd-1.7.0/lib/libGL.so]
+-- OpenGLU_Incl:                [/nix/store/2vvzfir1v357j5qfqfqv5zclklln5lp2-libglvnd-1.7.0-dev/include]
+-- OpenGLU_Lib:                 [/nix/store/450mrbh6bp5m0f9g4llc7h8z5pcr0wkz-glu-9.0.3/lib/libGLU.so]
+-- PIL:                         not found
+-- pivy:                        0.6.11
+-- pivy_Source:                 bundled
+-- PyAV:                        not found
+-- pybind11:                    3.0.4
+-- PYCXX:                       7.1.11 Incl: /home/user/dev/FreeCAD/src/3rdParty/PyCXX Src:/home/user/dev/FreeCAD/src/3rdParty/PyCXX/CXX
+-- PySide:                      6.11.0 [/nix/store/qyxanf06z79i3y90ks5qmqi6h3c986gr-pyside6-6.11.0/PySide6/include]
+-- PySideTools:                 v: 6  uic: [/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/libexec/uic]  rcc: [/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/libexec/rcc]
+-- QtConcurrent:                6.11.1
+-- QtCore:                      6.11.1
+-- QtNetwork:                   6.11.1
+-- QtOpenGL:                    6.11.1
+-- QtOpenGLWidgets:             6.11.1
+-- QtPrintSupport:              6.11.1
+-- QtSvg:                       6.11.1
+-- QtTest:                      6.11.1
+-- QtUiTools:                   6.11.1
+-- QtWidgets:                   6.11.1
+-- QtXml:                       6.11.1
+-- Shiboken:                    6.11.0 [/nix/store/fid1mwqxdc65j2a0ial5fp5p6jcmv51a-shiboken6-6.11.0/shiboken6/include;/nix/store/h3l4z7p6wny3phbckwwhy1i2g52pdnj4-python3-3.13.15/include/python3.13]
+-- SMESH:                       7.7.1.0 build internal
+-- SPNAV:                       [/nix/store/g4kwwc80ann96bmr5jll3p1bs6ifrwm3-libspnav-1.2/lib/libspnav.so] [/nix/store/g4kwwc80ann96bmr5jll3p1bs6ifrwm3-libspnav-1.2/include]
+-- SWIG:                        4.4.1
+-- Vtk:                         9.5.2
+-- XercesC:                     3.3.0 [/nix/store/s9k3wqxph2axp6xr2xia5acrmx4rgl4v-xerces-c-3.3.0/lib/libxerces-c.so] [/nix/store/s9k3wqxph2axp6xr2xia5acrmx4rgl4v-xerces-c-3.3.0/include]
+-- yaml-cpp:                    0.8.0
+-- ZLIB:                        1.3.2
+
+=================================================
+Now run 'cmake --build /home/user/dev/FreeCAD/build/clang-profile' to build FreeCAD
+=================================================
+
+-- Configuring done (16.3s)
+CMake Warning at src/3rdParty/salomesmesh/CMakeLists.txt:255 (ADD_LIBRARY):
+  Cannot generate a safe runtime search path for target SMESH because files
+  in some directories may conflict with libraries in implicit directories:
+
+    runtime library [libhdf5.so.310] in /nix/store/079x669sxgdkghj5b8bn0xf5yq9q6y9j-hdf5-cpp-1.14.6/lib may be hidden by files in:
+      /nix/store/6si9nhi2x21igs9ksp96p5xdqk8iqp9r-hdf5-cpp-1.14.6/lib
+    runtime library [libhdf5_hl.so.310] in /nix/store/079x669sxgdkghj5b8bn0xf5yq9q6y9j-hdf5-cpp-1.14.6/lib may be hidden by files in:
+      /nix/store/6si9nhi2x21igs9ksp96p5xdqk8iqp9r-hdf5-cpp-1.14.6/lib
+
+  Some of these libraries may not be found correctly.
+
+
+CMake Warning at src/3rdParty/salomesmesh/CMakeLists.txt:284 (ADD_LIBRARY):
+  Cannot generate a safe runtime search path for target StdMeshers because
+  files in some directories may conflict with libraries in implicit
+  directories:
+
+    runtime library [libhdf5.so.310] in /nix/store/079x669sxgdkghj5b8bn0xf5yq9q6y9j-hdf5-cpp-1.14.6/lib may be hidden by files in:
+      /nix/store/6si9nhi2x21igs9ksp96p5xdqk8iqp9r-hdf5-cpp-1.14.6/lib
+    runtime library [libhdf5_hl.so.310] in /nix/store/079x669sxgdkghj5b8bn0xf5yq9q6y9j-hdf5-cpp-1.14.6/lib may be hidden by files in:
+      /nix/store/6si9nhi2x21igs9ksp96p5xdqk8iqp9r-hdf5-cpp-1.14.6/lib
+
+  Some of these libraries may not be found correctly.
+
+
+CMake Warning at src/Mod/Fem/App/CMakeLists.txt:204 (add_library):
+  Cannot generate a safe runtime search path for target Fem because files in
+  some directories may conflict with libraries in implicit directories:
+
+    runtime library [libhdf5.so.310] in /nix/store/079x669sxgdkghj5b8bn0xf5yq9q6y9j-hdf5-cpp-1.14.6/lib may be hidden by files in:
+      /nix/store/6si9nhi2x21igs9ksp96p5xdqk8iqp9r-hdf5-cpp-1.14.6/lib
+    runtime library [libhdf5_hl.so.310] in /nix/store/079x669sxgdkghj5b8bn0xf5yq9q6y9j-hdf5-cpp-1.14.6/lib may be hidden by files in:
+      /nix/store/6si9nhi2x21igs9ksp96p5xdqk8iqp9r-hdf5-cpp-1.14.6/lib
+
+  Some of these libraries may not be found correctly.
+
+
+CMake Warning at src/Mod/Fem/Gui/CMakeLists.txt:391 (add_library):
+  Cannot generate a safe runtime search path for target FemGui because files
+  in some directories may conflict with libraries in implicit directories:
+
+    runtime library [libhdf5.so.310] in /nix/store/079x669sxgdkghj5b8bn0xf5yq9q6y9j-hdf5-cpp-1.14.6/lib may be hidden by files in:
+      /nix/store/6si9nhi2x21igs9ksp96p5xdqk8iqp9r-hdf5-cpp-1.14.6/lib
+    runtime library [libhdf5_hl.so.310] in /nix/store/079x669sxgdkghj5b8bn0xf5yq9q6y9j-hdf5-cpp-1.14.6/lib may be hidden by files in:
+      /nix/store/6si9nhi2x21igs9ksp96p5xdqk8iqp9r-hdf5-cpp-1.14.6/lib
+
+  Some of these libraries may not be found correctly.
+
+
+CMake Warning at src/Mod/MeshPart/App/CMakeLists.txt:3 (add_library):
+  Cannot generate a safe runtime search path for target MeshPart because
+  files in some directories may conflict with libraries in implicit
+  directories:
+
+    runtime library [libhdf5.so.310] in /nix/store/079x669sxgdkghj5b8bn0xf5yq9q6y9j-hdf5-cpp-1.14.6/lib may be hidden by files in:
+      /nix/store/6si9nhi2x21igs9ksp96p5xdqk8iqp9r-hdf5-cpp-1.14.6/lib
+    runtime library [libhdf5_hl.so.310] in /nix/store/079x669sxgdkghj5b8bn0xf5yq9q6y9j-hdf5-cpp-1.14.6/lib may be hidden by files in:
+      /nix/store/6si9nhi2x21igs9ksp96p5xdqk8iqp9r-hdf5-cpp-1.14.6/lib
+
+  Some of these libraries may not be found correctly.
+
+
+CMake Warning at src/Mod/MeshPart/App/CMakeLists.txt:123 (add_library):
+  Cannot generate a safe runtime search path for target flatmesh because
+  files in some directories may conflict with libraries in implicit
+  directories:
+
+    runtime library [libhdf5.so.310] in /nix/store/079x669sxgdkghj5b8bn0xf5yq9q6y9j-hdf5-cpp-1.14.6/lib may be hidden by files in:
+      /nix/store/6si9nhi2x21igs9ksp96p5xdqk8iqp9r-hdf5-cpp-1.14.6/lib
+    runtime library [libhdf5_hl.so.310] in /nix/store/079x669sxgdkghj5b8bn0xf5yq9q6y9j-hdf5-cpp-1.14.6/lib may be hidden by files in:
+      /nix/store/6si9nhi2x21igs9ksp96p5xdqk8iqp9r-hdf5-cpp-1.14.6/lib
+
+  Some of these libraries may not be found correctly.
+
+
+CMake Warning at src/Mod/MeshPart/Gui/CMakeLists.txt:67 (add_library):
+  Cannot generate a safe runtime search path for target MeshPartGui because
+  files in some directories may conflict with libraries in implicit
+  directories:
+
+    runtime library [libhdf5.so.310] in /nix/store/079x669sxgdkghj5b8bn0xf5yq9q6y9j-hdf5-cpp-1.14.6/lib may be hidden by files in:
+      /nix/store/6si9nhi2x21igs9ksp96p5xdqk8iqp9r-hdf5-cpp-1.14.6/lib
+    runtime library [libhdf5_hl.so.310] in /nix/store/079x669sxgdkghj5b8bn0xf5yq9q6y9j-hdf5-cpp-1.14.6/lib may be hidden by files in:
+      /nix/store/6si9nhi2x21igs9ksp96p5xdqk8iqp9r-hdf5-cpp-1.14.6/lib
+
+  Some of these libraries may not be found correctly.
+
+
+CMake Warning at tests/src/Mod/MeshPart/App/CMakeLists.txt:3 (add_executable):
+  Cannot generate a safe runtime search path for target MeshPart_tests_run
+  because files in some directories may conflict with libraries in implicit
+  directories:
+
+    runtime library [libhdf5.so.310] in /nix/store/079x669sxgdkghj5b8bn0xf5yq9q6y9j-hdf5-cpp-1.14.6/lib may be hidden by files in:
+      /nix/store/6si9nhi2x21igs9ksp96p5xdqk8iqp9r-hdf5-cpp-1.14.6/lib
+    runtime library [libhdf5_hl.so.310] in /nix/store/079x669sxgdkghj5b8bn0xf5yq9q6y9j-hdf5-cpp-1.14.6/lib may be hidden by files in:
+      /nix/store/6si9nhi2x21igs9ksp96p5xdqk8iqp9r-hdf5-cpp-1.14.6/lib
+
+  Some of these libraries may not be found correctly.
+
+
+-- Generating done (2.3s)
+-- Build files have been written to: /home/user/dev/FreeCAD/build/clang-profile
+FAILED: [code=1] src/Mod/TechDraw/App/CMakeFiles/TechDraw.dir/Unity/unity_8_cxx.cxx.o 
+/nix/store/5ivvhzl37ci5sfdmyxc62s0yq56gs0gf-clang-wrapper-21.1.8/bin/clang++ -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_CHRONO_DYN_LINK -DBOOST_CHRONO_NO_LIB -DBOOST_CONTAINER_DYN_LINK -DBOOST_CONTAINER_NO_LIB -DBOOST_DATE_TIME_DYN_LINK -DBOOST_DATE_TIME_NO_LIB -DBOOST_PP_VARIADICS=1 -DBOOST_PROGRAM_OPTIONS_DYN_LINK -DBOOST_PROGRAM_OPTIONS_NO_LIB -DBOOST_REGEX_DYN_LINK -DBOOST_REGEX_NO_LIB -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -DHAVE_CONFIG_H -DHAVE_FREETYPE -DHAVE_OPENGL_EXT -DHAVE_RAPIDJSON -DHAVE_TK -DHAVE_XLIB -DMINIMUM_CPLUSPLUS_VERSION=202302L -DMOD_TECHDRAW_HANDLE_FACES=1 -DOCC_CONVERT_SIGNALS -DPYCXX_6_2_COMPATIBILITY -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_NO_KEYWORDS -DQT_WIDGETS_LIB -DQT_XML_LIB -DTechDraw_EXPORTS -D_OCC64 -I/home/user/dev/FreeCAD/build/clang-profile/src/Mod/TechDraw/App/TechDraw_autogen/include -I/home/user/dev/FreeCAD/build/clang-profile -I/home/user/dev/FreeCAD/build/clang-profile/src -I/home/user/dev/FreeCAD/src -I/home/user/dev/FreeCAD/build/clang-profile/src/Mod/TechDraw/App -I/home/user/dev/FreeCAD/src/Mod/TechDraw/App -I/home/user/dev/FreeCAD/src/3rdParty/FastSignals/libfastsignals/include -isystem /nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtConcurrent -isystem /nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtWidgets -isystem /nix/store/njpvi46a41av7k4xqanvf94nawfci0f0-opencascade-occt-7.9.3/include/opencascade -isystem /nix/store/j61kz8dlhxqz2x2an06r7dkislj33rn0-freetype-2.14.3-dev/include/freetype2 -isystem /nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore -isystem /nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtXml -isystem /home/user/dev/FreeCAD/src/3rdParty/PyCXX -isystem /nix/store/h3l4z7p6wny3phbckwwhy1i2g52pdnj4-python3-3.13.15/include/python3.13 -isystem /home/user/dev/FreeCAD/src/3rdParty -isystem /nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/mkspecs/linux-g++ -isystem /nix/store/c390mqjf7hgpdxm43v74gq9lwr2zwpyz-harfbuzz-13.2.1-dev/include/harfbuzz -isystem /nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtGui -Wall -Wextra -Wpedantic -Wno-write-strings -fdiagnostics-color  -ftime-trace -Wno-undefined-var-template -O3 -DNDEBUG -std=c++23 -fPIC -fPIC -Winvalid-pch -Xclang -include-pch -Xclang /home/user/dev/FreeCAD/build/clang-profile/src/Mod/TechDraw/App/CMakeFiles/TechDraw.dir/cmake_pch.hxx.pch -Xclang -include -Xclang /home/user/dev/FreeCAD/build/clang-profile/src/Mod/TechDraw/App/CMakeFiles/TechDraw.dir/cmake_pch.hxx -MD -MT src/Mod/TechDraw/App/CMakeFiles/TechDraw.dir/Unity/unity_8_cxx.cxx.o -MF src/Mod/TechDraw/App/CMakeFiles/TechDraw.dir/Unity/unity_8_cxx.cxx.o.d -o src/Mod/TechDraw/App/CMakeFiles/TechDraw.dir/Unity/unity_8_cxx.cxx.o -c /home/user/dev/FreeCAD/build/clang-profile/src/Mod/TechDraw/App/CMakeFiles/TechDraw.dir/Unity/unity_8_cxx.cxx
+In file included from /home/user/dev/FreeCAD/build/clang-profile/src/Mod/TechDraw/App/CMakeFiles/TechDraw.dir/Unity/unity_8_cxx.cxx:19:
+In file included from /home/user/dev/FreeCAD/src/Mod/TechDraw/App/GeometryMatcher.cpp:49:
+In file included from /home/user/dev/FreeCAD/src/Mod/TechDraw/App/GeometryMatcher.h:30:
+In file included from /home/user/dev/FreeCAD/src/Mod/TechDraw/App/DrawViewDimension.h:35:
+/home/user/dev/FreeCAD/src/Mod/TechDraw/App/DimensionReferences.h:82:5: error: reference to 'Part' is ambiguous
+   82 |     Part::TopoShape asTopoShape() const;
+      |     ^
+/home/user/dev/FreeCAD/src/Mod/TechDraw/App/DimensionReferences.h:45:11: note: candidate found by name lookup is 'Part'
+   45 | namespace Part
+      |           ^
+/home/user/dev/FreeCAD/src/Mod/TechDraw/App/DrawViewPart.h:53:7: note: candidate found by name lookup is 'App::Part'
+   53 | class Part;
+      |       ^
+In file included from /home/user/dev/FreeCAD/build/clang-profile/src/Mod/TechDraw/App/CMakeFiles/TechDraw.dir/Unity/unity_8_cxx.cxx:19:
+In file included from /home/user/dev/FreeCAD/src/Mod/TechDraw/App/GeometryMatcher.cpp:49:
+In file included from /home/user/dev/FreeCAD/src/Mod/TechDraw/App/GeometryMatcher.h:30:
+In file included from /home/user/dev/FreeCAD/src/Mod/TechDraw/App/DrawViewDimension.h:35:
+/home/user/dev/FreeCAD/src/Mod/TechDraw/App/DimensionReferences.h:83:5: error: reference to 'Part' is ambiguous
+   83 |     Part::TopoShape asCanonicalTopoShape() const;
+      |     ^
+/home/user/dev/FreeCAD/src/Mod/TechDraw/App/DimensionReferences.h:45:11: note: candidate found by name lookup is 'Part'
+   45 | namespace Part
+      |           ^
+/home/user/dev/FreeCAD/src/Mod/TechDraw/App/DrawViewPart.h:53:7: note: candidate found by name lookup is 'App::Part'
+   53 | class Part;
+      |       ^
+In file included from /home/user/dev/FreeCAD/build/clang-profile/src/Mod/TechDraw/App/CMakeFiles/TechDraw.dir/Unity/unity_8_cxx.cxx:19:
+In file included from /home/user/dev/FreeCAD/src/Mod/TechDraw/App/GeometryMatcher.cpp:49:
+In file included from /home/user/dev/FreeCAD/src/Mod/TechDraw/App/GeometryMatcher.h:30:
+In file included from /home/user/dev/FreeCAD/src/Mod/TechDraw/App/DrawViewDimension.h:35:
+/home/user/dev/FreeCAD/src/Mod/TechDraw/App/DimensionReferences.h:84:12: error: reference to 'Part' is ambiguous
+   84 |     static Part::TopoShape asCanonicalTopoShape(const Part::TopoShape& inShape, const DrawViewPart& dvp);
+      |            ^
+/home/user/dev/FreeCAD/src/Mod/TechDraw/App/DimensionReferences.h:45:11: note: candidate found by name lookup is 'Part'
+   45 | namespace Part
+      |           ^
+/home/user/dev/FreeCAD/src/Mod/TechDraw/App/DrawViewPart.h:53:7: note: candidate found by name lookup is 'App::Part'
+   53 | class Part;
+      |       ^
+In file included from /home/user/dev/FreeCAD/build/clang-profile/src/Mod/TechDraw/App/CMakeFiles/TechDraw.dir/Unity/unity_8_cxx.cxx:19:
+In file included from /home/user/dev/FreeCAD/src/Mod/TechDraw/App/GeometryMatcher.cpp:49:
+In file included from /home/user/dev/FreeCAD/src/Mod/TechDraw/App/GeometryMatcher.h:30:
+In file included from /home/user/dev/FreeCAD/src/Mod/TechDraw/App/DrawViewDimension.h:35:
+/home/user/dev/FreeCAD/src/Mod/TechDraw/App/DimensionReferences.h:84:55: error: reference to 'Part' is ambiguous
+   84 |     static Part::TopoShape asCanonicalTopoShape(const Part::TopoShape& inShape, const DrawViewPart& dvp);
+      |                                                       ^
+/home/user/dev/FreeCAD/src/Mod/TechDraw/App/DimensionReferences.h:45:11: note: candidate found by name lookup is 'Part'
+   45 | namespace Part
+      |           ^
+/home/user/dev/FreeCAD/src/Mod/TechDraw/App/DrawViewPart.h:53:7: note: candidate found by name lookup is 'App::Part'
+   53 | class Part;
+      |       ^
+In file included from /home/user/dev/FreeCAD/build/clang-profile/src/Mod/TechDraw/App/CMakeFiles/TechDraw.dir/Unity/unity_8_cxx.cxx:19:
+In file included from /home/user/dev/FreeCAD/src/Mod/TechDraw/App/GeometryMatcher.cpp:49:
+In file included from /home/user/dev/FreeCAD/src/Mod/TechDraw/App/GeometryMatcher.h:30:
+In file included from /home/user/dev/FreeCAD/src/Mod/TechDraw/App/DrawViewDimension.h:35:
+/home/user/dev/FreeCAD/src/Mod/TechDraw/App/DimensionReferences.h:93:12: error: reference to 'Part' is ambiguous
+   93 |     static Part::TopoShape asTopoShapeVertex(const TopoDS_Vertex &vert);
+      |            ^
+/home/user/dev/FreeCAD/src/Mod/TechDraw/App/DimensionReferences.h:45:11: note: candidate found by name lookup is 'Part'
+   45 | namespace Part
+      |           ^
+/home/user/dev/FreeCAD/src/Mod/TechDraw/App/DrawViewPart.h:53:7: note: candidate found by name lookup is 'App::Part'
+   53 | class Part;
+      |       ^
+In file included from /home/user/dev/FreeCAD/build/clang-profile/src/Mod/TechDraw/App/CMakeFiles/TechDraw.dir/Unity/unity_8_cxx.cxx:19:
+In file included from /home/user/dev/FreeCAD/src/Mod/TechDraw/App/GeometryMatcher.cpp:49:
+In file included from /home/user/dev/FreeCAD/src/Mod/TechDraw/App/GeometryMatcher.h:30:
+In file included from /home/user/dev/FreeCAD/src/Mod/TechDraw/App/DrawViewDimension.h:35:
+/home/user/dev/FreeCAD/src/Mod/TechDraw/App/DimensionReferences.h:94:12: error: reference to 'Part' is ambiguous
+   94 |     static Part::TopoShape asTopoShapeEdge(const TopoDS_Edge& edge);
+      |            ^
+/home/user/dev/FreeCAD/src/Mod/TechDraw/App/DimensionReferences.h:45:11: note: candidate found by name lookup is 'Part'
+   45 | namespace Part
+      |           ^
+/home/user/dev/FreeCAD/src/Mod/TechDraw/App/DrawViewPart.h:53:7: note: candidate found by name lookup is 'App::Part'
+   53 | class Part;
+      |       ^
+In file included from /home/user/dev/FreeCAD/build/clang-profile/src/Mod/TechDraw/App/CMakeFiles/TechDraw.dir/Unity/unity_8_cxx.cxx:19:
+In file included from /home/user/dev/FreeCAD/src/Mod/TechDraw/App/GeometryMatcher.cpp:49:
+In file included from /home/user/dev/FreeCAD/src/Mod/TechDraw/App/GeometryMatcher.h:30:
+In file included from /home/user/dev/FreeCAD/src/Mod/TechDraw/App/DrawViewDimension.h:35:
+/home/user/dev/FreeCAD/src/Mod/TechDraw/App/DimensionReferences.h:95:12: error: reference to 'Part' is ambiguous
+   95 |     static Part::TopoShape asTopoShapeFace(const TopoDS_Face& edge);
+      |            ^
+/home/user/dev/FreeCAD/src/Mod/TechDraw/App/DimensionReferences.h:45:11: note: candidate found by name lookup is 'Part'
+   45 | namespace Part
+      |           ^
+/home/user/dev/FreeCAD/src/Mod/TechDraw/App/DrawViewPart.h:53:7: note: candidate found by name lookup is 'App::Part'
+   53 | class Part;
+      |       ^
+In file included from /home/user/dev/FreeCAD/build/clang-profile/src/Mod/TechDraw/App/CMakeFiles/TechDraw.dir/Unity/unity_8_cxx.cxx:19:
+In file included from /home/user/dev/FreeCAD/src/Mod/TechDraw/App/GeometryMatcher.cpp:49:
+In file included from /home/user/dev/FreeCAD/src/Mod/TechDraw/App/GeometryMatcher.h:30:
+/home/user/dev/FreeCAD/src/Mod/TechDraw/App/DrawViewDimension.h:99:5: error: reference to 'Part' is ambiguous
+   99 |     Part::PropertyTopoShapeList SavedGeometry;
+      |     ^
+/home/user/dev/FreeCAD/src/Mod/TechDraw/App/DimensionReferences.h:45:11: note: candidate found by name lookup is 'Part'
+   45 | namespace Part
+      |           ^
+/home/user/dev/FreeCAD/src/Mod/TechDraw/App/DrawViewPart.h:53:7: note: candidate found by name lookup is 'App::Part'
+   53 | class Part;
+      |       ^
+In file included from /home/user/dev/FreeCAD/build/clang-profile/src/Mod/TechDraw/App/CMakeFiles/TechDraw.dir/Unity/unity_8_cxx.cxx:19:
+In file included from /home/user/dev/FreeCAD/src/Mod/TechDraw/App/GeometryMatcher.cpp:49:
+In file included from /home/user/dev/FreeCAD/src/Mod/TechDraw/App/GeometryMatcher.h:30:
+/home/user/dev/FreeCAD/src/Mod/TechDraw/App/DrawViewDimension.h:221:24: error: reference to 'Part' is ambiguous
+  221 |     static std::vector<Part::TopoShape> getEdges(const Part::TopoShape& inShape);
+      |                        ^
+/home/user/dev/FreeCAD/src/Mod/TechDraw/App/DimensionReferences.h:45:11: note: candidate found by name lookup is 'Part'
+   45 | namespace Part
+      |           ^
+/home/user/dev/FreeCAD/src/Mod/TechDraw/App/DrawViewPart.h:53:7: note: candidate found by name lookup is 'App::Part'
+   53 | class Part;
+      |       ^
+In file included from /home/user/dev/FreeCAD/build/clang-profile/src/Mod/TechDraw/App/CMakeFiles/TechDraw.dir/Unity/unity_8_cxx.cxx:19:
+In file included from /home/user/dev/FreeCAD/src/Mod/TechDraw/App/GeometryMatcher.cpp:49:
+In file included from /home/user/dev/FreeCAD/src/Mod/TechDraw/App/GeometryMatcher.h:30:
+/home/user/dev/FreeCAD/src/Mod/TechDraw/App/DrawViewDimension.h:221:56: error: reference to 'Part' is ambiguous
+  221 |     static std::vector<Part::TopoShape> getEdges(const Part::TopoShape& inShape);
+      |                                                        ^
+/home/user/dev/FreeCAD/src/Mod/TechDraw/App/DimensionReferences.h:45:11: note: candidate found by name lookup is 'Part'
+   45 | namespace Part
+      |           ^
+/home/user/dev/FreeCAD/src/Mod/TechDraw/App/DrawViewPart.h:53:7: note: candidate found by name lookup is 'App::Part'
+   53 | class Part;
+      |       ^
+In file included from /home/user/dev/FreeCAD/build/clang-profile/src/Mod/TechDraw/App/CMakeFiles/TechDraw.dir/Unity/unity_8_cxx.cxx:19:
+In file included from /home/user/dev/FreeCAD/src/Mod/TechDraw/App/GeometryMatcher.cpp:49:
+In file included from /home/user/dev/FreeCAD/src/Mod/TechDraw/App/GeometryMatcher.h:30:
+/home/user/dev/FreeCAD/src/Mod/TechDraw/App/DrawViewDimension.h:222:24: error: reference to 'Part' is ambiguous
+  222 |     static std::vector<Part::TopoShape> getVertexes(const Part::TopoShape& inShape);
+      |                        ^
+/home/user/dev/FreeCAD/src/Mod/TechDraw/App/DimensionReferences.h:45:11: note: candidate found by name lookup is 'Part'
+   45 | namespace Part
+      |           ^
+/home/user/dev/FreeCAD/src/Mod/TechDraw/App/DrawViewPart.h:53:7: note: candidate found by name lookup is 'App::Part'
+   53 | class Part;
+      |       ^
+In file included from /home/user/dev/FreeCAD/build/clang-profile/src/Mod/TechDraw/App/CMakeFiles/TechDraw.dir/Unity/unity_8_cxx.cxx:19:
+In file included from /home/user/dev/FreeCAD/src/Mod/TechDraw/App/GeometryMatcher.cpp:49:
+In file included from /home/user/dev/FreeCAD/src/Mod/TechDraw/App/GeometryMatcher.h:30:
+/home/user/dev/FreeCAD/src/Mod/TechDraw/App/DrawViewDimension.h:222:59: error: reference to 'Part' is ambiguous
+  222 |     static std::vector<Part::TopoShape> getVertexes(const Part::TopoShape& inShape);
+      |                                                           ^
+/home/user/dev/FreeCAD/src/Mod/TechDraw/App/DimensionReferences.h:45:11: note: candidate found by name lookup is 'Part'
+   45 | namespace Part
+      |           ^
+/home/user/dev/FreeCAD/src/Mod/TechDraw/App/DrawViewPart.h:53:7: note: candidate found by name lookup is 'App::Part'
+   53 | class Part;
+      |       ^
+In file included from /home/user/dev/FreeCAD/build/clang-profile/src/Mod/TechDraw/App/CMakeFiles/TechDraw.dir/Unity/unity_8_cxx.cxx:19:
+In file included from /home/user/dev/FreeCAD/src/Mod/TechDraw/App/GeometryMatcher.cpp:49:
+/home/user/dev/FreeCAD/src/Mod/TechDraw/App/GeometryMatcher.h:45:32: error: reference to 'Part' is ambiguous
+   45 |     bool compareGeometry(const Part::TopoShape& geom1, const Part::TopoShape& geom2);
+      |                                ^
+/home/user/dev/FreeCAD/src/Mod/TechDraw/App/GeometryMatcher.h:32:11: note: candidate found by name lookup is 'Part'
+   32 | namespace Part
+      |           ^
+/home/user/dev/FreeCAD/src/Mod/TechDraw/App/DrawViewPart.h:53:7: note: candidate found by name lookup is 'App::Part'
+   53 | class Part;
+      |       ^
+In file included from /home/user/dev/FreeCAD/build/clang-profile/src/Mod/TechDraw/App/CMakeFiles/TechDraw.dir/Unity/unity_8_cxx.cxx:19:
+In file included from /home/user/dev/FreeCAD/src/Mod/TechDraw/App/GeometryMatcher.cpp:49:
+/home/user/dev/FreeCAD/src/Mod/TechDraw/App/GeometryMatcher.h:45:62: error: reference to 'Part' is ambiguous
+   45 |     bool compareGeometry(const Part::TopoShape& geom1, const Part::TopoShape& geom2);
+      |                                                              ^
+/home/user/dev/FreeCAD/src/Mod/TechDraw/App/GeometryMatcher.h:32:11: note: candidate found by name lookup is 'Part'
+   32 | namespace Part
+      |           ^
+/home/user/dev/FreeCAD/src/Mod/TechDraw/App/DrawViewPart.h:53:7: note: candidate found by name lookup is 'App::Part'
+   53 | class Part;
+      |       ^
+In file included from /home/user/dev/FreeCAD/build/clang-profile/src/Mod/TechDraw/App/CMakeFiles/TechDraw.dir/Unity/unity_8_cxx.cxx:19:
+/home/user/dev/FreeCAD/src/Mod/TechDraw/App/GeometryMatcher.cpp:59:45: error: reference to 'Part' is ambiguous
+   59 | bool GeometryMatcher::compareGeometry(const Part::TopoShape &shape1, const Part::TopoShape &shape2)
+      |                                             ^
+/home/user/dev/FreeCAD/src/Mod/TechDraw/App/GeometryMatcher.h:32:11: note: candidate found by name lookup is 'Part'
+   32 | namespace Part
+      |           ^
+/home/user/dev/FreeCAD/src/Mod/TechDraw/App/DrawViewPart.h:53:7: note: candidate found by name lookup is 'App::Part'
+   53 | class Part;
+      |       ^
+In file included from /home/user/dev/FreeCAD/build/clang-profile/src/Mod/TechDraw/App/CMakeFiles/TechDraw.dir/Unity/unity_8_cxx.cxx:19:
+/home/user/dev/FreeCAD/src/Mod/TechDraw/App/GeometryMatcher.cpp:59:76: error: reference to 'Part' is ambiguous
+   59 | bool GeometryMatcher::compareGeometry(const Part::TopoShape &shape1, const Part::TopoShape &shape2)
+      |                                                                            ^
+/home/user/dev/FreeCAD/src/Mod/TechDraw/App/GeometryMatcher.h:32:11: note: candidate found by name lookup is 'Part'
+   32 | namespace Part
+      |           ^
+/home/user/dev/FreeCAD/src/Mod/TechDraw/App/DrawViewPart.h:53:7: note: candidate found by name lookup is 'App::Part'
+   53 | class Part;
+      |       ^
+16 errors generated.
+ninja: build stopped: subcommand failed.

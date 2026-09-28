@@ -1,0 +1,7 @@
+{
+  "reason": "System suspend overlapped documentobserver-touch; repeat entire baseline-2 series.",
+  "suspend_local": "2026-09-28T17:40:18-04:00",
+  "resume_local": "2026-09-28T17:45:11-04:00",
+  "affected_timer_elapsed_s": 198.33,
+  "affected_realtime_through_metrics_write_s": 484.2
+}

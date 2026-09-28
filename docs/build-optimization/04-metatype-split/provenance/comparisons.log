@@ -1,0 +1,589 @@
+Nothing changed.
+{
+  "label": "candidate-1-prepare",
+  "command": [
+    "fc-build",
+    "--target",
+    "Materials",
+    "MatGui",
+    "Part",
+    "SketcherGui"
+  ],
+  "started_utc": "2026-09-28T21:19:34.094075+00:00",
+  "elapsed_s": 1.5849409860093147,
+  "exit_code": 0,
+  "jobs": 8,
+  "changed_ninja_outputs": 1,
+  "build_dir": "/home/user/dev/FreeCAD/build/clang-profile",
+  "children_user_s": 0.27695,
+  "children_system_s": 0.303899,
+  "max_child_rss_kib": 143212,
+  "memory_note": "Largest individual child RSS, not aggregate concurrent build memory."
+}
+{
+  "label": "candidate-1-targets",
+  "command": [
+    "fc-build",
+    "--target",
+    "Materials",
+    "MatGui",
+    "Part",
+    "SketcherGui"
+  ],
+  "started_utc": "2026-09-28T21:19:51.677137+00:00",
+  "elapsed_s": 134.42171299498295,
+  "exit_code": 0,
+  "jobs": 8,
+  "changed_ninja_outputs": 328,
+  "build_dir": "/home/user/dev/FreeCAD/build/clang-profile",
+  "children_user_s": 766.666503,
+  "children_system_s": 59.048473,
+  "max_child_rss_kib": 853048,
+  "memory_note": "Largest individual child RSS, not aggregate concurrent build memory."
+}
+{
+  "label": "candidate-1-documentobject-touch",
+  "command": [
+    "fc-build",
+    "--target",
+    "Materials",
+    "MatGui",
+    "Part",
+    "SketcherGui"
+  ],
+  "started_utc": "2026-09-28T21:22:06.203711+00:00",
+  "elapsed_s": 229.1415787829901,
+  "exit_code": 0,
+  "jobs": 8,
+  "changed_ninja_outputs": 517,
+  "build_dir": "/home/user/dev/FreeCAD/build/clang-profile",
+  "children_user_s": 1514.740229,
+  "children_system_s": 127.490153,
+  "max_child_rss_kib": 852036,
+  "memory_note": "Largest individual child RSS, not aggregate concurrent build memory."
+}
+{
+  "label": "candidate-1-documentobserver-touch",
+  "command": [
+    "fc-build",
+    "--target",
+    "Materials",
+    "MatGui",
+    "Part",
+    "SketcherGui"
+  ],
+  "started_utc": "2026-09-28T21:25:55.463792+00:00",
+  "elapsed_s": 180.90823532798095,
+  "exit_code": 0,
+  "jobs": 8,
+  "changed_ninja_outputs": 368,
+  "build_dir": "/home/user/dev/FreeCAD/build/clang-profile",
+  "children_user_s": 1209.506541,
+  "children_system_s": 102.392366,
+  "max_child_rss_kib": 853688,
+  "memory_note": "Largest individual child RSS, not aggregate concurrent build memory."
+}
+{
+  "label": "candidate-1-metatypes-touch",
+  "command": [
+    "fc-build",
+    "--target",
+    "Materials",
+    "MatGui",
+    "Part",
+    "SketcherGui"
+  ],
+  "started_utc": "2026-09-28T21:28:56.480012+00:00",
+  "elapsed_s": 100.31167879799614,
+  "exit_code": 0,
+  "jobs": 8,
+  "changed_ninja_outputs": 159,
+  "build_dir": "/home/user/dev/FreeCAD/build/clang-profile",
+  "children_user_s": 558.152472,
+  "children_system_s": 41.357803,
+  "max_child_rss_kib": 851856,
+  "memory_note": "Largest individual child RSS, not aggregate concurrent build memory."
+}
+Working copy  (@) now at: mpvxzszo 4bc8839b (no description set)
+Parent commit (@-)      : mzktnxlp ed8592d1 refactor[Gui]: separate value and document Qt metatypes
+Added 0 files, modified 18 files, removed 1 files
+{
+  "label": "baseline-2-prepare",
+  "command": [
+    "fc-build",
+    "--target",
+    "Materials",
+    "MatGui",
+    "Part",
+    "SketcherGui"
+  ],
+  "started_utc": "2026-09-28T21:30:37.059323+00:00",
+  "elapsed_s": 131.35219298803713,
+  "exit_code": 0,
+  "jobs": 8,
+  "changed_ninja_outputs": 433,
+  "build_dir": "/home/user/dev/FreeCAD/build/clang-profile",
+  "children_user_s": 626.027475,
+  "children_system_s": 57.857699,
+  "max_child_rss_kib": 856080,
+  "memory_note": "Largest individual child RSS, not aggregate concurrent build memory."
+}
+{
+  "label": "baseline-2-targets",
+  "command": [
+    "fc-build",
+    "--target",
+    "Materials",
+    "MatGui",
+    "Part",
+    "SketcherGui"
+  ],
+  "started_utc": "2026-09-28T21:33:04.450968+00:00",
+  "elapsed_s": 135.72359996999148,
+  "exit_code": 0,
+  "jobs": 8,
+  "changed_ninja_outputs": 328,
+  "build_dir": "/home/user/dev/FreeCAD/build/clang-profile",
+  "children_user_s": 776.096394,
+  "children_system_s": 60.55345,
+  "max_child_rss_kib": 857756,
+  "memory_note": "Largest individual child RSS, not aggregate concurrent build memory."
+}
+{
+  "label": "baseline-2-documentobject-touch",
+  "command": [
+    "fc-build",
+    "--target",
+    "Materials",
+    "MatGui",
+    "Part",
+    "SketcherGui"
+  ],
+  "started_utc": "2026-09-28T21:35:20.280269+00:00",
+  "elapsed_s": 233.47241898503853,
+  "exit_code": 0,
+  "jobs": 8,
+  "changed_ninja_outputs": 531,
+  "build_dir": "/home/user/dev/FreeCAD/build/clang-profile",
+  "children_user_s": 1555.478372,
+  "children_system_s": 131.86309,
+  "max_child_rss_kib": 851432,
+  "memory_note": "Largest individual child RSS, not aggregate concurrent build memory."
+}
+{
+  "label": "baseline-2-documentobserver-touch",
+  "command": [
+    "fc-build",
+    "--target",
+    "Materials",
+    "MatGui",
+    "Part",
+    "SketcherGui"
+  ],
+  "started_utc": "2026-09-28T21:39:13.884472+00:00",
+  "elapsed_s": 198.33469467202667,
+  "exit_code": 0,
+  "jobs": 8,
+  "changed_ninja_outputs": 382,
+  "build_dir": "/home/user/dev/FreeCAD/build/clang-profile",
+  "children_user_s": 1278.498801,
+  "children_system_s": 110.270746,
+  "max_child_rss_kib": 851212,
+  "memory_note": "Largest individual child RSS, not aggregate concurrent build memory."
+}
+{
+  "label": "baseline-2-metatypes-touch",
+  "command": [
+    "fc-build",
+    "--target",
+    "Materials",
+    "MatGui",
+    "Part",
+    "SketcherGui"
+  ],
+  "started_utc": "2026-09-28T21:47:18.150188+00:00",
+  "elapsed_s": 105.62255377497058,
+  "exit_code": 0,
+  "jobs": 8,
+  "changed_ninja_outputs": 176,
+  "build_dir": "/home/user/dev/FreeCAD/build/clang-profile",
+  "children_user_s": 601.931743,
+  "children_system_s": 47.269094,
+  "max_child_rss_kib": 851588,
+  "memory_note": "Largest individual child RSS, not aggregate concurrent build memory."
+}
+Working copy  (@) now at: mpvxzszo 41c16294 (no description set)
+Parent commit (@-)      : mzktnxlp ed8592d1 refactor[Gui]: separate value and document Qt metatypes
+Added 1 files, modified 18 files, removed 0 files
+{
+  "label": "candidate-2-prepare",
+  "command": [
+    "fc-build",
+    "--target",
+    "Materials",
+    "MatGui",
+    "Part",
+    "SketcherGui"
+  ],
+  "started_utc": "2026-09-28T21:49:04.075921+00:00",
+  "elapsed_s": 133.24605046398938,
+  "exit_code": 0,
+  "jobs": 8,
+  "changed_ninja_outputs": 433,
+  "build_dir": "/home/user/dev/FreeCAD/build/clang-profile",
+  "children_user_s": 623.579427,
+  "children_system_s": 58.674616,
+  "max_child_rss_kib": 850900,
+  "memory_note": "Largest individual child RSS, not aggregate concurrent build memory."
+}
+{
+  "label": "candidate-2-targets",
+  "command": [
+    "fc-build",
+    "--target",
+    "Materials",
+    "MatGui",
+    "Part",
+    "SketcherGui"
+  ],
+  "started_utc": "2026-09-28T21:51:33.612019+00:00",
+  "elapsed_s": 136.73537393601146,
+  "elapsed_including_suspend_s": 136.73537586885504,
+  "suspend_detected": false,
+  "exit_code": 0,
+  "jobs": 8,
+  "changed_ninja_outputs": 328,
+  "build_dir": "/home/user/dev/FreeCAD/build/clang-profile",
+  "children_user_s": 775.424864,
+  "children_system_s": 59.815292,
+  "max_child_rss_kib": 854228,
+  "memory_note": "Largest individual child RSS, not aggregate concurrent build memory."
+}
+{
+  "label": "candidate-2-documentobject-touch",
+  "command": [
+    "fc-build",
+    "--target",
+    "Materials",
+    "MatGui",
+    "Part",
+    "SketcherGui"
+  ],
+  "started_utc": "2026-09-28T21:53:50.454608+00:00",
+  "elapsed_s": 230.9562911390094,
+  "elapsed_including_suspend_s": 230.956293042982,
+  "suspend_detected": false,
+  "exit_code": 0,
+  "jobs": 8,
+  "changed_ninja_outputs": 517,
+  "build_dir": "/home/user/dev/FreeCAD/build/clang-profile",
+  "children_user_s": 1528.848526,
+  "children_system_s": 127.520205,
+  "max_child_rss_kib": 851064,
+  "memory_note": "Largest individual child RSS, not aggregate concurrent build memory."
+}
+{
+  "label": "candidate-2-documentobserver-touch",
+  "command": [
+    "fc-build",
+    "--target",
+    "Materials",
+    "MatGui",
+    "Part",
+    "SketcherGui"
+  ],
+  "started_utc": "2026-09-28T21:57:41.538011+00:00",
+  "elapsed_s": 187.84669468400534,
+  "elapsed_including_suspend_s": 187.84669713908806,
+  "suspend_detected": false,
+  "exit_code": 0,
+  "jobs": 8,
+  "changed_ninja_outputs": 368,
+  "build_dir": "/home/user/dev/FreeCAD/build/clang-profile",
+  "children_user_s": 1245.999271,
+  "children_system_s": 106.451098,
+  "max_child_rss_kib": 854240,
+  "memory_note": "Largest individual child RSS, not aggregate concurrent build memory."
+}
+{
+  "label": "candidate-2-metatypes-touch",
+  "command": [
+    "fc-build",
+    "--target",
+    "Materials",
+    "MatGui",
+    "Part",
+    "SketcherGui"
+  ],
+  "started_utc": "2026-09-28T22:00:49.499328+00:00",
+  "elapsed_s": 100.3257500170148,
+  "elapsed_including_suspend_s": 100.32575197005644,
+  "suspend_detected": false,
+  "exit_code": 0,
+  "jobs": 8,
+  "changed_ninja_outputs": 159,
+  "build_dir": "/home/user/dev/FreeCAD/build/clang-profile",
+  "children_user_s": 564.633764,
+  "children_system_s": 41.692524,
+  "max_child_rss_kib": 851680,
+  "memory_note": "Largest individual child RSS, not aggregate concurrent build memory."
+}
+Working copy  (@) now at: mpvxzszo 5a12afe0 (no description set)
+Parent commit (@-)      : mzktnxlp ed8592d1 refactor[Gui]: separate value and document Qt metatypes
+Added 0 files, modified 18 files, removed 1 files
+{
+  "label": "baseline-3-prepare",
+  "command": [
+    "fc-build",
+    "--target",
+    "Materials",
+    "MatGui",
+    "Part",
+    "SketcherGui"
+  ],
+  "started_utc": "2026-09-28T22:02:30.131365+00:00",
+  "elapsed_s": 132.66696828999557,
+  "elapsed_including_suspend_s": 132.66696984297596,
+  "suspend_detected": false,
+  "exit_code": 0,
+  "jobs": 8,
+  "changed_ninja_outputs": 433,
+  "build_dir": "/home/user/dev/FreeCAD/build/clang-profile",
+  "children_user_s": 634.69632,
+  "children_system_s": 59.629023,
+  "max_child_rss_kib": 852508,
+  "memory_note": "Largest individual child RSS, not aggregate concurrent build memory."
+}
+{
+  "label": "baseline-3-targets",
+  "command": [
+    "fc-build",
+    "--target",
+    "Materials",
+    "MatGui",
+    "Part",
+    "SketcherGui"
+  ],
+  "started_utc": "2026-09-28T22:04:59.023060+00:00",
+  "elapsed_s": 136.1429455759935,
+  "elapsed_including_suspend_s": 136.1429469489958,
+  "suspend_detected": false,
+  "exit_code": 0,
+  "jobs": 8,
+  "changed_ninja_outputs": 328,
+  "build_dir": "/home/user/dev/FreeCAD/build/clang-profile",
+  "children_user_s": 785.322641,
+  "children_system_s": 60.331796,
+  "max_child_rss_kib": 851308,
+  "memory_note": "Largest individual child RSS, not aggregate concurrent build memory."
+}
+{
+  "label": "baseline-3-documentobject-touch",
+  "command": [
+    "fc-build",
+    "--target",
+    "Materials",
+    "MatGui",
+    "Part",
+    "SketcherGui"
+  ],
+  "started_utc": "2026-09-28T22:07:15.271765+00:00",
+  "elapsed_s": 240.1270857549971,
+  "elapsed_including_suspend_s": 240.1270873581525,
+  "suspend_detected": false,
+  "exit_code": 0,
+  "jobs": 8,
+  "changed_ninja_outputs": 531,
+  "build_dir": "/home/user/dev/FreeCAD/build/clang-profile",
+  "children_user_s": 1601.330884,
+  "children_system_s": 135.71957,
+  "max_child_rss_kib": 851316,
+  "memory_note": "Largest individual child RSS, not aggregate concurrent build memory."
+}
+{
+  "label": "baseline-3-documentobserver-touch",
+  "command": [
+    "fc-build",
+    "--target",
+    "Materials",
+    "MatGui",
+    "Part",
+    "SketcherGui"
+  ],
+  "started_utc": "2026-09-28T22:11:15.546185+00:00",
+  "elapsed_s": 207.7658373650047,
+  "elapsed_including_suspend_s": 207.76583983004093,
+  "suspend_detected": false,
+  "exit_code": 0,
+  "jobs": 8,
+  "changed_ninja_outputs": 382,
+  "build_dir": "/home/user/dev/FreeCAD/build/clang-profile",
+  "children_user_s": 1395.816812,
+  "children_system_s": 123.258185,
+  "max_child_rss_kib": 848488,
+  "memory_note": "Largest individual child RSS, not aggregate concurrent build memory."
+}
+{
+  "label": "baseline-3-metatypes-touch",
+  "command": [
+    "fc-build",
+    "--target",
+    "Materials",
+    "MatGui",
+    "Part",
+    "SketcherGui"
+  ],
+  "started_utc": "2026-09-28T22:14:43.464455+00:00",
+  "elapsed_s": 134.2639448439586,
+  "elapsed_including_suspend_s": 134.26394697814249,
+  "suspend_detected": false,
+  "exit_code": 0,
+  "jobs": 8,
+  "changed_ninja_outputs": 176,
+  "build_dir": "/home/user/dev/FreeCAD/build/clang-profile",
+  "children_user_s": 779.617991,
+  "children_system_s": 63.929033,
+  "max_child_rss_kib": 853300,
+  "memory_note": "Largest individual child RSS, not aggregate concurrent build memory."
+}
+{
+  "label": "baseline-2-targets",
+  "command": [
+    "fc-build",
+    "--target",
+    "Materials",
+    "MatGui",
+    "Part",
+    "SketcherGui"
+  ],
+  "started_utc": "2026-09-28T22:17:15.780113+00:00",
+  "elapsed_s": 172.34666550398106,
+  "elapsed_including_suspend_s": 172.34666683594696,
+  "suspend_detected": false,
+  "exit_code": 0,
+  "jobs": 8,
+  "changed_ninja_outputs": 328,
+  "build_dir": "/home/user/dev/FreeCAD/build/clang-profile",
+  "children_user_s": 981.988211,
+  "children_system_s": 79.626788,
+  "max_child_rss_kib": 853464,
+  "memory_note": "Largest individual child RSS, not aggregate concurrent build memory."
+}
+{
+  "label": "baseline-2-documentobject-touch",
+  "command": [
+    "fc-build",
+    "--target",
+    "Materials",
+    "MatGui",
+    "Part",
+    "SketcherGui"
+  ],
+  "started_utc": "2026-09-28T22:20:08.263826+00:00",
+  "elapsed_s": 295.9832019569585,
+  "elapsed_including_suspend_s": 295.9832019270398,
+  "suspend_detected": false,
+  "exit_code": 0,
+  "jobs": 8,
+  "changed_ninja_outputs": 531,
+  "build_dir": "/home/user/dev/FreeCAD/build/clang-profile",
+  "children_user_s": 1959.367142,
+  "children_system_s": 173.82717,
+  "max_child_rss_kib": 853136,
+  "memory_note": "Largest individual child RSS, not aggregate concurrent build memory."
+}
+{
+  "label": "baseline-2-documentobserver-touch",
+  "command": [
+    "fc-build",
+    "--target",
+    "Materials",
+    "MatGui",
+    "Part",
+    "SketcherGui"
+  ],
+  "started_utc": "2026-09-28T22:25:04.398689+00:00",
+  "elapsed_s": 235.4900318189757,
+  "elapsed_including_suspend_s": 235.4900341129396,
+  "suspend_detected": false,
+  "exit_code": 0,
+  "jobs": 8,
+  "changed_ninja_outputs": 382,
+  "build_dir": "/home/user/dev/FreeCAD/build/clang-profile",
+  "children_user_s": 1589.775889,
+  "children_system_s": 136.550292,
+  "max_child_rss_kib": 851448,
+  "memory_note": "Largest individual child RSS, not aggregate concurrent build memory."
+}
+{
+  "label": "baseline-2-metatypes-touch",
+  "command": [
+    "fc-build",
+    "--target",
+    "Materials",
+    "MatGui",
+    "Part",
+    "SketcherGui"
+  ],
+  "started_utc": "2026-09-28T22:29:00.024666+00:00",
+  "elapsed_s": 128.7297759029898,
+  "elapsed_including_suspend_s": 128.7297770548612,
+  "suspend_detected": false,
+  "exit_code": 0,
+  "jobs": 8,
+  "changed_ninja_outputs": 176,
+  "build_dir": "/home/user/dev/FreeCAD/build/clang-profile",
+  "children_user_s": 738.887659,
+  "children_system_s": 56.772047,
+  "max_child_rss_kib": 852920,
+  "memory_note": "Largest individual child RSS, not aggregate concurrent build memory."
+}
+Working copy  (@) now at: mpvxzszo 98d31d56 (no description set)
+Parent commit (@-)      : mzktnxlp ed8592d1 refactor[Gui]: separate value and document Qt metatypes
+Added 1 files, modified 18 files, removed 0 files
+{
+  "label": "candidate-3-prepare",
+  "command": [
+    "fc-build",
+    "--target",
+    "Materials",
+    "MatGui",
+    "Part",
+    "SketcherGui"
+  ],
+  "started_utc": "2026-09-28T22:31:09.111128+00:00",
+  "elapsed_s": 159.66926523396978,
+  "elapsed_including_suspend_s": 159.66927007306367,
+  "suspend_detected": false,
+  "exit_code": 0,
+  "jobs": 8,
+  "changed_ninja_outputs": 433,
+  "build_dir": "/home/user/dev/FreeCAD/build/clang-profile",
+  "children_user_s": 762.970068,
+  "children_system_s": 69.376381,
+  "max_child_rss_kib": 849892,
+  "memory_note": "Largest individual child RSS, not aggregate concurrent build memory."
+}
+{
+  "label": "candidate-3-targets",
+  "command": [
+    "fc-build",
+    "--target",
+    "Materials",
+    "MatGui",
+    "Part",
+    "SketcherGui"
+  ],
+  "started_utc": "2026-09-28T22:34:06.163610+00:00",
+  "elapsed_s": 163.4935977369896,
+  "elapsed_including_suspend_s": 163.49359784694389,
+  "suspend_detected": false,
+  "exit_code": 0,
+  "jobs": 8,
+  "changed_ninja_outputs": 328,
+  "build_dir": "/home/user/dev/FreeCAD/build/clang-profile",
+  "children_user_s": 928.654882,
+  "children_system_s": 75.278734,
+  "max_child_rss_kib": 850820,
+  "memory_note": "Largest individual child RSS, not aggregate concurrent build memory."
+}

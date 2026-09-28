@@ -1,0 +1,21 @@
+[
+  "src/Gui/CMakeLists.txt",
+  "src/Gui/MetaTypes.h",
+  "src/Gui/ValueMetaTypes.h",
+  "src/Mod/Material/App/Array2DPyImp.cpp",
+  "src/Mod/Material/App/Array3DPyImp.cpp",
+  "src/Mod/Material/App/MaterialFilterOptionsPyImp.cpp",
+  "src/Mod/Material/App/MaterialFilterPyImp.cpp",
+  "src/Mod/Material/App/MaterialLibraryPyImp.cpp",
+  "src/Mod/Material/App/MaterialLoader.cpp",
+  "src/Mod/Material/App/MaterialPyImp.cpp",
+  "src/Mod/Material/App/MaterialValue.cpp",
+  "src/Mod/Material/App/Materials.cpp",
+  "src/Mod/Material/App/PropertyMaterial.cpp",
+  "src/Mod/Material/App/PyVariants.h",
+  "src/Mod/Material/Gui/ArrayDelegate.cpp",
+  "src/Mod/Material/Gui/ArrayModel.cpp",
+  "src/Mod/Material/Gui/BaseDelegate.cpp",
+  "src/Mod/Material/Gui/ListModel.cpp",
+  "src/Mod/Material/Gui/MaterialDelegate.cpp"
+]

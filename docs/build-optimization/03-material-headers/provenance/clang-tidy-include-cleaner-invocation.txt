@@ -1,0 +1,12 @@
+Working directory: /home/user/dev/FreeCAD
+Tool: clang-tidy from nixpkgs#llvmPackages_21.clang-tools
+Tool version: LLVM 21.1.8, optimized build
+Build: build/clang-profile with FREECAD_USE_PCH=OFF and CMAKE_EXPORT_COMPILE_COMMANDS=ON
+
+Exact invocation:
+nix shell --inputs-from . nixpkgs#llvmPackages_21.clang-tools -c clang-tidy -p /tmp/freecad-material-include-audit '--checks=-*,misc-include-cleaner' --quiet src/Mod/Material/App/MaterialValue.h src/Mod/Material/App/Materials.h > docs/build-optimization/03-material-headers/provenance/clang-tidy-include-cleaner.log 2>&1
+
+Reproduction using the preserved compile database:
+nix shell --inputs-from . nixpkgs#llvmPackages_21.clang-tools -c clang-tidy -p docs/build-optimization/03-material-headers/provenance '--checks=-*,misc-include-cleaner' --quiet src/Mod/Material/App/MaterialValue.h src/Mod/Material/App/Materials.h
+
+The preserved database is provenance/compile_commands.json.
