@@ -24,12 +24,16 @@
 #pragma once
 
 #include <memory>
+#include <utility>
 
 #include <QList>
+#include <QMap>
 #include <QMetaType>
+#include <QString>
 #include <QVariant>
 
-#include <Gui/MetaTypes.h>
+#include <Base/BaseClass.h>
+#include <Base/Quantity.h>
 
 #include <Mod/Material/MaterialGlobal.h>
 

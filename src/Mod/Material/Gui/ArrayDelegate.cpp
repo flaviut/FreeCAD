@@ -39,6 +39,7 @@
 #include <Gui/Application.h>
 #include <Gui/Command.h>
 #include <Gui/InputField.h>
+#include <Gui/MetaTypes.h>
 #include <Gui/PrefWidgets.h>
 #include <Gui/SpinBox.h>
 #include <Gui/WaitCursor.h>
