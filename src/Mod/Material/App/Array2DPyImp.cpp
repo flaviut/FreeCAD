@@ -28,7 +28,7 @@
 #include <Base/Quantity.h>
 #include <Base/QuantityPy.h>
 #include <CXX/Objects.hxx>
-#include <Gui/MetaTypes.h>
+#include <Gui/ValueMetaTypes.h>
 
 #include "Array2DPy.h"
 #include "Exceptions.h"
