@@ -1,0 +1,17 @@
+{
+  "compiler": "Clang 21.1.8",
+  "configuration": "Release",
+  "jobs": 8,
+  "ccache": false,
+  "pch": true,
+  "full_build_source_change": "muynlmvt",
+  "full_build_source_commit": "ed360be4",
+  "retained_tuning_change": "loktkmvz",
+  "retained_tuning_commit": "2471be9f",
+  "rejected_format_trial_change": "ksrwqrsw",
+  "rejected_format_trial_commit": "79cc4abb",
+  "complete_compilation_coverage": true,
+  "final_full_build_passed": true,
+  "headless_tests": "passed, zero failures; see tests-summary.json",
+  "scope_note": "Whole-project clean measurement uses existing PCHs; QtCore tuning measured separately on SketcherGui."
+}

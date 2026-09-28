@@ -1,0 +1,1666 @@
+{
+  "build_dir": "/home/user/dev/FreeCAD/docs/build-optimization/02-clang-pch/provenance/sketchergui-format-cpp-edit",
+  "repo_root": "/home/user/dev/FreeCAD",
+  "ninja_log": {
+    "recorded_start_ms": 130,
+    "recorded_end_ms": 12547,
+    "recorded_span_s": 12.417,
+    "duplicate_output_entries": 0,
+    "malformed_entries": 0
+  },
+  "aggregates": {
+    "translation_unit": {
+      "count": 7,
+      "phase_seconds": {
+        "ExecuteCompiler": 58.438318,
+        "Frontend": 42.988356,
+        "Backend": 15.111635,
+        "Source": 33.600839,
+        "InstantiateFunction": 12.277567,
+        "InstantiateClass": 12.193176,
+        "Optimizer": 9.556793,
+        "CodeGenPasses": 5.529039
+      },
+      "source_ranking": [
+        {
+          "name": "src/Mod/Sketcher/App/SketchObject.h",
+          "seconds": 11.540955
+        },
+        {
+          "name": "src/Mod/Sketcher/Gui/ViewProviderSketch.h",
+          "seconds": 11.524068
+        },
+        {
+          "name": "src/Mod/Part/Gui/ViewProviderPreviewExtension.h",
+          "seconds": 6.603394
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/QtCore",
+          "seconds": 6.594198
+        },
+        {
+          "name": "src/Mod/Sketcher/App/Sketch.h",
+          "seconds": 5.102148
+        },
+        {
+          "name": "src/Mod/Sketcher/App/planegcs/GCS.h",
+          "seconds": 4.8956219999999995
+        },
+        {
+          "name": "src/App/Document.h",
+          "seconds": 3.528156
+        },
+        {
+          "name": "src/Mod/Part/App/PartFeature.h",
+          "seconds": 3.347951
+        },
+        {
+          "name": "src/Mod/Part/App/Part2DObject.h",
+          "seconds": 3.243871
+        },
+        {
+          "name": "src/Mod/Part/App/AttachExtension.h",
+          "seconds": 3.226547
+        },
+        {
+          "name": "src/Mod/Part/App/Attacher.h",
+          "seconds": 3.118519
+        },
+        {
+          "name": "/nix/store/pvyj99kvphskpksxs8773916hl2xbj72-eigen-3.4.1/include/eigen3/Eigen/QR",
+          "seconds": 2.964244
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qsimd.h",
+          "seconds": 2.782062
+        },
+        {
+          "name": "/nix/store/5ivvhzl37ci5sfdmyxc62s0yq56gs0gf-clang-wrapper-21.1.8/resource-root/include/immintrin.h",
+          "seconds": 2.7781279999999997
+        },
+        {
+          "name": "/nix/store/pvyj99kvphskpksxs8773916hl2xbj72-eigen-3.4.1/include/eigen3/Eigen/Core",
+          "seconds": 2.773788
+        },
+        {
+          "name": "src/Mod/Part/App/Geometry.h",
+          "seconds": 2.601191
+        },
+        {
+          "name": "src/Gui/CommandT.h",
+          "seconds": 2.3429849999999997
+        },
+        {
+          "name": "src/Mod/Part/Gui/ViewProvider2DObject.h",
+          "seconds": 2.211376
+        },
+        {
+          "name": "src/Mod/Part/Gui/ViewProvider.h",
+          "seconds": 1.942497
+        },
+        {
+          "name": "src/Mod/Part/Gui/ViewProviderExt.h",
+          "seconds": 1.924757
+        },
+        {
+          "name": "src/Mod/Part/App/PropertyTopoShape.h",
+          "seconds": 1.766386
+        },
+        {
+          "name": "src/App/DocumentObject.h",
+          "seconds": 1.6977760000000002
+        },
+        {
+          "name": "src/Mod/Part/App/PropertyGeometryList.h",
+          "seconds": 1.590241
+        },
+        {
+          "name": "src/Gui/Application.h",
+          "seconds": 1.556372
+        },
+        {
+          "name": "src/Mod/Part/App/TopoShape.h",
+          "seconds": 1.545221
+        },
+        {
+          "name": "src/Mod/Material/App/PropertyMaterial.h",
+          "seconds": 1.472973
+        },
+        {
+          "name": "src/Mod/Sketcher/Gui/EditModeCoinManager.h",
+          "seconds": 1.434466
+        },
+        {
+          "name": "src/App/Application.h",
+          "seconds": 1.406414
+        },
+        {
+          "name": "src/Mod/Sketcher/App/GeometryFacade.h",
+          "seconds": 1.3868690000000001
+        },
+        {
+          "name": "src/Mod/Part/Gui/SoFCShapeObject.h",
+          "seconds": 1.2015710000000002
+        },
+        {
+          "name": "src/Mod/Sketcher/Gui/EditModeCoinManagerParameters.h",
+          "seconds": 1.162906
+        },
+        {
+          "name": "src/Mod/Material/App/Materials.h",
+          "seconds": 1.158487
+        },
+        {
+          "name": "src/Mod/Part/Gui/SoBrepEdgeSet.h",
+          "seconds": 1.146596
+        },
+        {
+          "name": "/nix/store/njpvi46a41av7k4xqanvf94nawfci0f0-opencascade-occt-7.9.3/include/opencascade/GeomPlate_BuildPlateSurface.hxx",
+          "seconds": 1.119992
+        },
+        {
+          "name": "src/Mod/Sketcher/App/SketchGeometryExtension.h",
+          "seconds": 1.0546520000000001
+        },
+        {
+          "name": "build/clang-profile/src/Mod/Sketcher/Gui/SketcherGui_autogen/include/ui_SketcherToolDefaultWidget.h",
+          "seconds": 1.033834
+        },
+        {
+          "name": "src/Gui/PrefWidgets.h",
+          "seconds": 1.0306870000000001
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/algorithm/string/predicate.hpp",
+          "seconds": 1.016667
+        },
+        {
+          "name": "src/App/PropertyStandard.h",
+          "seconds": 1.013261
+        },
+        {
+          "name": "src/App/ComplexGeoData.h",
+          "seconds": 1.0063520000000001
+        },
+        {
+          "name": "src/Gui/MetaTypes.h",
+          "seconds": 0.9181819999999999
+        },
+        {
+          "name": "/nix/store/pvyj99kvphskpksxs8773916hl2xbj72-eigen-3.4.1/include/eigen3/Eigen/Sparse",
+          "seconds": 0.8688120000000001
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/Objects.hxx",
+          "seconds": 0.8628419999999999
+        },
+        {
+          "name": "src/App/PropertyLinks.h",
+          "seconds": 0.8600099999999999
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/range/as_literal.hpp",
+          "seconds": 0.856731
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/range/iterator_range.hpp",
+          "seconds": 0.849871
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/range/iterator_range_core.hpp",
+          "seconds": 0.848027
+        },
+        {
+          "name": "/nix/store/njpvi46a41av7k4xqanvf94nawfci0f0-opencascade-occt-7.9.3/include/opencascade/Extrema_ExtPS.hxx",
+          "seconds": 0.803077
+        },
+        {
+          "name": "src/App/ExportInfo.h",
+          "seconds": 0.7873100000000001
+        },
+        {
+          "name": "/nix/store/njpvi46a41av7k4xqanvf94nawfci0f0-opencascade-occt-7.9.3/include/opencascade/Extrema_GenExtPS.hxx",
+          "seconds": 0.7849060000000001
+        },
+        {
+          "name": "src/Gui/ViewParams.h",
+          "seconds": 0.7791380000000001
+        },
+        {
+          "name": "src/Base/ParameterObserver.h",
+          "seconds": 0.77573
+        },
+        {
+          "name": "src/Mod/Sketcher/App/planegcs/SubSystem.h",
+          "seconds": 0.766826
+        },
+        {
+          "name": "src/App/MappedName.h",
+          "seconds": 0.717599
+        },
+        {
+          "name": "src/Mod/Sketcher/App/planegcs/Constraints.h",
+          "seconds": 0.692327
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/range/functions.hpp",
+          "seconds": 0.690357
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/uuid/uuid_generators.hpp",
+          "seconds": 0.6814040000000001
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/range/size.hpp",
+          "seconds": 0.673567
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/dynamic_bitset.hpp",
+          "seconds": 0.667448
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/dynamic_bitset/dynamic_bitset.hpp",
+          "seconds": 0.6660870000000001
+        },
+        {
+          "name": "src/Gui/StyleParameters/ParameterManager.h",
+          "seconds": 0.644186
+        },
+        {
+          "name": "src/App/FeaturePython.h",
+          "seconds": 0.6345320000000001
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/range/size_type.hpp",
+          "seconds": 0.6234419999999999
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/range/concepts.hpp",
+          "seconds": 0.6171069999999999
+        },
+        {
+          "name": "/nix/store/njpvi46a41av7k4xqanvf94nawfci0f0-opencascade-occt-7.9.3/include/opencascade/Extrema_HUBTreeOfSphere.hxx",
+          "seconds": 0.614758
+        },
+        {
+          "name": "/nix/store/njpvi46a41av7k4xqanvf94nawfci0f0-opencascade-occt-7.9.3/include/opencascade/NCollection_UBTreeFiller.hxx",
+          "seconds": 0.6119650000000001
+        },
+        {
+          "name": "src/Mod/Material/App/MaterialValue.h",
+          "seconds": 0.6109
+        },
+        {
+          "name": "src/Mod/Sketcher/App/planegcs/Geo.h",
+          "seconds": 0.6000800000000001
+        },
+        {
+          "name": "src/App/Transactions.h",
+          "seconds": 0.596256
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qrangemodel.h",
+          "seconds": 0.579454
+        },
+        {
+          "name": "/nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/random",
+          "seconds": 0.57452
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qrangemodel_impl.h",
+          "seconds": 0.559724
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/math/constants/constants.hpp",
+          "seconds": 0.557536
+        },
+        {
+          "name": "/nix/store/pvyj99kvphskpksxs8773916hl2xbj72-eigen-3.4.1/include/eigen3/Eigen/SparseCore",
+          "seconds": 0.5523939999999999
+        },
+        {
+          "name": "src/Gui/QuantitySpinBox.h",
+          "seconds": 0.552342
+        },
+        {
+          "name": "src/Mod/Sketcher/App/GeoList.h",
+          "seconds": 0.5409109999999999
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/WrapPython.h",
+          "seconds": 0.517891
+        },
+        {
+          "name": "/nix/store/h3l4z7p6wny3phbckwwhy1i2g52pdnj4-python3-3.13.15/include/python3.13/Python.h",
+          "seconds": 0.515725
+        },
+        {
+          "name": "src/Gui/StyleParameters/Value.h",
+          "seconds": 0.51066
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/concept_check.hpp",
+          "seconds": 0.508876
+        },
+        {
+          "name": "src/Mod/Sketcher/App/PropertyConstraintList.h",
+          "seconds": 0.4902929999999999
+        },
+        {
+          "name": "src/App/GeoFeature.h",
+          "seconds": 0.490213
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/uuid/uuid.hpp",
+          "seconds": 0.4809149999999999
+        },
+        {
+          "name": "src/Gui/Command.h",
+          "seconds": 0.480264
+        },
+        {
+          "name": "/nix/store/5ivvhzl37ci5sfdmyxc62s0yq56gs0gf-clang-wrapper-21.1.8/resource-root/include/avx512vlintrin.h",
+          "seconds": 0.467699
+        },
+        {
+          "name": "src/App/PropertyExpressionEngine.h",
+          "seconds": 0.455446
+        },
+        {
+          "name": "/nix/store/5ivvhzl37ci5sfdmyxc62s0yq56gs0gf-clang-wrapper-21.1.8/resource-root/include/avx512fintrin.h",
+          "seconds": 0.420357
+        },
+        {
+          "name": "src/App/PropertyGeo.h",
+          "seconds": 0.419666
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/container_hash/hash.hpp",
+          "seconds": 0.404991
+        },
+        {
+          "name": "src/App/ProcessArguments.h",
+          "seconds": 0.393376
+        },
+        {
+          "name": "src/Base/UnitsApi.h",
+          "seconds": 0.372788
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/format.hpp",
+          "seconds": 0.36310200000000004
+        },
+        {
+          "name": "src/Base/Observer.h",
+          "seconds": 0.356603
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/unordered/unordered_map.hpp",
+          "seconds": 0.34434499999999996
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/Python3/Objects.hxx",
+          "seconds": 0.344178
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/functional/hash/hash.hpp",
+          "seconds": 0.342451
+        },
+        {
+          "name": "src/Base/BoundBox.h",
+          "seconds": 0.321734
+        },
+        {
+          "name": "/nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/bits/random.h",
+          "seconds": 0.30662700000000004
+        },
+        {
+          "name": "src/Gui/TaskView/TaskView.h",
+          "seconds": 0.305828
+        },
+        {
+          "name": "src/Base/Reader.h",
+          "seconds": 0.305282
+        }
+      ],
+      "template_ranking": [
+        {
+          "name": "qRegisterNormalizedMetaType<QList<Base::Vector3<double>>>",
+          "seconds": 0.667226
+        },
+        {
+          "name": "qRegisterNormalizedMetaTypeImplementation<QList<Base::Vector3<double>>>",
+          "seconds": 0.666957
+        },
+        {
+          "name": "qRegisterNormalizedMetaType<QList<App::SubObjectT>>",
+          "seconds": 0.642861
+        },
+        {
+          "name": "qRegisterNormalizedMetaTypeImplementation<QList<App::SubObjectT>>",
+          "seconds": 0.64262
+        },
+        {
+          "name": "qRegisterNormalizedMetaType<QList<Base::Quantity>>",
+          "seconds": 0.534551
+        },
+        {
+          "name": "qRegisterNormalizedMetaTypeImplementation<QList<Base::Quantity>>",
+          "seconds": 0.534296
+        },
+        {
+          "name": "QtPrivate::SequentialValueTypeIsMetaType<QList<Base::Vector3<double>>>::registerConverter",
+          "seconds": 0.401473
+        },
+        {
+          "name": "QMetaType::registerConverter<QList<Base::Vector3<double>>, QIterable<QMetaSequence>, QtPrivate::QSequentialIterableConvertFunctor<QList<Base::Vector3<double>>>>",
+          "seconds": 0.399709
+        },
+        {
+          "name": "QtPrivate::SequentialValueTypeIsMetaType<QList<App::SubObjectT>>::registerConverter",
+          "seconds": 0.367398
+        },
+        {
+          "name": "QMetaType::registerConverter<QList<App::SubObjectT>, QIterable<QMetaSequence>, QtPrivate::QSequentialIterableConvertFunctor<QList<App::SubObjectT>>>",
+          "seconds": 0.36598700000000006
+        },
+        {
+          "name": "QtPrivate::QSequentialIterableConvertFunctor<QList<App::SubObjectT>>::operator()",
+          "seconds": 0.320965
+        },
+        {
+          "name": "QtPrivate::SequentialValueTypeIsMetaType<QList<Base::Quantity>>::registerConverter",
+          "seconds": 0.26307400000000003
+        },
+        {
+          "name": "QMetaType::registerConverter<QList<Base::Quantity>, QIterable<QMetaSequence>, QtPrivate::QSequentialIterableConvertFunctor<QList<Base::Quantity>>>",
+          "seconds": 0.26168
+        },
+        {
+          "name": "QtPrivate::QSequentialIterableConvertFunctor<QList<Base::Vector3<double>>>::operator()",
+          "seconds": 0.250439
+        },
+        {
+          "name": "std::__detail::__variant::_Copy_ctor_base<false, Gui::StyleParameters::Numeric, Base::Color, std::basic_string<char>, Gui::StyleParameters::Tuple>::_Copy_ctor_base",
+          "seconds": 0.21048599999999998
+        },
+        {
+          "name": "QtPrivate::QSequentialIterableConvertFunctor<QList<Base::Quantity>>::operator()",
+          "seconds": 0.207868
+        },
+        {
+          "name": "std::__detail::__variant::_Copy_assign_base<false, bool, long, unsigned long, double, std::basic_string<char>>::operator=",
+          "seconds": 0.19492500000000001
+        },
+        {
+          "name": "boost::basic_format<char>::basic_format",
+          "seconds": 0.17168699999999998
+        },
+        {
+          "name": "std::sort<QList<App::StringIDRef>::iterator>",
+          "seconds": 0.169591
+        },
+        {
+          "name": "std::__sort<QList<App::StringIDRef>::iterator, __gnu_cxx::__ops::_Iter_less_iter>",
+          "seconds": 0.16880599999999998
+        },
+        {
+          "name": "Gui::StyleParameters::Value::get<Gui::StyleParameters::Tuple>",
+          "seconds": 0.16565100000000002
+        },
+        {
+          "name": "boost::basic_format<char>::parse",
+          "seconds": 0.16547499999999998
+        },
+        {
+          "name": "QList<App::SubObjectT>::push_front",
+          "seconds": 0.162253
+        },
+        {
+          "name": "QList<App::SubObjectT>::prepend",
+          "seconds": 0.16210100000000002
+        },
+        {
+          "name": "QList<App::SubObjectT>::emplaceFront<const App::SubObjectT &>",
+          "seconds": 0.161816
+        },
+        {
+          "name": "QtPrivate::QGenericArrayOps<App::SubObjectT>::emplace<const App::SubObjectT &>",
+          "seconds": 0.160296
+        },
+        {
+          "name": "std::map<App::DocumentObject *, std::vector<std::basic_string<char>>>::operator[]",
+          "seconds": 0.15211200000000002
+        },
+        {
+          "name": "QArrayDataPointer<App::SubObjectT>::detachAndGrow",
+          "seconds": 0.152065
+        },
+        {
+          "name": "Gui::StyleParameters::Diagnostics::report<const char *, std::basic_string<char>>",
+          "seconds": 0.15126900000000001
+        },
+        {
+          "name": "std::format<const char *, std::basic_string<char>>",
+          "seconds": 0.147483
+        },
+        {
+          "name": "QArrayDataPointer<App::SubObjectT>::tryReadjustFreeSpace",
+          "seconds": 0.143579
+        },
+        {
+          "name": "std::map<QString, Materials::ModelProperty>::operator[]",
+          "seconds": 0.139336
+        },
+        {
+          "name": "std::unique_ptr<App::DynamicProperty::Impl>",
+          "seconds": 0.132266
+        },
+        {
+          "name": "QArrayDataPointer<App::SubObjectT>::relocate",
+          "seconds": 0.13157000000000002
+        },
+        {
+          "name": "qRegisterNormalizedMetaType<std::shared_ptr<Materials::Material>>",
+          "seconds": 0.13114800000000001
+        },
+        {
+          "name": "qRegisterNormalizedMetaTypeImplementation<std::shared_ptr<Materials::Material>>",
+          "seconds": 0.130883
+        },
+        {
+          "name": "qRegisterNormalizedMetaType<std::shared_ptr<Materials::Array2D>>",
+          "seconds": 0.129317
+        },
+        {
+          "name": "qRegisterNormalizedMetaTypeImplementation<std::shared_ptr<Materials::Array2D>>",
+          "seconds": 0.129066
+        },
+        {
+          "name": "qRegisterNormalizedMetaType<std::shared_ptr<Materials::Array3D>>",
+          "seconds": 0.12703599999999998
+        },
+        {
+          "name": "qRegisterNormalizedMetaTypeImplementation<std::shared_ptr<Materials::Array3D>>",
+          "seconds": 0.12679100000000001
+        },
+        {
+          "name": "std::__detail::__variant::_Copy_ctor_base<false, bool, long, unsigned long, double, std::basic_string<char>>::_Copy_ctor_base",
+          "seconds": 0.125629
+        },
+        {
+          "name": "std::__detail::__variant::__raw_idx_visit<(lambda at /nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/variant:586:4), const std::variant<bool, long, unsigned long, double, std::basic_string<char>> &>",
+          "seconds": 0.122284
+        },
+        {
+          "name": "qRegisterNormalizedMetaType<Base::Vector3<float>>",
+          "seconds": 0.12216099999999999
+        },
+        {
+          "name": "std::__do_visit<std::__detail::__variant::__variant_idx_cookie, (lambda at /nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/variant:586:4), const std::variant<bool, long, unsigned long, double, std::basic_string<char>> &>",
+          "seconds": 0.121068
+        },
+        {
+          "name": "qRegisterNormalizedMetaTypeImplementation<Base::Vector3<float>>",
+          "seconds": 0.12083300000000001
+        },
+        {
+          "name": "QtPrivate::q_relocate_overlap_n<App::SubObjectT, long long>",
+          "seconds": 0.11908500000000001
+        },
+        {
+          "name": "std::unique_ptr<Base::Exception>",
+          "seconds": 0.114921
+        },
+        {
+          "name": "std::__introsort_loop<QList<App::StringIDRef>::iterator, long long, __gnu_cxx::__ops::_Iter_less_iter>",
+          "seconds": 0.112306
+        },
+        {
+          "name": "std::vector<std::basic_string<char>>::vector<__gnu_cxx::__normal_iterator<char *const *, std::vector<char *>>, void>",
+          "seconds": 0.109493
+        },
+        {
+          "name": "std::_Rb_tree<int, std::pair<const int, std::pair<std::basic_string<char>, std::basic_string<char>>>, std::_Select1st<std::pair<const int, std::pair<std::basic_string<char>, std::basic_string<char>>>>, std::less<int>>::_M_copy<false, std::_Rb_tree<int, std::pair<const int, std::pair<std::basic_string<char>, std::basic_string<char>>>, std::_Select1st<std::pair<const int, std::pair<std::basic_string<char>, std::basic_string<char>>>>, std::less<int>>::_Alloc_node>",
+          "seconds": 0.10751500000000001
+        },
+        {
+          "name": "std::__uniq_ptr_data<App::DynamicProperty::Impl, std::default_delete<App::DynamicProperty::Impl>>",
+          "seconds": 0.10655200000000001
+        },
+        {
+          "name": "std::__uniq_ptr_impl<App::DynamicProperty::Impl, std::default_delete<App::DynamicProperty::Impl>>",
+          "seconds": 0.10585
+        },
+        {
+          "name": "std::__uniq_ptr_data<Base::Exception, std::default_delete<Base::Exception>>",
+          "seconds": 0.10382000000000001
+        },
+        {
+          "name": "std::__detail::__variant::_Move_assign_base<false, bool, long, unsigned long, double, std::basic_string<char>>::operator=",
+          "seconds": 0.103368
+        },
+        {
+          "name": "std::__uniq_ptr_impl<Base::Exception, std::default_delete<Base::Exception>>",
+          "seconds": 0.103168
+        },
+        {
+          "name": "std::__detail::__variant::_Variant_storage<false, Gui::StyleParameters::Numeric, Base::Color, std::basic_string<char>, Gui::StyleParameters::Tuple>::~_Variant_storage",
+          "seconds": 0.10297600000000001
+        },
+        {
+          "name": "std::__detail::__variant::__raw_idx_visit<(lambda at /nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/variant:586:4), const std::variant<Gui::StyleParameters::Numeric, Base::Color, std::basic_string<char>, Gui::StyleParameters::Tuple> &>",
+          "seconds": 0.10294700000000001
+        },
+        {
+          "name": "std::__detail::__variant::_Variant_storage<false, Gui::StyleParameters::Numeric, Base::Color, std::basic_string<char>, Gui::StyleParameters::Tuple>::_M_reset",
+          "seconds": 0.102449
+        },
+        {
+          "name": "std::__do_visit<std::__detail::__variant::__variant_idx_cookie, (lambda at /nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/variant:586:4), const std::variant<Gui::StyleParameters::Numeric, Base::Color, std::basic_string<char>, Gui::StyleParameters::Tuple> &>",
+          "seconds": 0.10160699999999999
+        },
+        {
+          "name": "std::__detail::__variant::__raw_idx_visit<(lambda at /nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/variant:714:4), std::variant<bool, long, unsigned long, double, std::basic_string<char>> &>",
+          "seconds": 0.100888
+        },
+        {
+          "name": "std::__do_visit<std::__detail::__variant::__variant_idx_cookie, (lambda at /nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/variant:714:4), std::variant<bool, long, unsigned long, double, std::basic_string<char>> &>",
+          "seconds": 0.099897
+        },
+        {
+          "name": "std::vector<std::basic_string<char>>::insert<__gnu_cxx::__normal_iterator<std::basic_string<char> *, std::vector<std::basic_string<char>>>, void>",
+          "seconds": 0.09911299999999999
+        },
+        {
+          "name": "std::vector<Base::Vector2d>::operator=",
+          "seconds": 0.096673
+        },
+        {
+          "name": "std::vector<std::basic_string<char>>::_M_range_insert<__gnu_cxx::__normal_iterator<std::basic_string<char> *, std::vector<std::basic_string<char>>>>",
+          "seconds": 0.09419
+        },
+        {
+          "name": "std::unique_ptr<App::DocumentWeakPtrT::Private>",
+          "seconds": 0.092839
+        },
+        {
+          "name": "std::vector<std::basic_string<char>>::~vector",
+          "seconds": 0.092545
+        },
+        {
+          "name": "qRegisterNormalizedMetaType<App::SubObjectT>",
+          "seconds": 0.092374
+        },
+        {
+          "name": "qRegisterNormalizedMetaTypeImplementation<App::SubObjectT>",
+          "seconds": 0.092137
+        },
+        {
+          "name": "std::make_shared<Gui::SoFCSelectionContextEx, Gui::SoFCSelectionContextEx &>",
+          "seconds": 0.091506
+        },
+        {
+          "name": "std::_Rb_tree<App::DocumentObject *, std::pair<App::DocumentObject *const, std::vector<std::basic_string<char>>>, std::_Select1st<std::pair<App::DocumentObject *const, std::vector<std::basic_string<char>>>>, std::less<App::DocumentObject *>>::_M_emplace_hint_unique<const std::piecewise_construct_t &, std::tuple<App::DocumentObject *const &>, std::tuple<>>",
+          "seconds": 0.090985
+        },
+        {
+          "name": "std::function<bool (const void *, void *)>::function<(lambda at /nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qmetatype.h:681:26), void>",
+          "seconds": 0.09044400000000001
+        },
+        {
+          "name": "std::_Destroy<std::basic_string<char> *, std::basic_string<char>>",
+          "seconds": 0.090435
+        },
+        {
+          "name": "std::unique_ptr<std::basic_istream<char>>",
+          "seconds": 0.08995
+        },
+        {
+          "name": "std::_Destroy<std::basic_string<char> *>",
+          "seconds": 0.08982899999999999
+        },
+        {
+          "name": "qRegisterNormalizedMetaType<Materials::MaterialValue>",
+          "seconds": 0.08876899999999999
+        },
+        {
+          "name": "qRegisterNormalizedMetaTypeImplementation<Materials::MaterialValue>",
+          "seconds": 0.08845599999999998
+        },
+        {
+          "name": "QSharedDataPointer<QPropertyBindingErrorPrivate>",
+          "seconds": 0.08759
+        },
+        {
+          "name": "std::shared_ptr<Gui::SoFCSelectionContextEx>::shared_ptr<std::allocator<void>, Gui::SoFCSelectionContextEx &>",
+          "seconds": 0.086375
+        },
+        {
+          "name": "std::__shared_ptr<Gui::SoFCSelectionContextEx>::__shared_ptr<std::allocator<void>, Gui::SoFCSelectionContextEx &>",
+          "seconds": 0.08553
+        },
+        {
+          "name": "qRegisterNormalizedMetaType<Base::Matrix4D>",
+          "seconds": 0.08492
+        },
+        {
+          "name": "qRegisterNormalizedMetaTypeImplementation<Base::Matrix4D>",
+          "seconds": 0.08467899999999999
+        },
+        {
+          "name": "std::__uniq_ptr_data<App::DocumentWeakPtrT::Private, std::default_delete<App::DocumentWeakPtrT::Private>>",
+          "seconds": 0.084385
+        },
+        {
+          "name": "std::__uniq_ptr_impl<App::DocumentWeakPtrT::Private, std::default_delete<App::DocumentWeakPtrT::Private>>",
+          "seconds": 0.083838
+        },
+        {
+          "name": "std::__detail::__variant::__raw_idx_visit<(lambda at /nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/variant:662:4), const std::variant<bool, long, unsigned long, double, std::basic_string<char>> &>",
+          "seconds": 0.083602
+        },
+        {
+          "name": "std::__shared_count<>::__shared_count<Gui::SoFCSelectionContextEx, std::allocator<void>, Gui::SoFCSelectionContextEx &>",
+          "seconds": 0.083364
+        },
+        {
+          "name": "std::__do_visit<std::__detail::__variant::__variant_idx_cookie, (lambda at /nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/variant:662:4), const std::variant<bool, long, unsigned long, double, std::basic_string<char>> &>",
+          "seconds": 0.082586
+        },
+        {
+          "name": "QSharedDataPointerBase<QSharedDataPointer, QPropertyBindingErrorPrivate>",
+          "seconds": 0.08199700000000001
+        },
+        {
+          "name": "QMetaSequence::fromContainer<QList<Base::Vector3<double>>>",
+          "seconds": 0.081967
+        },
+        {
+          "name": "std::__detail::__variant::_Variant_storage<false, bool, long, unsigned long, double, std::basic_string<char>>::~_Variant_storage",
+          "seconds": 0.08187200000000001
+        },
+        {
+          "name": "std::__detail::__variant::_Variant_storage<false, bool, long, unsigned long, double, std::basic_string<char>>::_M_reset",
+          "seconds": 0.081597
+        },
+        {
+          "name": "std::unique_ptr<App::PropertyXLink>",
+          "seconds": 0.08149600000000001
+        },
+        {
+          "name": "std::make_unique<SketcherGui::ViewProviderSketchGeometryExtension>",
+          "seconds": 0.08139700000000001
+        },
+        {
+          "name": "std::__uniq_ptr_data<std::basic_istream<char>, std::default_delete<std::basic_istream<char>>>",
+          "seconds": 0.08138
+        },
+        {
+          "name": "std::__do_visit<void, (lambda at /nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/variant:491:24), std::variant<Gui::StyleParameters::Numeric, Base::Color, std::basic_string<char>, Gui::StyleParameters::Tuple> &>",
+          "seconds": 0.081048
+        },
+        {
+          "name": "std::_Rb_tree<int, std::pair<const int, Base::Color>, std::_Select1st<std::pair<const int, Base::Color>>, std::less<int>>::_M_copy<false, std::_Rb_tree<int, std::pair<const int, Base::Color>, std::_Select1st<std::pair<const int, Base::Color>>, std::less<int>>::_Alloc_node>",
+          "seconds": 0.081016
+        },
+        {
+          "name": "std::__uniq_ptr_impl<std::basic_istream<char>, std::default_delete<std::basic_istream<char>>>",
+          "seconds": 0.08081600000000001
+        },
+        {
+          "name": "std::is_destructible<std::basic_string<char>>",
+          "seconds": 0.080751
+        },
+        {
+          "name": "qRegisterNormalizedMetaType<Base::Rotation>",
+          "seconds": 0.07988999999999999
+        },
+        {
+          "name": "qRegisterNormalizedMetaTypeImplementation<Base::Rotation>",
+          "seconds": 0.07964800000000001
+        },
+        {
+          "name": "std::unique_ptr<Data::MappedNameRef>",
+          "seconds": 0.07908200000000001
+        }
+      ]
+    },
+    "pch": {
+      "count": 0,
+      "phase_seconds": {
+        "ExecuteCompiler": 0,
+        "Frontend": 0,
+        "Backend": 0,
+        "Source": 0,
+        "InstantiateFunction": 0,
+        "InstantiateClass": 0,
+        "Optimizer": 0,
+        "CodeGenPasses": 0
+      },
+      "source_ranking": [],
+      "template_ranking": []
+    },
+    "combined": {
+      "count": 7,
+      "phase_seconds": {
+        "ExecuteCompiler": 58.438318,
+        "Frontend": 42.988356,
+        "Backend": 15.111635,
+        "Source": 33.600839,
+        "InstantiateFunction": 12.277567,
+        "InstantiateClass": 12.193176,
+        "Optimizer": 9.556793,
+        "CodeGenPasses": 5.529039
+      },
+      "source_ranking": [
+        {
+          "name": "src/Mod/Sketcher/App/SketchObject.h",
+          "seconds": 11.540955
+        },
+        {
+          "name": "src/Mod/Sketcher/Gui/ViewProviderSketch.h",
+          "seconds": 11.524068
+        },
+        {
+          "name": "src/Mod/Part/Gui/ViewProviderPreviewExtension.h",
+          "seconds": 6.603394
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/QtCore",
+          "seconds": 6.594198
+        },
+        {
+          "name": "src/Mod/Sketcher/App/Sketch.h",
+          "seconds": 5.102148
+        },
+        {
+          "name": "src/Mod/Sketcher/App/planegcs/GCS.h",
+          "seconds": 4.8956219999999995
+        },
+        {
+          "name": "src/App/Document.h",
+          "seconds": 3.528156
+        },
+        {
+          "name": "src/Mod/Part/App/PartFeature.h",
+          "seconds": 3.347951
+        },
+        {
+          "name": "src/Mod/Part/App/Part2DObject.h",
+          "seconds": 3.243871
+        },
+        {
+          "name": "src/Mod/Part/App/AttachExtension.h",
+          "seconds": 3.226547
+        },
+        {
+          "name": "src/Mod/Part/App/Attacher.h",
+          "seconds": 3.118519
+        },
+        {
+          "name": "/nix/store/pvyj99kvphskpksxs8773916hl2xbj72-eigen-3.4.1/include/eigen3/Eigen/QR",
+          "seconds": 2.964244
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qsimd.h",
+          "seconds": 2.782062
+        },
+        {
+          "name": "/nix/store/5ivvhzl37ci5sfdmyxc62s0yq56gs0gf-clang-wrapper-21.1.8/resource-root/include/immintrin.h",
+          "seconds": 2.7781279999999997
+        },
+        {
+          "name": "/nix/store/pvyj99kvphskpksxs8773916hl2xbj72-eigen-3.4.1/include/eigen3/Eigen/Core",
+          "seconds": 2.773788
+        },
+        {
+          "name": "src/Mod/Part/App/Geometry.h",
+          "seconds": 2.601191
+        },
+        {
+          "name": "src/Gui/CommandT.h",
+          "seconds": 2.3429849999999997
+        },
+        {
+          "name": "src/Mod/Part/Gui/ViewProvider2DObject.h",
+          "seconds": 2.211376
+        },
+        {
+          "name": "src/Mod/Part/Gui/ViewProvider.h",
+          "seconds": 1.942497
+        },
+        {
+          "name": "src/Mod/Part/Gui/ViewProviderExt.h",
+          "seconds": 1.924757
+        },
+        {
+          "name": "src/Mod/Part/App/PropertyTopoShape.h",
+          "seconds": 1.766386
+        },
+        {
+          "name": "src/App/DocumentObject.h",
+          "seconds": 1.6977760000000002
+        },
+        {
+          "name": "src/Mod/Part/App/PropertyGeometryList.h",
+          "seconds": 1.590241
+        },
+        {
+          "name": "src/Gui/Application.h",
+          "seconds": 1.556372
+        },
+        {
+          "name": "src/Mod/Part/App/TopoShape.h",
+          "seconds": 1.545221
+        },
+        {
+          "name": "src/Mod/Material/App/PropertyMaterial.h",
+          "seconds": 1.472973
+        },
+        {
+          "name": "src/Mod/Sketcher/Gui/EditModeCoinManager.h",
+          "seconds": 1.434466
+        },
+        {
+          "name": "src/App/Application.h",
+          "seconds": 1.406414
+        },
+        {
+          "name": "src/Mod/Sketcher/App/GeometryFacade.h",
+          "seconds": 1.3868690000000001
+        },
+        {
+          "name": "src/Mod/Part/Gui/SoFCShapeObject.h",
+          "seconds": 1.2015710000000002
+        },
+        {
+          "name": "src/Mod/Sketcher/Gui/EditModeCoinManagerParameters.h",
+          "seconds": 1.162906
+        },
+        {
+          "name": "src/Mod/Material/App/Materials.h",
+          "seconds": 1.158487
+        },
+        {
+          "name": "src/Mod/Part/Gui/SoBrepEdgeSet.h",
+          "seconds": 1.146596
+        },
+        {
+          "name": "/nix/store/njpvi46a41av7k4xqanvf94nawfci0f0-opencascade-occt-7.9.3/include/opencascade/GeomPlate_BuildPlateSurface.hxx",
+          "seconds": 1.119992
+        },
+        {
+          "name": "src/Mod/Sketcher/App/SketchGeometryExtension.h",
+          "seconds": 1.0546520000000001
+        },
+        {
+          "name": "build/clang-profile/src/Mod/Sketcher/Gui/SketcherGui_autogen/include/ui_SketcherToolDefaultWidget.h",
+          "seconds": 1.033834
+        },
+        {
+          "name": "src/Gui/PrefWidgets.h",
+          "seconds": 1.0306870000000001
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/algorithm/string/predicate.hpp",
+          "seconds": 1.016667
+        },
+        {
+          "name": "src/App/PropertyStandard.h",
+          "seconds": 1.013261
+        },
+        {
+          "name": "src/App/ComplexGeoData.h",
+          "seconds": 1.0063520000000001
+        },
+        {
+          "name": "src/Gui/MetaTypes.h",
+          "seconds": 0.9181819999999999
+        },
+        {
+          "name": "/nix/store/pvyj99kvphskpksxs8773916hl2xbj72-eigen-3.4.1/include/eigen3/Eigen/Sparse",
+          "seconds": 0.8688120000000001
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/Objects.hxx",
+          "seconds": 0.8628419999999999
+        },
+        {
+          "name": "src/App/PropertyLinks.h",
+          "seconds": 0.8600099999999999
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/range/as_literal.hpp",
+          "seconds": 0.856731
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/range/iterator_range.hpp",
+          "seconds": 0.849871
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/range/iterator_range_core.hpp",
+          "seconds": 0.848027
+        },
+        {
+          "name": "/nix/store/njpvi46a41av7k4xqanvf94nawfci0f0-opencascade-occt-7.9.3/include/opencascade/Extrema_ExtPS.hxx",
+          "seconds": 0.803077
+        },
+        {
+          "name": "src/App/ExportInfo.h",
+          "seconds": 0.7873100000000001
+        },
+        {
+          "name": "/nix/store/njpvi46a41av7k4xqanvf94nawfci0f0-opencascade-occt-7.9.3/include/opencascade/Extrema_GenExtPS.hxx",
+          "seconds": 0.7849060000000001
+        },
+        {
+          "name": "src/Gui/ViewParams.h",
+          "seconds": 0.7791380000000001
+        },
+        {
+          "name": "src/Base/ParameterObserver.h",
+          "seconds": 0.77573
+        },
+        {
+          "name": "src/Mod/Sketcher/App/planegcs/SubSystem.h",
+          "seconds": 0.766826
+        },
+        {
+          "name": "src/App/MappedName.h",
+          "seconds": 0.717599
+        },
+        {
+          "name": "src/Mod/Sketcher/App/planegcs/Constraints.h",
+          "seconds": 0.692327
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/range/functions.hpp",
+          "seconds": 0.690357
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/uuid/uuid_generators.hpp",
+          "seconds": 0.6814040000000001
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/range/size.hpp",
+          "seconds": 0.673567
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/dynamic_bitset.hpp",
+          "seconds": 0.667448
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/dynamic_bitset/dynamic_bitset.hpp",
+          "seconds": 0.6660870000000001
+        },
+        {
+          "name": "src/Gui/StyleParameters/ParameterManager.h",
+          "seconds": 0.644186
+        },
+        {
+          "name": "src/App/FeaturePython.h",
+          "seconds": 0.6345320000000001
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/range/size_type.hpp",
+          "seconds": 0.6234419999999999
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/range/concepts.hpp",
+          "seconds": 0.6171069999999999
+        },
+        {
+          "name": "/nix/store/njpvi46a41av7k4xqanvf94nawfci0f0-opencascade-occt-7.9.3/include/opencascade/Extrema_HUBTreeOfSphere.hxx",
+          "seconds": 0.614758
+        },
+        {
+          "name": "/nix/store/njpvi46a41av7k4xqanvf94nawfci0f0-opencascade-occt-7.9.3/include/opencascade/NCollection_UBTreeFiller.hxx",
+          "seconds": 0.6119650000000001
+        },
+        {
+          "name": "src/Mod/Material/App/MaterialValue.h",
+          "seconds": 0.6109
+        },
+        {
+          "name": "src/Mod/Sketcher/App/planegcs/Geo.h",
+          "seconds": 0.6000800000000001
+        },
+        {
+          "name": "src/App/Transactions.h",
+          "seconds": 0.596256
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qrangemodel.h",
+          "seconds": 0.579454
+        },
+        {
+          "name": "/nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/random",
+          "seconds": 0.57452
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qrangemodel_impl.h",
+          "seconds": 0.559724
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/math/constants/constants.hpp",
+          "seconds": 0.557536
+        },
+        {
+          "name": "/nix/store/pvyj99kvphskpksxs8773916hl2xbj72-eigen-3.4.1/include/eigen3/Eigen/SparseCore",
+          "seconds": 0.5523939999999999
+        },
+        {
+          "name": "src/Gui/QuantitySpinBox.h",
+          "seconds": 0.552342
+        },
+        {
+          "name": "src/Mod/Sketcher/App/GeoList.h",
+          "seconds": 0.5409109999999999
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/WrapPython.h",
+          "seconds": 0.517891
+        },
+        {
+          "name": "/nix/store/h3l4z7p6wny3phbckwwhy1i2g52pdnj4-python3-3.13.15/include/python3.13/Python.h",
+          "seconds": 0.515725
+        },
+        {
+          "name": "src/Gui/StyleParameters/Value.h",
+          "seconds": 0.51066
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/concept_check.hpp",
+          "seconds": 0.508876
+        },
+        {
+          "name": "src/Mod/Sketcher/App/PropertyConstraintList.h",
+          "seconds": 0.4902929999999999
+        },
+        {
+          "name": "src/App/GeoFeature.h",
+          "seconds": 0.490213
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/uuid/uuid.hpp",
+          "seconds": 0.4809149999999999
+        },
+        {
+          "name": "src/Gui/Command.h",
+          "seconds": 0.480264
+        },
+        {
+          "name": "/nix/store/5ivvhzl37ci5sfdmyxc62s0yq56gs0gf-clang-wrapper-21.1.8/resource-root/include/avx512vlintrin.h",
+          "seconds": 0.467699
+        },
+        {
+          "name": "src/App/PropertyExpressionEngine.h",
+          "seconds": 0.455446
+        },
+        {
+          "name": "/nix/store/5ivvhzl37ci5sfdmyxc62s0yq56gs0gf-clang-wrapper-21.1.8/resource-root/include/avx512fintrin.h",
+          "seconds": 0.420357
+        },
+        {
+          "name": "src/App/PropertyGeo.h",
+          "seconds": 0.419666
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/container_hash/hash.hpp",
+          "seconds": 0.404991
+        },
+        {
+          "name": "src/App/ProcessArguments.h",
+          "seconds": 0.393376
+        },
+        {
+          "name": "src/Base/UnitsApi.h",
+          "seconds": 0.372788
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/format.hpp",
+          "seconds": 0.36310200000000004
+        },
+        {
+          "name": "src/Base/Observer.h",
+          "seconds": 0.356603
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/unordered/unordered_map.hpp",
+          "seconds": 0.34434499999999996
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/Python3/Objects.hxx",
+          "seconds": 0.344178
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/functional/hash/hash.hpp",
+          "seconds": 0.342451
+        },
+        {
+          "name": "src/Base/BoundBox.h",
+          "seconds": 0.321734
+        },
+        {
+          "name": "/nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/bits/random.h",
+          "seconds": 0.30662700000000004
+        },
+        {
+          "name": "src/Gui/TaskView/TaskView.h",
+          "seconds": 0.305828
+        },
+        {
+          "name": "src/Base/Reader.h",
+          "seconds": 0.305282
+        }
+      ],
+      "template_ranking": [
+        {
+          "name": "qRegisterNormalizedMetaType<QList<Base::Vector3<double>>>",
+          "seconds": 0.667226
+        },
+        {
+          "name": "qRegisterNormalizedMetaTypeImplementation<QList<Base::Vector3<double>>>",
+          "seconds": 0.666957
+        },
+        {
+          "name": "qRegisterNormalizedMetaType<QList<App::SubObjectT>>",
+          "seconds": 0.642861
+        },
+        {
+          "name": "qRegisterNormalizedMetaTypeImplementation<QList<App::SubObjectT>>",
+          "seconds": 0.64262
+        },
+        {
+          "name": "qRegisterNormalizedMetaType<QList<Base::Quantity>>",
+          "seconds": 0.534551
+        },
+        {
+          "name": "qRegisterNormalizedMetaTypeImplementation<QList<Base::Quantity>>",
+          "seconds": 0.534296
+        },
+        {
+          "name": "QtPrivate::SequentialValueTypeIsMetaType<QList<Base::Vector3<double>>>::registerConverter",
+          "seconds": 0.401473
+        },
+        {
+          "name": "QMetaType::registerConverter<QList<Base::Vector3<double>>, QIterable<QMetaSequence>, QtPrivate::QSequentialIterableConvertFunctor<QList<Base::Vector3<double>>>>",
+          "seconds": 0.399709
+        },
+        {
+          "name": "QtPrivate::SequentialValueTypeIsMetaType<QList<App::SubObjectT>>::registerConverter",
+          "seconds": 0.367398
+        },
+        {
+          "name": "QMetaType::registerConverter<QList<App::SubObjectT>, QIterable<QMetaSequence>, QtPrivate::QSequentialIterableConvertFunctor<QList<App::SubObjectT>>>",
+          "seconds": 0.36598700000000006
+        },
+        {
+          "name": "QtPrivate::QSequentialIterableConvertFunctor<QList<App::SubObjectT>>::operator()",
+          "seconds": 0.320965
+        },
+        {
+          "name": "QtPrivate::SequentialValueTypeIsMetaType<QList<Base::Quantity>>::registerConverter",
+          "seconds": 0.26307400000000003
+        },
+        {
+          "name": "QMetaType::registerConverter<QList<Base::Quantity>, QIterable<QMetaSequence>, QtPrivate::QSequentialIterableConvertFunctor<QList<Base::Quantity>>>",
+          "seconds": 0.26168
+        },
+        {
+          "name": "QtPrivate::QSequentialIterableConvertFunctor<QList<Base::Vector3<double>>>::operator()",
+          "seconds": 0.250439
+        },
+        {
+          "name": "std::__detail::__variant::_Copy_ctor_base<false, Gui::StyleParameters::Numeric, Base::Color, std::basic_string<char>, Gui::StyleParameters::Tuple>::_Copy_ctor_base",
+          "seconds": 0.21048599999999998
+        },
+        {
+          "name": "QtPrivate::QSequentialIterableConvertFunctor<QList<Base::Quantity>>::operator()",
+          "seconds": 0.207868
+        },
+        {
+          "name": "std::__detail::__variant::_Copy_assign_base<false, bool, long, unsigned long, double, std::basic_string<char>>::operator=",
+          "seconds": 0.19492500000000001
+        },
+        {
+          "name": "boost::basic_format<char>::basic_format",
+          "seconds": 0.17168699999999998
+        },
+        {
+          "name": "std::sort<QList<App::StringIDRef>::iterator>",
+          "seconds": 0.169591
+        },
+        {
+          "name": "std::__sort<QList<App::StringIDRef>::iterator, __gnu_cxx::__ops::_Iter_less_iter>",
+          "seconds": 0.16880599999999998
+        },
+        {
+          "name": "Gui::StyleParameters::Value::get<Gui::StyleParameters::Tuple>",
+          "seconds": 0.16565100000000002
+        },
+        {
+          "name": "boost::basic_format<char>::parse",
+          "seconds": 0.16547499999999998
+        },
+        {
+          "name": "QList<App::SubObjectT>::push_front",
+          "seconds": 0.162253
+        },
+        {
+          "name": "QList<App::SubObjectT>::prepend",
+          "seconds": 0.16210100000000002
+        },
+        {
+          "name": "QList<App::SubObjectT>::emplaceFront<const App::SubObjectT &>",
+          "seconds": 0.161816
+        },
+        {
+          "name": "QtPrivate::QGenericArrayOps<App::SubObjectT>::emplace<const App::SubObjectT &>",
+          "seconds": 0.160296
+        },
+        {
+          "name": "std::map<App::DocumentObject *, std::vector<std::basic_string<char>>>::operator[]",
+          "seconds": 0.15211200000000002
+        },
+        {
+          "name": "QArrayDataPointer<App::SubObjectT>::detachAndGrow",
+          "seconds": 0.152065
+        },
+        {
+          "name": "Gui::StyleParameters::Diagnostics::report<const char *, std::basic_string<char>>",
+          "seconds": 0.15126900000000001
+        },
+        {
+          "name": "std::format<const char *, std::basic_string<char>>",
+          "seconds": 0.147483
+        },
+        {
+          "name": "QArrayDataPointer<App::SubObjectT>::tryReadjustFreeSpace",
+          "seconds": 0.143579
+        },
+        {
+          "name": "std::map<QString, Materials::ModelProperty>::operator[]",
+          "seconds": 0.139336
+        },
+        {
+          "name": "std::unique_ptr<App::DynamicProperty::Impl>",
+          "seconds": 0.132266
+        },
+        {
+          "name": "QArrayDataPointer<App::SubObjectT>::relocate",
+          "seconds": 0.13157000000000002
+        },
+        {
+          "name": "qRegisterNormalizedMetaType<std::shared_ptr<Materials::Material>>",
+          "seconds": 0.13114800000000001
+        },
+        {
+          "name": "qRegisterNormalizedMetaTypeImplementation<std::shared_ptr<Materials::Material>>",
+          "seconds": 0.130883
+        },
+        {
+          "name": "qRegisterNormalizedMetaType<std::shared_ptr<Materials::Array2D>>",
+          "seconds": 0.129317
+        },
+        {
+          "name": "qRegisterNormalizedMetaTypeImplementation<std::shared_ptr<Materials::Array2D>>",
+          "seconds": 0.129066
+        },
+        {
+          "name": "qRegisterNormalizedMetaType<std::shared_ptr<Materials::Array3D>>",
+          "seconds": 0.12703599999999998
+        },
+        {
+          "name": "qRegisterNormalizedMetaTypeImplementation<std::shared_ptr<Materials::Array3D>>",
+          "seconds": 0.12679100000000001
+        },
+        {
+          "name": "std::__detail::__variant::_Copy_ctor_base<false, bool, long, unsigned long, double, std::basic_string<char>>::_Copy_ctor_base",
+          "seconds": 0.125629
+        },
+        {
+          "name": "std::__detail::__variant::__raw_idx_visit<(lambda at /nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/variant:586:4), const std::variant<bool, long, unsigned long, double, std::basic_string<char>> &>",
+          "seconds": 0.122284
+        },
+        {
+          "name": "qRegisterNormalizedMetaType<Base::Vector3<float>>",
+          "seconds": 0.12216099999999999
+        },
+        {
+          "name": "std::__do_visit<std::__detail::__variant::__variant_idx_cookie, (lambda at /nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/variant:586:4), const std::variant<bool, long, unsigned long, double, std::basic_string<char>> &>",
+          "seconds": 0.121068
+        },
+        {
+          "name": "qRegisterNormalizedMetaTypeImplementation<Base::Vector3<float>>",
+          "seconds": 0.12083300000000001
+        },
+        {
+          "name": "QtPrivate::q_relocate_overlap_n<App::SubObjectT, long long>",
+          "seconds": 0.11908500000000001
+        },
+        {
+          "name": "std::unique_ptr<Base::Exception>",
+          "seconds": 0.114921
+        },
+        {
+          "name": "std::__introsort_loop<QList<App::StringIDRef>::iterator, long long, __gnu_cxx::__ops::_Iter_less_iter>",
+          "seconds": 0.112306
+        },
+        {
+          "name": "std::vector<std::basic_string<char>>::vector<__gnu_cxx::__normal_iterator<char *const *, std::vector<char *>>, void>",
+          "seconds": 0.109493
+        },
+        {
+          "name": "std::_Rb_tree<int, std::pair<const int, std::pair<std::basic_string<char>, std::basic_string<char>>>, std::_Select1st<std::pair<const int, std::pair<std::basic_string<char>, std::basic_string<char>>>>, std::less<int>>::_M_copy<false, std::_Rb_tree<int, std::pair<const int, std::pair<std::basic_string<char>, std::basic_string<char>>>, std::_Select1st<std::pair<const int, std::pair<std::basic_string<char>, std::basic_string<char>>>>, std::less<int>>::_Alloc_node>",
+          "seconds": 0.10751500000000001
+        },
+        {
+          "name": "std::__uniq_ptr_data<App::DynamicProperty::Impl, std::default_delete<App::DynamicProperty::Impl>>",
+          "seconds": 0.10655200000000001
+        },
+        {
+          "name": "std::__uniq_ptr_impl<App::DynamicProperty::Impl, std::default_delete<App::DynamicProperty::Impl>>",
+          "seconds": 0.10585
+        },
+        {
+          "name": "std::__uniq_ptr_data<Base::Exception, std::default_delete<Base::Exception>>",
+          "seconds": 0.10382000000000001
+        },
+        {
+          "name": "std::__detail::__variant::_Move_assign_base<false, bool, long, unsigned long, double, std::basic_string<char>>::operator=",
+          "seconds": 0.103368
+        },
+        {
+          "name": "std::__uniq_ptr_impl<Base::Exception, std::default_delete<Base::Exception>>",
+          "seconds": 0.103168
+        },
+        {
+          "name": "std::__detail::__variant::_Variant_storage<false, Gui::StyleParameters::Numeric, Base::Color, std::basic_string<char>, Gui::StyleParameters::Tuple>::~_Variant_storage",
+          "seconds": 0.10297600000000001
+        },
+        {
+          "name": "std::__detail::__variant::__raw_idx_visit<(lambda at /nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/variant:586:4), const std::variant<Gui::StyleParameters::Numeric, Base::Color, std::basic_string<char>, Gui::StyleParameters::Tuple> &>",
+          "seconds": 0.10294700000000001
+        },
+        {
+          "name": "std::__detail::__variant::_Variant_storage<false, Gui::StyleParameters::Numeric, Base::Color, std::basic_string<char>, Gui::StyleParameters::Tuple>::_M_reset",
+          "seconds": 0.102449
+        },
+        {
+          "name": "std::__do_visit<std::__detail::__variant::__variant_idx_cookie, (lambda at /nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/variant:586:4), const std::variant<Gui::StyleParameters::Numeric, Base::Color, std::basic_string<char>, Gui::StyleParameters::Tuple> &>",
+          "seconds": 0.10160699999999999
+        },
+        {
+          "name": "std::__detail::__variant::__raw_idx_visit<(lambda at /nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/variant:714:4), std::variant<bool, long, unsigned long, double, std::basic_string<char>> &>",
+          "seconds": 0.100888
+        },
+        {
+          "name": "std::__do_visit<std::__detail::__variant::__variant_idx_cookie, (lambda at /nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/variant:714:4), std::variant<bool, long, unsigned long, double, std::basic_string<char>> &>",
+          "seconds": 0.099897
+        },
+        {
+          "name": "std::vector<std::basic_string<char>>::insert<__gnu_cxx::__normal_iterator<std::basic_string<char> *, std::vector<std::basic_string<char>>>, void>",
+          "seconds": 0.09911299999999999
+        },
+        {
+          "name": "std::vector<Base::Vector2d>::operator=",
+          "seconds": 0.096673
+        },
+        {
+          "name": "std::vector<std::basic_string<char>>::_M_range_insert<__gnu_cxx::__normal_iterator<std::basic_string<char> *, std::vector<std::basic_string<char>>>>",
+          "seconds": 0.09419
+        },
+        {
+          "name": "std::unique_ptr<App::DocumentWeakPtrT::Private>",
+          "seconds": 0.092839
+        },
+        {
+          "name": "std::vector<std::basic_string<char>>::~vector",
+          "seconds": 0.092545
+        },
+        {
+          "name": "qRegisterNormalizedMetaType<App::SubObjectT>",
+          "seconds": 0.092374
+        },
+        {
+          "name": "qRegisterNormalizedMetaTypeImplementation<App::SubObjectT>",
+          "seconds": 0.092137
+        },
+        {
+          "name": "std::make_shared<Gui::SoFCSelectionContextEx, Gui::SoFCSelectionContextEx &>",
+          "seconds": 0.091506
+        },
+        {
+          "name": "std::_Rb_tree<App::DocumentObject *, std::pair<App::DocumentObject *const, std::vector<std::basic_string<char>>>, std::_Select1st<std::pair<App::DocumentObject *const, std::vector<std::basic_string<char>>>>, std::less<App::DocumentObject *>>::_M_emplace_hint_unique<const std::piecewise_construct_t &, std::tuple<App::DocumentObject *const &>, std::tuple<>>",
+          "seconds": 0.090985
+        },
+        {
+          "name": "std::function<bool (const void *, void *)>::function<(lambda at /nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qmetatype.h:681:26), void>",
+          "seconds": 0.09044400000000001
+        },
+        {
+          "name": "std::_Destroy<std::basic_string<char> *, std::basic_string<char>>",
+          "seconds": 0.090435
+        },
+        {
+          "name": "std::unique_ptr<std::basic_istream<char>>",
+          "seconds": 0.08995
+        },
+        {
+          "name": "std::_Destroy<std::basic_string<char> *>",
+          "seconds": 0.08982899999999999
+        },
+        {
+          "name": "qRegisterNormalizedMetaType<Materials::MaterialValue>",
+          "seconds": 0.08876899999999999
+        },
+        {
+          "name": "qRegisterNormalizedMetaTypeImplementation<Materials::MaterialValue>",
+          "seconds": 0.08845599999999998
+        },
+        {
+          "name": "QSharedDataPointer<QPropertyBindingErrorPrivate>",
+          "seconds": 0.08759
+        },
+        {
+          "name": "std::shared_ptr<Gui::SoFCSelectionContextEx>::shared_ptr<std::allocator<void>, Gui::SoFCSelectionContextEx &>",
+          "seconds": 0.086375
+        },
+        {
+          "name": "std::__shared_ptr<Gui::SoFCSelectionContextEx>::__shared_ptr<std::allocator<void>, Gui::SoFCSelectionContextEx &>",
+          "seconds": 0.08553
+        },
+        {
+          "name": "qRegisterNormalizedMetaType<Base::Matrix4D>",
+          "seconds": 0.08492
+        },
+        {
+          "name": "qRegisterNormalizedMetaTypeImplementation<Base::Matrix4D>",
+          "seconds": 0.08467899999999999
+        },
+        {
+          "name": "std::__uniq_ptr_data<App::DocumentWeakPtrT::Private, std::default_delete<App::DocumentWeakPtrT::Private>>",
+          "seconds": 0.084385
+        },
+        {
+          "name": "std::__uniq_ptr_impl<App::DocumentWeakPtrT::Private, std::default_delete<App::DocumentWeakPtrT::Private>>",
+          "seconds": 0.083838
+        },
+        {
+          "name": "std::__detail::__variant::__raw_idx_visit<(lambda at /nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/variant:662:4), const std::variant<bool, long, unsigned long, double, std::basic_string<char>> &>",
+          "seconds": 0.083602
+        },
+        {
+          "name": "std::__shared_count<>::__shared_count<Gui::SoFCSelectionContextEx, std::allocator<void>, Gui::SoFCSelectionContextEx &>",
+          "seconds": 0.083364
+        },
+        {
+          "name": "std::__do_visit<std::__detail::__variant::__variant_idx_cookie, (lambda at /nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/variant:662:4), const std::variant<bool, long, unsigned long, double, std::basic_string<char>> &>",
+          "seconds": 0.082586
+        },
+        {
+          "name": "QSharedDataPointerBase<QSharedDataPointer, QPropertyBindingErrorPrivate>",
+          "seconds": 0.08199700000000001
+        },
+        {
+          "name": "QMetaSequence::fromContainer<QList<Base::Vector3<double>>>",
+          "seconds": 0.081967
+        },
+        {
+          "name": "std::__detail::__variant::_Variant_storage<false, bool, long, unsigned long, double, std::basic_string<char>>::~_Variant_storage",
+          "seconds": 0.08187200000000001
+        },
+        {
+          "name": "std::__detail::__variant::_Variant_storage<false, bool, long, unsigned long, double, std::basic_string<char>>::_M_reset",
+          "seconds": 0.081597
+        },
+        {
+          "name": "std::unique_ptr<App::PropertyXLink>",
+          "seconds": 0.08149600000000001
+        },
+        {
+          "name": "std::make_unique<SketcherGui::ViewProviderSketchGeometryExtension>",
+          "seconds": 0.08139700000000001
+        },
+        {
+          "name": "std::__uniq_ptr_data<std::basic_istream<char>, std::default_delete<std::basic_istream<char>>>",
+          "seconds": 0.08138
+        },
+        {
+          "name": "std::__do_visit<void, (lambda at /nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/variant:491:24), std::variant<Gui::StyleParameters::Numeric, Base::Color, std::basic_string<char>, Gui::StyleParameters::Tuple> &>",
+          "seconds": 0.081048
+        },
+        {
+          "name": "std::_Rb_tree<int, std::pair<const int, Base::Color>, std::_Select1st<std::pair<const int, Base::Color>>, std::less<int>>::_M_copy<false, std::_Rb_tree<int, std::pair<const int, Base::Color>, std::_Select1st<std::pair<const int, Base::Color>>, std::less<int>>::_Alloc_node>",
+          "seconds": 0.081016
+        },
+        {
+          "name": "std::__uniq_ptr_impl<std::basic_istream<char>, std::default_delete<std::basic_istream<char>>>",
+          "seconds": 0.08081600000000001
+        },
+        {
+          "name": "std::is_destructible<std::basic_string<char>>",
+          "seconds": 0.080751
+        },
+        {
+          "name": "qRegisterNormalizedMetaType<Base::Rotation>",
+          "seconds": 0.07988999999999999
+        },
+        {
+          "name": "qRegisterNormalizedMetaTypeImplementation<Base::Rotation>",
+          "seconds": 0.07964800000000001
+        },
+        {
+          "name": "std::unique_ptr<Data::MappedNameRef>",
+          "seconds": 0.07908200000000001
+        }
+      ]
+    }
+  },
+  "diagnostics": {
+    "missing_traces": [],
+    "invalid_traces": []
+  }
+}

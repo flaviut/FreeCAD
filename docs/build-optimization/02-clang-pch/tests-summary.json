@@ -1,0 +1,29 @@
+{
+  "exit_code": 0,
+  "ctest_reported_tests": 2189,
+  "failed": 0,
+  "passed": 2187,
+  "skipped": 2,
+  "disabled": 8,
+  "elapsed_s": 28.01,
+  "excluded": [
+    "CommandLine_characterization"
+  ],
+  "command": [
+    "fc-test",
+    "-j",
+    "8",
+    "--timeout",
+    "120",
+    "-E",
+    "^CommandLine_characterization$"
+  ],
+  "environment": {
+    "QT_QPA_PLATFORM": "offscreen",
+    "FREECAD_BUILD_DIR": "/home/user/dev/FreeCAD/build/clang-profile"
+  },
+  "unset_environment": [
+    "DISPLAY",
+    "WAYLAND_DISPLAY"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "label": "sketchergui-qtcore-pch",
+  "command": [
+    "fc-build",
+    "--target",
+    "SketcherGui"
+  ],
+  "started_utc": "2026-09-28T19:39:41.450299+00:00",
+  "elapsed_s": 49.65409381699283,
+  "exit_code": 0,
+  "jobs": 8,
+  "changed_ninja_outputs": 59,
+  "build_dir": "/home/user/dev/FreeCAD/build/clang-profile",
+  "children_user_s": 276.62389,
+  "children_system_s": 18.720248,
+  "max_child_rss_kib": 851788,
+  "memory_note": "Largest individual child RSS, not aggregate concurrent build memory."
+}

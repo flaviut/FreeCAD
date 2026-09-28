@@ -1,0 +1,15 @@
+{
+  "label": "clean-build",
+  "command": [
+    "fc-build"
+  ],
+  "started_utc": "2026-09-28T19:06:55.858857+00:00",
+  "elapsed_s": 1144.2165053580538,
+  "exit_code": 0,
+  "jobs": 8,
+  "build_dir": "/home/user/dev/FreeCAD/build/clang-profile",
+  "children_user_s": 8026.348621,
+  "children_system_s": 879.418954,
+  "max_child_rss_kib": 946672,
+  "memory_note": "Largest individual child RSS, not aggregate concurrent build memory."
+}

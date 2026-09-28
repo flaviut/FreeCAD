@@ -1,0 +1,18 @@
+{
+  "label": "sketchergui-format-cpp-edit",
+  "command": [
+    "fc-build",
+    "--target",
+    "SketcherGui"
+  ],
+  "started_utc": "2026-09-28T19:37:24.116480+00:00",
+  "elapsed_s": 13.92964327899972,
+  "exit_code": 0,
+  "jobs": 8,
+  "changed_ninja_outputs": 13,
+  "build_dir": "/home/user/dev/FreeCAD/build/clang-profile",
+  "children_user_s": 56.464865,
+  "children_system_s": 4.597804,
+  "max_child_rss_kib": 675716,
+  "memory_note": "Largest individual child RSS, not aggregate concurrent build memory."
+}

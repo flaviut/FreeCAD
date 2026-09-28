@@ -1,0 +1,8 @@
+output,ninja_s,trace_s,frontend_s,backend_s,source_s,instantiate_function_s,instantiate_class_s,optimizer_s,codegen_s
+src/Mod/Sketcher/Gui/CMakeFiles/SketcherGui.dir/Utils.cpp.o,9.501,9.402419,5.802265,3.553856,4.467034,1.763348,1.708096,2.275022,1.275228
+src/Mod/Sketcher/Gui/CMakeFiles/SketcherGui.dir/TaskSketcherConstraints.cpp.o,8.68,8.589528,6.035517,2.501037,4.214119,1.994675,1.812905,1.628909,0.868022
+src/Mod/Sketcher/Gui/CMakeFiles/SketcherGui.dir/TaskSketcherElements.cpp.o,8.247,8.15617,5.862483,2.240402,3.993449,1.917785,1.776376,1.457414,0.778885
+src/Mod/Sketcher/Gui/CMakeFiles/SketcherGui.dir/SketcherToolDefaultWidget.cpp.o,7.772,7.68772,4.353915,3.292726,3.144763,1.666828,1.510047,2.067587,1.222137
+src/Mod/Sketcher/Gui/CMakeFiles/SketcherGui.dir/EditTextDialog.cpp.o,6.679,6.595526,5.080548,1.467542,4.030127,1.584668,1.491369,0.947806,0.516712
+src/Mod/Sketcher/Gui/CMakeFiles/SketcherGui.dir/TaskSketcherValidation.cpp.o,6.381,6.301566,4.621467,1.636821,3.393425,1.468114,1.273051,1.024614,0.609047
+src/Mod/Sketcher/Gui/CMakeFiles/SketcherGui.dir/TaskSketcherSolverAdvanced.cpp.o,5.65,5.568176,5.078492,0.443446,4.108462,1.54379,1.553348,0.198837,0.241272
