@@ -1,0 +1,1002 @@
+{
+  "build_dir": "/home/user/dev/FreeCAD/docs/build-optimization/05-part-strategies/provenance/project-pch-eligible-source",
+  "repo_root": "/home/user/dev/FreeCAD",
+  "ninja_log": {
+    "recorded_start_ms": 139,
+    "recorded_end_ms": 2376,
+    "recorded_span_s": 2.237,
+    "duplicate_output_entries": 0,
+    "malformed_entries": 0
+  },
+  "aggregates": {
+    "translation_unit": {
+      "count": 1,
+      "phase_seconds": {
+        "ExecuteCompiler": 0.476108,
+        "Frontend": 0.322336,
+        "Backend": 0.130274,
+        "Source": 0.186453,
+        "InstantiateFunction": 0.068169,
+        "InstantiateClass": 0.096528,
+        "Optimizer": 0.081818,
+        "CodeGenPasses": 0.047142
+      },
+      "source_ranking": [
+        {
+          "name": "src/Mod/Part/App/FeaturePartBox.h",
+          "seconds": 0.186454
+        },
+        {
+          "name": "src/Mod/Part/App/PrimitiveFeature.h",
+          "seconds": 0.18456
+        },
+        {
+          "name": "src/Mod/Part/App/AttachExtension.h",
+          "seconds": 0.145787
+        },
+        {
+          "name": "src/Mod/Part/App/Attacher.h",
+          "seconds": 0.089977
+        },
+        {
+          "name": "src/App/DocumentObserver.h",
+          "seconds": 0.054868
+        },
+        {
+          "name": "src/App/ExtensionPython.h",
+          "seconds": 0.039921
+        },
+        {
+          "name": "src/Base/Interpreter.h",
+          "seconds": 0.039632
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/Extensions.hxx",
+          "seconds": 0.034336
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/Python3/Extensions.hxx",
+          "seconds": 0.034265
+        },
+        {
+          "name": "src/Mod/Part/App/PrismExtension.h",
+          "seconds": 0.008631
+        },
+        {
+          "name": "src/App/PropertyUnits.h",
+          "seconds": 0.008242
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/Python3/ExtensionOldType.hxx",
+          "seconds": 0.00567
+        },
+        {
+          "name": "src/App/DocumentObjectExtension.h",
+          "seconds": 0.004597
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/Python3/ExtensionModule.hxx",
+          "seconds": 0.004396
+        },
+        {
+          "name": "src/App/Extension.h",
+          "seconds": 0.004099
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/Python3/ExtensionType.hxx",
+          "seconds": 0.002727
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/Python3/PythonType.hxx",
+          "seconds": 0.001773
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/Python3/ExtensionTypeBase.hxx",
+          "seconds": 0.000825
+        }
+      ],
+      "template_ranking": [
+        {
+          "name": "std::unique_ptr<App::DocumentWeakPtrT::Private>",
+          "seconds": 0.029174
+        },
+        {
+          "name": "std::__uniq_ptr_data<App::DocumentWeakPtrT::Private, std::default_delete<App::DocumentWeakPtrT::Private>>",
+          "seconds": 0.020862
+        },
+        {
+          "name": "std::__uniq_ptr_impl<App::DocumentWeakPtrT::Private, std::default_delete<App::DocumentWeakPtrT::Private>>",
+          "seconds": 0.020761
+        },
+        {
+          "name": "std::__format::_Seq_sink<std::basic_string<char>>::_M_reserve",
+          "seconds": 0.01683
+        },
+        {
+          "name": "std::vector<PyMethodDef>",
+          "seconds": 0.016739
+        },
+        {
+          "name": "std::_Vector_base<PyMethodDef, std::allocator<PyMethodDef>>",
+          "seconds": 0.014643
+        },
+        {
+          "name": "std::tuple<App::DocumentWeakPtrT::Private *, std::default_delete<App::DocumentWeakPtrT::Private>>",
+          "seconds": 0.010863
+        },
+        {
+          "name": "std::allocator<PyMethodDef>",
+          "seconds": 0.010285
+        },
+        {
+          "name": "std::__format::_Seq_sink<std::basic_string<wchar_t>>::_M_reserve",
+          "seconds": 0.010094
+        },
+        {
+          "name": "std::__new_allocator<PyMethodDef>",
+          "seconds": 0.010036
+        },
+        {
+          "name": "std::unique_ptr<App::DocumentObjectWeakPtrT::Private>",
+          "seconds": 0.009468
+        },
+        {
+          "name": "std::unique_ptr<Attacher::AttachEngine>",
+          "seconds": 0.009456
+        },
+        {
+          "name": "std::vector<Attacher::eRefType>::push_back",
+          "seconds": 0.009396
+        },
+        {
+          "name": "std::__uniq_ptr_data<Attacher::AttachEngine, std::default_delete<Attacher::AttachEngine>>",
+          "seconds": 0.008449
+        },
+        {
+          "name": "std::__uniq_ptr_impl<Attacher::AttachEngine, std::default_delete<Attacher::AttachEngine>>",
+          "seconds": 0.008387
+        },
+        {
+          "name": "std::__uniq_ptr_data<App::DocumentObjectWeakPtrT::Private, std::default_delete<App::DocumentObjectWeakPtrT::Private>>",
+          "seconds": 0.008374
+        },
+        {
+          "name": "std::__uniq_ptr_impl<App::DocumentObjectWeakPtrT::Private, std::default_delete<App::DocumentObjectWeakPtrT::Private>>",
+          "seconds": 0.008305
+        },
+        {
+          "name": "std::vector<Attacher::eRefType>::_M_realloc_append<const Attacher::eRefType &>",
+          "seconds": 0.007472
+        },
+        {
+          "name": "std::is_move_constructible<std::default_delete<App::DocumentWeakPtrT::Private>>",
+          "seconds": 0.006883
+        },
+        {
+          "name": "std::set<Attacher::eRefType>",
+          "seconds": 0.00576
+        },
+        {
+          "name": "std::vector<Attacher::eRefType>::~vector",
+          "seconds": 0.005204
+        },
+        {
+          "name": "std::_Destroy<Attacher::eRefType *, Attacher::eRefType>",
+          "seconds": 0.005089
+        },
+        {
+          "name": "std::_Destroy<Attacher::eRefType *>",
+          "seconds": 0.004889
+        },
+        {
+          "name": "std::tuple<Attacher::AttachEngine *, std::default_delete<Attacher::AttachEngine>>",
+          "seconds": 0.004286
+        },
+        {
+          "name": "std::_Rb_tree<Attacher::eRefType, Attacher::eRefType, std::_Identity<Attacher::eRefType>, std::less<Attacher::eRefType>>",
+          "seconds": 0.004279
+        },
+        {
+          "name": "std::tuple<App::DocumentObjectWeakPtrT::Private *, std::default_delete<App::DocumentObjectWeakPtrT::Private>>",
+          "seconds": 0.004205
+        },
+        {
+          "name": "std::__or_<std::is_reference<std::default_delete<App::DocumentWeakPtrT::Private>>, std::is_function<std::default_delete<App::DocumentWeakPtrT::Private>>, std::is_void<std::default_delete<App::DocumentWeakPtrT::Private>>, std::__is_array_unknown_bounds<std::default_delete<App::DocumentWeakPtrT::Private>>>",
+          "seconds": 0.00408
+        },
+        {
+          "name": "std::is_destructible<Attacher::eRefType>",
+          "seconds": 0.003874
+        },
+        {
+          "name": "std::map<Attacher::eMapMode, std::vector<std::vector<Attacher::eRefType>>>",
+          "seconds": 0.003316
+        },
+        {
+          "name": "std::tuple<App::DocumentWeakPtrT::Private *, std::default_delete<App::DocumentWeakPtrT::Private>>::__assignable<App::DocumentWeakPtrT::Private *const &, const std::default_delete<App::DocumentWeakPtrT::Private> &>",
+          "seconds": 0.002766
+        },
+        {
+          "name": "std::tuple<App::DocumentWeakPtrT::Private *, std::default_delete<App::DocumentWeakPtrT::Private>>::__constructible<App::DocumentWeakPtrT::Private *const &, const std::default_delete<App::DocumentWeakPtrT::Private> &>",
+          "seconds": 0.002691
+        },
+        {
+          "name": "std::list<Py::ExtensionModuleBase *>",
+          "seconds": 0.002586
+        },
+        {
+          "name": "std::vector<Attacher::eRefType>::_S_relocate",
+          "seconds": 0.002486
+        },
+        {
+          "name": "std::disjunction<std::is_same<std::basic_string<char>, unsigned short>, std::is_same<std::basic_string<char>, short>, std::is_same<std::basic_string<char>, QChar::SpecialCharacter>, std::is_same<std::basic_string<char>, QLatin1Char>, std::conjunction<std::is_same<std::basic_string<char>, wchar_t>, std::negation<std::integral_constant<bool, true>>>, std::is_same<std::basic_string<char>, char16_t>>",
+          "seconds": 0.002477
+        },
+        {
+          "name": "std::__relocate_a<Attacher::eRefType *, Attacher::eRefType *, std::allocator<Attacher::eRefType>>",
+          "seconds": 0.002454
+        },
+        {
+          "name": "std::__or_<std::is_reference<Attacher::eRefType>, std::is_scalar<Attacher::eRefType>>",
+          "seconds": 0.002364
+        },
+        {
+          "name": "std::__relocate_a_1<Attacher::eRefType, Attacher::eRefType>",
+          "seconds": 0.002347
+        },
+        {
+          "name": "std::tuple<App::DocumentWeakPtrT::Private *, std::default_delete<App::DocumentWeakPtrT::Private>>::__convertible<App::DocumentWeakPtrT::Private *const &, const std::default_delete<App::DocumentWeakPtrT::Private> &>",
+          "seconds": 0.002302
+        },
+        {
+          "name": "std::is_scalar<Attacher::eRefType>",
+          "seconds": 0.002224
+        },
+        {
+          "name": "std::_Tuple_impl<0, App::DocumentWeakPtrT::Private *, std::default_delete<App::DocumentWeakPtrT::Private>>",
+          "seconds": 0.001977
+        },
+        {
+          "name": "std::__relocate_a_1<Attacher::eRefType *, __gnu_cxx::__normal_iterator<Attacher::eRefType *, void>, std::allocator<Attacher::eRefType>>",
+          "seconds": 0.001927
+        },
+        {
+          "name": "std::vector<bool>",
+          "seconds": 0.001914
+        },
+        {
+          "name": "std::vector<Attacher::eRefType>::_S_use_relocate",
+          "seconds": 0.001806
+        },
+        {
+          "name": "std::__or_<std::is_arithmetic<Attacher::eRefType>, std::is_enum<Attacher::eRefType>, std::is_pointer<Attacher::eRefType>, std::is_member_pointer<Attacher::eRefType>, std::is_null_pointer<Attacher::eRefType>>",
+          "seconds": 0.001764
+        },
+        {
+          "name": "std::_Vector_base<PyMethodDef, std::allocator<PyMethodDef>>::_Vector_impl",
+          "seconds": 0.001685
+        },
+        {
+          "name": "std::is_arithmetic<Attacher::eRefType>",
+          "seconds": 0.001597
+        },
+        {
+          "name": "std::__and_<std::is_constructible<App::DocumentWeakPtrT::Private *, App::DocumentWeakPtrT::Private *const &>, std::is_constructible<std::default_delete<App::DocumentWeakPtrT::Private>, const std::default_delete<App::DocumentWeakPtrT::Private> &>>",
+          "seconds": 0.001582
+        },
+        {
+          "name": "std::__and_<std::is_assignable<App::DocumentWeakPtrT::Private *&, App::DocumentWeakPtrT::Private *const &>, std::is_assignable<std::default_delete<App::DocumentWeakPtrT::Private> &, const std::default_delete<App::DocumentWeakPtrT::Private> &>>",
+          "seconds": 0.001535
+        },
+        {
+          "name": "std::_Rb_tree<Attacher::eMapMode, std::pair<const Attacher::eMapMode, std::vector<std::vector<Attacher::eRefType>>>, std::_Select1st<std::pair<const Attacher::eMapMode, std::vector<std::vector<Attacher::eRefType>>>>, std::less<Attacher::eMapMode>>",
+          "seconds": 0.001497
+        },
+        {
+          "name": "std::vector<Attacher::eMapMode>",
+          "seconds": 0.001378
+        },
+        {
+          "name": "std::vector<Attacher::eRefType>::_S_nothrow_relocate",
+          "seconds": 0.001364
+        },
+        {
+          "name": "std::vector<std::vector<std::vector<Attacher::eRefType>>>",
+          "seconds": 0.001348
+        },
+        {
+          "name": "std::_List_base<Py::ExtensionModuleBase *, std::allocator<Py::ExtensionModuleBase *>>",
+          "seconds": 0.001323
+        },
+        {
+          "name": "std::allocator_traits<std::allocator<Attacher::eRefType>>::construct<Attacher::eRefType, const Attacher::eRefType &>",
+          "seconds": 0.001244
+        },
+        {
+          "name": "std::basic_string<char>::__resize_and_overwrite<(lambda at /nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/format:3332:10)>",
+          "seconds": 0.0012
+        },
+        {
+          "name": "std::__and_<std::is_convertible<App::DocumentWeakPtrT::Private *const &, App::DocumentWeakPtrT::Private *>, std::is_convertible<const std::default_delete<App::DocumentWeakPtrT::Private> &, std::default_delete<App::DocumentWeakPtrT::Private>>>",
+          "seconds": 0.001116
+        },
+        {
+          "name": "std::__detail::__disjunction_impl<void, std::is_same<std::basic_string<char>, unsigned short>, std::is_same<std::basic_string<char>, short>, std::is_same<std::basic_string<char>, QChar::SpecialCharacter>, std::is_same<std::basic_string<char>, QLatin1Char>, std::conjunction<std::is_same<std::basic_string<char>, wchar_t>, std::negation<std::integral_constant<bool, true>>>, std::is_same<std::basic_string<char>, char16_t>>",
+          "seconds": 0.001084
+        },
+        {
+          "name": "std::__or_<std::is_integral<Attacher::eRefType>, std::is_floating_point<Attacher::eRefType>>",
+          "seconds": 0.001056
+        },
+        {
+          "name": "std::_Bvector_base<std::allocator<bool>>",
+          "seconds": 0.001031
+        },
+        {
+          "name": "std::__detail::__disjunction_impl<void, std::is_same<std::basic_string<char>, short>, std::is_same<std::basic_string<char>, QChar::SpecialCharacter>, std::is_same<std::basic_string<char>, QLatin1Char>, std::conjunction<std::is_same<std::basic_string<char>, wchar_t>, std::negation<std::integral_constant<bool, true>>>, std::is_same<std::basic_string<char>, char16_t>>",
+          "seconds": 0.001015
+        },
+        {
+          "name": "std::_Tuple_impl<1, std::default_delete<App::DocumentWeakPtrT::Private>>",
+          "seconds": 0.001009
+        },
+        {
+          "name": "std::_Tuple_impl<0, Attacher::AttachEngine *, std::default_delete<Attacher::AttachEngine>>",
+          "seconds": 0.000977
+        },
+        {
+          "name": "std::__detail::__disjunction_impl<void, std::is_same<std::basic_string<char>, QChar::SpecialCharacter>, std::is_same<std::basic_string<char>, QLatin1Char>, std::conjunction<std::is_same<std::basic_string<char>, wchar_t>, std::negation<std::integral_constant<bool, true>>>, std::is_same<std::basic_string<char>, char16_t>>",
+          "seconds": 0.000965
+        },
+        {
+          "name": "std::_Tuple_impl<0, App::DocumentObjectWeakPtrT::Private *, std::default_delete<App::DocumentObjectWeakPtrT::Private>>",
+          "seconds": 0.000937
+        },
+        {
+          "name": "std::__detail::__disjunction_impl<void, std::is_same<std::basic_string<char>, QLatin1Char>, std::conjunction<std::is_same<std::basic_string<char>, wchar_t>, std::negation<std::integral_constant<bool, true>>>, std::is_same<std::basic_string<char>, char16_t>>",
+          "seconds": 0.000917
+        },
+        {
+          "name": "std::basic_string<char>::resize_and_overwrite<(lambda at /nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/format:3332:10) &>",
+          "seconds": 0.000879
+        },
+        {
+          "name": "std::basic_string<wchar_t>::__resize_and_overwrite<(lambda at /nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/format:3332:10)>",
+          "seconds": 0.000874
+        },
+        {
+          "name": "std::conjunction<std::is_same<std::basic_string<char>, wchar_t>, std::negation<std::integral_constant<bool, true>>>",
+          "seconds": 0.000854
+        },
+        {
+          "name": "std::tuple<App::DocumentWeakPtrT::Private *, std::default_delete<App::DocumentWeakPtrT::Private>>::__constructible<App::DocumentWeakPtrT::Private *&, std::default_delete<App::DocumentWeakPtrT::Private> &>",
+          "seconds": 0.000826
+        },
+        {
+          "name": "std::__or_<std::is_void<Attacher::eRefType>, std::__is_array_unknown_bounds<Attacher::eRefType>, std::is_function<Attacher::eRefType>>",
+          "seconds": 0.000816
+        },
+        {
+          "name": "std::vector<Attacher::eRefType>",
+          "seconds": 0.000814
+        },
+        {
+          "name": "std::is_nothrow_default_constructible<std::allocator<Attacher::eRefType>>",
+          "seconds": 0.000795
+        },
+        {
+          "name": "__gnu_cxx::__alloc_traits<std::allocator<PyMethodDef>>",
+          "seconds": 0.000793
+        },
+        {
+          "name": "std::vector<Attacher::eRefType>::_M_check_len",
+          "seconds": 0.000774
+        },
+        {
+          "name": "std::basic_string<wchar_t>::resize_and_overwrite<(lambda at /nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/format:3332:10) &>",
+          "seconds": 0.000769
+        },
+        {
+          "name": "std::_Vector_base<std::vector<std::vector<Attacher::eRefType>>, std::allocator<std::vector<std::vector<Attacher::eRefType>>>>",
+          "seconds": 0.000755
+        },
+        {
+          "name": "std::__and_<std::is_constructible<App::DocumentWeakPtrT::Private *, App::DocumentWeakPtrT::Private *&>, std::is_constructible<std::default_delete<App::DocumentWeakPtrT::Private>, std::default_delete<App::DocumentWeakPtrT::Private> &>>",
+          "seconds": 0.000745
+        },
+        {
+          "name": "std::vector<Attacher::eRefType>::end",
+          "seconds": 0.000734
+        },
+        {
+          "name": "std::_Vector_base<Attacher::eMapMode, std::allocator<Attacher::eMapMode>>",
+          "seconds": 0.000728
+        },
+        {
+          "name": "std::tuple<App::DocumentObjectWeakPtrT::Private *, std::default_delete<App::DocumentObjectWeakPtrT::Private>>::__assignable<App::DocumentObjectWeakPtrT::Private *const &, const std::default_delete<App::DocumentObjectWeakPtrT::Private> &>",
+          "seconds": 0.000719
+        },
+        {
+          "name": "std::tuple<Attacher::AttachEngine *, std::default_delete<Attacher::AttachEngine>>::__assignable<Attacher::AttachEngine *const &, const std::default_delete<Attacher::AttachEngine> &>",
+          "seconds": 0.00071
+        },
+        {
+          "name": "std::tuple<App::DocumentObjectWeakPtrT::Private *, std::default_delete<App::DocumentObjectWeakPtrT::Private>>::__constructible<App::DocumentObjectWeakPtrT::Private *const &, const std::default_delete<App::DocumentObjectWeakPtrT::Private> &>",
+          "seconds": 0.000692
+        },
+        {
+          "name": "std::tuple<Attacher::AttachEngine *, std::default_delete<Attacher::AttachEngine>>::__constructible<Attacher::AttachEngine *const &, const std::default_delete<Attacher::AttachEngine> &>",
+          "seconds": 0.000679
+        },
+        {
+          "name": "NCollection_Sequence<opencascade::handle<TColgp_HArray1OfPnt2d>>::~NCollection_Sequence",
+          "seconds": 0.000674
+        },
+        {
+          "name": "std::bitset<32>::bitset",
+          "seconds": 0.000657
+        },
+        {
+          "name": "std::__and_<std::is_constructible<Attacher::eRefType, const Attacher::eRefType &>, std::__is_nothrow_new_constructible_impl<Attacher::eRefType, const Attacher::eRefType &>>",
+          "seconds": 0.000655
+        },
+        {
+          "name": "std::__and_<std::is_assignable<App::DocumentObjectWeakPtrT::Private *&, App::DocumentObjectWeakPtrT::Private *const &>, std::is_assignable<std::default_delete<App::DocumentObjectWeakPtrT::Private> &, const std::default_delete<App::DocumentObjectWeakPtrT::Private> &>>",
+          "seconds": 0.000645
+        },
+        {
+          "name": "std::__and_<std::is_assignable<Attacher::AttachEngine *&, Attacher::AttachEngine *const &>, std::is_assignable<std::default_delete<Attacher::AttachEngine> &, const std::default_delete<Attacher::AttachEngine> &>>",
+          "seconds": 0.000634
+        },
+        {
+          "name": "__gnu_cxx::__normal_iterator<Attacher::eRefType *, std::vector<Attacher::eRefType>>",
+          "seconds": 0.000625
+        },
+        {
+          "name": "QtPrivate::IsCompatiblePointer<std::basic_string<char>>",
+          "seconds": 0.000618
+        },
+        {
+          "name": "std::__and_<std::is_constructible<App::DocumentObjectWeakPtrT::Private *, App::DocumentObjectWeakPtrT::Private *const &>, std::is_constructible<std::default_delete<App::DocumentObjectWeakPtrT::Private>, const std::default_delete<App::DocumentObjectWeakPtrT::Private> &>>",
+          "seconds": 0.000616
+        },
+        {
+          "name": "std::__and_<std::is_constructible<Attacher::AttachEngine *, Attacher::AttachEngine *const &>, std::is_constructible<std::default_delete<Attacher::AttachEngine>, const std::default_delete<Attacher::AttachEngine> &>>",
+          "seconds": 0.000608
+        },
+        {
+          "name": "std::is_move_constructible<std::default_delete<App::DocumentObjectWeakPtrT::Private>>",
+          "seconds": 0.000605
+        },
+        {
+          "name": "std::__and_<std::__not_<std::is_pointer<std::default_delete<App::DocumentWeakPtrT::Private>>>, std::is_default_constructible<std::default_delete<App::DocumentWeakPtrT::Private>>>",
+          "seconds": 0.00058
+        },
+        {
+          "name": "std::__format::_Seq_sink<std::basic_string<char>>::_M_bump",
+          "seconds": 0.000569
+        },
+        {
+          "name": "std::conjunction<QtPrivate::IsCompatibleByteArrayPointer<const char *>, std::is_convertible<unsigned long, long long>, QtPrivate::IsCompatibleByteType<char>, std::is_convertible<bool, bool>, std::negation<std::is_same<std::basic_string<char>, QByteArray>>, std::negation<std::is_array<std::basic_string<char>>>, std::negation<std::is_same<std::basic_string<char>, QByteArrayView>>>",
+          "seconds": 0.000563
+        },
+        {
+          "name": "std::is_constructible<std::default_delete<App::DocumentWeakPtrT::Private>, std::default_delete<App::DocumentWeakPtrT::Private> &>",
+          "seconds": 0.000542
+        },
+        {
+          "name": "std::is_move_constructible<std::default_delete<Attacher::AttachEngine>>",
+          "seconds": 0.000519
+        },
+        {
+          "name": "std::is_assignable<std::default_delete<App::DocumentWeakPtrT::Private> &, const std::default_delete<App::DocumentWeakPtrT::Private> &>",
+          "seconds": 0.000502
+        }
+      ]
+    },
+    "pch": {
+      "count": 0,
+      "phase_seconds": {
+        "ExecuteCompiler": 0,
+        "Frontend": 0,
+        "Backend": 0,
+        "Source": 0,
+        "InstantiateFunction": 0,
+        "InstantiateClass": 0,
+        "Optimizer": 0,
+        "CodeGenPasses": 0
+      },
+      "source_ranking": [],
+      "template_ranking": []
+    },
+    "combined": {
+      "count": 1,
+      "phase_seconds": {
+        "ExecuteCompiler": 0.476108,
+        "Frontend": 0.322336,
+        "Backend": 0.130274,
+        "Source": 0.186453,
+        "InstantiateFunction": 0.068169,
+        "InstantiateClass": 0.096528,
+        "Optimizer": 0.081818,
+        "CodeGenPasses": 0.047142
+      },
+      "source_ranking": [
+        {
+          "name": "src/Mod/Part/App/FeaturePartBox.h",
+          "seconds": 0.186454
+        },
+        {
+          "name": "src/Mod/Part/App/PrimitiveFeature.h",
+          "seconds": 0.18456
+        },
+        {
+          "name": "src/Mod/Part/App/AttachExtension.h",
+          "seconds": 0.145787
+        },
+        {
+          "name": "src/Mod/Part/App/Attacher.h",
+          "seconds": 0.089977
+        },
+        {
+          "name": "src/App/DocumentObserver.h",
+          "seconds": 0.054868
+        },
+        {
+          "name": "src/App/ExtensionPython.h",
+          "seconds": 0.039921
+        },
+        {
+          "name": "src/Base/Interpreter.h",
+          "seconds": 0.039632
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/Extensions.hxx",
+          "seconds": 0.034336
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/Python3/Extensions.hxx",
+          "seconds": 0.034265
+        },
+        {
+          "name": "src/Mod/Part/App/PrismExtension.h",
+          "seconds": 0.008631
+        },
+        {
+          "name": "src/App/PropertyUnits.h",
+          "seconds": 0.008242
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/Python3/ExtensionOldType.hxx",
+          "seconds": 0.00567
+        },
+        {
+          "name": "src/App/DocumentObjectExtension.h",
+          "seconds": 0.004597
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/Python3/ExtensionModule.hxx",
+          "seconds": 0.004396
+        },
+        {
+          "name": "src/App/Extension.h",
+          "seconds": 0.004099
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/Python3/ExtensionType.hxx",
+          "seconds": 0.002727
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/Python3/PythonType.hxx",
+          "seconds": 0.001773
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/Python3/ExtensionTypeBase.hxx",
+          "seconds": 0.000825
+        }
+      ],
+      "template_ranking": [
+        {
+          "name": "std::unique_ptr<App::DocumentWeakPtrT::Private>",
+          "seconds": 0.029174
+        },
+        {
+          "name": "std::__uniq_ptr_data<App::DocumentWeakPtrT::Private, std::default_delete<App::DocumentWeakPtrT::Private>>",
+          "seconds": 0.020862
+        },
+        {
+          "name": "std::__uniq_ptr_impl<App::DocumentWeakPtrT::Private, std::default_delete<App::DocumentWeakPtrT::Private>>",
+          "seconds": 0.020761
+        },
+        {
+          "name": "std::__format::_Seq_sink<std::basic_string<char>>::_M_reserve",
+          "seconds": 0.01683
+        },
+        {
+          "name": "std::vector<PyMethodDef>",
+          "seconds": 0.016739
+        },
+        {
+          "name": "std::_Vector_base<PyMethodDef, std::allocator<PyMethodDef>>",
+          "seconds": 0.014643
+        },
+        {
+          "name": "std::tuple<App::DocumentWeakPtrT::Private *, std::default_delete<App::DocumentWeakPtrT::Private>>",
+          "seconds": 0.010863
+        },
+        {
+          "name": "std::allocator<PyMethodDef>",
+          "seconds": 0.010285
+        },
+        {
+          "name": "std::__format::_Seq_sink<std::basic_string<wchar_t>>::_M_reserve",
+          "seconds": 0.010094
+        },
+        {
+          "name": "std::__new_allocator<PyMethodDef>",
+          "seconds": 0.010036
+        },
+        {
+          "name": "std::unique_ptr<App::DocumentObjectWeakPtrT::Private>",
+          "seconds": 0.009468
+        },
+        {
+          "name": "std::unique_ptr<Attacher::AttachEngine>",
+          "seconds": 0.009456
+        },
+        {
+          "name": "std::vector<Attacher::eRefType>::push_back",
+          "seconds": 0.009396
+        },
+        {
+          "name": "std::__uniq_ptr_data<Attacher::AttachEngine, std::default_delete<Attacher::AttachEngine>>",
+          "seconds": 0.008449
+        },
+        {
+          "name": "std::__uniq_ptr_impl<Attacher::AttachEngine, std::default_delete<Attacher::AttachEngine>>",
+          "seconds": 0.008387
+        },
+        {
+          "name": "std::__uniq_ptr_data<App::DocumentObjectWeakPtrT::Private, std::default_delete<App::DocumentObjectWeakPtrT::Private>>",
+          "seconds": 0.008374
+        },
+        {
+          "name": "std::__uniq_ptr_impl<App::DocumentObjectWeakPtrT::Private, std::default_delete<App::DocumentObjectWeakPtrT::Private>>",
+          "seconds": 0.008305
+        },
+        {
+          "name": "std::vector<Attacher::eRefType>::_M_realloc_append<const Attacher::eRefType &>",
+          "seconds": 0.007472
+        },
+        {
+          "name": "std::is_move_constructible<std::default_delete<App::DocumentWeakPtrT::Private>>",
+          "seconds": 0.006883
+        },
+        {
+          "name": "std::set<Attacher::eRefType>",
+          "seconds": 0.00576
+        },
+        {
+          "name": "std::vector<Attacher::eRefType>::~vector",
+          "seconds": 0.005204
+        },
+        {
+          "name": "std::_Destroy<Attacher::eRefType *, Attacher::eRefType>",
+          "seconds": 0.005089
+        },
+        {
+          "name": "std::_Destroy<Attacher::eRefType *>",
+          "seconds": 0.004889
+        },
+        {
+          "name": "std::tuple<Attacher::AttachEngine *, std::default_delete<Attacher::AttachEngine>>",
+          "seconds": 0.004286
+        },
+        {
+          "name": "std::_Rb_tree<Attacher::eRefType, Attacher::eRefType, std::_Identity<Attacher::eRefType>, std::less<Attacher::eRefType>>",
+          "seconds": 0.004279
+        },
+        {
+          "name": "std::tuple<App::DocumentObjectWeakPtrT::Private *, std::default_delete<App::DocumentObjectWeakPtrT::Private>>",
+          "seconds": 0.004205
+        },
+        {
+          "name": "std::__or_<std::is_reference<std::default_delete<App::DocumentWeakPtrT::Private>>, std::is_function<std::default_delete<App::DocumentWeakPtrT::Private>>, std::is_void<std::default_delete<App::DocumentWeakPtrT::Private>>, std::__is_array_unknown_bounds<std::default_delete<App::DocumentWeakPtrT::Private>>>",
+          "seconds": 0.00408
+        },
+        {
+          "name": "std::is_destructible<Attacher::eRefType>",
+          "seconds": 0.003874
+        },
+        {
+          "name": "std::map<Attacher::eMapMode, std::vector<std::vector<Attacher::eRefType>>>",
+          "seconds": 0.003316
+        },
+        {
+          "name": "std::tuple<App::DocumentWeakPtrT::Private *, std::default_delete<App::DocumentWeakPtrT::Private>>::__assignable<App::DocumentWeakPtrT::Private *const &, const std::default_delete<App::DocumentWeakPtrT::Private> &>",
+          "seconds": 0.002766
+        },
+        {
+          "name": "std::tuple<App::DocumentWeakPtrT::Private *, std::default_delete<App::DocumentWeakPtrT::Private>>::__constructible<App::DocumentWeakPtrT::Private *const &, const std::default_delete<App::DocumentWeakPtrT::Private> &>",
+          "seconds": 0.002691
+        },
+        {
+          "name": "std::list<Py::ExtensionModuleBase *>",
+          "seconds": 0.002586
+        },
+        {
+          "name": "std::vector<Attacher::eRefType>::_S_relocate",
+          "seconds": 0.002486
+        },
+        {
+          "name": "std::disjunction<std::is_same<std::basic_string<char>, unsigned short>, std::is_same<std::basic_string<char>, short>, std::is_same<std::basic_string<char>, QChar::SpecialCharacter>, std::is_same<std::basic_string<char>, QLatin1Char>, std::conjunction<std::is_same<std::basic_string<char>, wchar_t>, std::negation<std::integral_constant<bool, true>>>, std::is_same<std::basic_string<char>, char16_t>>",
+          "seconds": 0.002477
+        },
+        {
+          "name": "std::__relocate_a<Attacher::eRefType *, Attacher::eRefType *, std::allocator<Attacher::eRefType>>",
+          "seconds": 0.002454
+        },
+        {
+          "name": "std::__or_<std::is_reference<Attacher::eRefType>, std::is_scalar<Attacher::eRefType>>",
+          "seconds": 0.002364
+        },
+        {
+          "name": "std::__relocate_a_1<Attacher::eRefType, Attacher::eRefType>",
+          "seconds": 0.002347
+        },
+        {
+          "name": "std::tuple<App::DocumentWeakPtrT::Private *, std::default_delete<App::DocumentWeakPtrT::Private>>::__convertible<App::DocumentWeakPtrT::Private *const &, const std::default_delete<App::DocumentWeakPtrT::Private> &>",
+          "seconds": 0.002302
+        },
+        {
+          "name": "std::is_scalar<Attacher::eRefType>",
+          "seconds": 0.002224
+        },
+        {
+          "name": "std::_Tuple_impl<0, App::DocumentWeakPtrT::Private *, std::default_delete<App::DocumentWeakPtrT::Private>>",
+          "seconds": 0.001977
+        },
+        {
+          "name": "std::__relocate_a_1<Attacher::eRefType *, __gnu_cxx::__normal_iterator<Attacher::eRefType *, void>, std::allocator<Attacher::eRefType>>",
+          "seconds": 0.001927
+        },
+        {
+          "name": "std::vector<bool>",
+          "seconds": 0.001914
+        },
+        {
+          "name": "std::vector<Attacher::eRefType>::_S_use_relocate",
+          "seconds": 0.001806
+        },
+        {
+          "name": "std::__or_<std::is_arithmetic<Attacher::eRefType>, std::is_enum<Attacher::eRefType>, std::is_pointer<Attacher::eRefType>, std::is_member_pointer<Attacher::eRefType>, std::is_null_pointer<Attacher::eRefType>>",
+          "seconds": 0.001764
+        },
+        {
+          "name": "std::_Vector_base<PyMethodDef, std::allocator<PyMethodDef>>::_Vector_impl",
+          "seconds": 0.001685
+        },
+        {
+          "name": "std::is_arithmetic<Attacher::eRefType>",
+          "seconds": 0.001597
+        },
+        {
+          "name": "std::__and_<std::is_constructible<App::DocumentWeakPtrT::Private *, App::DocumentWeakPtrT::Private *const &>, std::is_constructible<std::default_delete<App::DocumentWeakPtrT::Private>, const std::default_delete<App::DocumentWeakPtrT::Private> &>>",
+          "seconds": 0.001582
+        },
+        {
+          "name": "std::__and_<std::is_assignable<App::DocumentWeakPtrT::Private *&, App::DocumentWeakPtrT::Private *const &>, std::is_assignable<std::default_delete<App::DocumentWeakPtrT::Private> &, const std::default_delete<App::DocumentWeakPtrT::Private> &>>",
+          "seconds": 0.001535
+        },
+        {
+          "name": "std::_Rb_tree<Attacher::eMapMode, std::pair<const Attacher::eMapMode, std::vector<std::vector<Attacher::eRefType>>>, std::_Select1st<std::pair<const Attacher::eMapMode, std::vector<std::vector<Attacher::eRefType>>>>, std::less<Attacher::eMapMode>>",
+          "seconds": 0.001497
+        },
+        {
+          "name": "std::vector<Attacher::eMapMode>",
+          "seconds": 0.001378
+        },
+        {
+          "name": "std::vector<Attacher::eRefType>::_S_nothrow_relocate",
+          "seconds": 0.001364
+        },
+        {
+          "name": "std::vector<std::vector<std::vector<Attacher::eRefType>>>",
+          "seconds": 0.001348
+        },
+        {
+          "name": "std::_List_base<Py::ExtensionModuleBase *, std::allocator<Py::ExtensionModuleBase *>>",
+          "seconds": 0.001323
+        },
+        {
+          "name": "std::allocator_traits<std::allocator<Attacher::eRefType>>::construct<Attacher::eRefType, const Attacher::eRefType &>",
+          "seconds": 0.001244
+        },
+        {
+          "name": "std::basic_string<char>::__resize_and_overwrite<(lambda at /nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/format:3332:10)>",
+          "seconds": 0.0012
+        },
+        {
+          "name": "std::__and_<std::is_convertible<App::DocumentWeakPtrT::Private *const &, App::DocumentWeakPtrT::Private *>, std::is_convertible<const std::default_delete<App::DocumentWeakPtrT::Private> &, std::default_delete<App::DocumentWeakPtrT::Private>>>",
+          "seconds": 0.001116
+        },
+        {
+          "name": "std::__detail::__disjunction_impl<void, std::is_same<std::basic_string<char>, unsigned short>, std::is_same<std::basic_string<char>, short>, std::is_same<std::basic_string<char>, QChar::SpecialCharacter>, std::is_same<std::basic_string<char>, QLatin1Char>, std::conjunction<std::is_same<std::basic_string<char>, wchar_t>, std::negation<std::integral_constant<bool, true>>>, std::is_same<std::basic_string<char>, char16_t>>",
+          "seconds": 0.001084
+        },
+        {
+          "name": "std::__or_<std::is_integral<Attacher::eRefType>, std::is_floating_point<Attacher::eRefType>>",
+          "seconds": 0.001056
+        },
+        {
+          "name": "std::_Bvector_base<std::allocator<bool>>",
+          "seconds": 0.001031
+        },
+        {
+          "name": "std::__detail::__disjunction_impl<void, std::is_same<std::basic_string<char>, short>, std::is_same<std::basic_string<char>, QChar::SpecialCharacter>, std::is_same<std::basic_string<char>, QLatin1Char>, std::conjunction<std::is_same<std::basic_string<char>, wchar_t>, std::negation<std::integral_constant<bool, true>>>, std::is_same<std::basic_string<char>, char16_t>>",
+          "seconds": 0.001015
+        },
+        {
+          "name": "std::_Tuple_impl<1, std::default_delete<App::DocumentWeakPtrT::Private>>",
+          "seconds": 0.001009
+        },
+        {
+          "name": "std::_Tuple_impl<0, Attacher::AttachEngine *, std::default_delete<Attacher::AttachEngine>>",
+          "seconds": 0.000977
+        },
+        {
+          "name": "std::__detail::__disjunction_impl<void, std::is_same<std::basic_string<char>, QChar::SpecialCharacter>, std::is_same<std::basic_string<char>, QLatin1Char>, std::conjunction<std::is_same<std::basic_string<char>, wchar_t>, std::negation<std::integral_constant<bool, true>>>, std::is_same<std::basic_string<char>, char16_t>>",
+          "seconds": 0.000965
+        },
+        {
+          "name": "std::_Tuple_impl<0, App::DocumentObjectWeakPtrT::Private *, std::default_delete<App::DocumentObjectWeakPtrT::Private>>",
+          "seconds": 0.000937
+        },
+        {
+          "name": "std::__detail::__disjunction_impl<void, std::is_same<std::basic_string<char>, QLatin1Char>, std::conjunction<std::is_same<std::basic_string<char>, wchar_t>, std::negation<std::integral_constant<bool, true>>>, std::is_same<std::basic_string<char>, char16_t>>",
+          "seconds": 0.000917
+        },
+        {
+          "name": "std::basic_string<char>::resize_and_overwrite<(lambda at /nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/format:3332:10) &>",
+          "seconds": 0.000879
+        },
+        {
+          "name": "std::basic_string<wchar_t>::__resize_and_overwrite<(lambda at /nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/format:3332:10)>",
+          "seconds": 0.000874
+        },
+        {
+          "name": "std::conjunction<std::is_same<std::basic_string<char>, wchar_t>, std::negation<std::integral_constant<bool, true>>>",
+          "seconds": 0.000854
+        },
+        {
+          "name": "std::tuple<App::DocumentWeakPtrT::Private *, std::default_delete<App::DocumentWeakPtrT::Private>>::__constructible<App::DocumentWeakPtrT::Private *&, std::default_delete<App::DocumentWeakPtrT::Private> &>",
+          "seconds": 0.000826
+        },
+        {
+          "name": "std::__or_<std::is_void<Attacher::eRefType>, std::__is_array_unknown_bounds<Attacher::eRefType>, std::is_function<Attacher::eRefType>>",
+          "seconds": 0.000816
+        },
+        {
+          "name": "std::vector<Attacher::eRefType>",
+          "seconds": 0.000814
+        },
+        {
+          "name": "std::is_nothrow_default_constructible<std::allocator<Attacher::eRefType>>",
+          "seconds": 0.000795
+        },
+        {
+          "name": "__gnu_cxx::__alloc_traits<std::allocator<PyMethodDef>>",
+          "seconds": 0.000793
+        },
+        {
+          "name": "std::vector<Attacher::eRefType>::_M_check_len",
+          "seconds": 0.000774
+        },
+        {
+          "name": "std::basic_string<wchar_t>::resize_and_overwrite<(lambda at /nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/format:3332:10) &>",
+          "seconds": 0.000769
+        },
+        {
+          "name": "std::_Vector_base<std::vector<std::vector<Attacher::eRefType>>, std::allocator<std::vector<std::vector<Attacher::eRefType>>>>",
+          "seconds": 0.000755
+        },
+        {
+          "name": "std::__and_<std::is_constructible<App::DocumentWeakPtrT::Private *, App::DocumentWeakPtrT::Private *&>, std::is_constructible<std::default_delete<App::DocumentWeakPtrT::Private>, std::default_delete<App::DocumentWeakPtrT::Private> &>>",
+          "seconds": 0.000745
+        },
+        {
+          "name": "std::vector<Attacher::eRefType>::end",
+          "seconds": 0.000734
+        },
+        {
+          "name": "std::_Vector_base<Attacher::eMapMode, std::allocator<Attacher::eMapMode>>",
+          "seconds": 0.000728
+        },
+        {
+          "name": "std::tuple<App::DocumentObjectWeakPtrT::Private *, std::default_delete<App::DocumentObjectWeakPtrT::Private>>::__assignable<App::DocumentObjectWeakPtrT::Private *const &, const std::default_delete<App::DocumentObjectWeakPtrT::Private> &>",
+          "seconds": 0.000719
+        },
+        {
+          "name": "std::tuple<Attacher::AttachEngine *, std::default_delete<Attacher::AttachEngine>>::__assignable<Attacher::AttachEngine *const &, const std::default_delete<Attacher::AttachEngine> &>",
+          "seconds": 0.00071
+        },
+        {
+          "name": "std::tuple<App::DocumentObjectWeakPtrT::Private *, std::default_delete<App::DocumentObjectWeakPtrT::Private>>::__constructible<App::DocumentObjectWeakPtrT::Private *const &, const std::default_delete<App::DocumentObjectWeakPtrT::Private> &>",
+          "seconds": 0.000692
+        },
+        {
+          "name": "std::tuple<Attacher::AttachEngine *, std::default_delete<Attacher::AttachEngine>>::__constructible<Attacher::AttachEngine *const &, const std::default_delete<Attacher::AttachEngine> &>",
+          "seconds": 0.000679
+        },
+        {
+          "name": "NCollection_Sequence<opencascade::handle<TColgp_HArray1OfPnt2d>>::~NCollection_Sequence",
+          "seconds": 0.000674
+        },
+        {
+          "name": "std::bitset<32>::bitset",
+          "seconds": 0.000657
+        },
+        {
+          "name": "std::__and_<std::is_constructible<Attacher::eRefType, const Attacher::eRefType &>, std::__is_nothrow_new_constructible_impl<Attacher::eRefType, const Attacher::eRefType &>>",
+          "seconds": 0.000655
+        },
+        {
+          "name": "std::__and_<std::is_assignable<App::DocumentObjectWeakPtrT::Private *&, App::DocumentObjectWeakPtrT::Private *const &>, std::is_assignable<std::default_delete<App::DocumentObjectWeakPtrT::Private> &, const std::default_delete<App::DocumentObjectWeakPtrT::Private> &>>",
+          "seconds": 0.000645
+        },
+        {
+          "name": "std::__and_<std::is_assignable<Attacher::AttachEngine *&, Attacher::AttachEngine *const &>, std::is_assignable<std::default_delete<Attacher::AttachEngine> &, const std::default_delete<Attacher::AttachEngine> &>>",
+          "seconds": 0.000634
+        },
+        {
+          "name": "__gnu_cxx::__normal_iterator<Attacher::eRefType *, std::vector<Attacher::eRefType>>",
+          "seconds": 0.000625
+        },
+        {
+          "name": "QtPrivate::IsCompatiblePointer<std::basic_string<char>>",
+          "seconds": 0.000618
+        },
+        {
+          "name": "std::__and_<std::is_constructible<App::DocumentObjectWeakPtrT::Private *, App::DocumentObjectWeakPtrT::Private *const &>, std::is_constructible<std::default_delete<App::DocumentObjectWeakPtrT::Private>, const std::default_delete<App::DocumentObjectWeakPtrT::Private> &>>",
+          "seconds": 0.000616
+        },
+        {
+          "name": "std::__and_<std::is_constructible<Attacher::AttachEngine *, Attacher::AttachEngine *const &>, std::is_constructible<std::default_delete<Attacher::AttachEngine>, const std::default_delete<Attacher::AttachEngine> &>>",
+          "seconds": 0.000608
+        },
+        {
+          "name": "std::is_move_constructible<std::default_delete<App::DocumentObjectWeakPtrT::Private>>",
+          "seconds": 0.000605
+        },
+        {
+          "name": "std::__and_<std::__not_<std::is_pointer<std::default_delete<App::DocumentWeakPtrT::Private>>>, std::is_default_constructible<std::default_delete<App::DocumentWeakPtrT::Private>>>",
+          "seconds": 0.00058
+        },
+        {
+          "name": "std::__format::_Seq_sink<std::basic_string<char>>::_M_bump",
+          "seconds": 0.000569
+        },
+        {
+          "name": "std::conjunction<QtPrivate::IsCompatibleByteArrayPointer<const char *>, std::is_convertible<unsigned long, long long>, QtPrivate::IsCompatibleByteType<char>, std::is_convertible<bool, bool>, std::negation<std::is_same<std::basic_string<char>, QByteArray>>, std::negation<std::is_array<std::basic_string<char>>>, std::negation<std::is_same<std::basic_string<char>, QByteArrayView>>>",
+          "seconds": 0.000563
+        },
+        {
+          "name": "std::is_constructible<std::default_delete<App::DocumentWeakPtrT::Private>, std::default_delete<App::DocumentWeakPtrT::Private> &>",
+          "seconds": 0.000542
+        },
+        {
+          "name": "std::is_move_constructible<std::default_delete<Attacher::AttachEngine>>",
+          "seconds": 0.000519
+        },
+        {
+          "name": "std::is_assignable<std::default_delete<App::DocumentWeakPtrT::Private> &, const std::default_delete<App::DocumentWeakPtrT::Private> &>",
+          "seconds": 0.000502
+        }
+      ]
+    }
+  },
+  "diagnostics": {
+    "missing_traces": [],
+    "invalid_traces": []
+  }
+}

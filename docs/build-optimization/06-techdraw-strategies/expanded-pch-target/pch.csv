@@ -1,0 +1,2 @@
+output,ninja_s,trace_s,frontend_s,backend_s,source_s,instantiate_function_s,instantiate_class_s,optimizer_s,codegen_s
+src/Mod/TechDraw/App/CMakeFiles/TechDraw.dir/cmake_pch.hxx.pch,7.992,7.878792,6.27259,0.0,5.760819,1.010392,1.206836,0.0,0.0

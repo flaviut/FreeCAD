@@ -1,0 +1,23 @@
+{
+  "label": "baseline-2-documentobserver-touch",
+  "command": [
+    "fc-build",
+    "--target",
+    "Materials",
+    "MatGui",
+    "Part",
+    "SketcherGui"
+  ],
+  "started_utc": "2026-09-28T22:25:04.398689+00:00",
+  "elapsed_s": 235.4900318189757,
+  "elapsed_including_suspend_s": 235.4900341129396,
+  "suspend_detected": false,
+  "exit_code": 0,
+  "jobs": 8,
+  "changed_ninja_outputs": 382,
+  "build_dir": "/home/user/dev/FreeCAD/build/clang-profile",
+  "children_user_s": 1589.775889,
+  "children_system_s": 136.550292,
+  "max_child_rss_kib": 851448,
+  "memory_note": "Largest individual child RSS, not aggregate concurrent build memory."
+}

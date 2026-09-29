@@ -1,0 +1,1258 @@
+{
+  "build_dir": "/home/user/dev/FreeCAD/docs/build-optimization/05-part-strategies/provenance/project-pch-source",
+  "repo_root": "/home/user/dev/FreeCAD",
+  "ninja_log": {
+    "recorded_start_ms": 138,
+    "recorded_end_ms": 6110,
+    "recorded_span_s": 5.972,
+    "duplicate_output_entries": 0,
+    "malformed_entries": 0
+  },
+  "aggregates": {
+    "translation_unit": {
+      "count": 1,
+      "phase_seconds": {
+        "ExecuteCompiler": 4.188287,
+        "Frontend": 1.603598,
+        "Backend": 2.551193,
+        "Source": 0.522701,
+        "InstantiateFunction": 0.606488,
+        "InstantiateClass": 0.467007,
+        "Optimizer": 1.644806,
+        "CodeGenPasses": 0.904242
+      },
+      "source_ranking": [
+        {
+          "name": "src/App/Link.h",
+          "seconds": 0.14885
+        },
+        {
+          "name": "src/App/Document.h",
+          "seconds": 0.114109
+        },
+        {
+          "name": "src/Mod/Material/App/MaterialManager.h",
+          "seconds": 0.083197
+        },
+        {
+          "name": "src/App/Datums.h",
+          "seconds": 0.083
+        },
+        {
+          "name": "src/Mod/Material/App/MaterialLibrary.h",
+          "seconds": 0.073421
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/QCoreApplication",
+          "seconds": 0.055212
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qcoreapplication.h",
+          "seconds": 0.054848
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qcoreevent.h",
+          "seconds": 0.052236
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qbasictimer.h",
+          "seconds": 0.049033
+        },
+        {
+          "name": "src/Mod/Material/App/ModelLibrary.h",
+          "seconds": 0.043821
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qabstracteventdispatcher.h",
+          "seconds": 0.042147
+        },
+        {
+          "name": "src/App/MainThreadSignal.h",
+          "seconds": 0.037924
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qeventloop.h",
+          "seconds": 0.037577
+        },
+        {
+          "name": "src/Base/Interpreter.h",
+          "seconds": 0.033546
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qdeadlinetimer.h",
+          "seconds": 0.031136
+        },
+        {
+          "name": "src/Base/Tools.h",
+          "seconds": 0.030651
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/Extensions.hxx",
+          "seconds": 0.028181
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/Python3/Extensions.hxx",
+          "seconds": 0.028154
+        },
+        {
+          "name": "src/Mod/Part/App/Tools.h",
+          "seconds": 0.027101
+        },
+        {
+          "name": "src/Mod/Part/App/Geometry.h",
+          "seconds": 0.026127
+        },
+        {
+          "name": "src/Base/Stream.h",
+          "seconds": 0.023865
+        },
+        {
+          "name": "src/App/GroupExtension.h",
+          "seconds": 0.022157
+        },
+        {
+          "name": "src/Base/Converter.h",
+          "seconds": 0.021953
+        },
+        {
+          "name": "src/Mod/Material/App/MaterialFilter.h",
+          "seconds": 0.007571
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/Python3/ExtensionOldType.hxx",
+          "seconds": 0.005595
+        },
+        {
+          "name": "build/clang-profile/src/Mod/Part/App/PartFeaturePy.h",
+          "seconds": 0.005367
+        },
+        {
+          "name": "src/Mod/Part/App/PartPyCXX.h",
+          "seconds": 0.005015
+        },
+        {
+          "name": "build/clang-profile/src/App/GeoFeaturePy.h",
+          "seconds": 0.004929
+        },
+        {
+          "name": "build/clang-profile/src/Mod/Part/App/TopoShapePy.h",
+          "seconds": 0.004735
+        },
+        {
+          "name": "build/clang-profile/src/App/DocumentObjectPy.h",
+          "seconds": 0.004379
+        },
+        {
+          "name": "src/Mod/Material/App/Library.h",
+          "seconds": 0.004221
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/Python3/ExtensionModule.hxx",
+          "seconds": 0.002941
+        },
+        {
+          "name": "src/App/FeaturePythonPyImp.h",
+          "seconds": 0.002768
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/Python3/ExtensionType.hxx",
+          "seconds": 0.002691
+        },
+        {
+          "name": "build/clang-profile/src/App/ExtensionContainerPy.h",
+          "seconds": 0.002541
+        },
+        {
+          "name": "src/App/Placement.h",
+          "seconds": 0.002454
+        },
+        {
+          "name": "src/App/FeaturePythonPyImp.inl",
+          "seconds": 0.002384
+        },
+        {
+          "name": "build/clang-profile/src/App/PropertyContainerPy.h",
+          "seconds": 0.002135
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/Python3/PythonType.hxx",
+          "seconds": 0.001866
+        },
+        {
+          "name": "build/clang-profile/src/App/ComplexGeoDataPy.h",
+          "seconds": 0.001401
+        },
+        {
+          "name": "src/App/DocumentObjectExtension.h",
+          "seconds": 0.001392
+        },
+        {
+          "name": "build/clang-profile/src/Base/PersistencePy.h",
+          "seconds": 0.00134
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/preprocessor/seq/for_each.hpp",
+          "seconds": 0.0011
+        },
+        {
+          "name": "src/App/Extension.h",
+          "seconds": 0.000914
+        },
+        {
+          "name": "build/clang-profile/src/Base/BaseClassPy.h",
+          "seconds": 0.000883
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/Python3/ExtensionTypeBase.hxx",
+          "seconds": 0.000863
+        },
+        {
+          "name": "src/App/GeoFeatureGroupExtension.h",
+          "seconds": 0.000847
+        },
+        {
+          "name": "/nix/store/njpvi46a41av7k4xqanvf94nawfci0f0-opencascade-occt-7.9.3/include/opencascade/TColStd_ListOfTransient.hxx",
+          "seconds": 0.000707
+        },
+        {
+          "name": "src/Mod/Part/App/GeometryExtension.h",
+          "seconds": 0.000577
+        }
+      ],
+      "template_ranking": [
+        {
+          "name": "QList<Data::MappedElement>::append",
+          "seconds": 0.02549
+        },
+        {
+          "name": "std::stable_sort<__gnu_cxx::__normal_iterator<std::pair<unsigned long, std::vector<int>> *, std::vector<std::pair<unsigned long, std::vector<int>>>>, (lambda at /home/user/dev/FreeCAD/src/Mod/Part/App/PartFeature.cpp:247:25)>",
+          "seconds": 0.025243
+        },
+        {
+          "name": "QList<Data::MappedElement>::push_back",
+          "seconds": 0.024897
+        },
+        {
+          "name": "QList<Data::MappedElement>::emplaceBack<Data::MappedElement>",
+          "seconds": 0.024723
+        },
+        {
+          "name": "std::__stable_sort<__gnu_cxx::__normal_iterator<std::pair<unsigned long, std::vector<int>> *, std::vector<std::pair<unsigned long, std::vector<int>>>>, __gnu_cxx::__ops::_Iter_comp_iter<(lambda at /home/user/dev/FreeCAD/src/Mod/Part/App/PartFeature.cpp:247:25)>>",
+          "seconds": 0.024677
+        },
+        {
+          "name": "QtPrivate::QGenericArrayOps<Data::MappedElement>::emplace<Data::MappedElement>",
+          "seconds": 0.024362
+        },
+        {
+          "name": "QArrayDataPointer<Data::MappedElement>::detachAndGrow",
+          "seconds": 0.022992
+        },
+        {
+          "name": "qRegisterNormalizedMetaType<Materials::MaterialFilter>",
+          "seconds": 0.022932
+        },
+        {
+          "name": "qRegisterNormalizedMetaTypeImplementation<Materials::MaterialFilter>",
+          "seconds": 0.022753
+        },
+        {
+          "name": "std::unique_ptr<std::map<QString, std::shared_ptr<Materials::Model>>>",
+          "seconds": 0.022538
+        },
+        {
+          "name": "std::__uniq_ptr_data<std::map<QString, std::shared_ptr<Materials::Model>>, std::default_delete<std::map<QString, std::shared_ptr<Materials::Model>>>>",
+          "seconds": 0.019643
+        },
+        {
+          "name": "std::__uniq_ptr_impl<std::map<QString, std::shared_ptr<Materials::Model>>, std::default_delete<std::map<QString, std::shared_ptr<Materials::Model>>>>",
+          "seconds": 0.019532
+        },
+        {
+          "name": "std::unordered_map<const App::DocumentObject *, fastsignals::scoped_connection>",
+          "seconds": 0.019073
+        },
+        {
+          "name": "QArrayDataPointer<Data::MappedElement>::tryReadjustFreeSpace",
+          "seconds": 0.018134
+        },
+        {
+          "name": "Base::ConsoleSingleton::log<std::basic_string<char>>",
+          "seconds": 0.017844
+        },
+        {
+          "name": "Base::ConsoleSingleton::send<Base::LogStyle::Log, Base::IntendedRecipient::All, Base::ContentType::Untranslated, std::basic_string<char>>",
+          "seconds": 0.017518
+        },
+        {
+          "name": "QArrayDataPointer<Data::MappedElement>::relocate",
+          "seconds": 0.017487
+        },
+        {
+          "name": "boost::algorithm::starts_with<std::basic_string<char>, const char *>",
+          "seconds": 0.017063
+        },
+        {
+          "name": "boost::algorithm::starts_with<std::basic_string<char>, const char *, boost::algorithm::is_equal>",
+          "seconds": 0.016643
+        },
+        {
+          "name": "std::format<std::basic_string<char>>",
+          "seconds": 0.016501
+        },
+        {
+          "name": "qRegisterNormalizedMetaType<std::shared_ptr<Materials::ModelLibrary>>",
+          "seconds": 0.015935
+        },
+        {
+          "name": "qRegisterNormalizedMetaTypeImplementation<std::shared_ptr<Materials::ModelLibrary>>",
+          "seconds": 0.015874
+        },
+        {
+          "name": "std::map<int, std::vector<int>>::operator[]",
+          "seconds": 0.015502
+        },
+        {
+          "name": "QtPrivate::q_relocate_overlap_n<Data::MappedElement, long long>",
+          "seconds": 0.01458
+        },
+        {
+          "name": "qRegisterNormalizedMetaType<std::shared_ptr<Materials::ModelLibraryLocal>>",
+          "seconds": 0.013681
+        },
+        {
+          "name": "qRegisterNormalizedMetaTypeImplementation<std::shared_ptr<Materials::ModelLibraryLocal>>",
+          "seconds": 0.013648
+        },
+        {
+          "name": "qRegisterNormalizedMetaType<std::shared_ptr<Materials::MaterialLibraryLocal>>",
+          "seconds": 0.013545
+        },
+        {
+          "name": "std::vector<std::pair<long, Data::MappedName>>::rbegin",
+          "seconds": 0.013538
+        },
+        {
+          "name": "qRegisterNormalizedMetaTypeImplementation<std::shared_ptr<Materials::MaterialLibraryLocal>>",
+          "seconds": 0.013515
+        },
+        {
+          "name": "qRegisterNormalizedMetaType<std::shared_ptr<Materials::MaterialLibrary>>",
+          "seconds": 0.013391
+        },
+        {
+          "name": "std::reverse_iterator<__gnu_cxx::__normal_iterator<std::pair<long, Data::MappedName> *, std::vector<std::pair<long, Data::MappedName>>>>",
+          "seconds": 0.013375
+        },
+        {
+          "name": "qRegisterNormalizedMetaTypeImplementation<std::shared_ptr<Materials::MaterialLibrary>>",
+          "seconds": 0.013349
+        },
+        {
+          "name": "std::map<int, QList<Data::MappedElement>>::operator[]",
+          "seconds": 0.012905
+        },
+        {
+          "name": "std::optional<std::tuple<TopoDS_Shape, double>>",
+          "seconds": 0.012564
+        },
+        {
+          "name": "std::set<std::pair<App::Document *, long>>::insert",
+          "seconds": 0.012488
+        },
+        {
+          "name": "std::vector<PyMethodDef>",
+          "seconds": 0.012315
+        },
+        {
+          "name": "std::vector<std::pair<unsigned long, std::vector<int>>>::emplace_back<unsigned long, std::vector<int>>",
+          "seconds": 0.012151
+        },
+        {
+          "name": "std::tuple<std::map<QString, std::shared_ptr<Materials::Model>> *, std::default_delete<std::map<QString, std::shared_ptr<Materials::Model>>>>",
+          "seconds": 0.011532
+        },
+        {
+          "name": "std::_Vector_base<PyMethodDef, std::allocator<PyMethodDef>>",
+          "seconds": 0.010564
+        },
+        {
+          "name": "std::unique_ptr<std::map<QString, std::shared_ptr<Materials::Material>>>",
+          "seconds": 0.010463
+        },
+        {
+          "name": "std::uninitialized_copy<std::move_iterator<int *>, int *>",
+          "seconds": 0.010337
+        },
+        {
+          "name": "std::_Rb_tree<std::pair<App::Document *, long>, std::pair<App::Document *, long>, std::_Identity<std::pair<App::Document *, long>>, std::less<std::pair<App::Document *, long>>>::_M_insert_unique<std::pair<App::Document *, long>>",
+          "seconds": 0.010243
+        },
+        {
+          "name": "std::unique_ptr<Part::Geometry>",
+          "seconds": 0.010015
+        },
+        {
+          "name": "std::unique_ptr<Part::GeomLine>",
+          "seconds": 0.009938
+        },
+        {
+          "name": "std::__inplace_stable_sort<__gnu_cxx::__normal_iterator<std::pair<unsigned long, std::vector<int>> *, std::vector<std::pair<unsigned long, std::vector<int>>>>, __gnu_cxx::__ops::_Iter_comp_iter<(lambda at /home/user/dev/FreeCAD/src/Mod/Part/App/PartFeature.cpp:247:25)>>",
+          "seconds": 0.009847
+        },
+        {
+          "name": "std::__format::_Seq_sink<std::basic_string<wchar_t>>::_M_reserve",
+          "seconds": 0.009727
+        },
+        {
+          "name": "std::_Hashtable<const App::DocumentObject *, std::pair<const App::DocumentObject *const, fastsignals::scoped_connection>, std::allocator<std::pair<const App::DocumentObject *const, fastsignals::scoped_connection>>, std::__detail::_Select1st, std::equal_to<const App::DocumentObject *>, std::hash<const App::DocumentObject *>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>>",
+          "seconds": 0.009665
+        },
+        {
+          "name": "std::map<int, App::Transaction *>",
+          "seconds": 0.009487
+        },
+        {
+          "name": "std::__uniq_ptr_data<std::map<QString, std::shared_ptr<Materials::Material>>, std::default_delete<std::map<QString, std::shared_ptr<Materials::Material>>>>",
+          "seconds": 0.009383
+        },
+        {
+          "name": "std::__uniq_ptr_impl<std::map<QString, std::shared_ptr<Materials::Material>>, std::default_delete<std::map<QString, std::shared_ptr<Materials::Material>>>>",
+          "seconds": 0.009313
+        },
+        {
+          "name": "std::__merge_without_buffer<__gnu_cxx::__normal_iterator<std::pair<unsigned long, std::vector<int>> *, std::vector<std::pair<unsigned long, std::vector<int>>>>, long, __gnu_cxx::__ops::_Iter_comp_iter<(lambda at /home/user/dev/FreeCAD/src/Mod/Part/App/PartFeature.cpp:247:25)>>",
+          "seconds": 0.009277
+        },
+        {
+          "name": "std::vector<std::pair<std::basic_string<char>, Part::PropertyPartShape *>>::emplace_back<const std::basic_string<char> &, Part::PropertyPartShape *&>",
+          "seconds": 0.009205
+        },
+        {
+          "name": "Base::FormatString<std::basic_string<char>>::FormatString<3UL>",
+          "seconds": 0.009123
+        },
+        {
+          "name": "std::__uniq_ptr_data<Part::Geometry, std::default_delete<Part::Geometry>>",
+          "seconds": 0.008944
+        },
+        {
+          "name": "std::allocator<PyMethodDef>",
+          "seconds": 0.008916
+        },
+        {
+          "name": "std::__uniq_ptr_data<Part::GeomLine, std::default_delete<Part::GeomLine>>",
+          "seconds": 0.0089
+        },
+        {
+          "name": "std::__uniq_ptr_impl<Part::Geometry, std::default_delete<Part::Geometry>>",
+          "seconds": 0.00887
+        },
+        {
+          "name": "std::vector<int>::resize",
+          "seconds": 0.008838
+        },
+        {
+          "name": "std::__uniq_ptr_impl<Part::GeomLine, std::default_delete<Part::GeomLine>>",
+          "seconds": 0.008826
+        },
+        {
+          "name": "std::basic_format_string<char, std::basic_string<char>>::basic_format_string<char[3]>",
+          "seconds": 0.008786
+        },
+        {
+          "name": "std::__stable_sort_adaptive<__gnu_cxx::__normal_iterator<std::pair<unsigned long, std::vector<int>> *, std::vector<std::pair<unsigned long, std::vector<int>>>>, std::pair<unsigned long, std::vector<int>> *, __gnu_cxx::__ops::_Iter_comp_iter<(lambda at /home/user/dev/FreeCAD/src/Mod/Part/App/PartFeature.cpp:247:25)>>",
+          "seconds": 0.008728
+        },
+        {
+          "name": "std::vector<int>::_M_fill_insert",
+          "seconds": 0.008617
+        },
+        {
+          "name": "std::__format::_Checking_scanner<char, std::basic_string<char>>",
+          "seconds": 0.008476
+        },
+        {
+          "name": "std::__new_allocator<PyMethodDef>",
+          "seconds": 0.008419
+        },
+        {
+          "name": "std::vector<std::pair<long, Data::MappedName>>::emplace_back<int, const Data::MappedName &>",
+          "seconds": 0.008382
+        },
+        {
+          "name": "std::vector<int>::operator=",
+          "seconds": 0.008327
+        },
+        {
+          "name": "std::map<std::basic_string<char>, Part::Feature::ElementCache>::insert<std::pair<std::basic_string<char>, Part::Feature::ElementCache>>",
+          "seconds": 0.008199
+        },
+        {
+          "name": "boost::iterator_range<__gnu_cxx::__normal_iterator<const char *, std::basic_string<char>>>",
+          "seconds": 0.007842
+        },
+        {
+          "name": "QList<Data::MappedElement>",
+          "seconds": 0.007832
+        },
+        {
+          "name": "std::vector<std::pair<unsigned long, std::vector<int>>>::_M_realloc_append<unsigned long, std::vector<int>>",
+          "seconds": 0.007509
+        },
+        {
+          "name": "std::__not_<std::__and_<std::__is_fast_hash<std::hash<const App::DocumentObject *>>, std::__is_nothrow_invocable<const std::hash<const App::DocumentObject *> &, const App::DocumentObject *const &>>>",
+          "seconds": 0.007441
+        },
+        {
+          "name": "std::__and_<std::__is_fast_hash<std::hash<const App::DocumentObject *>>, std::__is_nothrow_invocable<const std::hash<const App::DocumentObject *> &, const App::DocumentObject *const &>>",
+          "seconds": 0.007389
+        },
+        {
+          "name": "std::__is_nothrow_invocable<const std::hash<const App::DocumentObject *> &, const App::DocumentObject *const &>",
+          "seconds": 0.007153
+        },
+        {
+          "name": "std::_Function_handler<bool (const App::DocumentObject *), App::Document::(lambda at /home/user/dev/FreeCAD/src/App/Document.h:1277:13)>",
+          "seconds": 0.007142
+        },
+        {
+          "name": "std::_Function_base::_Base_manager<App::Document::(lambda at /home/user/dev/FreeCAD/src/App/Document.h:1277:13)>",
+          "seconds": 0.007069
+        },
+        {
+          "name": "std::__and_<std::__is_invocable<const std::hash<const App::DocumentObject *> &, const App::DocumentObject *const &>, std::__call_is_nothrow<std::__invoke_result<const std::hash<const App::DocumentObject *> &, const App::DocumentObject *const &>, const std::hash<const App::DocumentObject *> &, const App::DocumentObject *const &>>",
+          "seconds": 0.007037
+        },
+        {
+          "name": "std::_Rb_tree<int, std::pair<const int, App::Transaction *>, std::_Select1st<std::pair<const int, App::Transaction *>>, std::less<int>>",
+          "seconds": 0.006922
+        },
+        {
+          "name": "std::__format::_Seq_sink<std::basic_string<char>>::_M_reserve",
+          "seconds": 0.006879
+        },
+        {
+          "name": "std::__is_location_invariant<App::Document::(lambda at /home/user/dev/FreeCAD/src/App/Document.h:1277:13)>",
+          "seconds": 0.006787
+        },
+        {
+          "name": "std::_Rb_tree<int, std::pair<const int, std::vector<int>>, std::_Select1st<std::pair<const int, std::vector<int>>>, std::less<int>>::_M_emplace_hint_unique<const std::piecewise_construct_t &, std::tuple<int &&>, std::tuple<>>",
+          "seconds": 0.006782
+        },
+        {
+          "name": "QtPrivate::checkTypeIsSuitableForMetaType<std::shared_ptr<Materials::ModelLibraryLocal>>",
+          "seconds": 0.006759
+        },
+        {
+          "name": "std::basic_format_args<std::basic_format_context<std::__format::_Sink_iter<char>, char>>::basic_format_args<std::basic_string_view<char>>",
+          "seconds": 0.006756
+        },
+        {
+          "name": "std::vector<Base::Placement>::~vector",
+          "seconds": 0.006687
+        },
+        {
+          "name": "std::__merge_sort_with_buffer<__gnu_cxx::__normal_iterator<std::pair<unsigned long, std::vector<int>> *, std::vector<std::pair<unsigned long, std::vector<int>>>>, std::pair<unsigned long, std::vector<int>> *, __gnu_cxx::__ops::_Iter_comp_iter<(lambda at /home/user/dev/FreeCAD/src/Mod/Part/App/PartFeature.cpp:247:25)>>",
+          "seconds": 0.006655
+        },
+        {
+          "name": "std::_Rb_tree<int, std::pair<const int, QList<Data::MappedElement>>, std::_Select1st<std::pair<const int, QList<Data::MappedElement>>>, std::less<int>>::_M_emplace_hint_unique<const std::piecewise_construct_t &, std::tuple<const int &>, std::tuple<>>",
+          "seconds": 0.006604
+        },
+        {
+          "name": "std::is_trivially_copyable<App::Document::(lambda at /home/user/dev/FreeCAD/src/App/Document.h:1277:13)>",
+          "seconds": 0.006543
+        },
+        {
+          "name": "std::_Destroy<Base::Placement *, Base::Placement>",
+          "seconds": 0.006524
+        },
+        {
+          "name": "std::unordered_set<App::PropertyLinkBase *>",
+          "seconds": 0.006439
+        },
+        {
+          "name": "std::_Destroy<Base::Placement *>",
+          "seconds": 0.006433
+        },
+        {
+          "name": "std::__format::_Arg_store<std::basic_format_context<std::__format::_Sink_iter<char>, char>, std::basic_string_view<char>>::_Arg_store<std::basic_string<char>>",
+          "seconds": 0.006357
+        },
+        {
+          "name": "std::_Rb_tree<std::pair<App::Document *, long>, std::pair<App::Document *, long>, std::_Identity<std::pair<App::Document *, long>>, std::less<std::pair<App::Document *, long>>>::_M_get_insert_unique_pos",
+          "seconds": 0.006271
+        },
+        {
+          "name": "std::__format::_Arg_store<std::basic_format_context<std::__format::_Sink_iter<char>, char>, std::basic_string_view<char>>::_S_make_elt<std::basic_string<char>>",
+          "seconds": 0.00625
+        },
+        {
+          "name": "QtPrivate::is_complete<std::shared_ptr<Materials::ModelLibraryLocal>>",
+          "seconds": 0.006221
+        },
+        {
+          "name": "QtPrivate::detail::is_complete_helper<std::shared_ptr<Materials::ModelLibraryLocal>, void>",
+          "seconds": 0.006195
+        },
+        {
+          "name": "std::__format::__pack_arg_types<5, 1UL>",
+          "seconds": 0.006192
+        },
+        {
+          "name": "std::is_destructible<Base::Placement>",
+          "seconds": 0.006129
+        },
+        {
+          "name": "std::shared_ptr<Materials::ModelLibraryLocal>",
+          "seconds": 0.006116
+        },
+        {
+          "name": "QtPrivate::q_relocate_overlap_n_left_move<std::reverse_iterator<Data::MappedElement *>, long long>",
+          "seconds": 0.006105
+        },
+        {
+          "name": "opencascade::handle<Geom_CartesianPoint>",
+          "seconds": 0.005933
+        },
+        {
+          "name": "std::vector<std::pair<std::basic_string<char>, Part::PropertyPartShape *>>::_M_realloc_append<const std::basic_string<char> &, Part::PropertyPartShape *&>",
+          "seconds": 0.00589
+        }
+      ]
+    },
+    "pch": {
+      "count": 0,
+      "phase_seconds": {
+        "ExecuteCompiler": 0,
+        "Frontend": 0,
+        "Backend": 0,
+        "Source": 0,
+        "InstantiateFunction": 0,
+        "InstantiateClass": 0,
+        "Optimizer": 0,
+        "CodeGenPasses": 0
+      },
+      "source_ranking": [],
+      "template_ranking": []
+    },
+    "combined": {
+      "count": 1,
+      "phase_seconds": {
+        "ExecuteCompiler": 4.188287,
+        "Frontend": 1.603598,
+        "Backend": 2.551193,
+        "Source": 0.522701,
+        "InstantiateFunction": 0.606488,
+        "InstantiateClass": 0.467007,
+        "Optimizer": 1.644806,
+        "CodeGenPasses": 0.904242
+      },
+      "source_ranking": [
+        {
+          "name": "src/App/Link.h",
+          "seconds": 0.14885
+        },
+        {
+          "name": "src/App/Document.h",
+          "seconds": 0.114109
+        },
+        {
+          "name": "src/Mod/Material/App/MaterialManager.h",
+          "seconds": 0.083197
+        },
+        {
+          "name": "src/App/Datums.h",
+          "seconds": 0.083
+        },
+        {
+          "name": "src/Mod/Material/App/MaterialLibrary.h",
+          "seconds": 0.073421
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/QCoreApplication",
+          "seconds": 0.055212
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qcoreapplication.h",
+          "seconds": 0.054848
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qcoreevent.h",
+          "seconds": 0.052236
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qbasictimer.h",
+          "seconds": 0.049033
+        },
+        {
+          "name": "src/Mod/Material/App/ModelLibrary.h",
+          "seconds": 0.043821
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qabstracteventdispatcher.h",
+          "seconds": 0.042147
+        },
+        {
+          "name": "src/App/MainThreadSignal.h",
+          "seconds": 0.037924
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qeventloop.h",
+          "seconds": 0.037577
+        },
+        {
+          "name": "src/Base/Interpreter.h",
+          "seconds": 0.033546
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qdeadlinetimer.h",
+          "seconds": 0.031136
+        },
+        {
+          "name": "src/Base/Tools.h",
+          "seconds": 0.030651
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/Extensions.hxx",
+          "seconds": 0.028181
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/Python3/Extensions.hxx",
+          "seconds": 0.028154
+        },
+        {
+          "name": "src/Mod/Part/App/Tools.h",
+          "seconds": 0.027101
+        },
+        {
+          "name": "src/Mod/Part/App/Geometry.h",
+          "seconds": 0.026127
+        },
+        {
+          "name": "src/Base/Stream.h",
+          "seconds": 0.023865
+        },
+        {
+          "name": "src/App/GroupExtension.h",
+          "seconds": 0.022157
+        },
+        {
+          "name": "src/Base/Converter.h",
+          "seconds": 0.021953
+        },
+        {
+          "name": "src/Mod/Material/App/MaterialFilter.h",
+          "seconds": 0.007571
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/Python3/ExtensionOldType.hxx",
+          "seconds": 0.005595
+        },
+        {
+          "name": "build/clang-profile/src/Mod/Part/App/PartFeaturePy.h",
+          "seconds": 0.005367
+        },
+        {
+          "name": "src/Mod/Part/App/PartPyCXX.h",
+          "seconds": 0.005015
+        },
+        {
+          "name": "build/clang-profile/src/App/GeoFeaturePy.h",
+          "seconds": 0.004929
+        },
+        {
+          "name": "build/clang-profile/src/Mod/Part/App/TopoShapePy.h",
+          "seconds": 0.004735
+        },
+        {
+          "name": "build/clang-profile/src/App/DocumentObjectPy.h",
+          "seconds": 0.004379
+        },
+        {
+          "name": "src/Mod/Material/App/Library.h",
+          "seconds": 0.004221
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/Python3/ExtensionModule.hxx",
+          "seconds": 0.002941
+        },
+        {
+          "name": "src/App/FeaturePythonPyImp.h",
+          "seconds": 0.002768
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/Python3/ExtensionType.hxx",
+          "seconds": 0.002691
+        },
+        {
+          "name": "build/clang-profile/src/App/ExtensionContainerPy.h",
+          "seconds": 0.002541
+        },
+        {
+          "name": "src/App/Placement.h",
+          "seconds": 0.002454
+        },
+        {
+          "name": "src/App/FeaturePythonPyImp.inl",
+          "seconds": 0.002384
+        },
+        {
+          "name": "build/clang-profile/src/App/PropertyContainerPy.h",
+          "seconds": 0.002135
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/Python3/PythonType.hxx",
+          "seconds": 0.001866
+        },
+        {
+          "name": "build/clang-profile/src/App/ComplexGeoDataPy.h",
+          "seconds": 0.001401
+        },
+        {
+          "name": "src/App/DocumentObjectExtension.h",
+          "seconds": 0.001392
+        },
+        {
+          "name": "build/clang-profile/src/Base/PersistencePy.h",
+          "seconds": 0.00134
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/preprocessor/seq/for_each.hpp",
+          "seconds": 0.0011
+        },
+        {
+          "name": "src/App/Extension.h",
+          "seconds": 0.000914
+        },
+        {
+          "name": "build/clang-profile/src/Base/BaseClassPy.h",
+          "seconds": 0.000883
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/Python3/ExtensionTypeBase.hxx",
+          "seconds": 0.000863
+        },
+        {
+          "name": "src/App/GeoFeatureGroupExtension.h",
+          "seconds": 0.000847
+        },
+        {
+          "name": "/nix/store/njpvi46a41av7k4xqanvf94nawfci0f0-opencascade-occt-7.9.3/include/opencascade/TColStd_ListOfTransient.hxx",
+          "seconds": 0.000707
+        },
+        {
+          "name": "src/Mod/Part/App/GeometryExtension.h",
+          "seconds": 0.000577
+        }
+      ],
+      "template_ranking": [
+        {
+          "name": "QList<Data::MappedElement>::append",
+          "seconds": 0.02549
+        },
+        {
+          "name": "std::stable_sort<__gnu_cxx::__normal_iterator<std::pair<unsigned long, std::vector<int>> *, std::vector<std::pair<unsigned long, std::vector<int>>>>, (lambda at /home/user/dev/FreeCAD/src/Mod/Part/App/PartFeature.cpp:247:25)>",
+          "seconds": 0.025243
+        },
+        {
+          "name": "QList<Data::MappedElement>::push_back",
+          "seconds": 0.024897
+        },
+        {
+          "name": "QList<Data::MappedElement>::emplaceBack<Data::MappedElement>",
+          "seconds": 0.024723
+        },
+        {
+          "name": "std::__stable_sort<__gnu_cxx::__normal_iterator<std::pair<unsigned long, std::vector<int>> *, std::vector<std::pair<unsigned long, std::vector<int>>>>, __gnu_cxx::__ops::_Iter_comp_iter<(lambda at /home/user/dev/FreeCAD/src/Mod/Part/App/PartFeature.cpp:247:25)>>",
+          "seconds": 0.024677
+        },
+        {
+          "name": "QtPrivate::QGenericArrayOps<Data::MappedElement>::emplace<Data::MappedElement>",
+          "seconds": 0.024362
+        },
+        {
+          "name": "QArrayDataPointer<Data::MappedElement>::detachAndGrow",
+          "seconds": 0.022992
+        },
+        {
+          "name": "qRegisterNormalizedMetaType<Materials::MaterialFilter>",
+          "seconds": 0.022932
+        },
+        {
+          "name": "qRegisterNormalizedMetaTypeImplementation<Materials::MaterialFilter>",
+          "seconds": 0.022753
+        },
+        {
+          "name": "std::unique_ptr<std::map<QString, std::shared_ptr<Materials::Model>>>",
+          "seconds": 0.022538
+        },
+        {
+          "name": "std::__uniq_ptr_data<std::map<QString, std::shared_ptr<Materials::Model>>, std::default_delete<std::map<QString, std::shared_ptr<Materials::Model>>>>",
+          "seconds": 0.019643
+        },
+        {
+          "name": "std::__uniq_ptr_impl<std::map<QString, std::shared_ptr<Materials::Model>>, std::default_delete<std::map<QString, std::shared_ptr<Materials::Model>>>>",
+          "seconds": 0.019532
+        },
+        {
+          "name": "std::unordered_map<const App::DocumentObject *, fastsignals::scoped_connection>",
+          "seconds": 0.019073
+        },
+        {
+          "name": "QArrayDataPointer<Data::MappedElement>::tryReadjustFreeSpace",
+          "seconds": 0.018134
+        },
+        {
+          "name": "Base::ConsoleSingleton::log<std::basic_string<char>>",
+          "seconds": 0.017844
+        },
+        {
+          "name": "Base::ConsoleSingleton::send<Base::LogStyle::Log, Base::IntendedRecipient::All, Base::ContentType::Untranslated, std::basic_string<char>>",
+          "seconds": 0.017518
+        },
+        {
+          "name": "QArrayDataPointer<Data::MappedElement>::relocate",
+          "seconds": 0.017487
+        },
+        {
+          "name": "boost::algorithm::starts_with<std::basic_string<char>, const char *>",
+          "seconds": 0.017063
+        },
+        {
+          "name": "boost::algorithm::starts_with<std::basic_string<char>, const char *, boost::algorithm::is_equal>",
+          "seconds": 0.016643
+        },
+        {
+          "name": "std::format<std::basic_string<char>>",
+          "seconds": 0.016501
+        },
+        {
+          "name": "qRegisterNormalizedMetaType<std::shared_ptr<Materials::ModelLibrary>>",
+          "seconds": 0.015935
+        },
+        {
+          "name": "qRegisterNormalizedMetaTypeImplementation<std::shared_ptr<Materials::ModelLibrary>>",
+          "seconds": 0.015874
+        },
+        {
+          "name": "std::map<int, std::vector<int>>::operator[]",
+          "seconds": 0.015502
+        },
+        {
+          "name": "QtPrivate::q_relocate_overlap_n<Data::MappedElement, long long>",
+          "seconds": 0.01458
+        },
+        {
+          "name": "qRegisterNormalizedMetaType<std::shared_ptr<Materials::ModelLibraryLocal>>",
+          "seconds": 0.013681
+        },
+        {
+          "name": "qRegisterNormalizedMetaTypeImplementation<std::shared_ptr<Materials::ModelLibraryLocal>>",
+          "seconds": 0.013648
+        },
+        {
+          "name": "qRegisterNormalizedMetaType<std::shared_ptr<Materials::MaterialLibraryLocal>>",
+          "seconds": 0.013545
+        },
+        {
+          "name": "std::vector<std::pair<long, Data::MappedName>>::rbegin",
+          "seconds": 0.013538
+        },
+        {
+          "name": "qRegisterNormalizedMetaTypeImplementation<std::shared_ptr<Materials::MaterialLibraryLocal>>",
+          "seconds": 0.013515
+        },
+        {
+          "name": "qRegisterNormalizedMetaType<std::shared_ptr<Materials::MaterialLibrary>>",
+          "seconds": 0.013391
+        },
+        {
+          "name": "std::reverse_iterator<__gnu_cxx::__normal_iterator<std::pair<long, Data::MappedName> *, std::vector<std::pair<long, Data::MappedName>>>>",
+          "seconds": 0.013375
+        },
+        {
+          "name": "qRegisterNormalizedMetaTypeImplementation<std::shared_ptr<Materials::MaterialLibrary>>",
+          "seconds": 0.013349
+        },
+        {
+          "name": "std::map<int, QList<Data::MappedElement>>::operator[]",
+          "seconds": 0.012905
+        },
+        {
+          "name": "std::optional<std::tuple<TopoDS_Shape, double>>",
+          "seconds": 0.012564
+        },
+        {
+          "name": "std::set<std::pair<App::Document *, long>>::insert",
+          "seconds": 0.012488
+        },
+        {
+          "name": "std::vector<PyMethodDef>",
+          "seconds": 0.012315
+        },
+        {
+          "name": "std::vector<std::pair<unsigned long, std::vector<int>>>::emplace_back<unsigned long, std::vector<int>>",
+          "seconds": 0.012151
+        },
+        {
+          "name": "std::tuple<std::map<QString, std::shared_ptr<Materials::Model>> *, std::default_delete<std::map<QString, std::shared_ptr<Materials::Model>>>>",
+          "seconds": 0.011532
+        },
+        {
+          "name": "std::_Vector_base<PyMethodDef, std::allocator<PyMethodDef>>",
+          "seconds": 0.010564
+        },
+        {
+          "name": "std::unique_ptr<std::map<QString, std::shared_ptr<Materials::Material>>>",
+          "seconds": 0.010463
+        },
+        {
+          "name": "std::uninitialized_copy<std::move_iterator<int *>, int *>",
+          "seconds": 0.010337
+        },
+        {
+          "name": "std::_Rb_tree<std::pair<App::Document *, long>, std::pair<App::Document *, long>, std::_Identity<std::pair<App::Document *, long>>, std::less<std::pair<App::Document *, long>>>::_M_insert_unique<std::pair<App::Document *, long>>",
+          "seconds": 0.010243
+        },
+        {
+          "name": "std::unique_ptr<Part::Geometry>",
+          "seconds": 0.010015
+        },
+        {
+          "name": "std::unique_ptr<Part::GeomLine>",
+          "seconds": 0.009938
+        },
+        {
+          "name": "std::__inplace_stable_sort<__gnu_cxx::__normal_iterator<std::pair<unsigned long, std::vector<int>> *, std::vector<std::pair<unsigned long, std::vector<int>>>>, __gnu_cxx::__ops::_Iter_comp_iter<(lambda at /home/user/dev/FreeCAD/src/Mod/Part/App/PartFeature.cpp:247:25)>>",
+          "seconds": 0.009847
+        },
+        {
+          "name": "std::__format::_Seq_sink<std::basic_string<wchar_t>>::_M_reserve",
+          "seconds": 0.009727
+        },
+        {
+          "name": "std::_Hashtable<const App::DocumentObject *, std::pair<const App::DocumentObject *const, fastsignals::scoped_connection>, std::allocator<std::pair<const App::DocumentObject *const, fastsignals::scoped_connection>>, std::__detail::_Select1st, std::equal_to<const App::DocumentObject *>, std::hash<const App::DocumentObject *>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>>",
+          "seconds": 0.009665
+        },
+        {
+          "name": "std::map<int, App::Transaction *>",
+          "seconds": 0.009487
+        },
+        {
+          "name": "std::__uniq_ptr_data<std::map<QString, std::shared_ptr<Materials::Material>>, std::default_delete<std::map<QString, std::shared_ptr<Materials::Material>>>>",
+          "seconds": 0.009383
+        },
+        {
+          "name": "std::__uniq_ptr_impl<std::map<QString, std::shared_ptr<Materials::Material>>, std::default_delete<std::map<QString, std::shared_ptr<Materials::Material>>>>",
+          "seconds": 0.009313
+        },
+        {
+          "name": "std::__merge_without_buffer<__gnu_cxx::__normal_iterator<std::pair<unsigned long, std::vector<int>> *, std::vector<std::pair<unsigned long, std::vector<int>>>>, long, __gnu_cxx::__ops::_Iter_comp_iter<(lambda at /home/user/dev/FreeCAD/src/Mod/Part/App/PartFeature.cpp:247:25)>>",
+          "seconds": 0.009277
+        },
+        {
+          "name": "std::vector<std::pair<std::basic_string<char>, Part::PropertyPartShape *>>::emplace_back<const std::basic_string<char> &, Part::PropertyPartShape *&>",
+          "seconds": 0.009205
+        },
+        {
+          "name": "Base::FormatString<std::basic_string<char>>::FormatString<3UL>",
+          "seconds": 0.009123
+        },
+        {
+          "name": "std::__uniq_ptr_data<Part::Geometry, std::default_delete<Part::Geometry>>",
+          "seconds": 0.008944
+        },
+        {
+          "name": "std::allocator<PyMethodDef>",
+          "seconds": 0.008916
+        },
+        {
+          "name": "std::__uniq_ptr_data<Part::GeomLine, std::default_delete<Part::GeomLine>>",
+          "seconds": 0.0089
+        },
+        {
+          "name": "std::__uniq_ptr_impl<Part::Geometry, std::default_delete<Part::Geometry>>",
+          "seconds": 0.00887
+        },
+        {
+          "name": "std::vector<int>::resize",
+          "seconds": 0.008838
+        },
+        {
+          "name": "std::__uniq_ptr_impl<Part::GeomLine, std::default_delete<Part::GeomLine>>",
+          "seconds": 0.008826
+        },
+        {
+          "name": "std::basic_format_string<char, std::basic_string<char>>::basic_format_string<char[3]>",
+          "seconds": 0.008786
+        },
+        {
+          "name": "std::__stable_sort_adaptive<__gnu_cxx::__normal_iterator<std::pair<unsigned long, std::vector<int>> *, std::vector<std::pair<unsigned long, std::vector<int>>>>, std::pair<unsigned long, std::vector<int>> *, __gnu_cxx::__ops::_Iter_comp_iter<(lambda at /home/user/dev/FreeCAD/src/Mod/Part/App/PartFeature.cpp:247:25)>>",
+          "seconds": 0.008728
+        },
+        {
+          "name": "std::vector<int>::_M_fill_insert",
+          "seconds": 0.008617
+        },
+        {
+          "name": "std::__format::_Checking_scanner<char, std::basic_string<char>>",
+          "seconds": 0.008476
+        },
+        {
+          "name": "std::__new_allocator<PyMethodDef>",
+          "seconds": 0.008419
+        },
+        {
+          "name": "std::vector<std::pair<long, Data::MappedName>>::emplace_back<int, const Data::MappedName &>",
+          "seconds": 0.008382
+        },
+        {
+          "name": "std::vector<int>::operator=",
+          "seconds": 0.008327
+        },
+        {
+          "name": "std::map<std::basic_string<char>, Part::Feature::ElementCache>::insert<std::pair<std::basic_string<char>, Part::Feature::ElementCache>>",
+          "seconds": 0.008199
+        },
+        {
+          "name": "boost::iterator_range<__gnu_cxx::__normal_iterator<const char *, std::basic_string<char>>>",
+          "seconds": 0.007842
+        },
+        {
+          "name": "QList<Data::MappedElement>",
+          "seconds": 0.007832
+        },
+        {
+          "name": "std::vector<std::pair<unsigned long, std::vector<int>>>::_M_realloc_append<unsigned long, std::vector<int>>",
+          "seconds": 0.007509
+        },
+        {
+          "name": "std::__not_<std::__and_<std::__is_fast_hash<std::hash<const App::DocumentObject *>>, std::__is_nothrow_invocable<const std::hash<const App::DocumentObject *> &, const App::DocumentObject *const &>>>",
+          "seconds": 0.007441
+        },
+        {
+          "name": "std::__and_<std::__is_fast_hash<std::hash<const App::DocumentObject *>>, std::__is_nothrow_invocable<const std::hash<const App::DocumentObject *> &, const App::DocumentObject *const &>>",
+          "seconds": 0.007389
+        },
+        {
+          "name": "std::__is_nothrow_invocable<const std::hash<const App::DocumentObject *> &, const App::DocumentObject *const &>",
+          "seconds": 0.007153
+        },
+        {
+          "name": "std::_Function_handler<bool (const App::DocumentObject *), App::Document::(lambda at /home/user/dev/FreeCAD/src/App/Document.h:1277:13)>",
+          "seconds": 0.007142
+        },
+        {
+          "name": "std::_Function_base::_Base_manager<App::Document::(lambda at /home/user/dev/FreeCAD/src/App/Document.h:1277:13)>",
+          "seconds": 0.007069
+        },
+        {
+          "name": "std::__and_<std::__is_invocable<const std::hash<const App::DocumentObject *> &, const App::DocumentObject *const &>, std::__call_is_nothrow<std::__invoke_result<const std::hash<const App::DocumentObject *> &, const App::DocumentObject *const &>, const std::hash<const App::DocumentObject *> &, const App::DocumentObject *const &>>",
+          "seconds": 0.007037
+        },
+        {
+          "name": "std::_Rb_tree<int, std::pair<const int, App::Transaction *>, std::_Select1st<std::pair<const int, App::Transaction *>>, std::less<int>>",
+          "seconds": 0.006922
+        },
+        {
+          "name": "std::__format::_Seq_sink<std::basic_string<char>>::_M_reserve",
+          "seconds": 0.006879
+        },
+        {
+          "name": "std::__is_location_invariant<App::Document::(lambda at /home/user/dev/FreeCAD/src/App/Document.h:1277:13)>",
+          "seconds": 0.006787
+        },
+        {
+          "name": "std::_Rb_tree<int, std::pair<const int, std::vector<int>>, std::_Select1st<std::pair<const int, std::vector<int>>>, std::less<int>>::_M_emplace_hint_unique<const std::piecewise_construct_t &, std::tuple<int &&>, std::tuple<>>",
+          "seconds": 0.006782
+        },
+        {
+          "name": "QtPrivate::checkTypeIsSuitableForMetaType<std::shared_ptr<Materials::ModelLibraryLocal>>",
+          "seconds": 0.006759
+        },
+        {
+          "name": "std::basic_format_args<std::basic_format_context<std::__format::_Sink_iter<char>, char>>::basic_format_args<std::basic_string_view<char>>",
+          "seconds": 0.006756
+        },
+        {
+          "name": "std::vector<Base::Placement>::~vector",
+          "seconds": 0.006687
+        },
+        {
+          "name": "std::__merge_sort_with_buffer<__gnu_cxx::__normal_iterator<std::pair<unsigned long, std::vector<int>> *, std::vector<std::pair<unsigned long, std::vector<int>>>>, std::pair<unsigned long, std::vector<int>> *, __gnu_cxx::__ops::_Iter_comp_iter<(lambda at /home/user/dev/FreeCAD/src/Mod/Part/App/PartFeature.cpp:247:25)>>",
+          "seconds": 0.006655
+        },
+        {
+          "name": "std::_Rb_tree<int, std::pair<const int, QList<Data::MappedElement>>, std::_Select1st<std::pair<const int, QList<Data::MappedElement>>>, std::less<int>>::_M_emplace_hint_unique<const std::piecewise_construct_t &, std::tuple<const int &>, std::tuple<>>",
+          "seconds": 0.006604
+        },
+        {
+          "name": "std::is_trivially_copyable<App::Document::(lambda at /home/user/dev/FreeCAD/src/App/Document.h:1277:13)>",
+          "seconds": 0.006543
+        },
+        {
+          "name": "std::_Destroy<Base::Placement *, Base::Placement>",
+          "seconds": 0.006524
+        },
+        {
+          "name": "std::unordered_set<App::PropertyLinkBase *>",
+          "seconds": 0.006439
+        },
+        {
+          "name": "std::_Destroy<Base::Placement *>",
+          "seconds": 0.006433
+        },
+        {
+          "name": "std::__format::_Arg_store<std::basic_format_context<std::__format::_Sink_iter<char>, char>, std::basic_string_view<char>>::_Arg_store<std::basic_string<char>>",
+          "seconds": 0.006357
+        },
+        {
+          "name": "std::_Rb_tree<std::pair<App::Document *, long>, std::pair<App::Document *, long>, std::_Identity<std::pair<App::Document *, long>>, std::less<std::pair<App::Document *, long>>>::_M_get_insert_unique_pos",
+          "seconds": 0.006271
+        },
+        {
+          "name": "std::__format::_Arg_store<std::basic_format_context<std::__format::_Sink_iter<char>, char>, std::basic_string_view<char>>::_S_make_elt<std::basic_string<char>>",
+          "seconds": 0.00625
+        },
+        {
+          "name": "QtPrivate::is_complete<std::shared_ptr<Materials::ModelLibraryLocal>>",
+          "seconds": 0.006221
+        },
+        {
+          "name": "QtPrivate::detail::is_complete_helper<std::shared_ptr<Materials::ModelLibraryLocal>, void>",
+          "seconds": 0.006195
+        },
+        {
+          "name": "std::__format::__pack_arg_types<5, 1UL>",
+          "seconds": 0.006192
+        },
+        {
+          "name": "std::is_destructible<Base::Placement>",
+          "seconds": 0.006129
+        },
+        {
+          "name": "std::shared_ptr<Materials::ModelLibraryLocal>",
+          "seconds": 0.006116
+        },
+        {
+          "name": "QtPrivate::q_relocate_overlap_n_left_move<std::reverse_iterator<Data::MappedElement *>, long long>",
+          "seconds": 0.006105
+        },
+        {
+          "name": "opencascade::handle<Geom_CartesianPoint>",
+          "seconds": 0.005933
+        },
+        {
+          "name": "std::vector<std::pair<std::basic_string<char>, Part::PropertyPartShape *>>::_M_realloc_append<const std::basic_string<char> &, Part::PropertyPartShape *&>",
+          "seconds": 0.00589
+        }
+      ]
+    }
+  },
+  "diagnostics": {
+    "missing_traces": [],
+    "invalid_traces": []
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "baseline_object_sources": 203,
+  "unity_eligible_sources": 190,
+  "unity_excluded_sources": 13,
+  "baseline_source_partition_matches": true,
+  "same_exclusions_for_unity_4_and_8": true,
+  "target_runs": {
+    "baseline-target": {
+      "compiler_outputs": 204,
+      "object_outputs": 203,
+      "pch_outputs": 1,
+      "traces": 204,
+      "only_part_compiler_outputs": true
+    },
+    "project-pch-target": {
+      "compiler_outputs": 204,
+      "object_outputs": 203,
+      "pch_outputs": 1,
+      "traces": 204,
+      "only_part_compiler_outputs": true
+    },
+    "unity-4-target": {
+      "compiler_outputs": 62,
+      "object_outputs": 61,
+      "pch_outputs": 1,
+      "traces": 62,
+      "only_part_compiler_outputs": true
+    },
+    "unity-8-target": {
+      "compiler_outputs": 38,
+      "object_outputs": 37,
+      "pch_outputs": 1,
+      "traces": 38,
+      "only_part_compiler_outputs": true
+    },
+    "majority-pch-target": {
+      "compiler_outputs": 204,
+      "object_outputs": 203,
+      "pch_outputs": 1,
+      "traces": 204,
+      "only_part_compiler_outputs": true
+    }
+  }
+}

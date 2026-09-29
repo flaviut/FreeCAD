@@ -417,7 +417,7 @@ other compilation or analysis jobs during the measured series.
 
 ## 04 — Separate value and document Qt metatypes
 
-Date: 2026-09-28. Status: proposed; not executed.
+Date: 2026-09-28. Status: partially measured; execution stopped before final validation.
 
 ### Initial analysis
 
@@ -496,3 +496,110 @@ timing differences remain within observed variation, reject or narrow the trial.
 Do not infer a whole-project clean-build speedup from these target measurements.
 Record results and source change IDs here before considering migration of
 additional modules or further splitting individual value metatypes.
+
+### Partial results
+
+Commit `mzktnxlp` (`ed8592d1`) separates value metatypes and updates 16 material
+includes. Selected-target builds passed.
+
+The first baseline/candidate comparison:
+
+| Measurement | Baseline | Candidate |
+| --- | ---: | ---: |
+| Target rebuild, 317 TUs + 4 PCH files | 138.02 s | 134.42 s |
+| `DocumentObject.h` touch | 238.43 s / 502 TUs | 229.14 s / 488 TUs |
+| `DocumentObserver.h` touch | 185.27 s / 353 TUs | 180.91 s / 339 TUs |
+| `Gui/MetaTypes.h` touch | 103.63 s / 152 TUs | 100.31 s / 138 TUs |
+
+Each header edit rebuilt 14 fewer source files. One comparison does not establish
+a reliable speedup.
+
+Further measurements were stopped because of excessive runtime. Trace analysis,
+full builds with and without PCH, and regression tests remain unfinished.
+The change is committed but not fully validated.
+
+Metrics: `04-metatype-split/`. Raw traces and logs: its local `provenance/` directory.
+
+### Conclusion
+
+Deprioritize this approach for now. Removing 14 recompilations and observing
+only small timing gains does not justify further work on this split. Keep the
+isolated commit as an experiment; it is not fully validated for adoption.
+
+
+## 05 — Part compilation strategies
+
+Date: 2026-09-28. Status: measured; trial changes restored.
+
+Compare existing PCH, project-header PCH, and existing PCH with selective unity
+batches of four/eight. Clang 21.1.8, Release, eight jobs, time tracing on, ccache
+off. Dependencies were prepared before deleting only Part's objects and PCH;
+Ninja history was preserved. Builds and analysis ran serially under a shared
+lock. Each case is one run, including PCH construction, with complete traces.
+
+| Part | Existing PCH | Project PCH | Unity 4 | Unity 8 |
+| --- | ---: | ---: | ---: | ---: |
+| Target rebuild, s | 69.52 | 47.93 | 43.97 | 38.17 |
+| Combined frontend, s | 317.36 | 153.88 | 143.48 | 106.65 |
+| Compiler jobs, including PCH | 204 | 204 | 62 | 38 |
+| Peak sampled aggregate RSS, GiB | 2.74 | 2.60 | 2.82 | 3.01 |
+| `FeaturePartBox.cpp` touch, s | 6.51 | 4.84 | 6.18 | 7.26 |
+
+Project PCH adds `App/ComplexGeoData.h` and `TopoShape.h`, used by 116 and 115
+of 203 Part objects. Unity uses the same 190 eligible sources in both configurations; 13 remain separate because of
+logging globals and repeated definitions from `TopoShapeMapper.h`. Failed
+compatibility attempts are excluded. Each source edit rebuilt one compiler
+output, containing a whole batch in unity configurations.
+
+Both strategies merit follow-up: project PCH reduced target time by 31%, unity
+eight by 45%. Project PCH used less memory and gave the fastest source edit;
+unity eight made that edit slower than baseline. Header edits were not measured
+and would invalidate the expanded PCH. These target results do not establish a
+whole-project saving. RSS is sampled every 0.1 s across build descendants and
+may double-count shared pages or miss brief peaks.
+
+A separate PCH trial with `DocumentObject.h` and `PartFeature.h` reached 40.34 s,
+but those headers occur in only 63 and 54 objects. It is recorded separately
+from the requested majority-used header comparison.
+
+Part's original source/configuration was restored and its final build passed.
+This was compilation validation, without runtime tests. See
+[configurations, exclusions, and reproduction](05-part-strategies/entry.md),
+[baseline](05-part-strategies/baseline-target/analysis.md),
+[project PCH](05-part-strategies/majority-pch-target/analysis.md), and
+[unity eight](05-part-strategies/unity-8-target/analysis.md).
+
+
+## 06 — TechDraw compilation strategies
+
+Date: 2026-09-28. Status: measured; trial changes restored.
+
+Same controls and measurement method as experiment 05, applied separately to
+`TechDraw` (the App library). One run per case; all compiler outputs have traces.
+
+| TechDraw | Existing PCH | Project PCH | Unity 4 | Unity 8 |
+| --- | ---: | ---: | ---: | ---: |
+| Target rebuild, s | 45.83 | 40.42 | 34.96 | 31.82 |
+| Combined frontend, s | 159.86 | 109.14 | 71.58 | 46.50 |
+| Compiler jobs, including PCH | 98 | 98 | 29 | 17 |
+| Peak sampled aggregate RSS, GiB | 3.23 | 3.05 | 3.32 | 3.42 |
+| `HatchLine.cpp` touch, s | 6.56 | 5.99 | 11.42 | 16.78 |
+
+Project PCH adds `App/DocumentObject.h` and `DrawView.h`, used by 90 and 69 of
+97 TechDraw objects. Unity excludes four
+`Property*.cpp` files whose namespace imports broke another source in a batch.
+Both final unity cases use the same exclusions. The failed batch-eight attempt
+and earlier unfiltered batch-four result are excluded from this comparison.
+
+Unity eight reduced target time by 31%, but its source edit took 2.6 times as
+long as baseline. Project PCH gave a smaller 12% target improvement and a modest
+source-edit improvement. This supports target-specific choices: unity trades
+faster target rebuilds for slower individual edits and somewhat higher memory.
+Neither experiment establishes a whole-project saving or runtime correctness;
+expanded-PCH header invalidation remains unmeasured.
+
+Original source/configuration was restored and the final TechDraw build passed.
+See [configurations and reproduction](06-techdraw-strategies/entry.md),
+[baseline](06-techdraw-strategies/baseline-target/analysis.md),
+[project PCH](06-techdraw-strategies/expanded-pch-target/analysis.md), and
+[unity eight](06-techdraw-strategies/unity8-target/analysis.md).

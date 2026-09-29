@@ -1,0 +1,5 @@
+{
+  "variant": "unity4",
+  "pch_appended": "",
+  "cmake_appended": "\nset_target_properties(TechDraw PROPERTIES UNITY_BUILD ON UNITY_BUILD_BATCH_SIZE 4)\n"
+}

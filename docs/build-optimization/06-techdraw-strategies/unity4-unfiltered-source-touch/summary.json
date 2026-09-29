@@ -1,0 +1,1666 @@
+{
+  "build_dir": "/home/user/dev/FreeCAD/docs/build-optimization/06-techdraw-strategies/provenance/unity4-source-touch",
+  "repo_root": "/home/user/dev/FreeCAD",
+  "ninja_log": {
+    "recorded_start_ms": 126,
+    "recorded_end_ms": 10034,
+    "recorded_span_s": 9.908,
+    "duplicate_output_entries": 0,
+    "malformed_entries": 0
+  },
+  "aggregates": {
+    "translation_unit": {
+      "count": 1,
+      "phase_seconds": {
+        "ExecuteCompiler": 8.090158,
+        "Frontend": 3.041987,
+        "Backend": 4.996562,
+        "Source": 0.0,
+        "InstantiateFunction": 1.196612,
+        "InstantiateClass": 1.019846,
+        "Optimizer": 3.296326,
+        "CodeGenPasses": 1.697633
+      },
+      "source_ranking": [
+        {
+          "name": "src/Mod/TechDraw/App/ShapeExtractor.cpp",
+          "seconds": 1.560754
+        },
+        {
+          "name": "src/App/Document.h",
+          "seconds": 0.628637
+        },
+        {
+          "name": "src/Mod/Part/App/PartFeature.h",
+          "seconds": 0.42027
+        },
+        {
+          "name": "src/Mod/TechDraw/App/DrawDimHelper.cpp",
+          "seconds": 0.295669
+        },
+        {
+          "name": "src/Mod/Part/App/PropertyTopoShape.h",
+          "seconds": 0.241665
+        },
+        {
+          "name": "src/Mod/TechDraw/App/EdgeWalker.cpp",
+          "seconds": 0.234877
+        },
+        {
+          "name": "src/Mod/Part/App/TopoShape.h",
+          "seconds": 0.212816
+        },
+        {
+          "name": "src/App/ComplexGeoData.h",
+          "seconds": 0.184326
+        },
+        {
+          "name": "src/Mod/TechDraw/App/DrawViewDimension.h",
+          "seconds": 0.183802
+        },
+        {
+          "name": "src/Base/UnitsApi.h",
+          "seconds": 0.175654
+        },
+        {
+          "name": "src/Mod/Material/App/PropertyMaterial.h",
+          "seconds": 0.166763
+        },
+        {
+          "name": "src/Mod/TechDraw/App/Preferences.h",
+          "seconds": 0.146826
+        },
+        {
+          "name": "src/App/ExportInfo.h",
+          "seconds": 0.146681
+        },
+        {
+          "name": "src/App/DocumentObject.h",
+          "seconds": 0.146461
+        },
+        {
+          "name": "src/Mod/TechDraw/App/DrawBrokenView.h",
+          "seconds": 0.146144
+        },
+        {
+          "name": "src/Mod/TechDraw/App/DrawViewPart.h",
+          "seconds": 0.143122
+        },
+        {
+          "name": "src/App/Link.h",
+          "seconds": 0.14084
+        },
+        {
+          "name": "src/Mod/TechDraw/App/CosmeticExtension.h",
+          "seconds": 0.128445
+        },
+        {
+          "name": "src/Mod/Material/App/Materials.h",
+          "seconds": 0.12188
+        },
+        {
+          "name": "src/App/PropertyLinks.h",
+          "seconds": 0.118783
+        },
+        {
+          "name": "src/Mod/TechDraw/App/Geometry.h",
+          "seconds": 0.118466
+        },
+        {
+          "name": "src/Base/UnitsSchemasData.h",
+          "seconds": 0.11613
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/Objects.hxx",
+          "seconds": 0.115817
+        },
+        {
+          "name": "src/Base/Writer.h",
+          "seconds": 0.101031
+        },
+        {
+          "name": "src/Mod/TechDraw/App/HatchLine.cpp",
+          "seconds": 0.09758
+        },
+        {
+          "name": "src/Mod/Part/App/PrimitiveFeature.h",
+          "seconds": 0.094674
+        },
+        {
+          "name": "src/App/ElementMap.h",
+          "seconds": 0.092557
+        },
+        {
+          "name": "src/App/MappedName.h",
+          "seconds": 0.07843
+        },
+        {
+          "name": "src/App/Application.h",
+          "seconds": 0.074639
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/WrapPython.h",
+          "seconds": 0.066273
+        },
+        {
+          "name": "/nix/store/h3l4z7p6wny3phbckwwhy1i2g52pdnj4-python3-3.13.15/include/python3.13/Python.h",
+          "seconds": 0.06581
+        },
+        {
+          "name": "src/App/PropertyStandard.h",
+          "seconds": 0.063971
+        },
+        {
+          "name": "src/Mod/Part/App/AttachExtension.h",
+          "seconds": 0.057454
+        },
+        {
+          "name": "src/Base/Observer.h",
+          "seconds": 0.057348
+        },
+        {
+          "name": "src/Base/UniqueNameManager.h",
+          "seconds": 0.055118
+        },
+        {
+          "name": "src/App/PropertyGeo.h",
+          "seconds": 0.053039
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/Python3/Objects.hxx",
+          "seconds": 0.04946
+        },
+        {
+          "name": "src/Mod/TechDraw/App/EdgeWalker.h",
+          "seconds": 0.049353
+        },
+        {
+          "name": "src/Mod/Material/App/MaterialValue.h",
+          "seconds": 0.048169
+        },
+        {
+          "name": "src/Base/UnlimitedUnsigned.h",
+          "seconds": 0.047966
+        },
+        {
+          "name": "src/Mod/Part/App/Attacher.h",
+          "seconds": 0.045501
+        },
+        {
+          "name": "src/Base/Reader.h",
+          "seconds": 0.044237
+        },
+        {
+          "name": "src/App/PropertyContainer.h",
+          "seconds": 0.041814
+        },
+        {
+          "name": "src/Base/BoundBox.h",
+          "seconds": 0.041449
+        },
+        {
+          "name": "src/Base/Tools.h",
+          "seconds": 0.040915
+        },
+        {
+          "name": "src/App/Property.h",
+          "seconds": 0.038951
+        },
+        {
+          "name": "src/Mod/TechDraw/App/GeometryObject.h",
+          "seconds": 0.032515
+        },
+        {
+          "name": "src/3rdParty/FastSignals/libfastsignals/include/fastsignals/signal.h",
+          "seconds": 0.031266
+        },
+        {
+          "name": "src/Mod/TechDraw/App/DrawUtil.h",
+          "seconds": 0.030901
+        },
+        {
+          "name": "src/3rdParty/zipios++/zipoutputstream.h",
+          "seconds": 0.030322
+        },
+        {
+          "name": "src/App/ProcessArguments.h",
+          "seconds": 0.029506
+        },
+        {
+          "name": "src/Mod/Material/App/Model.h",
+          "seconds": 0.029046
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/dynamic_bitset.hpp",
+          "seconds": 0.028681
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/dynamic_bitset/dynamic_bitset.hpp",
+          "seconds": 0.028514
+        },
+        {
+          "name": "src/App/PropertyExpressionEngine.h",
+          "seconds": 0.027599
+        },
+        {
+          "name": "src/Base/Tools2D.h",
+          "seconds": 0.027089
+        },
+        {
+          "name": "src/Base/Console.h",
+          "seconds": 0.026829
+        },
+        {
+          "name": "src/App/DepEdge.h",
+          "seconds": 0.026507
+        },
+        {
+          "name": "src/App/DocumentObserver.h",
+          "seconds": 0.024171
+        },
+        {
+          "name": "src/App/StringHasher.h",
+          "seconds": 0.023591
+        },
+        {
+          "name": "src/3rdParty/zipios++/zipoutputstreambuf.h",
+          "seconds": 0.022921
+        },
+        {
+          "name": "src/App/MainThreadSignal.h",
+          "seconds": 0.021238
+        },
+        {
+          "name": "src/Base/Converter.h",
+          "seconds": 0.020724
+        },
+        {
+          "name": "src/App/DynamicProperty.h",
+          "seconds": 0.019691
+        },
+        {
+          "name": "/nix/store/s9k3wqxph2axp6xr2xia5acrmx4rgl4v-xerces-c-3.3.0/include/xercesc/sax2/DefaultHandler.hpp",
+          "seconds": 0.018505
+        },
+        {
+          "name": "src/Base/Interpreter.h",
+          "seconds": 0.018394
+        },
+        {
+          "name": "src/3rdParty/zipios++/fcoll.h",
+          "seconds": 0.017881
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/any.hpp",
+          "seconds": 0.017755
+        },
+        {
+          "name": "src/Base/Exception.h",
+          "seconds": 0.017362
+        },
+        {
+          "name": "src/Base/Stream.h",
+          "seconds": 0.015653
+        },
+        {
+          "name": "/nix/store/s9k3wqxph2axp6xr2xia5acrmx4rgl4v-xerces-c-3.3.0/include/xercesc/sax/SAXParseException.hpp",
+          "seconds": 0.015607
+        },
+        {
+          "name": "/nix/store/s9k3wqxph2axp6xr2xia5acrmx4rgl4v-xerces-c-3.3.0/include/xercesc/sax/SAXException.hpp",
+          "seconds": 0.015285
+        },
+        {
+          "name": "src/3rdParty/FastSignals/libfastsignals/include/fastsignals/connection.h",
+          "seconds": 0.015167
+        },
+        {
+          "name": "src/Mod/TechDraw/App/HatchLine.h",
+          "seconds": 0.014599
+        },
+        {
+          "name": "src/Base/UnitsSchemas.h",
+          "seconds": 0.014486
+        },
+        {
+          "name": "/nix/store/s9k3wqxph2axp6xr2xia5acrmx4rgl4v-xerces-c-3.3.0/include/xercesc/util/XMLString.hpp",
+          "seconds": 0.014434
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/type_index.hpp",
+          "seconds": 0.013974
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/type_index/stl_type_index.hpp",
+          "seconds": 0.013604
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/Extensions.hxx",
+          "seconds": 0.013251
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/Python3/Extensions.hxx",
+          "seconds": 0.013216
+        },
+        {
+          "name": "src/Mod/Measure/App/ShapeFinder.h",
+          "seconds": 0.011391
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/Python3/Exception.hxx",
+          "seconds": 0.011334
+        },
+        {
+          "name": "/nix/store/h3l4z7p6wny3phbckwwhy1i2g52pdnj4-python3-3.13.15/include/python3.13/unicodeobject.h",
+          "seconds": 0.010622
+        },
+        {
+          "name": "/nix/store/s9k3wqxph2axp6xr2xia5acrmx4rgl4v-xerces-c-3.3.0/include/xercesc/util/BaseRefVectorOf.hpp",
+          "seconds": 0.01031
+        },
+        {
+          "name": "src/App/GroupExtension.h",
+          "seconds": 0.010212
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/Python3/cxx_standard_exceptions.hxx",
+          "seconds": 0.009287
+        },
+        {
+          "name": "/nix/store/h3l4z7p6wny3phbckwwhy1i2g52pdnj4-python3-3.13.15/include/python3.13/cpython/unicodeobject.h",
+          "seconds": 0.008984
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/core/demangle.hpp",
+          "seconds": 0.008778
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/algorithm/string/predicate.hpp",
+          "seconds": 0.008758
+        },
+        {
+          "name": "src/App/TransactionalObject.h",
+          "seconds": 0.008421
+        },
+        {
+          "name": "src/Mod/Part/App/PrismExtension.h",
+          "seconds": 0.008212
+        },
+        {
+          "name": "src/Base/Matrix.h",
+          "seconds": 0.007839
+        },
+        {
+          "name": "src/App/PropertyUnits.h",
+          "seconds": 0.007807
+        },
+        {
+          "name": "/nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/cxxabi.h",
+          "seconds": 0.007466
+        },
+        {
+          "name": "src/App/FeaturePython.h",
+          "seconds": 0.00736
+        },
+        {
+          "name": "src/3rdParty/FastSignals/libfastsignals/include/fastsignals/signal_impl.h",
+          "seconds": 0.00722
+        },
+        {
+          "name": "src/Base/UnitsSchema.h",
+          "seconds": 0.006833
+        },
+        {
+          "name": "src/Base/UnitsSchemasSpecs.h",
+          "seconds": 0.006592
+        },
+        {
+          "name": "src/App/FeaturePythonPyImp.h",
+          "seconds": 0.006491
+        },
+        {
+          "name": "src/Base/Parameter.h",
+          "seconds": 0.00645
+        }
+      ],
+      "template_ranking": [
+        {
+          "name": "boost::planar_face_traversal<boost::adjacency_list<boost::vecS, boost::vecS, boost::bidirectionalS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int>>, std::vector<boost::detail::edge_desc_impl<boost::bidirectional_tag, unsigned long>> *, TechDraw::edgeVisitor>",
+          "seconds": 0.072811
+        },
+        {
+          "name": "boost::planar_face_traversal<boost::adjacency_list<boost::vecS, boost::vecS, boost::bidirectionalS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int>>, std::vector<boost::detail::edge_desc_impl<boost::bidirectional_tag, unsigned long>> *, TechDraw::edgeVisitor, boost::adj_list_edge_property_map<boost::bidirectional_tag, int, const int &, unsigned long, const boost::property<boost::edge_index_t, int>, boost::edge_index_t>>",
+          "seconds": 0.072421
+        },
+        {
+          "name": "boost::add_edge<boost::adjacency_list<boost::vecS, boost::vecS, boost::bidirectionalS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int>>, boost::detail::adj_list_gen<boost::adjacency_list<boost::vecS, boost::vecS, boost::bidirectionalS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int>>, boost::vecS, boost::vecS, boost::bidirectionalS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int>, boost::no_property, boost::listS>::config, boost::bidirectional_graph_helper_with_property<boost::detail::adj_list_gen<boost::adjacency_list<boost::vecS, boost::vecS, boost::bidirectionalS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int>>, boost::vecS, boost::vecS, boost::bidirectionalS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int>, boost::no_property, boost::listS>::config>>",
+          "seconds": 0.051497
+        },
+        {
+          "name": "Base::ConsoleSingleton::error<const char *>",
+          "seconds": 0.028168
+        },
+        {
+          "name": "std::vector<int>::rbegin",
+          "seconds": 0.024749
+        },
+        {
+          "name": "boost::graph_traits<boost::adjacency_list<boost::vecS, boost::vecS, boost::bidirectionalS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int>>>",
+          "seconds": 0.022426
+        },
+        {
+          "name": "std::map<App::DocumentObject *, std::vector<std::basic_string<char>>>::operator[]",
+          "seconds": 0.019904
+        },
+        {
+          "name": "boost::add_edge<boost::detail::adj_list_gen<boost::adjacency_list<boost::vecS, boost::vecS, boost::bidirectionalS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int>>, boost::vecS, boost::vecS, boost::bidirectionalS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int>, boost::no_property, boost::listS>::config>",
+          "seconds": 0.019029
+        },
+        {
+          "name": "std::unique_ptr<App::DynamicProperty::Impl>",
+          "seconds": 0.018427
+        },
+        {
+          "name": "boost::adjacency_list<boost::vecS, boost::vecS, boost::bidirectionalS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int>>",
+          "seconds": 0.018038
+        },
+        {
+          "name": "std::uninitialized_copy<std::move_iterator<double *>, double *>",
+          "seconds": 0.017775
+        },
+        {
+          "name": "std::__uniq_ptr_data<App::DynamicProperty::Impl, std::default_delete<App::DynamicProperty::Impl>>",
+          "seconds": 0.016541
+        },
+        {
+          "name": "std::__uniq_ptr_impl<App::DynamicProperty::Impl, std::default_delete<App::DynamicProperty::Impl>>",
+          "seconds": 0.016439
+        },
+        {
+          "name": "std::vector<TopoDS_Shape>::insert<__gnu_cxx::__normal_iterator<TopoDS_Shape *, std::vector<TopoDS_Shape>>, void>",
+          "seconds": 0.016385
+        },
+        {
+          "name": "std::map<QString, Materials::ModelProperty>::operator[]",
+          "seconds": 0.016342
+        },
+        {
+          "name": "std::sort<QList<App::StringIDRef>::iterator>",
+          "seconds": 0.016087
+        },
+        {
+          "name": "std::__sort<QList<App::StringIDRef>::iterator, __gnu_cxx::__ops::_Iter_less_iter>",
+          "seconds": 0.015985
+        },
+        {
+          "name": "std::sort<__gnu_cxx::__normal_iterator<TopoDS_Wire *, std::vector<TopoDS_Wire>>, bool (*)(const TopoDS_Wire &, const TopoDS_Wire &)>",
+          "seconds": 0.015911
+        },
+        {
+          "name": "qRegisterNormalizedMetaType<Materials::MaterialValue>",
+          "seconds": 0.015794
+        },
+        {
+          "name": "std::__sort<__gnu_cxx::__normal_iterator<TopoDS_Wire *, std::vector<TopoDS_Wire>>, __gnu_cxx::__ops::_Iter_comp_iter<bool (*)(const TopoDS_Wire &, const TopoDS_Wire &)>>",
+          "seconds": 0.015627
+        },
+        {
+          "name": "qRegisterNormalizedMetaTypeImplementation<Materials::MaterialValue>",
+          "seconds": 0.01557
+        },
+        {
+          "name": "Base::ConsoleSingleton::message<std::basic_string<char> &>",
+          "seconds": 0.015408
+        },
+        {
+          "name": "std::map<std::basic_string<char>, std::vector<Base::UniqueNameManager::PiecewiseSparseIntegerSet<Base::UnlimitedUnsigned>>, std::less<void>>::clear",
+          "seconds": 0.015032
+        },
+        {
+          "name": "std::vector<std::shared_ptr<TechDraw::BaseGeom>>::operator=",
+          "seconds": 0.015002
+        },
+        {
+          "name": "std::_Rb_tree<std::basic_string<char>, std::pair<const std::basic_string<char>, std::vector<Base::UniqueNameManager::PiecewiseSparseIntegerSet<Base::UnlimitedUnsigned>>>, std::_Select1st<std::pair<const std::basic_string<char>, std::vector<Base::UniqueNameManager::PiecewiseSparseIntegerSet<Base::UnlimitedUnsigned>>>>, std::less<void>>::clear",
+          "seconds": 0.015
+        },
+        {
+          "name": "std::_Rb_tree<std::basic_string<char>, std::pair<const std::basic_string<char>, std::vector<Base::UniqueNameManager::PiecewiseSparseIntegerSet<Base::UnlimitedUnsigned>>>, std::_Select1st<std::pair<const std::basic_string<char>, std::vector<Base::UniqueNameManager::PiecewiseSparseIntegerSet<Base::UnlimitedUnsigned>>>>, std::less<void>>::_M_erase",
+          "seconds": 0.014893
+        },
+        {
+          "name": "qRegisterNormalizedMetaType<std::shared_ptr<Materials::Array2D>>",
+          "seconds": 0.014836
+        },
+        {
+          "name": "qRegisterNormalizedMetaTypeImplementation<std::shared_ptr<Materials::Array2D>>",
+          "seconds": 0.014807
+        },
+        {
+          "name": "qRegisterNormalizedMetaType<std::shared_ptr<Materials::Material>>",
+          "seconds": 0.014457
+        },
+        {
+          "name": "qRegisterNormalizedMetaTypeImplementation<std::shared_ptr<Materials::Material>>",
+          "seconds": 0.014422
+        },
+        {
+          "name": "std::vector<std::shared_ptr<TechDraw::Vertex>>::operator=",
+          "seconds": 0.014326
+        },
+        {
+          "name": "std::unique_ptr<std::basic_istream<char>>",
+          "seconds": 0.014173
+        },
+        {
+          "name": "QList<QString>::operator<<",
+          "seconds": 0.014027
+        },
+        {
+          "name": "qRegisterNormalizedMetaType<std::shared_ptr<Materials::Array3D>>",
+          "seconds": 0.013963
+        },
+        {
+          "name": "QList<QString>::append",
+          "seconds": 0.013941
+        },
+        {
+          "name": "std::vector<TopoDS_Shape>::_M_range_insert<__gnu_cxx::__normal_iterator<TopoDS_Shape *, std::vector<TopoDS_Shape>>>",
+          "seconds": 0.013935
+        },
+        {
+          "name": "qRegisterNormalizedMetaTypeImplementation<std::shared_ptr<Materials::Array3D>>",
+          "seconds": 0.013932
+        },
+        {
+          "name": "QList<QString>::emplaceBack<const QString &>",
+          "seconds": 0.01387
+        },
+        {
+          "name": "Base::ConsoleSingleton::send<Base::LogStyle::Error, Base::IntendedRecipient::All, Base::ContentType::Untranslated, const char *>",
+          "seconds": 0.013705
+        },
+        {
+          "name": "std::vector<std::basic_string<char>>::vector<__gnu_cxx::__normal_iterator<char *const *, std::vector<char *>>, void>",
+          "seconds": 0.013612
+        },
+        {
+          "name": "std::vector<Base::Vector2d>::operator=",
+          "seconds": 0.013589
+        },
+        {
+          "name": "boost::vec_adj_list_impl<boost::adjacency_list<boost::vecS, boost::vecS, boost::bidirectionalS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int>>, boost::detail::adj_list_gen<boost::adjacency_list<boost::vecS, boost::vecS, boost::bidirectionalS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int>>, boost::vecS, boost::vecS, boost::bidirectionalS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int>, boost::no_property, boost::listS>::config, boost::bidirectional_graph_helper_with_property<boost::detail::adj_list_gen<boost::adjacency_list<boost::vecS, boost::vecS, boost::bidirectionalS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int>>, boost::vecS, boost::vecS, boost::bidirectionalS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int>, boost::no_property, boost::listS>::config>>",
+          "seconds": 0.013344
+        },
+        {
+          "name": "std::format<const char *>",
+          "seconds": 0.013173
+        },
+        {
+          "name": "std::reverse_iterator<__gnu_cxx::__normal_iterator<int *, std::vector<int>>>",
+          "seconds": 0.013141
+        },
+        {
+          "name": "std::__uniq_ptr_data<std::basic_istream<char>, std::default_delete<std::basic_istream<char>>>",
+          "seconds": 0.012943
+        },
+        {
+          "name": "QtPrivate::QMovableArrayOps<QString>::emplace<const QString &>",
+          "seconds": 0.012912
+        },
+        {
+          "name": "std::__uniq_ptr_impl<std::basic_istream<char>, std::default_delete<std::basic_istream<char>>>",
+          "seconds": 0.012866
+        },
+        {
+          "name": "std::make_unique<Base::UnitsSchemas, const Base::UnitsSchemasDataPack &>",
+          "seconds": 0.012726
+        },
+        {
+          "name": "std::unique_ptr<std::vector<App::PropertyXLinkContainer::RestoreInfo>>",
+          "seconds": 0.012122
+        },
+        {
+          "name": "std::_Rb_tree<App::DocumentObject *, std::pair<App::DocumentObject *const, std::vector<std::basic_string<char>>>, std::_Select1st<std::pair<App::DocumentObject *const, std::vector<std::basic_string<char>>>>, std::less<App::DocumentObject *>>::_M_emplace_hint_unique<const std::piecewise_construct_t &, std::tuple<App::DocumentObject *const &>, std::tuple<>>",
+          "seconds": 0.011889
+        },
+        {
+          "name": "std::map<unsigned long, boost::detail::edge_desc_impl<boost::bidirectional_tag, unsigned long>>::operator[]",
+          "seconds": 0.011786
+        },
+        {
+          "name": "std::basic_format_string<char, const char (&)[2]>::basic_format_string<char[5]>",
+          "seconds": 0.011607
+        },
+        {
+          "name": "boost::adj_list_helper<boost::detail::adj_list_gen<boost::adjacency_list<boost::vecS, boost::vecS, boost::bidirectionalS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int>>, boost::vecS, boost::vecS, boost::bidirectionalS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int>, boost::no_property, boost::listS>::config, boost::bidirectional_graph_helper_with_property<boost::detail::adj_list_gen<boost::adjacency_list<boost::vecS, boost::vecS, boost::bidirectionalS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int>>, boost::vecS, boost::vecS, boost::bidirectionalS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int>, boost::no_property, boost::listS>::config>>",
+          "seconds": 0.011527
+        },
+        {
+          "name": "std::__format::_Checking_scanner<char, char[2]>",
+          "seconds": 0.011482
+        },
+        {
+          "name": "std::__introsort_loop<QList<App::StringIDRef>::iterator, long long, __gnu_cxx::__ops::_Iter_less_iter>",
+          "seconds": 0.011413
+        },
+        {
+          "name": "std::__introsort_loop<__gnu_cxx::__normal_iterator<TopoDS_Wire *, std::vector<TopoDS_Wire>>, long, __gnu_cxx::__ops::_Iter_comp_iter<bool (*)(const TopoDS_Wire &, const TopoDS_Wire &)>>",
+          "seconds": 0.011358
+        },
+        {
+          "name": "boost::bidirectional_graph_helper_with_property<boost::detail::adj_list_gen<boost::adjacency_list<boost::vecS, boost::vecS, boost::bidirectionalS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int>>, boost::vecS, boost::vecS, boost::bidirectionalS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int>, boost::no_property, boost::listS>::config>",
+          "seconds": 0.011248
+        },
+        {
+          "name": "std::reverse_iterator<__gnu_cxx::__normal_iterator<const int *, std::vector<int>>>",
+          "seconds": 0.011241
+        },
+        {
+          "name": "std::_Rb_tree<std::basic_string<char>, std::pair<const std::basic_string<char>, std::vector<Base::UniqueNameManager::PiecewiseSparseIntegerSet<Base::UnlimitedUnsigned>>>, std::_Select1st<std::pair<const std::basic_string<char>, std::vector<Base::UniqueNameManager::PiecewiseSparseIntegerSet<Base::UnlimitedUnsigned>>>>, std::less<void>>::_M_drop_node",
+          "seconds": 0.011236
+        },
+        {
+          "name": "boost::bidirectional_graph_helper<boost::detail::adj_list_gen<boost::adjacency_list<boost::vecS, boost::vecS, boost::bidirectionalS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int>>, boost::vecS, boost::vecS, boost::bidirectionalS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int>, boost::no_property, boost::listS>::config>",
+          "seconds": 0.011132
+        },
+        {
+          "name": "boost::directed_edges_helper<boost::detail::adj_list_gen<boost::adjacency_list<boost::vecS, boost::vecS, boost::bidirectionalS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int>>, boost::vecS, boost::vecS, boost::bidirectionalS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int>, boost::no_property, boost::listS>::config>",
+          "seconds": 0.011107
+        },
+        {
+          "name": "boost::detail::adj_list_gen<boost::adjacency_list<boost::vecS, boost::vecS, boost::bidirectionalS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int>>, boost::vecS, boost::vecS, boost::bidirectionalS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int>, boost::no_property, boost::listS>::config",
+          "seconds": 0.011062
+        },
+        {
+          "name": "std::_Rb_tree<std::basic_string<char>, std::pair<const std::basic_string<char>, std::vector<Base::UniqueNameManager::PiecewiseSparseIntegerSet<Base::UnlimitedUnsigned>>>, std::_Select1st<std::pair<const std::basic_string<char>, std::vector<Base::UniqueNameManager::PiecewiseSparseIntegerSet<Base::UnlimitedUnsigned>>>>, std::less<void>>::_M_destroy_node",
+          "seconds": 0.011018
+        },
+        {
+          "name": "std::vector<double>::insert<__gnu_cxx::__normal_iterator<double *, std::vector<double>>, void>",
+          "seconds": 0.010989
+        },
+        {
+          "name": "std::unique_ptr<Base::Exception>",
+          "seconds": 0.01092
+        },
+        {
+          "name": "std::unique_ptr<App::StringHasher::HashMap>",
+          "seconds": 0.010693
+        },
+        {
+          "name": "std::unique_ptr<App::PropertyXLink>",
+          "seconds": 0.010643
+        },
+        {
+          "name": "QArrayDataPointer<QString>::detachAndGrow",
+          "seconds": 0.010484
+        },
+        {
+          "name": "std::vector<double>::_M_range_insert<__gnu_cxx::__normal_iterator<double *, std::vector<double>>>",
+          "seconds": 0.010436
+        },
+        {
+          "name": "std::unique_ptr<Base::UnitsSchemas>",
+          "seconds": 0.010417
+        },
+        {
+          "name": "std::sort<__gnu_cxx::__normal_iterator<TechDraw::WalkerEdge *, std::vector<TechDraw::WalkerEdge>>, bool (*)(TechDraw::WalkerEdge, TechDraw::WalkerEdge)>",
+          "seconds": 0.010348
+        },
+        {
+          "name": "std::__uniq_ptr_data<std::vector<App::PropertyXLinkContainer::RestoreInfo>, std::default_delete<std::vector<App::PropertyXLinkContainer::RestoreInfo>>>",
+          "seconds": 0.010282
+        },
+        {
+          "name": "std::unique_ptr<Data::MappedNameRef>",
+          "seconds": 0.010231
+        },
+        {
+          "name": "std::unique_ptr<Base::UnitsSchema>",
+          "seconds": 0.010227
+        },
+        {
+          "name": "std::__uniq_ptr_impl<std::vector<App::PropertyXLinkContainer::RestoreInfo>, std::default_delete<std::vector<App::PropertyXLinkContainer::RestoreInfo>>>",
+          "seconds": 0.010211
+        },
+        {
+          "name": "std::vector<std::map<unsigned long, boost::detail::edge_desc_impl<boost::bidirectional_tag, unsigned long>>>::vector",
+          "seconds": 0.010193
+        },
+        {
+          "name": "std::unique_ptr<App::DocumentWeakPtrT::Private>",
+          "seconds": 0.010139
+        },
+        {
+          "name": "std::unique_ptr<Attacher::AttachEngine>",
+          "seconds": 0.010092
+        },
+        {
+          "name": "std::__sort<__gnu_cxx::__normal_iterator<TechDraw::WalkerEdge *, std::vector<TechDraw::WalkerEdge>>, __gnu_cxx::__ops::_Iter_comp_iter<bool (*)(TechDraw::WalkerEdge, TechDraw::WalkerEdge)>>",
+          "seconds": 0.010079
+        },
+        {
+          "name": "std::unique_ptr<std::basic_ostream<char>>",
+          "seconds": 0.010038
+        },
+        {
+          "name": "std::unique_ptr<App::DocumentObjectWeakPtrT::Private>",
+          "seconds": 0.010036
+        },
+        {
+          "name": "std::unordered_set<std::basic_string<char>>",
+          "seconds": 0.009962
+        },
+        {
+          "name": "std::__format::_Seq_sink<std::basic_string<wchar_t>>::_M_reserve",
+          "seconds": 0.009955
+        },
+        {
+          "name": "std::map<std::basic_string<char>, std::vector<Base::UnitTranslationSpec>>::map",
+          "seconds": 0.009917
+        },
+        {
+          "name": "std::unique_ptr<std::vector<App::PropertyExpressionEngine::RestoredExpression>>",
+          "seconds": 0.009874
+        },
+        {
+          "name": "std::__uniq_ptr_data<Base::Exception, std::default_delete<Base::Exception>>",
+          "seconds": 0.009826
+        },
+        {
+          "name": "std::set<Base::ILogger *>",
+          "seconds": 0.009812
+        },
+        {
+          "name": "std::__uniq_ptr_impl<Base::Exception, std::default_delete<Base::Exception>>",
+          "seconds": 0.009749
+        },
+        {
+          "name": "std::unique_ptr<App::PropertyExpressionEngine::Private>",
+          "seconds": 0.00974
+        },
+        {
+          "name": "std::sort<__gnu_cxx::__normal_iterator<TechDraw::incidenceItem *, std::vector<TechDraw::incidenceItem>>, bool (*)(const TechDraw::incidenceItem &, const TechDraw::incidenceItem &)>",
+          "seconds": 0.009643
+        },
+        {
+          "name": "std::vector<TechDraw::incidenceItem>::operator=",
+          "seconds": 0.009617
+        },
+        {
+          "name": "std::vector<std::basic_string<char>>::push_back",
+          "seconds": 0.009576
+        },
+        {
+          "name": "std::__uniq_ptr_data<App::PropertyXLink, std::default_delete<App::PropertyXLink>>",
+          "seconds": 0.009572
+        },
+        {
+          "name": "std::__uniq_ptr_data<App::StringHasher::HashMap, std::default_delete<App::StringHasher::HashMap>>",
+          "seconds": 0.009563
+        },
+        {
+          "name": "App::PropertyListsT<App::Material>::setValue",
+          "seconds": 0.009558
+        },
+        {
+          "name": "std::unique_ptr<App::PropertyData::Impl>",
+          "seconds": 0.009549
+        },
+        {
+          "name": "std::vector<Materials::MaterialProperty>::push_back",
+          "seconds": 0.009539
+        },
+        {
+          "name": "App::PropertyListsT<App::Material>::setValues",
+          "seconds": 0.009528
+        },
+        {
+          "name": "std::tuple<App::DynamicProperty::Impl *, std::default_delete<App::DynamicProperty::Impl>>",
+          "seconds": 0.009507
+        },
+        {
+          "name": "std::__uniq_ptr_impl<App::PropertyXLink, std::default_delete<App::PropertyXLink>>",
+          "seconds": 0.009496
+        }
+      ]
+    },
+    "pch": {
+      "count": 0,
+      "phase_seconds": {
+        "ExecuteCompiler": 0,
+        "Frontend": 0,
+        "Backend": 0,
+        "Source": 0,
+        "InstantiateFunction": 0,
+        "InstantiateClass": 0,
+        "Optimizer": 0,
+        "CodeGenPasses": 0
+      },
+      "source_ranking": [],
+      "template_ranking": []
+    },
+    "combined": {
+      "count": 1,
+      "phase_seconds": {
+        "ExecuteCompiler": 8.090158,
+        "Frontend": 3.041987,
+        "Backend": 4.996562,
+        "Source": 0.0,
+        "InstantiateFunction": 1.196612,
+        "InstantiateClass": 1.019846,
+        "Optimizer": 3.296326,
+        "CodeGenPasses": 1.697633
+      },
+      "source_ranking": [
+        {
+          "name": "src/Mod/TechDraw/App/ShapeExtractor.cpp",
+          "seconds": 1.560754
+        },
+        {
+          "name": "src/App/Document.h",
+          "seconds": 0.628637
+        },
+        {
+          "name": "src/Mod/Part/App/PartFeature.h",
+          "seconds": 0.42027
+        },
+        {
+          "name": "src/Mod/TechDraw/App/DrawDimHelper.cpp",
+          "seconds": 0.295669
+        },
+        {
+          "name": "src/Mod/Part/App/PropertyTopoShape.h",
+          "seconds": 0.241665
+        },
+        {
+          "name": "src/Mod/TechDraw/App/EdgeWalker.cpp",
+          "seconds": 0.234877
+        },
+        {
+          "name": "src/Mod/Part/App/TopoShape.h",
+          "seconds": 0.212816
+        },
+        {
+          "name": "src/App/ComplexGeoData.h",
+          "seconds": 0.184326
+        },
+        {
+          "name": "src/Mod/TechDraw/App/DrawViewDimension.h",
+          "seconds": 0.183802
+        },
+        {
+          "name": "src/Base/UnitsApi.h",
+          "seconds": 0.175654
+        },
+        {
+          "name": "src/Mod/Material/App/PropertyMaterial.h",
+          "seconds": 0.166763
+        },
+        {
+          "name": "src/Mod/TechDraw/App/Preferences.h",
+          "seconds": 0.146826
+        },
+        {
+          "name": "src/App/ExportInfo.h",
+          "seconds": 0.146681
+        },
+        {
+          "name": "src/App/DocumentObject.h",
+          "seconds": 0.146461
+        },
+        {
+          "name": "src/Mod/TechDraw/App/DrawBrokenView.h",
+          "seconds": 0.146144
+        },
+        {
+          "name": "src/Mod/TechDraw/App/DrawViewPart.h",
+          "seconds": 0.143122
+        },
+        {
+          "name": "src/App/Link.h",
+          "seconds": 0.14084
+        },
+        {
+          "name": "src/Mod/TechDraw/App/CosmeticExtension.h",
+          "seconds": 0.128445
+        },
+        {
+          "name": "src/Mod/Material/App/Materials.h",
+          "seconds": 0.12188
+        },
+        {
+          "name": "src/App/PropertyLinks.h",
+          "seconds": 0.118783
+        },
+        {
+          "name": "src/Mod/TechDraw/App/Geometry.h",
+          "seconds": 0.118466
+        },
+        {
+          "name": "src/Base/UnitsSchemasData.h",
+          "seconds": 0.11613
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/Objects.hxx",
+          "seconds": 0.115817
+        },
+        {
+          "name": "src/Base/Writer.h",
+          "seconds": 0.101031
+        },
+        {
+          "name": "src/Mod/TechDraw/App/HatchLine.cpp",
+          "seconds": 0.09758
+        },
+        {
+          "name": "src/Mod/Part/App/PrimitiveFeature.h",
+          "seconds": 0.094674
+        },
+        {
+          "name": "src/App/ElementMap.h",
+          "seconds": 0.092557
+        },
+        {
+          "name": "src/App/MappedName.h",
+          "seconds": 0.07843
+        },
+        {
+          "name": "src/App/Application.h",
+          "seconds": 0.074639
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/WrapPython.h",
+          "seconds": 0.066273
+        },
+        {
+          "name": "/nix/store/h3l4z7p6wny3phbckwwhy1i2g52pdnj4-python3-3.13.15/include/python3.13/Python.h",
+          "seconds": 0.06581
+        },
+        {
+          "name": "src/App/PropertyStandard.h",
+          "seconds": 0.063971
+        },
+        {
+          "name": "src/Mod/Part/App/AttachExtension.h",
+          "seconds": 0.057454
+        },
+        {
+          "name": "src/Base/Observer.h",
+          "seconds": 0.057348
+        },
+        {
+          "name": "src/Base/UniqueNameManager.h",
+          "seconds": 0.055118
+        },
+        {
+          "name": "src/App/PropertyGeo.h",
+          "seconds": 0.053039
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/Python3/Objects.hxx",
+          "seconds": 0.04946
+        },
+        {
+          "name": "src/Mod/TechDraw/App/EdgeWalker.h",
+          "seconds": 0.049353
+        },
+        {
+          "name": "src/Mod/Material/App/MaterialValue.h",
+          "seconds": 0.048169
+        },
+        {
+          "name": "src/Base/UnlimitedUnsigned.h",
+          "seconds": 0.047966
+        },
+        {
+          "name": "src/Mod/Part/App/Attacher.h",
+          "seconds": 0.045501
+        },
+        {
+          "name": "src/Base/Reader.h",
+          "seconds": 0.044237
+        },
+        {
+          "name": "src/App/PropertyContainer.h",
+          "seconds": 0.041814
+        },
+        {
+          "name": "src/Base/BoundBox.h",
+          "seconds": 0.041449
+        },
+        {
+          "name": "src/Base/Tools.h",
+          "seconds": 0.040915
+        },
+        {
+          "name": "src/App/Property.h",
+          "seconds": 0.038951
+        },
+        {
+          "name": "src/Mod/TechDraw/App/GeometryObject.h",
+          "seconds": 0.032515
+        },
+        {
+          "name": "src/3rdParty/FastSignals/libfastsignals/include/fastsignals/signal.h",
+          "seconds": 0.031266
+        },
+        {
+          "name": "src/Mod/TechDraw/App/DrawUtil.h",
+          "seconds": 0.030901
+        },
+        {
+          "name": "src/3rdParty/zipios++/zipoutputstream.h",
+          "seconds": 0.030322
+        },
+        {
+          "name": "src/App/ProcessArguments.h",
+          "seconds": 0.029506
+        },
+        {
+          "name": "src/Mod/Material/App/Model.h",
+          "seconds": 0.029046
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/dynamic_bitset.hpp",
+          "seconds": 0.028681
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/dynamic_bitset/dynamic_bitset.hpp",
+          "seconds": 0.028514
+        },
+        {
+          "name": "src/App/PropertyExpressionEngine.h",
+          "seconds": 0.027599
+        },
+        {
+          "name": "src/Base/Tools2D.h",
+          "seconds": 0.027089
+        },
+        {
+          "name": "src/Base/Console.h",
+          "seconds": 0.026829
+        },
+        {
+          "name": "src/App/DepEdge.h",
+          "seconds": 0.026507
+        },
+        {
+          "name": "src/App/DocumentObserver.h",
+          "seconds": 0.024171
+        },
+        {
+          "name": "src/App/StringHasher.h",
+          "seconds": 0.023591
+        },
+        {
+          "name": "src/3rdParty/zipios++/zipoutputstreambuf.h",
+          "seconds": 0.022921
+        },
+        {
+          "name": "src/App/MainThreadSignal.h",
+          "seconds": 0.021238
+        },
+        {
+          "name": "src/Base/Converter.h",
+          "seconds": 0.020724
+        },
+        {
+          "name": "src/App/DynamicProperty.h",
+          "seconds": 0.019691
+        },
+        {
+          "name": "/nix/store/s9k3wqxph2axp6xr2xia5acrmx4rgl4v-xerces-c-3.3.0/include/xercesc/sax2/DefaultHandler.hpp",
+          "seconds": 0.018505
+        },
+        {
+          "name": "src/Base/Interpreter.h",
+          "seconds": 0.018394
+        },
+        {
+          "name": "src/3rdParty/zipios++/fcoll.h",
+          "seconds": 0.017881
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/any.hpp",
+          "seconds": 0.017755
+        },
+        {
+          "name": "src/Base/Exception.h",
+          "seconds": 0.017362
+        },
+        {
+          "name": "src/Base/Stream.h",
+          "seconds": 0.015653
+        },
+        {
+          "name": "/nix/store/s9k3wqxph2axp6xr2xia5acrmx4rgl4v-xerces-c-3.3.0/include/xercesc/sax/SAXParseException.hpp",
+          "seconds": 0.015607
+        },
+        {
+          "name": "/nix/store/s9k3wqxph2axp6xr2xia5acrmx4rgl4v-xerces-c-3.3.0/include/xercesc/sax/SAXException.hpp",
+          "seconds": 0.015285
+        },
+        {
+          "name": "src/3rdParty/FastSignals/libfastsignals/include/fastsignals/connection.h",
+          "seconds": 0.015167
+        },
+        {
+          "name": "src/Mod/TechDraw/App/HatchLine.h",
+          "seconds": 0.014599
+        },
+        {
+          "name": "src/Base/UnitsSchemas.h",
+          "seconds": 0.014486
+        },
+        {
+          "name": "/nix/store/s9k3wqxph2axp6xr2xia5acrmx4rgl4v-xerces-c-3.3.0/include/xercesc/util/XMLString.hpp",
+          "seconds": 0.014434
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/type_index.hpp",
+          "seconds": 0.013974
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/type_index/stl_type_index.hpp",
+          "seconds": 0.013604
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/Extensions.hxx",
+          "seconds": 0.013251
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/Python3/Extensions.hxx",
+          "seconds": 0.013216
+        },
+        {
+          "name": "src/Mod/Measure/App/ShapeFinder.h",
+          "seconds": 0.011391
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/Python3/Exception.hxx",
+          "seconds": 0.011334
+        },
+        {
+          "name": "/nix/store/h3l4z7p6wny3phbckwwhy1i2g52pdnj4-python3-3.13.15/include/python3.13/unicodeobject.h",
+          "seconds": 0.010622
+        },
+        {
+          "name": "/nix/store/s9k3wqxph2axp6xr2xia5acrmx4rgl4v-xerces-c-3.3.0/include/xercesc/util/BaseRefVectorOf.hpp",
+          "seconds": 0.01031
+        },
+        {
+          "name": "src/App/GroupExtension.h",
+          "seconds": 0.010212
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/Python3/cxx_standard_exceptions.hxx",
+          "seconds": 0.009287
+        },
+        {
+          "name": "/nix/store/h3l4z7p6wny3phbckwwhy1i2g52pdnj4-python3-3.13.15/include/python3.13/cpython/unicodeobject.h",
+          "seconds": 0.008984
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/core/demangle.hpp",
+          "seconds": 0.008778
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/algorithm/string/predicate.hpp",
+          "seconds": 0.008758
+        },
+        {
+          "name": "src/App/TransactionalObject.h",
+          "seconds": 0.008421
+        },
+        {
+          "name": "src/Mod/Part/App/PrismExtension.h",
+          "seconds": 0.008212
+        },
+        {
+          "name": "src/Base/Matrix.h",
+          "seconds": 0.007839
+        },
+        {
+          "name": "src/App/PropertyUnits.h",
+          "seconds": 0.007807
+        },
+        {
+          "name": "/nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/cxxabi.h",
+          "seconds": 0.007466
+        },
+        {
+          "name": "src/App/FeaturePython.h",
+          "seconds": 0.00736
+        },
+        {
+          "name": "src/3rdParty/FastSignals/libfastsignals/include/fastsignals/signal_impl.h",
+          "seconds": 0.00722
+        },
+        {
+          "name": "src/Base/UnitsSchema.h",
+          "seconds": 0.006833
+        },
+        {
+          "name": "src/Base/UnitsSchemasSpecs.h",
+          "seconds": 0.006592
+        },
+        {
+          "name": "src/App/FeaturePythonPyImp.h",
+          "seconds": 0.006491
+        },
+        {
+          "name": "src/Base/Parameter.h",
+          "seconds": 0.00645
+        }
+      ],
+      "template_ranking": [
+        {
+          "name": "boost::planar_face_traversal<boost::adjacency_list<boost::vecS, boost::vecS, boost::bidirectionalS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int>>, std::vector<boost::detail::edge_desc_impl<boost::bidirectional_tag, unsigned long>> *, TechDraw::edgeVisitor>",
+          "seconds": 0.072811
+        },
+        {
+          "name": "boost::planar_face_traversal<boost::adjacency_list<boost::vecS, boost::vecS, boost::bidirectionalS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int>>, std::vector<boost::detail::edge_desc_impl<boost::bidirectional_tag, unsigned long>> *, TechDraw::edgeVisitor, boost::adj_list_edge_property_map<boost::bidirectional_tag, int, const int &, unsigned long, const boost::property<boost::edge_index_t, int>, boost::edge_index_t>>",
+          "seconds": 0.072421
+        },
+        {
+          "name": "boost::add_edge<boost::adjacency_list<boost::vecS, boost::vecS, boost::bidirectionalS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int>>, boost::detail::adj_list_gen<boost::adjacency_list<boost::vecS, boost::vecS, boost::bidirectionalS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int>>, boost::vecS, boost::vecS, boost::bidirectionalS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int>, boost::no_property, boost::listS>::config, boost::bidirectional_graph_helper_with_property<boost::detail::adj_list_gen<boost::adjacency_list<boost::vecS, boost::vecS, boost::bidirectionalS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int>>, boost::vecS, boost::vecS, boost::bidirectionalS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int>, boost::no_property, boost::listS>::config>>",
+          "seconds": 0.051497
+        },
+        {
+          "name": "Base::ConsoleSingleton::error<const char *>",
+          "seconds": 0.028168
+        },
+        {
+          "name": "std::vector<int>::rbegin",
+          "seconds": 0.024749
+        },
+        {
+          "name": "boost::graph_traits<boost::adjacency_list<boost::vecS, boost::vecS, boost::bidirectionalS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int>>>",
+          "seconds": 0.022426
+        },
+        {
+          "name": "std::map<App::DocumentObject *, std::vector<std::basic_string<char>>>::operator[]",
+          "seconds": 0.019904
+        },
+        {
+          "name": "boost::add_edge<boost::detail::adj_list_gen<boost::adjacency_list<boost::vecS, boost::vecS, boost::bidirectionalS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int>>, boost::vecS, boost::vecS, boost::bidirectionalS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int>, boost::no_property, boost::listS>::config>",
+          "seconds": 0.019029
+        },
+        {
+          "name": "std::unique_ptr<App::DynamicProperty::Impl>",
+          "seconds": 0.018427
+        },
+        {
+          "name": "boost::adjacency_list<boost::vecS, boost::vecS, boost::bidirectionalS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int>>",
+          "seconds": 0.018038
+        },
+        {
+          "name": "std::uninitialized_copy<std::move_iterator<double *>, double *>",
+          "seconds": 0.017775
+        },
+        {
+          "name": "std::__uniq_ptr_data<App::DynamicProperty::Impl, std::default_delete<App::DynamicProperty::Impl>>",
+          "seconds": 0.016541
+        },
+        {
+          "name": "std::__uniq_ptr_impl<App::DynamicProperty::Impl, std::default_delete<App::DynamicProperty::Impl>>",
+          "seconds": 0.016439
+        },
+        {
+          "name": "std::vector<TopoDS_Shape>::insert<__gnu_cxx::__normal_iterator<TopoDS_Shape *, std::vector<TopoDS_Shape>>, void>",
+          "seconds": 0.016385
+        },
+        {
+          "name": "std::map<QString, Materials::ModelProperty>::operator[]",
+          "seconds": 0.016342
+        },
+        {
+          "name": "std::sort<QList<App::StringIDRef>::iterator>",
+          "seconds": 0.016087
+        },
+        {
+          "name": "std::__sort<QList<App::StringIDRef>::iterator, __gnu_cxx::__ops::_Iter_less_iter>",
+          "seconds": 0.015985
+        },
+        {
+          "name": "std::sort<__gnu_cxx::__normal_iterator<TopoDS_Wire *, std::vector<TopoDS_Wire>>, bool (*)(const TopoDS_Wire &, const TopoDS_Wire &)>",
+          "seconds": 0.015911
+        },
+        {
+          "name": "qRegisterNormalizedMetaType<Materials::MaterialValue>",
+          "seconds": 0.015794
+        },
+        {
+          "name": "std::__sort<__gnu_cxx::__normal_iterator<TopoDS_Wire *, std::vector<TopoDS_Wire>>, __gnu_cxx::__ops::_Iter_comp_iter<bool (*)(const TopoDS_Wire &, const TopoDS_Wire &)>>",
+          "seconds": 0.015627
+        },
+        {
+          "name": "qRegisterNormalizedMetaTypeImplementation<Materials::MaterialValue>",
+          "seconds": 0.01557
+        },
+        {
+          "name": "Base::ConsoleSingleton::message<std::basic_string<char> &>",
+          "seconds": 0.015408
+        },
+        {
+          "name": "std::map<std::basic_string<char>, std::vector<Base::UniqueNameManager::PiecewiseSparseIntegerSet<Base::UnlimitedUnsigned>>, std::less<void>>::clear",
+          "seconds": 0.015032
+        },
+        {
+          "name": "std::vector<std::shared_ptr<TechDraw::BaseGeom>>::operator=",
+          "seconds": 0.015002
+        },
+        {
+          "name": "std::_Rb_tree<std::basic_string<char>, std::pair<const std::basic_string<char>, std::vector<Base::UniqueNameManager::PiecewiseSparseIntegerSet<Base::UnlimitedUnsigned>>>, std::_Select1st<std::pair<const std::basic_string<char>, std::vector<Base::UniqueNameManager::PiecewiseSparseIntegerSet<Base::UnlimitedUnsigned>>>>, std::less<void>>::clear",
+          "seconds": 0.015
+        },
+        {
+          "name": "std::_Rb_tree<std::basic_string<char>, std::pair<const std::basic_string<char>, std::vector<Base::UniqueNameManager::PiecewiseSparseIntegerSet<Base::UnlimitedUnsigned>>>, std::_Select1st<std::pair<const std::basic_string<char>, std::vector<Base::UniqueNameManager::PiecewiseSparseIntegerSet<Base::UnlimitedUnsigned>>>>, std::less<void>>::_M_erase",
+          "seconds": 0.014893
+        },
+        {
+          "name": "qRegisterNormalizedMetaType<std::shared_ptr<Materials::Array2D>>",
+          "seconds": 0.014836
+        },
+        {
+          "name": "qRegisterNormalizedMetaTypeImplementation<std::shared_ptr<Materials::Array2D>>",
+          "seconds": 0.014807
+        },
+        {
+          "name": "qRegisterNormalizedMetaType<std::shared_ptr<Materials::Material>>",
+          "seconds": 0.014457
+        },
+        {
+          "name": "qRegisterNormalizedMetaTypeImplementation<std::shared_ptr<Materials::Material>>",
+          "seconds": 0.014422
+        },
+        {
+          "name": "std::vector<std::shared_ptr<TechDraw::Vertex>>::operator=",
+          "seconds": 0.014326
+        },
+        {
+          "name": "std::unique_ptr<std::basic_istream<char>>",
+          "seconds": 0.014173
+        },
+        {
+          "name": "QList<QString>::operator<<",
+          "seconds": 0.014027
+        },
+        {
+          "name": "qRegisterNormalizedMetaType<std::shared_ptr<Materials::Array3D>>",
+          "seconds": 0.013963
+        },
+        {
+          "name": "QList<QString>::append",
+          "seconds": 0.013941
+        },
+        {
+          "name": "std::vector<TopoDS_Shape>::_M_range_insert<__gnu_cxx::__normal_iterator<TopoDS_Shape *, std::vector<TopoDS_Shape>>>",
+          "seconds": 0.013935
+        },
+        {
+          "name": "qRegisterNormalizedMetaTypeImplementation<std::shared_ptr<Materials::Array3D>>",
+          "seconds": 0.013932
+        },
+        {
+          "name": "QList<QString>::emplaceBack<const QString &>",
+          "seconds": 0.01387
+        },
+        {
+          "name": "Base::ConsoleSingleton::send<Base::LogStyle::Error, Base::IntendedRecipient::All, Base::ContentType::Untranslated, const char *>",
+          "seconds": 0.013705
+        },
+        {
+          "name": "std::vector<std::basic_string<char>>::vector<__gnu_cxx::__normal_iterator<char *const *, std::vector<char *>>, void>",
+          "seconds": 0.013612
+        },
+        {
+          "name": "std::vector<Base::Vector2d>::operator=",
+          "seconds": 0.013589
+        },
+        {
+          "name": "boost::vec_adj_list_impl<boost::adjacency_list<boost::vecS, boost::vecS, boost::bidirectionalS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int>>, boost::detail::adj_list_gen<boost::adjacency_list<boost::vecS, boost::vecS, boost::bidirectionalS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int>>, boost::vecS, boost::vecS, boost::bidirectionalS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int>, boost::no_property, boost::listS>::config, boost::bidirectional_graph_helper_with_property<boost::detail::adj_list_gen<boost::adjacency_list<boost::vecS, boost::vecS, boost::bidirectionalS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int>>, boost::vecS, boost::vecS, boost::bidirectionalS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int>, boost::no_property, boost::listS>::config>>",
+          "seconds": 0.013344
+        },
+        {
+          "name": "std::format<const char *>",
+          "seconds": 0.013173
+        },
+        {
+          "name": "std::reverse_iterator<__gnu_cxx::__normal_iterator<int *, std::vector<int>>>",
+          "seconds": 0.013141
+        },
+        {
+          "name": "std::__uniq_ptr_data<std::basic_istream<char>, std::default_delete<std::basic_istream<char>>>",
+          "seconds": 0.012943
+        },
+        {
+          "name": "QtPrivate::QMovableArrayOps<QString>::emplace<const QString &>",
+          "seconds": 0.012912
+        },
+        {
+          "name": "std::__uniq_ptr_impl<std::basic_istream<char>, std::default_delete<std::basic_istream<char>>>",
+          "seconds": 0.012866
+        },
+        {
+          "name": "std::make_unique<Base::UnitsSchemas, const Base::UnitsSchemasDataPack &>",
+          "seconds": 0.012726
+        },
+        {
+          "name": "std::unique_ptr<std::vector<App::PropertyXLinkContainer::RestoreInfo>>",
+          "seconds": 0.012122
+        },
+        {
+          "name": "std::_Rb_tree<App::DocumentObject *, std::pair<App::DocumentObject *const, std::vector<std::basic_string<char>>>, std::_Select1st<std::pair<App::DocumentObject *const, std::vector<std::basic_string<char>>>>, std::less<App::DocumentObject *>>::_M_emplace_hint_unique<const std::piecewise_construct_t &, std::tuple<App::DocumentObject *const &>, std::tuple<>>",
+          "seconds": 0.011889
+        },
+        {
+          "name": "std::map<unsigned long, boost::detail::edge_desc_impl<boost::bidirectional_tag, unsigned long>>::operator[]",
+          "seconds": 0.011786
+        },
+        {
+          "name": "std::basic_format_string<char, const char (&)[2]>::basic_format_string<char[5]>",
+          "seconds": 0.011607
+        },
+        {
+          "name": "boost::adj_list_helper<boost::detail::adj_list_gen<boost::adjacency_list<boost::vecS, boost::vecS, boost::bidirectionalS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int>>, boost::vecS, boost::vecS, boost::bidirectionalS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int>, boost::no_property, boost::listS>::config, boost::bidirectional_graph_helper_with_property<boost::detail::adj_list_gen<boost::adjacency_list<boost::vecS, boost::vecS, boost::bidirectionalS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int>>, boost::vecS, boost::vecS, boost::bidirectionalS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int>, boost::no_property, boost::listS>::config>>",
+          "seconds": 0.011527
+        },
+        {
+          "name": "std::__format::_Checking_scanner<char, char[2]>",
+          "seconds": 0.011482
+        },
+        {
+          "name": "std::__introsort_loop<QList<App::StringIDRef>::iterator, long long, __gnu_cxx::__ops::_Iter_less_iter>",
+          "seconds": 0.011413
+        },
+        {
+          "name": "std::__introsort_loop<__gnu_cxx::__normal_iterator<TopoDS_Wire *, std::vector<TopoDS_Wire>>, long, __gnu_cxx::__ops::_Iter_comp_iter<bool (*)(const TopoDS_Wire &, const TopoDS_Wire &)>>",
+          "seconds": 0.011358
+        },
+        {
+          "name": "boost::bidirectional_graph_helper_with_property<boost::detail::adj_list_gen<boost::adjacency_list<boost::vecS, boost::vecS, boost::bidirectionalS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int>>, boost::vecS, boost::vecS, boost::bidirectionalS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int>, boost::no_property, boost::listS>::config>",
+          "seconds": 0.011248
+        },
+        {
+          "name": "std::reverse_iterator<__gnu_cxx::__normal_iterator<const int *, std::vector<int>>>",
+          "seconds": 0.011241
+        },
+        {
+          "name": "std::_Rb_tree<std::basic_string<char>, std::pair<const std::basic_string<char>, std::vector<Base::UniqueNameManager::PiecewiseSparseIntegerSet<Base::UnlimitedUnsigned>>>, std::_Select1st<std::pair<const std::basic_string<char>, std::vector<Base::UniqueNameManager::PiecewiseSparseIntegerSet<Base::UnlimitedUnsigned>>>>, std::less<void>>::_M_drop_node",
+          "seconds": 0.011236
+        },
+        {
+          "name": "boost::bidirectional_graph_helper<boost::detail::adj_list_gen<boost::adjacency_list<boost::vecS, boost::vecS, boost::bidirectionalS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int>>, boost::vecS, boost::vecS, boost::bidirectionalS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int>, boost::no_property, boost::listS>::config>",
+          "seconds": 0.011132
+        },
+        {
+          "name": "boost::directed_edges_helper<boost::detail::adj_list_gen<boost::adjacency_list<boost::vecS, boost::vecS, boost::bidirectionalS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int>>, boost::vecS, boost::vecS, boost::bidirectionalS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int>, boost::no_property, boost::listS>::config>",
+          "seconds": 0.011107
+        },
+        {
+          "name": "boost::detail::adj_list_gen<boost::adjacency_list<boost::vecS, boost::vecS, boost::bidirectionalS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int>>, boost::vecS, boost::vecS, boost::bidirectionalS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int>, boost::no_property, boost::listS>::config",
+          "seconds": 0.011062
+        },
+        {
+          "name": "std::_Rb_tree<std::basic_string<char>, std::pair<const std::basic_string<char>, std::vector<Base::UniqueNameManager::PiecewiseSparseIntegerSet<Base::UnlimitedUnsigned>>>, std::_Select1st<std::pair<const std::basic_string<char>, std::vector<Base::UniqueNameManager::PiecewiseSparseIntegerSet<Base::UnlimitedUnsigned>>>>, std::less<void>>::_M_destroy_node",
+          "seconds": 0.011018
+        },
+        {
+          "name": "std::vector<double>::insert<__gnu_cxx::__normal_iterator<double *, std::vector<double>>, void>",
+          "seconds": 0.010989
+        },
+        {
+          "name": "std::unique_ptr<Base::Exception>",
+          "seconds": 0.01092
+        },
+        {
+          "name": "std::unique_ptr<App::StringHasher::HashMap>",
+          "seconds": 0.010693
+        },
+        {
+          "name": "std::unique_ptr<App::PropertyXLink>",
+          "seconds": 0.010643
+        },
+        {
+          "name": "QArrayDataPointer<QString>::detachAndGrow",
+          "seconds": 0.010484
+        },
+        {
+          "name": "std::vector<double>::_M_range_insert<__gnu_cxx::__normal_iterator<double *, std::vector<double>>>",
+          "seconds": 0.010436
+        },
+        {
+          "name": "std::unique_ptr<Base::UnitsSchemas>",
+          "seconds": 0.010417
+        },
+        {
+          "name": "std::sort<__gnu_cxx::__normal_iterator<TechDraw::WalkerEdge *, std::vector<TechDraw::WalkerEdge>>, bool (*)(TechDraw::WalkerEdge, TechDraw::WalkerEdge)>",
+          "seconds": 0.010348
+        },
+        {
+          "name": "std::__uniq_ptr_data<std::vector<App::PropertyXLinkContainer::RestoreInfo>, std::default_delete<std::vector<App::PropertyXLinkContainer::RestoreInfo>>>",
+          "seconds": 0.010282
+        },
+        {
+          "name": "std::unique_ptr<Data::MappedNameRef>",
+          "seconds": 0.010231
+        },
+        {
+          "name": "std::unique_ptr<Base::UnitsSchema>",
+          "seconds": 0.010227
+        },
+        {
+          "name": "std::__uniq_ptr_impl<std::vector<App::PropertyXLinkContainer::RestoreInfo>, std::default_delete<std::vector<App::PropertyXLinkContainer::RestoreInfo>>>",
+          "seconds": 0.010211
+        },
+        {
+          "name": "std::vector<std::map<unsigned long, boost::detail::edge_desc_impl<boost::bidirectional_tag, unsigned long>>>::vector",
+          "seconds": 0.010193
+        },
+        {
+          "name": "std::unique_ptr<App::DocumentWeakPtrT::Private>",
+          "seconds": 0.010139
+        },
+        {
+          "name": "std::unique_ptr<Attacher::AttachEngine>",
+          "seconds": 0.010092
+        },
+        {
+          "name": "std::__sort<__gnu_cxx::__normal_iterator<TechDraw::WalkerEdge *, std::vector<TechDraw::WalkerEdge>>, __gnu_cxx::__ops::_Iter_comp_iter<bool (*)(TechDraw::WalkerEdge, TechDraw::WalkerEdge)>>",
+          "seconds": 0.010079
+        },
+        {
+          "name": "std::unique_ptr<std::basic_ostream<char>>",
+          "seconds": 0.010038
+        },
+        {
+          "name": "std::unique_ptr<App::DocumentObjectWeakPtrT::Private>",
+          "seconds": 0.010036
+        },
+        {
+          "name": "std::unordered_set<std::basic_string<char>>",
+          "seconds": 0.009962
+        },
+        {
+          "name": "std::__format::_Seq_sink<std::basic_string<wchar_t>>::_M_reserve",
+          "seconds": 0.009955
+        },
+        {
+          "name": "std::map<std::basic_string<char>, std::vector<Base::UnitTranslationSpec>>::map",
+          "seconds": 0.009917
+        },
+        {
+          "name": "std::unique_ptr<std::vector<App::PropertyExpressionEngine::RestoredExpression>>",
+          "seconds": 0.009874
+        },
+        {
+          "name": "std::__uniq_ptr_data<Base::Exception, std::default_delete<Base::Exception>>",
+          "seconds": 0.009826
+        },
+        {
+          "name": "std::set<Base::ILogger *>",
+          "seconds": 0.009812
+        },
+        {
+          "name": "std::__uniq_ptr_impl<Base::Exception, std::default_delete<Base::Exception>>",
+          "seconds": 0.009749
+        },
+        {
+          "name": "std::unique_ptr<App::PropertyExpressionEngine::Private>",
+          "seconds": 0.00974
+        },
+        {
+          "name": "std::sort<__gnu_cxx::__normal_iterator<TechDraw::incidenceItem *, std::vector<TechDraw::incidenceItem>>, bool (*)(const TechDraw::incidenceItem &, const TechDraw::incidenceItem &)>",
+          "seconds": 0.009643
+        },
+        {
+          "name": "std::vector<TechDraw::incidenceItem>::operator=",
+          "seconds": 0.009617
+        },
+        {
+          "name": "std::vector<std::basic_string<char>>::push_back",
+          "seconds": 0.009576
+        },
+        {
+          "name": "std::__uniq_ptr_data<App::PropertyXLink, std::default_delete<App::PropertyXLink>>",
+          "seconds": 0.009572
+        },
+        {
+          "name": "std::__uniq_ptr_data<App::StringHasher::HashMap, std::default_delete<App::StringHasher::HashMap>>",
+          "seconds": 0.009563
+        },
+        {
+          "name": "App::PropertyListsT<App::Material>::setValue",
+          "seconds": 0.009558
+        },
+        {
+          "name": "std::unique_ptr<App::PropertyData::Impl>",
+          "seconds": 0.009549
+        },
+        {
+          "name": "std::vector<Materials::MaterialProperty>::push_back",
+          "seconds": 0.009539
+        },
+        {
+          "name": "App::PropertyListsT<App::Material>::setValues",
+          "seconds": 0.009528
+        },
+        {
+          "name": "std::tuple<App::DynamicProperty::Impl *, std::default_delete<App::DynamicProperty::Impl>>",
+          "seconds": 0.009507
+        },
+        {
+          "name": "std::__uniq_ptr_impl<App::PropertyXLink, std::default_delete<App::PropertyXLink>>",
+          "seconds": 0.009496
+        }
+      ]
+    }
+  },
+  "diagnostics": {
+    "missing_traces": [],
+    "invalid_traces": []
+  }
+}

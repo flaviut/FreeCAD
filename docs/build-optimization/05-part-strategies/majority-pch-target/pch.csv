@@ -1,0 +1,2 @@
+output,ninja_s,trace_s,frontend_s,backend_s,source_s,instantiate_function_s,instantiate_class_s,optimizer_s,codegen_s
+src/Mod/Part/App/CMakeFiles/Part.dir/cmake_pch.hxx.pch,5.354,5.272905,4.223998,0.0,3.836695,0.73349,0.737364,0.0,0.0

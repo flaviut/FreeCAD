@@ -1,0 +1,19 @@
+{
+  "label": "expanded-pch-target",
+  "command": [
+    "fc-build",
+    "--target",
+    "TechDraw"
+  ],
+  "started_utc": "2026-09-28T23:42:01.571393+00:00",
+  "elapsed_s": 40.41636535600992,
+  "exit_code": 0,
+  "jobs": 8,
+  "changed_ninja_outputs": 100,
+  "compiler_outputs": 98,
+  "traced_compiler_outputs": 98,
+  "missing_traces": [],
+  "peak_sampled_descendant_rss_kib": 3202568,
+  "peak_sampled_single_process_rss_kib": 814192,
+  "memory_note": "RSS sampled at 0.1 s intervals for fc-build and descendants; aggregate is concurrent process RSS and may double count shared pages."
+}

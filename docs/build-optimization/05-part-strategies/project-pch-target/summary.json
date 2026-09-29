@@ -1,0 +1,2468 @@
+{
+  "build_dir": "/home/user/dev/FreeCAD/docs/build-optimization/05-part-strategies/provenance/project-pch-target",
+  "repo_root": "/home/user/dev/FreeCAD",
+  "ninja_log": {
+    "recorded_start_ms": 136,
+    "recorded_end_ms": 38922,
+    "recorded_span_s": 38.786,
+    "duplicate_output_entries": 0,
+    "malformed_entries": 0
+  },
+  "aggregates": {
+    "translation_unit": {
+      "count": 203,
+      "phase_seconds": {
+        "ExecuteCompiler": 178.183985,
+        "Frontend": 81.078995,
+        "Backend": 92.018041,
+        "Source": 28.432263,
+        "InstantiateFunction": 22.113103,
+        "InstantiateClass": 17.66349,
+        "Optimizer": 56.838997,
+        "CodeGenPasses": 34.850137
+      },
+      "source_ranking": [
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/geometry.hpp",
+          "seconds": 3.850411
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/geometry/geometry.hpp",
+          "seconds": 3.850293
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/Extensions.hxx",
+          "seconds": 3.5712530000000005
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/Python3/Extensions.hxx",
+          "seconds": 3.5635469999999994
+        },
+        {
+          "name": "src/Base/GeometryPyCXX.h",
+          "seconds": 2.621738
+        },
+        {
+          "name": "src/App/Link.h",
+          "seconds": 2.584473
+        },
+        {
+          "name": "src/Mod/Part/App/Geometry.h",
+          "seconds": 2.44538
+        },
+        {
+          "name": "src/Mod/Part/App/AttachExtension.h",
+          "seconds": 2.383956
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/QCoreApplication",
+          "seconds": 2.0753920000000003
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qcoreapplication.h",
+          "seconds": 2.064651
+        },
+        {
+          "name": "src/Mod/Part/App/Attacher.h",
+          "seconds": 2.0435930000000004
+        },
+        {
+          "name": "build/clang-profile/src/Mod/Part/App/GeometryPy.h",
+          "seconds": 2.004331
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qcoreevent.h",
+          "seconds": 1.97881
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qbasictimer.h",
+          "seconds": 1.875349
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/geometry/core/radian_access.hpp",
+          "seconds": 1.849241
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/geometry/core/coordinate_promotion.hpp",
+          "seconds": 1.813981
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/multiprecision/cpp_bin_float.hpp",
+          "seconds": 1.782806
+        },
+        {
+          "name": "src/Base/Interpreter.h",
+          "seconds": 1.7292170000000004
+        },
+        {
+          "name": "src/Base/Writer.h",
+          "seconds": 1.6880849999999998
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qabstracteventdispatcher.h",
+          "seconds": 1.617075
+        },
+        {
+          "name": "src/App/Document.h",
+          "seconds": 1.5946540000000002
+        },
+        {
+          "name": "src/Mod/Part/App/LinkArray.h",
+          "seconds": 1.558873
+        },
+        {
+          "name": "src/App/Datums.h",
+          "seconds": 1.4940309999999999
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qeventloop.h",
+          "seconds": 1.468487
+        },
+        {
+          "name": "src/Mod/Part/App/FaceMaker.h",
+          "seconds": 1.391734
+        },
+        {
+          "name": "src/App/GroupExtension.h",
+          "seconds": 1.2625959999999998
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qdeadlinetimer.h",
+          "seconds": 1.228462
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/geometry/algorithms/buffer.hpp",
+          "seconds": 1.195796
+        },
+        {
+          "name": "src/App/DocumentObserver.h",
+          "seconds": 1.195552
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/geometry/algorithms/detail/buffer/implementation.hpp",
+          "seconds": 1.191824
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/geometry/algorithms/detail/buffer/buffer_inserter.hpp",
+          "seconds": 1.190472
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/geometry/algorithms/detail/buffer/buffered_piece_collection.hpp",
+          "seconds": 1.176116
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/geometry/algorithms/covered_by.hpp",
+          "seconds": 1.13244
+        },
+        {
+          "name": "src/Mod/Part/App/Tools.h",
+          "seconds": 1.1307189999999996
+        },
+        {
+          "name": "src/App/ExtensionPython.h",
+          "seconds": 1.0992
+        },
+        {
+          "name": "build/clang-profile/src/Mod/Part/App/GeometryCurvePy.h",
+          "seconds": 1.0659490000000003
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/multiprecision/cpp_int.hpp",
+          "seconds": 1.059325
+        },
+        {
+          "name": "src/Mod/Part/App/PrimitiveFeature.h",
+          "seconds": 1.048702
+        },
+        {
+          "name": "src/Base/Converter.h",
+          "seconds": 0.991571
+        },
+        {
+          "name": "build/clang-profile/src/Mod/Part/App/GeometrySurfacePy.h",
+          "seconds": 0.8433799999999999
+        },
+        {
+          "name": "src/Mod/Part/App/Part2DObject.h",
+          "seconds": 0.8379329999999999
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/geometry/algorithms/detail/covered_by/implementation_gc.hpp",
+          "seconds": 0.814659
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/geometry/algorithms/detail/relate/implementation_gc.hpp",
+          "seconds": 0.814455
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/geometry/algorithms/difference.hpp",
+          "seconds": 0.762124
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/geometry/algorithms/detail/intersection/gc.hpp",
+          "seconds": 0.750879
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/geometry/algorithms/detail/intersection/interface.hpp",
+          "seconds": 0.748452
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/geometry/algorithms/detail/overlay/intersection_insert.hpp",
+          "seconds": 0.746661
+        },
+        {
+          "name": "src/Base/Tools.h",
+          "seconds": 0.7378100000000001
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/geometry/algorithms/detail/overlay/overlay.hpp",
+          "seconds": 0.700237
+        },
+        {
+          "name": "src/3rdParty/zipios++/zipoutputstream.h",
+          "seconds": 0.6882790000000001
+        },
+        {
+          "name": "src/Base/UniqueNameManager.h",
+          "seconds": 0.673908
+        },
+        {
+          "name": "build/clang-profile/src/Mod/Part/App/BoundedCurvePy.h",
+          "seconds": 0.669358
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/geometry/strategies/strategies.hpp",
+          "seconds": 0.63718
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/geometry/algorithms/detail/overlay/traverse.hpp",
+          "seconds": 0.599751
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/Python3/ExtensionOldType.hxx",
+          "seconds": 0.5871710000000002
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/geometry/algorithms/detail/overlay/graph/detect_biconnected_components.hpp",
+          "seconds": 0.580265
+        },
+        {
+          "name": "src/Base/UnlimitedUnsigned.h",
+          "seconds": 0.5602630000000001
+        },
+        {
+          "name": "src/App/GeoFeatureGroupExtension.h",
+          "seconds": 0.5365749999999999
+        },
+        {
+          "name": "src/App/MainThreadSignal.h",
+          "seconds": 0.501265
+        },
+        {
+          "name": "src/Mod/Part/App/TopoShapeMapper.h",
+          "seconds": 0.486381
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/geometry/algorithms/detail/overlay/graph/graph_util.hpp",
+          "seconds": 0.484748
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/multiprecision/cpp_int/add.hpp",
+          "seconds": 0.475958
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/multiprecision/cpp_int/add_unsigned.hpp",
+          "seconds": 0.471628
+        },
+        {
+          "name": "build/clang-profile/src/Mod/Part/App/TrimmedCurvePy.h",
+          "seconds": 0.470713
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/multiprecision/cpp_int/intel_intrinsics.hpp",
+          "seconds": 0.469351
+        },
+        {
+          "name": "/nix/store/5ivvhzl37ci5sfdmyxc62s0yq56gs0gf-clang-wrapper-21.1.8/resource-root/include/immintrin.h",
+          "seconds": 0.468446
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/Python3/ExtensionModule.hxx",
+          "seconds": 0.439622
+        },
+        {
+          "name": "src/Mod/Part/App/Geometry2d.h",
+          "seconds": 0.43604499999999996
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/math/special_functions/gamma.hpp",
+          "seconds": 0.420106
+        },
+        {
+          "name": "src/Mod/Part/App/BodyBase.h",
+          "seconds": 0.41648999999999997
+        },
+        {
+          "name": "src/App/OriginGroupExtension.h",
+          "seconds": 0.41218899999999997
+        },
+        {
+          "name": "src/Mod/Part/App/DatumFeature.h",
+          "seconds": 0.39636899999999997
+        },
+        {
+          "name": "src/3rdParty/zipios++/zipoutputstreambuf.h",
+          "seconds": 0.39298500000000003
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/graph/biconnected_components.hpp",
+          "seconds": 0.390247
+        },
+        {
+          "name": "build/clang-profile/src/Mod/Part/App/Geom2d/Geometry2dPy.h",
+          "seconds": 0.37324
+        },
+        {
+          "name": "build/clang-profile/src/Mod/Part/App/Geom2d/Curve2dPy.h",
+          "seconds": 0.369719
+        },
+        {
+          "name": "src/Mod/Part/App/Datums.h",
+          "seconds": 0.34682599999999997
+        },
+        {
+          "name": "src/Mod/Part/App/FaceMakerCheese.h",
+          "seconds": 0.33561299999999994
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/multiprecision/number.hpp",
+          "seconds": 0.331397
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/geometry/algorithms/detail/covered_by/implementation.hpp",
+          "seconds": 0.313004
+        },
+        {
+          "name": "build/clang-profile/src/Mod/Part/App/ArcOfConicPy.h",
+          "seconds": 0.31146399999999996
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/geometry/algorithms/detail/within/implementation.hpp",
+          "seconds": 0.311218
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/geometry/strategies/intersection_strategies.hpp",
+          "seconds": 0.303729
+        },
+        {
+          "name": "build/clang-profile/src/Mod/Part/App/TopoShapePy.h",
+          "seconds": 0.29926400000000014
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/Python3/ExtensionType.hxx",
+          "seconds": 0.285282
+        },
+        {
+          "name": "src/3rdParty/zipios++/fcoll.h",
+          "seconds": 0.282629
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/graph/depth_first_search.hpp",
+          "seconds": 0.280328
+        },
+        {
+          "name": "src/3rdParty/zipios++/ziphead.h",
+          "seconds": 0.27574699999999996
+        },
+        {
+          "name": "src/Mod/Part/App/LinkArrayPolar.h",
+          "seconds": 0.263748
+        },
+        {
+          "name": "src/Mod/Part/App/FeaturePartBox.h",
+          "seconds": 0.262805
+        },
+        {
+          "name": "src/Mod/Part/App/LinkArrayPath.h",
+          "seconds": 0.262115
+        },
+        {
+          "name": "src/Mod/Part/App/FaceMakerBuildFace.h",
+          "seconds": 0.26193500000000003
+        },
+        {
+          "name": "src/Mod/Part/App/FaceMakerBullseye.h",
+          "seconds": 0.259941
+        },
+        {
+          "name": "src/Mod/Part/App/LinkArrayCircular.h",
+          "seconds": 0.259561
+        },
+        {
+          "name": "src/Mod/Part/App/LinkArrayLinear.h",
+          "seconds": 0.257419
+        },
+        {
+          "name": "src/Mod/Part/App/LinkArrayPoint.h",
+          "seconds": 0.251244
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/multiprecision/detail/generic_interconvert.hpp",
+          "seconds": 0.242935
+        },
+        {
+          "name": "src/App/PropertyUnits.h",
+          "seconds": 0.23868999999999996
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/thread/mutex.hpp",
+          "seconds": 0.236367
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/multiprecision/detail/default_ops.hpp",
+          "seconds": 0.236232
+        }
+      ],
+      "template_ranking": [
+        {
+          "name": "std::__format::_Seq_sink<std::basic_string<char>>::_M_reserve",
+          "seconds": 4.454670999999998
+        },
+        {
+          "name": "std::__format::_Seq_sink<std::basic_string<wchar_t>>::_M_reserve",
+          "seconds": 2.2880399999999996
+        },
+        {
+          "name": "std::vector<PyMethodDef>",
+          "seconds": 1.653064
+        },
+        {
+          "name": "std::_Vector_base<PyMethodDef, std::allocator<PyMethodDef>>",
+          "seconds": 1.4398680000000004
+        },
+        {
+          "name": "std::allocator<PyMethodDef>",
+          "seconds": 1.0123090000000003
+        },
+        {
+          "name": "std::__new_allocator<PyMethodDef>",
+          "seconds": 0.988215
+        },
+        {
+          "name": "std::unique_ptr<App::DocumentWeakPtrT::Private>",
+          "seconds": 0.6445120000000001
+        },
+        {
+          "name": "std::unordered_map<const App::DocumentObject *, fastsignals::scoped_connection>",
+          "seconds": 0.593883
+        },
+        {
+          "name": "boost::basic_regex<char>::assign",
+          "seconds": 0.556535
+        },
+        {
+          "name": "std::vector<std::shared_ptr<Part::GeometryExtension>>",
+          "seconds": 0.545839
+        },
+        {
+          "name": "std::__uniq_ptr_data<App::DocumentWeakPtrT::Private, std::default_delete<App::DocumentWeakPtrT::Private>>",
+          "seconds": 0.497699
+        },
+        {
+          "name": "std::__uniq_ptr_impl<App::DocumentWeakPtrT::Private, std::default_delete<App::DocumentWeakPtrT::Private>>",
+          "seconds": 0.4952050000000002
+        },
+        {
+          "name": "std::basic_string<char>::__resize_and_overwrite<(lambda at /nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/format:3332:10)>",
+          "seconds": 0.4932420000000004
+        },
+        {
+          "name": "std::_Vector_base<std::shared_ptr<Part::GeometryExtension>, std::allocator<std::shared_ptr<Part::GeometryExtension>>>",
+          "seconds": 0.4504809999999999
+        },
+        {
+          "name": "std::basic_string<char>::resize_and_overwrite<(lambda at /nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/format:3332:10) &>",
+          "seconds": 0.40613900000000003
+        },
+        {
+          "name": "opencascade::handle<Geom_CartesianPoint>",
+          "seconds": 0.372432
+        },
+        {
+          "name": "std::_Hashtable<const App::DocumentObject *, std::pair<const App::DocumentObject *const, fastsignals::scoped_connection>, std::allocator<std::pair<const App::DocumentObject *const, fastsignals::scoped_connection>>, std::__detail::_Select1st, std::equal_to<const App::DocumentObject *>, std::hash<const App::DocumentObject *>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>>",
+          "seconds": 0.34214799999999995
+        },
+        {
+          "name": "std::vector<int>::rbegin",
+          "seconds": 0.328126
+        },
+        {
+          "name": "std::allocator<std::shared_ptr<Part::GeometryExtension>>",
+          "seconds": 0.3151420000000001
+        },
+        {
+          "name": "std::tuple<float, float, float>",
+          "seconds": 0.309002
+        },
+        {
+          "name": "Base::ConsoleSingleton::log<const char *>",
+          "seconds": 0.307624
+        },
+        {
+          "name": "std::__new_allocator<std::shared_ptr<Part::GeometryExtension>>",
+          "seconds": 0.30176800000000004
+        },
+        {
+          "name": "std::vector<Part::TopoShape>::push_back",
+          "seconds": 0.29786700000000005
+        },
+        {
+          "name": "boost::basic_regex<char>::basic_regex",
+          "seconds": 0.278588
+        },
+        {
+          "name": "boost::basic_regex<char>::do_assign",
+          "seconds": 0.278068
+        },
+        {
+          "name": "boost::detail::create_implemenation<char, unsigned int, boost::regex_traits<char>>",
+          "seconds": 0.271801
+        },
+        {
+          "name": "std::tuple<App::DocumentWeakPtrT::Private *, std::default_delete<App::DocumentWeakPtrT::Private>>",
+          "seconds": 0.270834
+        },
+        {
+          "name": "std::format<const char *>",
+          "seconds": 0.24718400000000001
+        },
+        {
+          "name": "App::PropertyListsT<App::DocumentObject *, std::vector<App::DocumentObject *>, App::PropertyLinkListBase>::setValue",
+          "seconds": 0.24467999999999998
+        },
+        {
+          "name": "std::unique_ptr<App::DocumentObjectWeakPtrT::Private>",
+          "seconds": 0.24427
+        },
+        {
+          "name": "std::unique_ptr<Attacher::AttachEngine>",
+          "seconds": 0.229087
+        },
+        {
+          "name": "std::vector<Attacher::eRefType>::push_back",
+          "seconds": 0.22557599999999997
+        },
+        {
+          "name": "std::__uniq_ptr_data<App::DocumentObjectWeakPtrT::Private, std::default_delete<App::DocumentObjectWeakPtrT::Private>>",
+          "seconds": 0.217511
+        },
+        {
+          "name": "std::__uniq_ptr_impl<App::DocumentObjectWeakPtrT::Private, std::default_delete<App::DocumentObjectWeakPtrT::Private>>",
+          "seconds": 0.21577100000000002
+        },
+        {
+          "name": "std::reverse_iterator<__gnu_cxx::__normal_iterator<int *, std::vector<int>>>",
+          "seconds": 0.21281799999999998
+        },
+        {
+          "name": "std::vector<Part::TopoShape>::_M_realloc_append<const Part::TopoShape &>",
+          "seconds": 0.20942299999999997
+        },
+        {
+          "name": "std::unique_ptr<std::basic_ostream<char>>",
+          "seconds": 0.20850000000000002
+        },
+        {
+          "name": "std::__uniq_ptr_data<Attacher::AttachEngine, std::default_delete<Attacher::AttachEngine>>",
+          "seconds": 0.20494400000000002
+        },
+        {
+          "name": "std::__uniq_ptr_impl<Attacher::AttachEngine, std::default_delete<Attacher::AttachEngine>>",
+          "seconds": 0.20333700000000002
+        },
+        {
+          "name": "std::__not_<std::__and_<std::__is_fast_hash<std::hash<const App::DocumentObject *>>, std::__is_nothrow_invocable<const std::hash<const App::DocumentObject *> &, const App::DocumentObject *const &>>>",
+          "seconds": 0.19852499999999998
+        },
+        {
+          "name": "std::__and_<std::__is_fast_hash<std::hash<const App::DocumentObject *>>, std::__is_nothrow_invocable<const std::hash<const App::DocumentObject *> &, const App::DocumentObject *const &>>",
+          "seconds": 0.19737699999999997
+        },
+        {
+          "name": "std::__format::_Seq_sink<std::basic_string<char>>::_M_bump",
+          "seconds": 0.19459099999999993
+        },
+        {
+          "name": "std::reverse_iterator<const std::__format::_Arg_t *>",
+          "seconds": 0.191198
+        },
+        {
+          "name": "std::__is_nothrow_invocable<const std::hash<const App::DocumentObject *> &, const App::DocumentObject *const &>",
+          "seconds": 0.19096799999999997
+        },
+        {
+          "name": "std::__and_<std::__is_invocable<const std::hash<const App::DocumentObject *> &, const App::DocumentObject *const &>, std::__call_is_nothrow<std::__invoke_result<const std::hash<const App::DocumentObject *> &, const App::DocumentObject *const &>, const std::hash<const App::DocumentObject *> &, const App::DocumentObject *const &>>",
+          "seconds": 0.188522
+        },
+        {
+          "name": "std::__uniq_ptr_data<std::basic_ostream<char>, std::default_delete<std::basic_ostream<char>>>",
+          "seconds": 0.186524
+        },
+        {
+          "name": "std::__uniq_ptr_impl<std::basic_ostream<char>, std::default_delete<std::basic_ostream<char>>>",
+          "seconds": 0.18553400000000003
+        },
+        {
+          "name": "boost::geometry::index::rtree<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, Part::WireJoiner::WireJoinerP::BoxGetter>::remove",
+          "seconds": 0.182704
+        },
+        {
+          "name": "boost::geometry::index::rtree<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, Part::WireJoiner::WireJoinerP::BoxGetter>::raw_remove",
+          "seconds": 0.182655
+        },
+        {
+          "name": "boost::geometry::index::detail::rtree::apply_visitor<boost::geometry::index::detail::rtree::visitors::remove<boost::geometry::index::rtree<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, Part::WireJoiner::WireJoinerP::BoxGetter>::members_holder>, std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>>, std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>",
+          "seconds": 0.175346
+        },
+        {
+          "name": "boost::apply_visitor<boost::geometry::index::detail::rtree::visitors::remove<boost::geometry::index::rtree<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, Part::WireJoiner::WireJoinerP::BoxGetter>::members_holder>, boost::variant<boost::geometry::index::detail::rtree::variant_leaf<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>>, std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::variant_internal_node<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>>, std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>> &>",
+          "seconds": 0.175102
+        },
+        {
+          "name": "boost::variant<boost::geometry::index::detail::rtree::variant_leaf<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>>, std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::variant_internal_node<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>>, std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>>::apply_visitor<boost::geometry::index::detail::rtree::visitors::remove<boost::geometry::index::rtree<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, Part::WireJoiner::WireJoinerP::BoxGetter>::members_holder>>",
+          "seconds": 0.175001
+        },
+        {
+          "name": "std::vector<Attacher::eRefType>::_M_realloc_append<const Attacher::eRefType &>",
+          "seconds": 0.17491599999999996
+        },
+        {
+          "name": "boost::variant<boost::geometry::index::detail::rtree::variant_leaf<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>>, std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::variant_internal_node<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>>, std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>>::internal_apply_visitor<boost::detail::variant::invoke_visitor<boost::geometry::index::detail::rtree::visitors::remove<boost::geometry::index::rtree<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, Part::WireJoiner::WireJoinerP::BoxGetter>::members_holder>, false>>",
+          "seconds": 0.174758
+        },
+        {
+          "name": "boost::variant<boost::geometry::index::detail::rtree::variant_leaf<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>>, std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::variant_internal_node<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>>, std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>>::internal_apply_visitor_impl<boost::detail::variant::invoke_visitor<boost::geometry::index::detail::rtree::visitors::remove<boost::geometry::index::rtree<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, Part::WireJoiner::WireJoinerP::BoxGetter>::members_holder>, false>, void *>",
+          "seconds": 0.174678
+        },
+        {
+          "name": "boost::detail::variant::visitation_impl<mpl_::int_<0>, boost::detail::variant::visitation_impl_step<boost::mpl::l_iter<boost::mpl::l_item<mpl_::long_<2>, boost::geometry::index::detail::rtree::variant_leaf<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>>, std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::mpl::l_item<mpl_::long_<1>, boost::geometry::index::detail::rtree::variant_internal_node<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>>, std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::mpl::l_end>>>, boost::mpl::l_iter<l_end>>, boost::detail::variant::invoke_visitor<boost::geometry::index::detail::rtree::visitors::remove<boost::geometry::index::rtree<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, Part::WireJoiner::WireJoinerP::BoxGetter>::members_holder>, false>, void *, boost::variant<boost::geometry::index::detail::rtree::variant_leaf<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>>, std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::variant_internal_node<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>>, std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>>::has_fallback_type_>",
+          "seconds": 0.174531
+        },
+        {
+          "name": "std::__format::__pack_arg_types<5, 1UL>",
+          "seconds": 0.17349099999999995
+        },
+        {
+          "name": "std::format<std::basic_string<char>>",
+          "seconds": 0.173051
+        },
+        {
+          "name": "boost::geometry::index::detail::rtree::visitors::remove<boost::geometry::index::rtree<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, Part::WireJoiner::WireJoinerP::BoxGetter>::members_holder>::operator()",
+          "seconds": 0.17236
+        },
+        {
+          "name": "std::basic_string<wchar_t>::__resize_and_overwrite<(lambda at /nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/format:3332:10)>",
+          "seconds": 0.17083899999999996
+        },
+        {
+          "name": "std::make_tuple<const float &, const float &, const float &>",
+          "seconds": 0.169888
+        },
+        {
+          "name": "std::__and_<std::is_default_constructible<std::equal_to<const App::DocumentObject *>>, std::is_default_constructible<std::hash<const App::DocumentObject *>>, std::is_default_constructible<std::allocator<std::pair<const App::DocumentObject *const, fastsignals::scoped_connection>>>>",
+          "seconds": 0.16955099999999998
+        },
+        {
+          "name": "std::__format::_Arg_store<std::basic_format_context<std::__format::_Sink_iter<char>, char>, const char *>::_Arg_store<const char *>",
+          "seconds": 0.16877500000000004
+        },
+        {
+          "name": "std::map<std::basic_string<char>, std::vector<Base::UniqueNameManager::PiecewiseSparseIntegerSet<Base::UnlimitedUnsigned>>, std::less<void>>::clear",
+          "seconds": 0.168073
+        },
+        {
+          "name": "std::_Rb_tree<std::basic_string<char>, std::pair<const std::basic_string<char>, std::vector<Base::UniqueNameManager::PiecewiseSparseIntegerSet<Base::UnlimitedUnsigned>>>, std::_Select1st<std::pair<const std::basic_string<char>, std::vector<Base::UniqueNameManager::PiecewiseSparseIntegerSet<Base::UnlimitedUnsigned>>>>, std::less<void>>::clear",
+          "seconds": 0.16766599999999998
+        },
+        {
+          "name": "std::__format::_Arg_store<std::basic_format_context<std::__format::_Sink_iter<char>, char>, const char *>::_S_make_elt<const char *>",
+          "seconds": 0.167456
+        },
+        {
+          "name": "std::_Rb_tree<std::basic_string<char>, std::pair<const std::basic_string<char>, std::vector<Base::UniqueNameManager::PiecewiseSparseIntegerSet<Base::UnlimitedUnsigned>>>, std::_Select1st<std::pair<const std::basic_string<char>, std::vector<Base::UniqueNameManager::PiecewiseSparseIntegerSet<Base::UnlimitedUnsigned>>>>, std::less<void>>::_M_erase",
+          "seconds": 0.166332
+        },
+        {
+          "name": "std::unique_ptr<Part::GeometryExtension>",
+          "seconds": 0.16338599999999998
+        },
+        {
+          "name": "boost::geometry::index::rtree<Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, Part::WireJoiner::WireJoinerP::PntGetter>::remove",
+          "seconds": 0.160507
+        },
+        {
+          "name": "boost::geometry::index::rtree<Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, Part::WireJoiner::WireJoinerP::PntGetter>::raw_remove",
+          "seconds": 0.16046
+        },
+        {
+          "name": "std::list<Py::ExtensionModuleBase *>",
+          "seconds": 0.15696000000000002
+        },
+        {
+          "name": "std::tuple<double, double, double>",
+          "seconds": 0.15466499999999997
+        },
+        {
+          "name": "boost::detail::variant::visitation_impl_invoke<boost::detail::variant::invoke_visitor<boost::geometry::index::detail::rtree::visitors::remove<boost::geometry::index::rtree<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, Part::WireJoiner::WireJoinerP::BoxGetter>::members_holder>, false>, void *, boost::geometry::index::detail::rtree::variant_internal_node<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>>, std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::variant<boost::geometry::index::detail::rtree::variant_leaf<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>>, std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::variant_internal_node<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>>, std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>>::has_fallback_type_>",
+          "seconds": 0.153738
+        },
+        {
+          "name": "boost::detail::variant::visitation_impl_invoke_impl<boost::detail::variant::invoke_visitor<boost::geometry::index::detail::rtree::visitors::remove<boost::geometry::index::rtree<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, Part::WireJoiner::WireJoinerP::BoxGetter>::members_holder>, false>, void *, boost::geometry::index::detail::rtree::variant_internal_node<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>>, std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>>",
+          "seconds": 0.15364
+        },
+        {
+          "name": "boost::detail::variant::invoke_visitor<boost::geometry::index::detail::rtree::visitors::remove<boost::geometry::index::rtree<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, Part::WireJoiner::WireJoinerP::BoxGetter>::members_holder>, false>::internal_visit<boost::geometry::index::detail::rtree::variant_internal_node<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>>, std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag> &>",
+          "seconds": 0.153305
+        },
+        {
+          "name": "boost::geometry::index::detail::rtree::apply_visitor<boost::geometry::index::detail::rtree::visitors::remove<boost::geometry::index::rtree<Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, Part::WireJoiner::WireJoinerP::PntGetter>::members_holder>, Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<Part::WireJoiner::WireJoinerP::VertexInfo>, Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>",
+          "seconds": 0.152795
+        },
+        {
+          "name": "boost::apply_visitor<boost::geometry::index::detail::rtree::visitors::remove<boost::geometry::index::rtree<Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, Part::WireJoiner::WireJoinerP::PntGetter>::members_holder>, boost::variant<boost::geometry::index::detail::rtree::variant_leaf<Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<Part::WireJoiner::WireJoinerP::VertexInfo>, Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::variant_internal_node<Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<Part::WireJoiner::WireJoinerP::VertexInfo>, Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>> &>",
+          "seconds": 0.152565
+        },
+        {
+          "name": "boost::variant<boost::geometry::index::detail::rtree::variant_leaf<Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<Part::WireJoiner::WireJoinerP::VertexInfo>, Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::variant_internal_node<Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<Part::WireJoiner::WireJoinerP::VertexInfo>, Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>>::apply_visitor<boost::geometry::index::detail::rtree::visitors::remove<boost::geometry::index::rtree<Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, Part::WireJoiner::WireJoinerP::PntGetter>::members_holder>>",
+          "seconds": 0.15246
+        },
+        {
+          "name": "boost::variant<boost::geometry::index::detail::rtree::variant_leaf<Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<Part::WireJoiner::WireJoinerP::VertexInfo>, Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::variant_internal_node<Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<Part::WireJoiner::WireJoinerP::VertexInfo>, Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>>::internal_apply_visitor<boost::detail::variant::invoke_visitor<boost::geometry::index::detail::rtree::visitors::remove<boost::geometry::index::rtree<Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, Part::WireJoiner::WireJoinerP::PntGetter>::members_holder>, false>>",
+          "seconds": 0.152204
+        },
+        {
+          "name": "boost::variant<boost::geometry::index::detail::rtree::variant_leaf<Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<Part::WireJoiner::WireJoinerP::VertexInfo>, Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::variant_internal_node<Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<Part::WireJoiner::WireJoinerP::VertexInfo>, Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>>::internal_apply_visitor_impl<boost::detail::variant::invoke_visitor<boost::geometry::index::detail::rtree::visitors::remove<boost::geometry::index::rtree<Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, Part::WireJoiner::WireJoinerP::PntGetter>::members_holder>, false>, void *>",
+          "seconds": 0.15211
+        },
+        {
+          "name": "boost::detail::variant::visitation_impl<mpl_::int_<0>, boost::detail::variant::visitation_impl_step<boost::mpl::l_iter<boost::mpl::l_item<mpl_::long_<2>, boost::geometry::index::detail::rtree::variant_leaf<Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<Part::WireJoiner::WireJoinerP::VertexInfo>, Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::mpl::l_item<mpl_::long_<1>, boost::geometry::index::detail::rtree::variant_internal_node<Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<Part::WireJoiner::WireJoinerP::VertexInfo>, Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::mpl::l_end>>>, boost::mpl::l_iter<l_end>>, boost::detail::variant::invoke_visitor<boost::geometry::index::detail::rtree::visitors::remove<boost::geometry::index::rtree<Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, Part::WireJoiner::WireJoinerP::PntGetter>::members_holder>, false>, void *, boost::variant<boost::geometry::index::detail::rtree::variant_leaf<Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<Part::WireJoiner::WireJoinerP::VertexInfo>, Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::variant_internal_node<Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<Part::WireJoiner::WireJoinerP::VertexInfo>, Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>>::has_fallback_type_>",
+          "seconds": 0.15197
+        },
+        {
+          "name": "std::_Vector_base<PyMethodDef, std::allocator<PyMethodDef>>::_Vector_impl",
+          "seconds": 0.15122599999999994
+        },
+        {
+          "name": "Base::ConsoleSingleton::send<Base::LogStyle::Log, Base::IntendedRecipient::All, Base::ContentType::Untranslated, const char *>",
+          "seconds": 0.15042
+        },
+        {
+          "name": "std::vector<Part::TopoShape>::resize",
+          "seconds": 0.14996600000000002
+        },
+        {
+          "name": "std::array<std::__format::_Arg_t, 1>::rbegin",
+          "seconds": 0.14963200000000001
+        },
+        {
+          "name": "boost::geometry::index::detail::rtree::visitors::remove<boost::geometry::index::rtree<Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, Part::WireJoiner::WireJoinerP::PntGetter>::members_holder>::operator()",
+          "seconds": 0.14959699999999998
+        },
+        {
+          "name": "std::vector<Part::TopoShape>::_M_default_append",
+          "seconds": 0.1495
+        },
+        {
+          "name": "NCollection_Sequence<opencascade::handle<TColgp_HArray1OfPnt2d>>::~NCollection_Sequence",
+          "seconds": 0.14619000000000001
+        },
+        {
+          "name": "std::basic_string<wchar_t>::resize_and_overwrite<(lambda at /nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/format:3332:10) &>",
+          "seconds": 0.14521399999999998
+        },
+        {
+          "name": "std::tuple<double, double, double, double>",
+          "seconds": 0.14358200000000002
+        },
+        {
+          "name": "boost::detail::variant::visitation_impl_invoke<boost::detail::variant::invoke_visitor<boost::geometry::index::detail::rtree::visitors::remove<boost::geometry::index::rtree<Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, Part::WireJoiner::WireJoinerP::PntGetter>::members_holder>, false>, void *, boost::geometry::index::detail::rtree::variant_internal_node<Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<Part::WireJoiner::WireJoinerP::VertexInfo>, Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::variant<boost::geometry::index::detail::rtree::variant_leaf<Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<Part::WireJoiner::WireJoinerP::VertexInfo>, Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::variant_internal_node<Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<Part::WireJoiner::WireJoinerP::VertexInfo>, Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>>::has_fallback_type_>",
+          "seconds": 0.143462
+        },
+        {
+          "name": "boost::detail::variant::visitation_impl_invoke_impl<boost::detail::variant::invoke_visitor<boost::geometry::index::detail::rtree::visitors::remove<boost::geometry::index::rtree<Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, Part::WireJoiner::WireJoinerP::PntGetter>::members_holder>, false>, void *, boost::geometry::index::detail::rtree::variant_internal_node<Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<Part::WireJoiner::WireJoinerP::VertexInfo>, Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>>",
+          "seconds": 0.143359
+        },
+        {
+          "name": "boost::detail::variant::invoke_visitor<boost::geometry::index::detail::rtree::visitors::remove<boost::geometry::index::rtree<Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, Part::WireJoiner::WireJoinerP::PntGetter>::members_holder>, false>::internal_visit<boost::geometry::index::detail::rtree::variant_internal_node<Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<Part::WireJoiner::WireJoinerP::VertexInfo>, Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag> &>",
+          "seconds": 0.14302
+        },
+        {
+          "name": "std::unique_ptr<Part::Geometry>",
+          "seconds": 0.13899199999999998
+        },
+        {
+          "name": "std::set<Attacher::eRefType>",
+          "seconds": 0.138832
+        },
+        {
+          "name": "boost::re_detail_600::basic_regex_implementation<char, boost::regex_traits<char>>::assign",
+          "seconds": 0.137726
+        },
+        {
+          "name": "std::unique_ptr<Part::Geom2dCurve>",
+          "seconds": 0.136916
+        },
+        {
+          "name": "std::vector<Part::TopoShape>::_M_default_append(size_type)::_Guard_elts::_Guard_elts",
+          "seconds": 0.132427
+        },
+        {
+          "name": "std::is_default_constructible<std::equal_to<const App::DocumentObject *>>",
+          "seconds": 0.13186699999999998
+        },
+        {
+          "name": "boost::re_detail_600::basic_regex_implementation<char, boost::regex_traits<char>>::basic_regex_implementation",
+          "seconds": 0.13151
+        }
+      ]
+    },
+    "pch": {
+      "count": 1,
+      "phase_seconds": {
+        "ExecuteCompiler": 6.715897,
+        "Frontend": 5.452294,
+        "Backend": 0.0,
+        "Source": 4.877068,
+        "InstantiateFunction": 1.113318,
+        "InstantiateClass": 1.189914,
+        "Optimizer": 0.0,
+        "CodeGenPasses": 0.0
+      },
+      "source_ranking": [
+        {
+          "name": "build/clang-profile/src/Mod/Part/App/CMakeFiles/Part.dir/cmake_pch.hxx",
+          "seconds": 4.877069
+        },
+        {
+          "name": "src/Mod/Part/App/PreCompiled.h",
+          "seconds": 4.877044
+        },
+        {
+          "name": "src/Mod/Part/App/PartFeature.h",
+          "seconds": 1.349532
+        },
+        {
+          "name": "src/Mod/Part/App/OpenCascadeAll.h",
+          "seconds": 1.072401
+        },
+        {
+          "name": "src/Mod/Material/App/PropertyMaterial.h",
+          "seconds": 0.946054
+        },
+        {
+          "name": "src/Mod/Material/App/Materials.h",
+          "seconds": 0.911036
+        },
+        {
+          "name": "/nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/fstream",
+          "seconds": 0.521687
+        },
+        {
+          "name": "/nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/istream",
+          "seconds": 0.502085
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/QSet",
+          "seconds": 0.477215
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qset.h",
+          "seconds": 0.477147
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qhash.h",
+          "seconds": 0.473369
+        },
+        {
+          "name": "src/App/DocumentObject.h",
+          "seconds": 0.442214
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qhashfunctions.h",
+          "seconds": 0.428519
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qstring.h",
+          "seconds": 0.415473
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/regex.hpp",
+          "seconds": 0.353835
+        },
+        {
+          "name": "src/Mod/Material/App/MaterialValue.h",
+          "seconds": 0.339485
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/regex/v5/regex.hpp",
+          "seconds": 0.333753
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/uuid/uuid_generators.hpp",
+          "seconds": 0.302194
+        },
+        {
+          "name": "src/Mod/Part/App/PropertyTopoShape.h",
+          "seconds": 0.298641
+        },
+        {
+          "name": "src/Mod/Part/App/TopoShape.h",
+          "seconds": 0.273814
+        },
+        {
+          "name": "/nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/ios",
+          "seconds": 0.261454
+        },
+        {
+          "name": "src/App/ComplexGeoData.h",
+          "seconds": 0.249367
+        },
+        {
+          "name": "/nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/ostream",
+          "seconds": 0.226372
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qchar.h",
+          "seconds": 0.219381
+        },
+        {
+          "name": "src/App/PropertyExpressionEngine.h",
+          "seconds": 0.218901
+        },
+        {
+          "name": "/nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/format",
+          "seconds": 0.216782
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/uuid/nil_generator.hpp",
+          "seconds": 0.210146
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/uuid/uuid.hpp",
+          "seconds": 0.209994
+        },
+        {
+          "name": "/nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/bits/ios_base.h",
+          "seconds": 0.191086
+        },
+        {
+          "name": "/nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/cmath",
+          "seconds": 0.187903
+        },
+        {
+          "name": "src/App/PropertyLinks.h",
+          "seconds": 0.182804
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/algorithm/string/predicate.hpp",
+          "seconds": 0.179796
+        },
+        {
+          "name": "/nix/store/njpvi46a41av7k4xqanvf94nawfci0f0-opencascade-occt-7.9.3/include/opencascade/BRepMesh_IncrementalMesh.hxx",
+          "seconds": 0.179399
+        },
+        {
+          "name": "/nix/store/njpvi46a41av7k4xqanvf94nawfci0f0-opencascade-occt-7.9.3/include/opencascade/IMeshTools_Context.hxx",
+          "seconds": 0.178139
+        },
+        {
+          "name": "/nix/store/njpvi46a41av7k4xqanvf94nawfci0f0-opencascade-occt-7.9.3/include/opencascade/IMeshTools_ModelBuilder.hxx",
+          "seconds": 0.17551
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/uuid/uuid_clock.hpp",
+          "seconds": 0.17096
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/QMetaType",
+          "seconds": 0.17007
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qmetatype.h",
+          "seconds": 0.169993
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qstringview.h",
+          "seconds": 0.166936
+        },
+        {
+          "name": "/nix/store/njpvi46a41av7k4xqanvf94nawfci0f0-opencascade-occt-7.9.3/include/opencascade/IMeshData_Model.hxx",
+          "seconds": 0.166375
+        },
+        {
+          "name": "/nix/store/njpvi46a41av7k4xqanvf94nawfci0f0-opencascade-occt-7.9.3/include/opencascade/IMeshData_Types.hxx",
+          "seconds": 0.16545
+        },
+        {
+          "name": "src/App/ElementMap.h",
+          "seconds": 0.164868
+        },
+        {
+          "name": "/nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/chrono",
+          "seconds": 0.164629
+        },
+        {
+          "name": "/nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/bits/locale_classes.h",
+          "seconds": 0.155753
+        },
+        {
+          "name": "/nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/string",
+          "seconds": 0.149357
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/range/as_literal.hpp",
+          "seconds": 0.147679
+        },
+        {
+          "name": "src/App/Application.h",
+          "seconds": 0.147338
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/range/iterator_range.hpp",
+          "seconds": 0.146941
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/range/iterator_range_core.hpp",
+          "seconds": 0.146722
+        },
+        {
+          "name": "/nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/queue",
+          "seconds": 0.145364
+        },
+        {
+          "name": "/nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/bits/stl_queue.h",
+          "seconds": 0.144703
+        },
+        {
+          "name": "/nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/ranges",
+          "seconds": 0.139876
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qbytearray.h",
+          "seconds": 0.135148
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/random.hpp",
+          "seconds": 0.130088
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/QVariant",
+          "seconds": 0.124087
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qvariant.h",
+          "seconds": 0.123993
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/range/functions.hpp",
+          "seconds": 0.113228
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/range/size.hpp",
+          "seconds": 0.111012
+        },
+        {
+          "name": "src/App/PropertyStandard.h",
+          "seconds": 0.104883
+        },
+        {
+          "name": "/nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/bits/basic_string.h",
+          "seconds": 0.102163
+        },
+        {
+          "name": "/nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/bits/specfun.h",
+          "seconds": 0.099585
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/range/size_type.hpp",
+          "seconds": 0.098962
+        },
+        {
+          "name": "src/App/Property.h",
+          "seconds": 0.096731
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/range/concepts.hpp",
+          "seconds": 0.095113
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qdebug.h",
+          "seconds": 0.094683
+        },
+        {
+          "name": "src/App/FeaturePython.h",
+          "seconds": 0.094077
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/QtGlobal",
+          "seconds": 0.091746
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qglobal.h",
+          "seconds": 0.091448
+        },
+        {
+          "name": "src/App/PropertyPythonObject.h",
+          "seconds": 0.086168
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/Objects.hxx",
+          "seconds": 0.085742
+        },
+        {
+          "name": "/nix/store/njpvi46a41av7k4xqanvf94nawfci0f0-opencascade-occt-7.9.3/include/opencascade/Approx_Curve3d.hxx",
+          "seconds": 0.08548
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/concept_check.hpp",
+          "seconds": 0.080518
+        },
+        {
+          "name": "/nix/store/njpvi46a41av7k4xqanvf94nawfci0f0-opencascade-occt-7.9.3/include/opencascade/Adaptor3d_Curve.hxx",
+          "seconds": 0.077175
+        },
+        {
+          "name": "src/Base/Exception.h",
+          "seconds": 0.07597
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/regex/regex_traits.hpp",
+          "seconds": 0.074744
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/regex/v5/regex_traits.hpp",
+          "seconds": 0.07471
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/dynamic_bitset.hpp",
+          "seconds": 0.074013
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/dynamic_bitset/dynamic_bitset.hpp",
+          "seconds": 0.073836
+        },
+        {
+          "name": "/nix/store/njpvi46a41av7k4xqanvf94nawfci0f0-opencascade-occt-7.9.3/include/opencascade/BRepExtrema_ShapeProximity.hxx",
+          "seconds": 0.073654
+        },
+        {
+          "name": "/nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/memory",
+          "seconds": 0.07235
+        },
+        {
+          "name": "/nix/store/njpvi46a41av7k4xqanvf94nawfci0f0-opencascade-occt-7.9.3/include/opencascade/BRepExtrema_ProximityValueTool.hxx",
+          "seconds": 0.072328
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/uuid/random_generator.hpp",
+          "seconds": 0.072
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/regex/v5/regex_format.hpp",
+          "seconds": 0.07106
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/uuid/basic_random_generator.hpp",
+          "seconds": 0.07086
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/uuid/detail/random_provider.hpp",
+          "seconds": 0.068191
+        },
+        {
+          "name": "/nix/store/njpvi46a41av7k4xqanvf94nawfci0f0-opencascade-occt-7.9.3/include/opencascade/gp_Circ.hxx",
+          "seconds": 0.067811
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/uuid/detail/random_device.hpp",
+          "seconds": 0.067712
+        },
+        {
+          "name": "/nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/random",
+          "seconds": 0.067253
+        },
+        {
+          "name": "src/App/MappedName.h",
+          "seconds": 0.066907
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qnamespace.h",
+          "seconds": 0.066636
+        },
+        {
+          "name": "/nix/store/njpvi46a41av7k4xqanvf94nawfci0f0-opencascade-occt-7.9.3/include/opencascade/BRepExtrema_ProximityDistTool.hxx",
+          "seconds": 0.066473
+        },
+        {
+          "name": "/nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/bits/stl_algobase.h",
+          "seconds": 0.065847
+        },
+        {
+          "name": "/nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/functional",
+          "seconds": 0.065152
+        },
+        {
+          "name": "src/Base/FileInfo.h",
+          "seconds": 0.064702
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/regex/v5/basic_regex_creator.hpp",
+          "seconds": 0.064667
+        },
+        {
+          "name": "/nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/filesystem",
+          "seconds": 0.063967
+        },
+        {
+          "name": "/nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/bits/chrono_io.h",
+          "seconds": 0.063945
+        },
+        {
+          "name": "/nix/store/njpvi46a41av7k4xqanvf94nawfci0f0-opencascade-occt-7.9.3/include/opencascade/gp_Ax1.hxx",
+          "seconds": 0.063523
+        },
+        {
+          "name": "/nix/store/njpvi46a41av7k4xqanvf94nawfci0f0-opencascade-occt-7.9.3/include/opencascade/gp_Pnt.hxx",
+          "seconds": 0.06235
+        },
+        {
+          "name": "/nix/store/njpvi46a41av7k4xqanvf94nawfci0f0-opencascade-occt-7.9.3/include/opencascade/BRepExtrema_TriangleSet.hxx",
+          "seconds": 0.059335
+        }
+      ],
+      "template_ranking": [
+        {
+          "name": "std::vformat_to<std::__format::_Sink_iter<char>>",
+          "seconds": 0.109372
+        },
+        {
+          "name": "std::__format::__do_vformat_to<std::__format::_Sink_iter<char>, char, std::basic_format_context<std::__format::_Sink_iter<char>, char>>",
+          "seconds": 0.109247
+        },
+        {
+          "name": "std::vformat_to<std::__format::_Sink_iter<wchar_t>>",
+          "seconds": 0.097219
+        },
+        {
+          "name": "std::__format::__do_vformat_to<std::__format::_Sink_iter<wchar_t>, wchar_t, std::basic_format_context<std::__format::_Sink_iter<wchar_t>, wchar_t>>",
+          "seconds": 0.097101
+        },
+        {
+          "name": "std::formatter<bool>::format<std::__format::_Sink_iter<char>>",
+          "seconds": 0.031604
+        },
+        {
+          "name": "std::__format::__formatter_int<char>::format<std::__format::_Sink_iter<char>>",
+          "seconds": 0.031529
+        },
+        {
+          "name": "std::__format::__formatter_int<char>::format<unsigned char, std::__format::_Sink_iter<char>>",
+          "seconds": 0.02912
+        },
+        {
+          "name": "std::__format::__formatter_int<char>::_M_format_int<std::__format::_Sink_iter<char>>",
+          "seconds": 0.027702
+        },
+        {
+          "name": "std::map<QString, Materials::ModelProperty>",
+          "seconds": 0.024474
+        },
+        {
+          "name": "App::PropertyListsT<App::Material>::setValue",
+          "seconds": 0.024283
+        },
+        {
+          "name": "App::PropertyListsT<App::Material>::setValues",
+          "seconds": 0.024261
+        },
+        {
+          "name": "std::vector<App::Material>::operator=",
+          "seconds": 0.023554
+        },
+        {
+          "name": "std::_Rb_tree<QString, std::pair<const QString, Materials::ModelProperty>, std::_Select1st<std::pair<const QString, Materials::ModelProperty>>, std::less<QString>>",
+          "seconds": 0.023123
+        },
+        {
+          "name": "std::formatter<const wchar_t *, wchar_t>::format<std::__format::_Sink_iter<wchar_t>>",
+          "seconds": 0.022587
+        },
+        {
+          "name": "std::__format::__formatter_str<wchar_t>::format<std::__format::_Sink_iter<wchar_t>>",
+          "seconds": 0.022512
+        },
+        {
+          "name": "std::__format::_Formatting_scanner<std::__format::_Sink_iter<char>, char>",
+          "seconds": 0.020685
+        },
+        {
+          "name": "std::__format::_Formatting_scanner<std::__format::_Sink_iter<char>, char>::_M_format_arg",
+          "seconds": 0.020486
+        },
+        {
+          "name": "std::__format::__visit_format_arg<(lambda at /nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/format:4593:31), std::basic_format_context<std::__format::_Sink_iter<char>, char>>",
+          "seconds": 0.020328
+        },
+        {
+          "name": "std::basic_format_arg<std::basic_format_context<std::__format::_Sink_iter<char>, char>>::_M_visit<(lambda at /nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/format:4593:31)>",
+          "seconds": 0.020225
+        },
+        {
+          "name": "std::__format::_Spec<wchar_t>::_M_parse_fill_and_align",
+          "seconds": 0.01994
+        },
+        {
+          "name": "std::__format::__write_padded<std::__format::_Sink_iter<char>, char>",
+          "seconds": 0.019303
+        },
+        {
+          "name": "std::__format::__formatter_int<wchar_t>::_M_parse<char>",
+          "seconds": 0.018607
+        },
+        {
+          "name": "std::__format::__formatter_int<wchar_t>::_M_do_parse",
+          "seconds": 0.018414
+        },
+        {
+          "name": "std::__format::_Formatting_scanner<std::__format::_Sink_iter<wchar_t>, wchar_t>",
+          "seconds": 0.017528
+        },
+        {
+          "name": "std::map<App::DocumentObject *, std::vector<std::basic_string<char>>>::operator[]",
+          "seconds": 0.017262
+        },
+        {
+          "name": "std::__format::_Formatting_scanner<std::__format::_Sink_iter<wchar_t>, wchar_t>::_M_format_arg",
+          "seconds": 0.016649
+        },
+        {
+          "name": "std::copy<App::Material *, App::Material *>",
+          "seconds": 0.016613
+        },
+        {
+          "name": "Base::Subject<const char *>",
+          "seconds": 0.016327
+        },
+        {
+          "name": "std::set<Base::Observer<const char *> *>",
+          "seconds": 0.016229
+        },
+        {
+          "name": "std::__format::__visit_format_arg<(lambda at /nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/format:4593:31), std::basic_format_context<std::__format::_Sink_iter<wchar_t>, wchar_t>>",
+          "seconds": 0.016114
+        },
+        {
+          "name": "std::basic_format_arg<std::basic_format_context<std::__format::_Sink_iter<wchar_t>, wchar_t>>::_M_visit<(lambda at /nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/format:4593:31)>",
+          "seconds": 0.015959
+        },
+        {
+          "name": "std::map<QString, Materials::ModelProperty>::operator[]",
+          "seconds": 0.015615
+        },
+        {
+          "name": "std::formatter<bool, wchar_t>::format<std::__format::_Sink_iter<wchar_t>>",
+          "seconds": 0.015081
+        },
+        {
+          "name": "std::_Rb_tree<Base::Observer<const char *> *, Base::Observer<const char *> *, std::_Identity<Base::Observer<const char *> *>, std::less<Base::Observer<const char *> *>>",
+          "seconds": 0.01508
+        },
+        {
+          "name": "std::__format::__formatter_int<wchar_t>::format<std::__format::_Sink_iter<wchar_t>>",
+          "seconds": 0.01499
+        },
+        {
+          "name": "std::chrono::hh_mm_ss<std::chrono::duration<long>>::hh_mm_ss",
+          "seconds": 0.014439
+        },
+        {
+          "name": "std::__format::_Seq_sink<std::basic_string<wchar_t>>",
+          "seconds": 0.014228
+        },
+        {
+          "name": "std::__format::_Buf_sink<wchar_t>",
+          "seconds": 0.014095
+        },
+        {
+          "name": "std::__format::_Sink<wchar_t>",
+          "seconds": 0.01399
+        },
+        {
+          "name": "std::allocator<std::_Rb_tree_node<Base::Observer<const char *> *>>",
+          "seconds": 0.013673
+        },
+        {
+          "name": "std::span<wchar_t>",
+          "seconds": 0.013626
+        },
+        {
+          "name": "std::__format::__formatter_int<wchar_t>::format<unsigned char, std::__format::_Sink_iter<wchar_t>>",
+          "seconds": 0.013307
+        },
+        {
+          "name": "qRegisterNormalizedMetaType<std::shared_ptr<Materials::Material>>",
+          "seconds": 0.013091
+        },
+        {
+          "name": "qRegisterNormalizedMetaTypeImplementation<std::shared_ptr<Materials::Material>>",
+          "seconds": 0.013068
+        },
+        {
+          "name": "qRegisterNormalizedMetaType<std::shared_ptr<Materials::Array3D>>",
+          "seconds": 0.013005
+        },
+        {
+          "name": "qRegisterNormalizedMetaTypeImplementation<std::shared_ptr<Materials::Array3D>>",
+          "seconds": 0.012983
+        },
+        {
+          "name": "qRegisterNormalizedMetaType<std::shared_ptr<Materials::Array2D>>",
+          "seconds": 0.012835
+        },
+        {
+          "name": "qRegisterNormalizedMetaTypeImplementation<std::shared_ptr<Materials::Array2D>>",
+          "seconds": 0.012812
+        },
+        {
+          "name": "std::sort<QList<App::StringIDRef>::iterator>",
+          "seconds": 0.012805
+        },
+        {
+          "name": "std::__sort<QList<App::StringIDRef>::iterator, __gnu_cxx::__ops::_Iter_less_iter>",
+          "seconds": 0.012773
+        },
+        {
+          "name": "std::__format::_Seq_sink<std::basic_string<char>>",
+          "seconds": 0.012287
+        },
+        {
+          "name": "std::__format::_Buf_sink<char>",
+          "seconds": 0.012174
+        },
+        {
+          "name": "std::__format::_Sink<char>",
+          "seconds": 0.012082
+        },
+        {
+          "name": "std::__format::__formatter_int<wchar_t>::_M_format_int<std::__format::_Sink_iter<wchar_t>>",
+          "seconds": 0.011814
+        },
+        {
+          "name": "std::span<char>",
+          "seconds": 0.011798
+        },
+        {
+          "name": "std::__format::_Seq_sink<std::basic_string<wchar_t>>::view",
+          "seconds": 0.011541
+        },
+        {
+          "name": "std::formatter<wchar_t, wchar_t>::format<std::__format::_Sink_iter<wchar_t>>",
+          "seconds": 0.011387
+        },
+        {
+          "name": "std::unique_ptr<Base::Exception>",
+          "seconds": 0.010929
+        },
+        {
+          "name": "std::iterator_traits<std::__unicode::_Utf_iterator<char32_t, char, const char32_t *>>",
+          "seconds": 0.010523
+        },
+        {
+          "name": "std::formatter<const char *>::format<std::__format::_Sink_iter<char>>",
+          "seconds": 0.010517
+        },
+        {
+          "name": "std::__format::__formatter_str<char>::format<std::__format::_Sink_iter<char>>",
+          "seconds": 0.010448
+        },
+        {
+          "name": "std::vector<Base::Vector2d>::operator=",
+          "seconds": 0.010349
+        },
+        {
+          "name": "std::reverse_iterator<std::_Bit_iterator>",
+          "seconds": 0.010337
+        },
+        {
+          "name": "QList<QString>::operator<<",
+          "seconds": 0.010287
+        },
+        {
+          "name": "QList<QString>::append",
+          "seconds": 0.010236
+        },
+        {
+          "name": "QList<QString>::emplaceBack<const QString &>",
+          "seconds": 0.010195
+        },
+        {
+          "name": "std::_Rb_tree<App::DocumentObject *, std::pair<App::DocumentObject *const, std::vector<std::basic_string<char>>>, std::_Select1st<std::pair<App::DocumentObject *const, std::vector<std::basic_string<char>>>>, std::less<App::DocumentObject *>>::_M_emplace_hint_unique<const std::piecewise_construct_t &, std::tuple<App::DocumentObject *const &>, std::tuple<>>",
+          "seconds": 0.010166
+        },
+        {
+          "name": "std::__format::_Spec<char>::_M_parse_fill_and_align",
+          "seconds": 0.010128999999999999
+        },
+        {
+          "name": "std::__format::__formatter_str<wchar_t>::_S_trunc",
+          "seconds": 0.010107
+        },
+        {
+          "name": "std::__format::__formatter_int<wchar_t>::_M_format_character_escaped<std::__format::_Sink_iter<wchar_t>>",
+          "seconds": 0.010053
+        },
+        {
+          "name": "std::__uniq_ptr_data<Base::Exception, std::default_delete<Base::Exception>>",
+          "seconds": 0.009974
+        },
+        {
+          "name": "std::__uniq_ptr_impl<Base::Exception, std::default_delete<Base::Exception>>",
+          "seconds": 0.009904
+        },
+        {
+          "name": "std::unique_ptr<QDebugStateSaverPrivate>",
+          "seconds": 0.009802
+        },
+        {
+          "name": "std::unique_ptr<std::basic_istream<char>>",
+          "seconds": 0.009794
+        },
+        {
+          "name": "std::__format::__formatter_str<char>::_S_trunc",
+          "seconds": 0.009679
+        },
+        {
+          "name": "std::basic_string<wchar_t>::basic_string<__gnu_cxx::__normal_iterator<char *, std::basic_string<char>>, void>",
+          "seconds": 0.00963
+        },
+        {
+          "name": "QtPrivate::QMovableArrayOps<QString>::emplace<const QString &>",
+          "seconds": 0.009527
+        },
+        {
+          "name": "std::__unicode::__truncate<wchar_t>",
+          "seconds": 0.009488
+        },
+        {
+          "name": "std::basic_string<wchar_t>::_M_construct<__gnu_cxx::__normal_iterator<char *, std::basic_string<char>>>",
+          "seconds": 0.009476
+        },
+        {
+          "name": "std::unique_ptr<QTextStreamPrivate>",
+          "seconds": 0.009325
+        },
+        {
+          "name": "std::formatter<char>::format<std::__format::_Sink_iter<char>>",
+          "seconds": 0.009324
+        },
+        {
+          "name": "std::unique_ptr<QtPrivate::QSlotObjectBase, QtPrivate::QSlotObjectBase::Deleter>",
+          "seconds": 0.009272
+        },
+        {
+          "name": "std::reverse_iterator<std::_Bit_const_iterator>",
+          "seconds": 0.009267
+        },
+        {
+          "name": "std::__unicode::__truncate<char>",
+          "seconds": 0.009198
+        },
+        {
+          "name": "std::__format::__formatter_int<char>::_M_format_character_escaped<std::__format::_Sink_iter<char>>",
+          "seconds": 0.009055
+        },
+        {
+          "name": "std::unique_ptr<App::PropertyXLink>",
+          "seconds": 0.00905
+        },
+        {
+          "name": "std::unique_ptr<BRepClass_FaceExplorer>",
+          "seconds": 0.009043
+        },
+        {
+          "name": "std::unique_ptr<std::thread::_State>",
+          "seconds": 0.009025
+        },
+        {
+          "name": "std::unique_ptr<std::chrono::time_zone::_Impl>",
+          "seconds": 0.008989
+        },
+        {
+          "name": "std::unique_ptr<App::StringHasher::HashMap>",
+          "seconds": 0.008983
+        },
+        {
+          "name": "std::__introsort_loop<QList<App::StringIDRef>::iterator, long long, __gnu_cxx::__ops::_Iter_less_iter>",
+          "seconds": 0.00898
+        },
+        {
+          "name": "std::basic_string<wchar_t>::_S_copy_chars<__gnu_cxx::__normal_iterator<char *, std::basic_string<char>>>",
+          "seconds": 0.008953
+        },
+        {
+          "name": "std::unique_ptr<App::DynamicProperty::Impl>",
+          "seconds": 0.008891
+        },
+        {
+          "name": "std::__format::__write_escaped<wchar_t, std::__format::_Sink_iter<wchar_t>>",
+          "seconds": 0.008865
+        },
+        {
+          "name": "std::unique_ptr<void, QVLABaseBase::free_deleter>",
+          "seconds": 0.008864
+        },
+        {
+          "name": "std::unique_ptr<Data::MappedNameRef>",
+          "seconds": 0.008861
+        },
+        {
+          "name": "std::unique_ptr<std::filesystem::path::_List::_Impl, std::filesystem::path::_List::_Impl_deleter>",
+          "seconds": 0.008786
+        },
+        {
+          "name": "std::unique_ptr<std::vector<App::PropertyXLinkContainer::RestoreInfo>>",
+          "seconds": 0.008785
+        },
+        {
+          "name": "std::unique_ptr<std::vector<App::PropertyExpressionEngine::RestoredExpression>>",
+          "seconds": 0.008779
+        },
+        {
+          "name": "std::unique_ptr<App::PropertyData::Impl>",
+          "seconds": 0.00874
+        }
+      ]
+    },
+    "combined": {
+      "count": 204,
+      "phase_seconds": {
+        "ExecuteCompiler": 184.899882,
+        "Frontend": 86.531289,
+        "Backend": 92.018041,
+        "Source": 33.309331,
+        "InstantiateFunction": 23.226421,
+        "InstantiateClass": 18.853404,
+        "Optimizer": 56.838997,
+        "CodeGenPasses": 34.850137
+      },
+      "source_ranking": [
+        {
+          "name": "build/clang-profile/src/Mod/Part/App/CMakeFiles/Part.dir/cmake_pch.hxx",
+          "seconds": 4.877069
+        },
+        {
+          "name": "src/Mod/Part/App/PreCompiled.h",
+          "seconds": 4.877044
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/geometry.hpp",
+          "seconds": 3.850411
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/geometry/geometry.hpp",
+          "seconds": 3.850293
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/Extensions.hxx",
+          "seconds": 3.5712530000000005
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/Python3/Extensions.hxx",
+          "seconds": 3.5635469999999994
+        },
+        {
+          "name": "src/Base/GeometryPyCXX.h",
+          "seconds": 2.621738
+        },
+        {
+          "name": "src/App/Link.h",
+          "seconds": 2.584473
+        },
+        {
+          "name": "src/Mod/Part/App/Geometry.h",
+          "seconds": 2.44538
+        },
+        {
+          "name": "src/Mod/Part/App/AttachExtension.h",
+          "seconds": 2.383956
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/QCoreApplication",
+          "seconds": 2.0753920000000003
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qcoreapplication.h",
+          "seconds": 2.064651
+        },
+        {
+          "name": "src/Mod/Part/App/Attacher.h",
+          "seconds": 2.0435930000000004
+        },
+        {
+          "name": "build/clang-profile/src/Mod/Part/App/GeometryPy.h",
+          "seconds": 2.004331
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qcoreevent.h",
+          "seconds": 1.97881
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qbasictimer.h",
+          "seconds": 1.875349
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/geometry/core/radian_access.hpp",
+          "seconds": 1.849241
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/geometry/core/coordinate_promotion.hpp",
+          "seconds": 1.813981
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/multiprecision/cpp_bin_float.hpp",
+          "seconds": 1.782806
+        },
+        {
+          "name": "src/Base/Interpreter.h",
+          "seconds": 1.7292170000000004
+        },
+        {
+          "name": "src/Base/Writer.h",
+          "seconds": 1.6880849999999998
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qabstracteventdispatcher.h",
+          "seconds": 1.617075
+        },
+        {
+          "name": "src/App/Document.h",
+          "seconds": 1.5946540000000002
+        },
+        {
+          "name": "src/Mod/Part/App/LinkArray.h",
+          "seconds": 1.558873
+        },
+        {
+          "name": "src/App/Datums.h",
+          "seconds": 1.4940309999999999
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qeventloop.h",
+          "seconds": 1.468487
+        },
+        {
+          "name": "src/Mod/Part/App/FaceMaker.h",
+          "seconds": 1.391734
+        },
+        {
+          "name": "src/Mod/Part/App/PartFeature.h",
+          "seconds": 1.349532
+        },
+        {
+          "name": "src/App/GroupExtension.h",
+          "seconds": 1.2625959999999998
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qdeadlinetimer.h",
+          "seconds": 1.228462
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/geometry/algorithms/buffer.hpp",
+          "seconds": 1.195796
+        },
+        {
+          "name": "src/App/DocumentObserver.h",
+          "seconds": 1.195552
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/geometry/algorithms/detail/buffer/implementation.hpp",
+          "seconds": 1.191824
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/geometry/algorithms/detail/buffer/buffer_inserter.hpp",
+          "seconds": 1.190472
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/geometry/algorithms/detail/buffer/buffered_piece_collection.hpp",
+          "seconds": 1.176116
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/geometry/algorithms/covered_by.hpp",
+          "seconds": 1.13244
+        },
+        {
+          "name": "src/Mod/Part/App/Tools.h",
+          "seconds": 1.1307189999999996
+        },
+        {
+          "name": "src/App/ExtensionPython.h",
+          "seconds": 1.0992
+        },
+        {
+          "name": "src/Mod/Part/App/OpenCascadeAll.h",
+          "seconds": 1.072401
+        },
+        {
+          "name": "build/clang-profile/src/Mod/Part/App/GeometryCurvePy.h",
+          "seconds": 1.0659490000000003
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/multiprecision/cpp_int.hpp",
+          "seconds": 1.059325
+        },
+        {
+          "name": "src/Mod/Part/App/PrimitiveFeature.h",
+          "seconds": 1.048702
+        },
+        {
+          "name": "src/Base/Converter.h",
+          "seconds": 0.991571
+        },
+        {
+          "name": "src/Mod/Material/App/PropertyMaterial.h",
+          "seconds": 0.946054
+        },
+        {
+          "name": "src/Mod/Material/App/Materials.h",
+          "seconds": 0.911036
+        },
+        {
+          "name": "build/clang-profile/src/Mod/Part/App/GeometrySurfacePy.h",
+          "seconds": 0.8433799999999999
+        },
+        {
+          "name": "src/Mod/Part/App/Part2DObject.h",
+          "seconds": 0.8379329999999999
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/geometry/algorithms/detail/covered_by/implementation_gc.hpp",
+          "seconds": 0.814659
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/geometry/algorithms/detail/relate/implementation_gc.hpp",
+          "seconds": 0.814455
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/geometry/algorithms/difference.hpp",
+          "seconds": 0.762124
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/geometry/algorithms/detail/intersection/gc.hpp",
+          "seconds": 0.750879
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/geometry/algorithms/detail/intersection/interface.hpp",
+          "seconds": 0.748452
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/geometry/algorithms/detail/overlay/intersection_insert.hpp",
+          "seconds": 0.746661
+        },
+        {
+          "name": "src/Base/Tools.h",
+          "seconds": 0.7378100000000001
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/geometry/algorithms/detail/overlay/overlay.hpp",
+          "seconds": 0.700237
+        },
+        {
+          "name": "src/3rdParty/zipios++/zipoutputstream.h",
+          "seconds": 0.6882790000000001
+        },
+        {
+          "name": "src/Base/UniqueNameManager.h",
+          "seconds": 0.673908
+        },
+        {
+          "name": "build/clang-profile/src/Mod/Part/App/BoundedCurvePy.h",
+          "seconds": 0.669358
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/geometry/strategies/strategies.hpp",
+          "seconds": 0.63718
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/geometry/algorithms/detail/overlay/traverse.hpp",
+          "seconds": 0.599751
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/Python3/ExtensionOldType.hxx",
+          "seconds": 0.5871710000000002
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/geometry/algorithms/detail/overlay/graph/detect_biconnected_components.hpp",
+          "seconds": 0.580265
+        },
+        {
+          "name": "src/Base/UnlimitedUnsigned.h",
+          "seconds": 0.5602630000000001
+        },
+        {
+          "name": "src/App/GeoFeatureGroupExtension.h",
+          "seconds": 0.5365749999999999
+        },
+        {
+          "name": "/nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/fstream",
+          "seconds": 0.521687
+        },
+        {
+          "name": "/nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/istream",
+          "seconds": 0.502085
+        },
+        {
+          "name": "src/App/MainThreadSignal.h",
+          "seconds": 0.501265
+        },
+        {
+          "name": "src/Mod/Part/App/TopoShapeMapper.h",
+          "seconds": 0.486381
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/geometry/algorithms/detail/overlay/graph/graph_util.hpp",
+          "seconds": 0.484748
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/QSet",
+          "seconds": 0.477215
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qset.h",
+          "seconds": 0.477147
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/multiprecision/cpp_int/add.hpp",
+          "seconds": 0.475958
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qhash.h",
+          "seconds": 0.473369
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/multiprecision/cpp_int/add_unsigned.hpp",
+          "seconds": 0.471628
+        },
+        {
+          "name": "build/clang-profile/src/Mod/Part/App/TrimmedCurvePy.h",
+          "seconds": 0.470713
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/multiprecision/cpp_int/intel_intrinsics.hpp",
+          "seconds": 0.469351
+        },
+        {
+          "name": "/nix/store/5ivvhzl37ci5sfdmyxc62s0yq56gs0gf-clang-wrapper-21.1.8/resource-root/include/immintrin.h",
+          "seconds": 0.468446
+        },
+        {
+          "name": "src/App/DocumentObject.h",
+          "seconds": 0.442214
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/Python3/ExtensionModule.hxx",
+          "seconds": 0.439622
+        },
+        {
+          "name": "src/Mod/Part/App/Geometry2d.h",
+          "seconds": 0.43604499999999996
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qhashfunctions.h",
+          "seconds": 0.428519
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/math/special_functions/gamma.hpp",
+          "seconds": 0.420106
+        },
+        {
+          "name": "src/Mod/Part/App/BodyBase.h",
+          "seconds": 0.41648999999999997
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qstring.h",
+          "seconds": 0.415473
+        },
+        {
+          "name": "src/App/OriginGroupExtension.h",
+          "seconds": 0.41218899999999997
+        },
+        {
+          "name": "src/Mod/Part/App/DatumFeature.h",
+          "seconds": 0.39636899999999997
+        },
+        {
+          "name": "src/3rdParty/zipios++/zipoutputstreambuf.h",
+          "seconds": 0.39298500000000003
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/graph/biconnected_components.hpp",
+          "seconds": 0.390247
+        },
+        {
+          "name": "build/clang-profile/src/Mod/Part/App/Geom2d/Geometry2dPy.h",
+          "seconds": 0.37324
+        },
+        {
+          "name": "build/clang-profile/src/Mod/Part/App/Geom2d/Curve2dPy.h",
+          "seconds": 0.369719
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/regex.hpp",
+          "seconds": 0.353835
+        },
+        {
+          "name": "src/Mod/Part/App/Datums.h",
+          "seconds": 0.34682599999999997
+        },
+        {
+          "name": "src/Mod/Material/App/MaterialValue.h",
+          "seconds": 0.339485
+        },
+        {
+          "name": "src/Mod/Part/App/FaceMakerCheese.h",
+          "seconds": 0.33561299999999994
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/regex/v5/regex.hpp",
+          "seconds": 0.333753
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/multiprecision/number.hpp",
+          "seconds": 0.331397
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/geometry/algorithms/detail/covered_by/implementation.hpp",
+          "seconds": 0.313004
+        },
+        {
+          "name": "build/clang-profile/src/Mod/Part/App/ArcOfConicPy.h",
+          "seconds": 0.31146399999999996
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/geometry/algorithms/detail/within/implementation.hpp",
+          "seconds": 0.311218
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/geometry/strategies/intersection_strategies.hpp",
+          "seconds": 0.303729
+        }
+      ],
+      "template_ranking": [
+        {
+          "name": "std::__format::_Seq_sink<std::basic_string<char>>::_M_reserve",
+          "seconds": 4.454670999999998
+        },
+        {
+          "name": "std::__format::_Seq_sink<std::basic_string<wchar_t>>::_M_reserve",
+          "seconds": 2.2880399999999996
+        },
+        {
+          "name": "std::vector<PyMethodDef>",
+          "seconds": 1.653064
+        },
+        {
+          "name": "std::_Vector_base<PyMethodDef, std::allocator<PyMethodDef>>",
+          "seconds": 1.4398680000000004
+        },
+        {
+          "name": "std::allocator<PyMethodDef>",
+          "seconds": 1.0123090000000003
+        },
+        {
+          "name": "std::__new_allocator<PyMethodDef>",
+          "seconds": 0.988215
+        },
+        {
+          "name": "std::unique_ptr<App::DocumentWeakPtrT::Private>",
+          "seconds": 0.6445120000000001
+        },
+        {
+          "name": "std::unordered_map<const App::DocumentObject *, fastsignals::scoped_connection>",
+          "seconds": 0.593883
+        },
+        {
+          "name": "boost::basic_regex<char>::assign",
+          "seconds": 0.556535
+        },
+        {
+          "name": "std::vector<std::shared_ptr<Part::GeometryExtension>>",
+          "seconds": 0.545839
+        },
+        {
+          "name": "std::__uniq_ptr_data<App::DocumentWeakPtrT::Private, std::default_delete<App::DocumentWeakPtrT::Private>>",
+          "seconds": 0.497699
+        },
+        {
+          "name": "std::__uniq_ptr_impl<App::DocumentWeakPtrT::Private, std::default_delete<App::DocumentWeakPtrT::Private>>",
+          "seconds": 0.4952050000000002
+        },
+        {
+          "name": "std::basic_string<char>::__resize_and_overwrite<(lambda at /nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/format:3332:10)>",
+          "seconds": 0.4932420000000004
+        },
+        {
+          "name": "std::_Vector_base<std::shared_ptr<Part::GeometryExtension>, std::allocator<std::shared_ptr<Part::GeometryExtension>>>",
+          "seconds": 0.4504809999999999
+        },
+        {
+          "name": "std::basic_string<char>::resize_and_overwrite<(lambda at /nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/format:3332:10) &>",
+          "seconds": 0.40613900000000003
+        },
+        {
+          "name": "opencascade::handle<Geom_CartesianPoint>",
+          "seconds": 0.372432
+        },
+        {
+          "name": "std::_Hashtable<const App::DocumentObject *, std::pair<const App::DocumentObject *const, fastsignals::scoped_connection>, std::allocator<std::pair<const App::DocumentObject *const, fastsignals::scoped_connection>>, std::__detail::_Select1st, std::equal_to<const App::DocumentObject *>, std::hash<const App::DocumentObject *>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>>",
+          "seconds": 0.34214799999999995
+        },
+        {
+          "name": "std::vector<int>::rbegin",
+          "seconds": 0.328126
+        },
+        {
+          "name": "std::allocator<std::shared_ptr<Part::GeometryExtension>>",
+          "seconds": 0.3151420000000001
+        },
+        {
+          "name": "std::tuple<float, float, float>",
+          "seconds": 0.309002
+        },
+        {
+          "name": "Base::ConsoleSingleton::log<const char *>",
+          "seconds": 0.307624
+        },
+        {
+          "name": "std::__new_allocator<std::shared_ptr<Part::GeometryExtension>>",
+          "seconds": 0.30176800000000004
+        },
+        {
+          "name": "std::vector<Part::TopoShape>::push_back",
+          "seconds": 0.29786700000000005
+        },
+        {
+          "name": "boost::basic_regex<char>::basic_regex",
+          "seconds": 0.278588
+        },
+        {
+          "name": "boost::basic_regex<char>::do_assign",
+          "seconds": 0.278068
+        },
+        {
+          "name": "boost::detail::create_implemenation<char, unsigned int, boost::regex_traits<char>>",
+          "seconds": 0.271801
+        },
+        {
+          "name": "std::tuple<App::DocumentWeakPtrT::Private *, std::default_delete<App::DocumentWeakPtrT::Private>>",
+          "seconds": 0.270834
+        },
+        {
+          "name": "std::format<const char *>",
+          "seconds": 0.24718400000000001
+        },
+        {
+          "name": "App::PropertyListsT<App::DocumentObject *, std::vector<App::DocumentObject *>, App::PropertyLinkListBase>::setValue",
+          "seconds": 0.24467999999999998
+        },
+        {
+          "name": "std::unique_ptr<App::DocumentObjectWeakPtrT::Private>",
+          "seconds": 0.24427
+        },
+        {
+          "name": "std::unique_ptr<Attacher::AttachEngine>",
+          "seconds": 0.229087
+        },
+        {
+          "name": "std::vector<Attacher::eRefType>::push_back",
+          "seconds": 0.22557599999999997
+        },
+        {
+          "name": "std::__uniq_ptr_data<App::DocumentObjectWeakPtrT::Private, std::default_delete<App::DocumentObjectWeakPtrT::Private>>",
+          "seconds": 0.217511
+        },
+        {
+          "name": "std::__uniq_ptr_impl<App::DocumentObjectWeakPtrT::Private, std::default_delete<App::DocumentObjectWeakPtrT::Private>>",
+          "seconds": 0.21577100000000002
+        },
+        {
+          "name": "std::reverse_iterator<__gnu_cxx::__normal_iterator<int *, std::vector<int>>>",
+          "seconds": 0.21281799999999998
+        },
+        {
+          "name": "std::vector<Part::TopoShape>::_M_realloc_append<const Part::TopoShape &>",
+          "seconds": 0.20942299999999997
+        },
+        {
+          "name": "std::unique_ptr<std::basic_ostream<char>>",
+          "seconds": 0.20850000000000002
+        },
+        {
+          "name": "std::__uniq_ptr_data<Attacher::AttachEngine, std::default_delete<Attacher::AttachEngine>>",
+          "seconds": 0.20494400000000002
+        },
+        {
+          "name": "std::__uniq_ptr_impl<Attacher::AttachEngine, std::default_delete<Attacher::AttachEngine>>",
+          "seconds": 0.20333700000000002
+        },
+        {
+          "name": "std::__not_<std::__and_<std::__is_fast_hash<std::hash<const App::DocumentObject *>>, std::__is_nothrow_invocable<const std::hash<const App::DocumentObject *> &, const App::DocumentObject *const &>>>",
+          "seconds": 0.19852499999999998
+        },
+        {
+          "name": "std::__and_<std::__is_fast_hash<std::hash<const App::DocumentObject *>>, std::__is_nothrow_invocable<const std::hash<const App::DocumentObject *> &, const App::DocumentObject *const &>>",
+          "seconds": 0.19737699999999997
+        },
+        {
+          "name": "std::__format::_Seq_sink<std::basic_string<char>>::_M_bump",
+          "seconds": 0.19459099999999993
+        },
+        {
+          "name": "std::reverse_iterator<const std::__format::_Arg_t *>",
+          "seconds": 0.191198
+        },
+        {
+          "name": "std::__is_nothrow_invocable<const std::hash<const App::DocumentObject *> &, const App::DocumentObject *const &>",
+          "seconds": 0.19096799999999997
+        },
+        {
+          "name": "std::__and_<std::__is_invocable<const std::hash<const App::DocumentObject *> &, const App::DocumentObject *const &>, std::__call_is_nothrow<std::__invoke_result<const std::hash<const App::DocumentObject *> &, const App::DocumentObject *const &>, const std::hash<const App::DocumentObject *> &, const App::DocumentObject *const &>>",
+          "seconds": 0.188522
+        },
+        {
+          "name": "std::__uniq_ptr_data<std::basic_ostream<char>, std::default_delete<std::basic_ostream<char>>>",
+          "seconds": 0.186524
+        },
+        {
+          "name": "std::__uniq_ptr_impl<std::basic_ostream<char>, std::default_delete<std::basic_ostream<char>>>",
+          "seconds": 0.18553400000000003
+        },
+        {
+          "name": "boost::geometry::index::rtree<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, Part::WireJoiner::WireJoinerP::BoxGetter>::remove",
+          "seconds": 0.182704
+        },
+        {
+          "name": "boost::geometry::index::rtree<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, Part::WireJoiner::WireJoinerP::BoxGetter>::raw_remove",
+          "seconds": 0.182655
+        },
+        {
+          "name": "boost::geometry::index::detail::rtree::apply_visitor<boost::geometry::index::detail::rtree::visitors::remove<boost::geometry::index::rtree<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, Part::WireJoiner::WireJoinerP::BoxGetter>::members_holder>, std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>>, std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>",
+          "seconds": 0.175346
+        },
+        {
+          "name": "boost::apply_visitor<boost::geometry::index::detail::rtree::visitors::remove<boost::geometry::index::rtree<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, Part::WireJoiner::WireJoinerP::BoxGetter>::members_holder>, boost::variant<boost::geometry::index::detail::rtree::variant_leaf<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>>, std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::variant_internal_node<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>>, std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>> &>",
+          "seconds": 0.175102
+        },
+        {
+          "name": "boost::variant<boost::geometry::index::detail::rtree::variant_leaf<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>>, std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::variant_internal_node<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>>, std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>>::apply_visitor<boost::geometry::index::detail::rtree::visitors::remove<boost::geometry::index::rtree<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, Part::WireJoiner::WireJoinerP::BoxGetter>::members_holder>>",
+          "seconds": 0.175001
+        },
+        {
+          "name": "std::vector<Attacher::eRefType>::_M_realloc_append<const Attacher::eRefType &>",
+          "seconds": 0.17491599999999996
+        },
+        {
+          "name": "boost::variant<boost::geometry::index::detail::rtree::variant_leaf<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>>, std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::variant_internal_node<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>>, std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>>::internal_apply_visitor<boost::detail::variant::invoke_visitor<boost::geometry::index::detail::rtree::visitors::remove<boost::geometry::index::rtree<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, Part::WireJoiner::WireJoinerP::BoxGetter>::members_holder>, false>>",
+          "seconds": 0.174758
+        },
+        {
+          "name": "boost::variant<boost::geometry::index::detail::rtree::variant_leaf<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>>, std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::variant_internal_node<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>>, std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>>::internal_apply_visitor_impl<boost::detail::variant::invoke_visitor<boost::geometry::index::detail::rtree::visitors::remove<boost::geometry::index::rtree<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, Part::WireJoiner::WireJoinerP::BoxGetter>::members_holder>, false>, void *>",
+          "seconds": 0.174678
+        },
+        {
+          "name": "boost::detail::variant::visitation_impl<mpl_::int_<0>, boost::detail::variant::visitation_impl_step<boost::mpl::l_iter<boost::mpl::l_item<mpl_::long_<2>, boost::geometry::index::detail::rtree::variant_leaf<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>>, std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::mpl::l_item<mpl_::long_<1>, boost::geometry::index::detail::rtree::variant_internal_node<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>>, std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::mpl::l_end>>>, boost::mpl::l_iter<l_end>>, boost::detail::variant::invoke_visitor<boost::geometry::index::detail::rtree::visitors::remove<boost::geometry::index::rtree<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, Part::WireJoiner::WireJoinerP::BoxGetter>::members_holder>, false>, void *, boost::variant<boost::geometry::index::detail::rtree::variant_leaf<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>>, std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::variant_internal_node<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>>, std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>>::has_fallback_type_>",
+          "seconds": 0.174531
+        },
+        {
+          "name": "std::__format::__pack_arg_types<5, 1UL>",
+          "seconds": 0.17349099999999995
+        },
+        {
+          "name": "std::format<std::basic_string<char>>",
+          "seconds": 0.173051
+        },
+        {
+          "name": "boost::geometry::index::detail::rtree::visitors::remove<boost::geometry::index::rtree<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, Part::WireJoiner::WireJoinerP::BoxGetter>::members_holder>::operator()",
+          "seconds": 0.17236
+        },
+        {
+          "name": "std::basic_string<wchar_t>::__resize_and_overwrite<(lambda at /nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/format:3332:10)>",
+          "seconds": 0.17083899999999996
+        },
+        {
+          "name": "std::make_tuple<const float &, const float &, const float &>",
+          "seconds": 0.169888
+        },
+        {
+          "name": "std::__and_<std::is_default_constructible<std::equal_to<const App::DocumentObject *>>, std::is_default_constructible<std::hash<const App::DocumentObject *>>, std::is_default_constructible<std::allocator<std::pair<const App::DocumentObject *const, fastsignals::scoped_connection>>>>",
+          "seconds": 0.16955099999999998
+        },
+        {
+          "name": "std::__format::_Arg_store<std::basic_format_context<std::__format::_Sink_iter<char>, char>, const char *>::_Arg_store<const char *>",
+          "seconds": 0.16877500000000004
+        },
+        {
+          "name": "std::map<std::basic_string<char>, std::vector<Base::UniqueNameManager::PiecewiseSparseIntegerSet<Base::UnlimitedUnsigned>>, std::less<void>>::clear",
+          "seconds": 0.168073
+        },
+        {
+          "name": "std::_Rb_tree<std::basic_string<char>, std::pair<const std::basic_string<char>, std::vector<Base::UniqueNameManager::PiecewiseSparseIntegerSet<Base::UnlimitedUnsigned>>>, std::_Select1st<std::pair<const std::basic_string<char>, std::vector<Base::UniqueNameManager::PiecewiseSparseIntegerSet<Base::UnlimitedUnsigned>>>>, std::less<void>>::clear",
+          "seconds": 0.16766599999999998
+        },
+        {
+          "name": "std::__format::_Arg_store<std::basic_format_context<std::__format::_Sink_iter<char>, char>, const char *>::_S_make_elt<const char *>",
+          "seconds": 0.167456
+        },
+        {
+          "name": "std::_Rb_tree<std::basic_string<char>, std::pair<const std::basic_string<char>, std::vector<Base::UniqueNameManager::PiecewiseSparseIntegerSet<Base::UnlimitedUnsigned>>>, std::_Select1st<std::pair<const std::basic_string<char>, std::vector<Base::UniqueNameManager::PiecewiseSparseIntegerSet<Base::UnlimitedUnsigned>>>>, std::less<void>>::_M_erase",
+          "seconds": 0.166332
+        },
+        {
+          "name": "std::unique_ptr<Part::GeometryExtension>",
+          "seconds": 0.16338599999999998
+        },
+        {
+          "name": "boost::geometry::index::rtree<Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, Part::WireJoiner::WireJoinerP::PntGetter>::remove",
+          "seconds": 0.160507
+        },
+        {
+          "name": "boost::geometry::index::rtree<Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, Part::WireJoiner::WireJoinerP::PntGetter>::raw_remove",
+          "seconds": 0.16046
+        },
+        {
+          "name": "std::list<Py::ExtensionModuleBase *>",
+          "seconds": 0.15696000000000002
+        },
+        {
+          "name": "std::tuple<double, double, double>",
+          "seconds": 0.15466499999999997
+        },
+        {
+          "name": "boost::detail::variant::visitation_impl_invoke<boost::detail::variant::invoke_visitor<boost::geometry::index::detail::rtree::visitors::remove<boost::geometry::index::rtree<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, Part::WireJoiner::WireJoinerP::BoxGetter>::members_holder>, false>, void *, boost::geometry::index::detail::rtree::variant_internal_node<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>>, std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::variant<boost::geometry::index::detail::rtree::variant_leaf<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>>, std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::variant_internal_node<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>>, std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>>::has_fallback_type_>",
+          "seconds": 0.153738
+        },
+        {
+          "name": "boost::detail::variant::visitation_impl_invoke_impl<boost::detail::variant::invoke_visitor<boost::geometry::index::detail::rtree::visitors::remove<boost::geometry::index::rtree<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, Part::WireJoiner::WireJoinerP::BoxGetter>::members_holder>, false>, void *, boost::geometry::index::detail::rtree::variant_internal_node<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>>, std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>>",
+          "seconds": 0.15364
+        },
+        {
+          "name": "boost::detail::variant::invoke_visitor<boost::geometry::index::detail::rtree::visitors::remove<boost::geometry::index::rtree<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, Part::WireJoiner::WireJoinerP::BoxGetter>::members_holder>, false>::internal_visit<boost::geometry::index::detail::rtree::variant_internal_node<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>>, std::_List_iterator<Part::WireJoiner::WireJoinerP::EdgeInfo>, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag> &>",
+          "seconds": 0.153305
+        },
+        {
+          "name": "boost::geometry::index::detail::rtree::apply_visitor<boost::geometry::index::detail::rtree::visitors::remove<boost::geometry::index::rtree<Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, Part::WireJoiner::WireJoinerP::PntGetter>::members_holder>, Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<Part::WireJoiner::WireJoinerP::VertexInfo>, Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>",
+          "seconds": 0.152795
+        },
+        {
+          "name": "boost::apply_visitor<boost::geometry::index::detail::rtree::visitors::remove<boost::geometry::index::rtree<Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, Part::WireJoiner::WireJoinerP::PntGetter>::members_holder>, boost::variant<boost::geometry::index::detail::rtree::variant_leaf<Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<Part::WireJoiner::WireJoinerP::VertexInfo>, Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::variant_internal_node<Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<Part::WireJoiner::WireJoinerP::VertexInfo>, Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>> &>",
+          "seconds": 0.152565
+        },
+        {
+          "name": "boost::variant<boost::geometry::index::detail::rtree::variant_leaf<Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<Part::WireJoiner::WireJoinerP::VertexInfo>, Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::variant_internal_node<Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<Part::WireJoiner::WireJoinerP::VertexInfo>, Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>>::apply_visitor<boost::geometry::index::detail::rtree::visitors::remove<boost::geometry::index::rtree<Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, Part::WireJoiner::WireJoinerP::PntGetter>::members_holder>>",
+          "seconds": 0.15246
+        },
+        {
+          "name": "boost::variant<boost::geometry::index::detail::rtree::variant_leaf<Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<Part::WireJoiner::WireJoinerP::VertexInfo>, Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::variant_internal_node<Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<Part::WireJoiner::WireJoinerP::VertexInfo>, Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>>::internal_apply_visitor<boost::detail::variant::invoke_visitor<boost::geometry::index::detail::rtree::visitors::remove<boost::geometry::index::rtree<Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, Part::WireJoiner::WireJoinerP::PntGetter>::members_holder>, false>>",
+          "seconds": 0.152204
+        },
+        {
+          "name": "boost::variant<boost::geometry::index::detail::rtree::variant_leaf<Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<Part::WireJoiner::WireJoinerP::VertexInfo>, Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::variant_internal_node<Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<Part::WireJoiner::WireJoinerP::VertexInfo>, Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>>::internal_apply_visitor_impl<boost::detail::variant::invoke_visitor<boost::geometry::index::detail::rtree::visitors::remove<boost::geometry::index::rtree<Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, Part::WireJoiner::WireJoinerP::PntGetter>::members_holder>, false>, void *>",
+          "seconds": 0.15211
+        },
+        {
+          "name": "boost::detail::variant::visitation_impl<mpl_::int_<0>, boost::detail::variant::visitation_impl_step<boost::mpl::l_iter<boost::mpl::l_item<mpl_::long_<2>, boost::geometry::index::detail::rtree::variant_leaf<Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<Part::WireJoiner::WireJoinerP::VertexInfo>, Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::mpl::l_item<mpl_::long_<1>, boost::geometry::index::detail::rtree::variant_internal_node<Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<Part::WireJoiner::WireJoinerP::VertexInfo>, Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::mpl::l_end>>>, boost::mpl::l_iter<l_end>>, boost::detail::variant::invoke_visitor<boost::geometry::index::detail::rtree::visitors::remove<boost::geometry::index::rtree<Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, Part::WireJoiner::WireJoinerP::PntGetter>::members_holder>, false>, void *, boost::variant<boost::geometry::index::detail::rtree::variant_leaf<Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<Part::WireJoiner::WireJoinerP::VertexInfo>, Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::variant_internal_node<Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<Part::WireJoiner::WireJoinerP::VertexInfo>, Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>>::has_fallback_type_>",
+          "seconds": 0.15197
+        },
+        {
+          "name": "std::_Vector_base<PyMethodDef, std::allocator<PyMethodDef>>::_Vector_impl",
+          "seconds": 0.15122599999999994
+        },
+        {
+          "name": "Base::ConsoleSingleton::send<Base::LogStyle::Log, Base::IntendedRecipient::All, Base::ContentType::Untranslated, const char *>",
+          "seconds": 0.15042
+        },
+        {
+          "name": "std::vector<Part::TopoShape>::resize",
+          "seconds": 0.14996600000000002
+        },
+        {
+          "name": "std::array<std::__format::_Arg_t, 1>::rbegin",
+          "seconds": 0.14963200000000001
+        },
+        {
+          "name": "boost::geometry::index::detail::rtree::visitors::remove<boost::geometry::index::rtree<Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, Part::WireJoiner::WireJoinerP::PntGetter>::members_holder>::operator()",
+          "seconds": 0.14959699999999998
+        },
+        {
+          "name": "std::vector<Part::TopoShape>::_M_default_append",
+          "seconds": 0.1495
+        },
+        {
+          "name": "NCollection_Sequence<opencascade::handle<TColgp_HArray1OfPnt2d>>::~NCollection_Sequence",
+          "seconds": 0.14619000000000001
+        },
+        {
+          "name": "std::basic_string<wchar_t>::resize_and_overwrite<(lambda at /nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/format:3332:10) &>",
+          "seconds": 0.14521399999999998
+        },
+        {
+          "name": "std::tuple<double, double, double, double>",
+          "seconds": 0.14358200000000002
+        },
+        {
+          "name": "boost::detail::variant::visitation_impl_invoke<boost::detail::variant::invoke_visitor<boost::geometry::index::detail::rtree::visitors::remove<boost::geometry::index::rtree<Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, Part::WireJoiner::WireJoinerP::PntGetter>::members_holder>, false>, void *, boost::geometry::index::detail::rtree::variant_internal_node<Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<Part::WireJoiner::WireJoinerP::VertexInfo>, Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::variant<boost::geometry::index::detail::rtree::variant_leaf<Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<Part::WireJoiner::WireJoinerP::VertexInfo>, Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::variant_internal_node<Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<Part::WireJoiner::WireJoinerP::VertexInfo>, Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>>::has_fallback_type_>",
+          "seconds": 0.143462
+        },
+        {
+          "name": "boost::detail::variant::visitation_impl_invoke_impl<boost::detail::variant::invoke_visitor<boost::geometry::index::detail::rtree::visitors::remove<boost::geometry::index::rtree<Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, Part::WireJoiner::WireJoinerP::PntGetter>::members_holder>, false>, void *, boost::geometry::index::detail::rtree::variant_internal_node<Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<Part::WireJoiner::WireJoinerP::VertexInfo>, Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>>",
+          "seconds": 0.143359
+        },
+        {
+          "name": "boost::detail::variant::invoke_visitor<boost::geometry::index::detail::rtree::visitors::remove<boost::geometry::index::rtree<Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, Part::WireJoiner::WireJoinerP::PntGetter>::members_holder>, false>::internal_visit<boost::geometry::index::detail::rtree::variant_internal_node<Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::container::new_allocator<Part::WireJoiner::WireJoinerP::VertexInfo>, Part::WireJoiner::WireJoinerP::VertexInfo, boost::geometry::index::linear<16>, boost::geometry::model::box<boost::geometry::model::point<double, 3, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag> &>",
+          "seconds": 0.14302
+        },
+        {
+          "name": "std::unique_ptr<Part::Geometry>",
+          "seconds": 0.13899199999999998
+        },
+        {
+          "name": "std::set<Attacher::eRefType>",
+          "seconds": 0.138832
+        },
+        {
+          "name": "boost::re_detail_600::basic_regex_implementation<char, boost::regex_traits<char>>::assign",
+          "seconds": 0.137726
+        },
+        {
+          "name": "std::unique_ptr<Part::Geom2dCurve>",
+          "seconds": 0.136916
+        },
+        {
+          "name": "std::vector<Part::TopoShape>::_M_default_append(size_type)::_Guard_elts::_Guard_elts",
+          "seconds": 0.132427
+        },
+        {
+          "name": "std::is_default_constructible<std::equal_to<const App::DocumentObject *>>",
+          "seconds": 0.13186699999999998
+        },
+        {
+          "name": "boost::re_detail_600::basic_regex_implementation<char, boost::regex_traits<char>>::basic_regex_implementation",
+          "seconds": 0.13151
+        }
+      ]
+    }
+  },
+  "diagnostics": {
+    "missing_traces": [],
+    "invalid_traces": []
+  }
+}

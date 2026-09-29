@@ -1,0 +1,131 @@
+{
+  "src/Mod/TechDraw/App/CMakeFiles/TechDraw.dir/Unity/unity_0_cxx.cxx.o": [
+    "build/clang-profile/src/Mod/TechDraw/App/TechDraw_autogen/mocs_compilation.cpp",
+    "src/Mod/TechDraw/App/AppTechDraw.cpp",
+    "src/Mod/TechDraw/App/AppTechDrawPy.cpp",
+    "src/Mod/TechDraw/App/DrawUtil.cpp",
+    "src/Mod/TechDraw/App/ShapeExtractor.cpp",
+    "src/Mod/TechDraw/App/DrawDimHelper.cpp",
+    "src/Mod/TechDraw/App/HatchLine.cpp",
+    "src/Mod/TechDraw/App/EdgeWalker.cpp"
+  ],
+  "src/Mod/TechDraw/App/CMakeFiles/TechDraw.dir/Unity/unity_3_cxx.cxx.o": [
+    "src/Mod/TechDraw/App/DrawViewPart.cpp",
+    "src/Mod/TechDraw/App/DrawViewAnnotation.cpp",
+    "src/Mod/TechDraw/App/DrawViewSymbol.cpp",
+    "src/Mod/TechDraw/App/DrawViewSpreadsheet.cpp",
+    "src/Mod/TechDraw/App/DrawViewClip.cpp",
+    "src/Mod/TechDraw/App/DrawProjGroup.cpp",
+    "src/Mod/TechDraw/App/DrawProjGroupItem.cpp",
+    "src/Mod/TechDraw/App/DrawParametricTemplate.cpp"
+  ],
+  "src/Mod/TechDraw/App/CMakeFiles/TechDraw.dir/Unity/unity_2_cxx.cxx.o": [
+    "src/Mod/TechDraw/App/TechDrawExport.cpp",
+    "src/Mod/TechDraw/App/ProjectionAlgos.cpp",
+    "src/Mod/TechDraw/App/XMLQuery.cpp",
+    "src/Mod/TechDraw/App/LineGenerator.cpp",
+    "src/Mod/TechDraw/App/LineFormat.cpp",
+    "src/Mod/TechDraw/App/DrawPage.cpp",
+    "src/Mod/TechDraw/App/DrawComplexSection.cpp",
+    "src/Mod/TechDraw/App/DrawView.cpp"
+  ],
+  "src/Mod/TechDraw/App/CMakeFiles/TechDraw.dir/Unity/unity_5_cxx.cxx.o": [
+    "src/Mod/TechDraw/App/DimensionFormatter.cpp",
+    "src/Mod/TechDraw/App/DimensionAutoCorrect.cpp",
+    "src/Mod/TechDraw/App/DrawViewBalloon.cpp",
+    "src/Mod/TechDraw/App/DrawViewSection.cpp",
+    "src/Mod/TechDraw/App/DrawHatch.cpp",
+    "src/Mod/TechDraw/App/DrawGeomHatch.cpp",
+    "src/Mod/TechDraw/App/DrawViewDraft.cpp",
+    "src/Mod/TechDraw/App/DrawViewArch.cpp"
+  ],
+  "src/Mod/TechDraw/App/CMakeFiles/TechDraw.dir/Unity/unity_4_cxx.cxx.o": [
+    "src/Mod/TechDraw/App/DrawSVGTemplate.cpp",
+    "src/Mod/TechDraw/App/DrawTemplate.cpp",
+    "src/Mod/TechDraw/App/DrawViewCollection.cpp",
+    "src/Mod/TechDraw/App/DrawViewDimension.cpp",
+    "src/Mod/TechDraw/App/DrawViewDimExtent.cpp",
+    "src/Mod/TechDraw/App/LandmarkDimension.cpp",
+    "src/Mod/TechDraw/App/DimensionGeometry.cpp",
+    "src/Mod/TechDraw/App/DimensionReferences.cpp"
+  ],
+  "src/Mod/TechDraw/App/CMakeFiles/TechDraw.dir/Unity/unity_7_cxx.cxx.o": [
+    "src/Mod/TechDraw/App/FeatureProjection.cpp",
+    "src/Mod/TechDraw/App/DrawBrokenView.cpp",
+    "src/Mod/TechDraw/App/Geometry.cpp",
+    "src/Mod/TechDraw/App/GeometryObject.cpp",
+    "src/Mod/TechDraw/App/ShapeUtils.cpp",
+    "src/Mod/TechDraw/App/CenterLine.cpp",
+    "src/Mod/TechDraw/App/Cosmetic.cpp",
+    "src/Mod/TechDraw/App/CosmeticVertex.cpp"
+  ],
+  "src/Mod/TechDraw/App/CMakeFiles/TechDraw.dir/Unity/unity_8_cxx.cxx.o": [
+    "src/Mod/TechDraw/App/CosmeticExtension.cpp",
+    "src/Mod/TechDraw/App/GeometryMatcher.cpp",
+    "src/Mod/TechDraw/App/DrawPagePyImp.cpp",
+    "src/Mod/TechDraw/App/DrawViewPyImp.cpp",
+    "src/Mod/TechDraw/App/DrawViewPartPyImp.cpp",
+    "src/Mod/TechDraw/App/DrawViewSymbolPyImp.cpp",
+    "src/Mod/TechDraw/App/DrawTemplatePyImp.cpp",
+    "src/Mod/TechDraw/App/DrawParametricTemplatePyImp.cpp"
+  ],
+  "src/Mod/TechDraw/App/CMakeFiles/TechDraw.dir/Unity/unity_6_cxx.cxx.o": [
+    "src/Mod/TechDraw/App/DrawViewMulti.cpp",
+    "src/Mod/TechDraw/App/DrawViewImage.cpp",
+    "src/Mod/TechDraw/App/DrawViewDetail.cpp",
+    "src/Mod/TechDraw/App/DrawLeaderLine.cpp",
+    "src/Mod/TechDraw/App/DrawRichAnno.cpp",
+    "src/Mod/TechDraw/App/DrawTile.cpp",
+    "src/Mod/TechDraw/App/DrawTileWeld.cpp",
+    "src/Mod/TechDraw/App/DrawWeldSymbol.cpp"
+  ],
+  "src/Mod/TechDraw/App/CMakeFiles/TechDraw.dir/Unity/unity_9_cxx.cxx.o": [
+    "src/Mod/TechDraw/App/DrawSVGTemplatePyImp.cpp",
+    "src/Mod/TechDraw/App/DrawViewClipPyImp.cpp",
+    "src/Mod/TechDraw/App/DrawViewDimensionPyImp.cpp",
+    "src/Mod/TechDraw/App/DrawViewDimExtentPyImp.cpp",
+    "src/Mod/TechDraw/App/DrawHatchPyImp.cpp",
+    "src/Mod/TechDraw/App/DrawGeomHatchPyImp.cpp",
+    "src/Mod/TechDraw/App/DrawViewCollectionPyImp.cpp",
+    "src/Mod/TechDraw/App/DrawProjGroupPyImp.cpp"
+  ],
+  "src/Mod/TechDraw/App/CMakeFiles/TechDraw.dir/Unity/unity_1_cxx.cxx.o": [
+    "src/Mod/TechDraw/App/DrawProjectSplit.cpp",
+    "src/Mod/TechDraw/App/LineGroup.cpp",
+    "src/Mod/TechDraw/App/LineNameEnum.cpp",
+    "src/Mod/TechDraw/App/ArrowPropEnum.cpp",
+    "src/Mod/TechDraw/App/BalloonPropEnum.cpp",
+    "src/Mod/TechDraw/App/MattingPropEnum.cpp",
+    "src/Mod/TechDraw/App/Preferences.cpp",
+    "src/Mod/TechDraw/App/Tag.cpp"
+  ],
+  "src/Mod/TechDraw/App/CMakeFiles/TechDraw.dir/Unity/unity_10_cxx.cxx.o": [
+    "src/Mod/TechDraw/App/DrawProjGroupItemPyImp.cpp",
+    "src/Mod/TechDraw/App/DrawViewAnnotationPyImp.cpp",
+    "src/Mod/TechDraw/App/DrawLeaderLinePyImp.cpp",
+    "src/Mod/TechDraw/App/DrawRichAnnoPyImp.cpp",
+    "src/Mod/TechDraw/App/GeomFormatPyImp.cpp",
+    "src/Mod/TechDraw/App/CenterLinePyImp.cpp",
+    "src/Mod/TechDraw/App/CosmeticEdgePyImp.cpp",
+    "src/Mod/TechDraw/App/CosmeticVertexPyImp.cpp"
+  ],
+  "src/Mod/TechDraw/App/CMakeFiles/TechDraw.dir/PropertyGeomFormatList.cpp.o": [
+    "src/Mod/TechDraw/App/PropertyGeomFormatList.cpp"
+  ],
+  "src/Mod/TechDraw/App/CMakeFiles/TechDraw.dir/PropertyCosmeticVertexList.cpp.o": [
+    "src/Mod/TechDraw/App/PropertyCosmeticVertexList.cpp"
+  ],
+  "src/Mod/TechDraw/App/CMakeFiles/TechDraw.dir/PropertyCosmeticEdgeList.cpp.o": [
+    "src/Mod/TechDraw/App/PropertyCosmeticEdgeList.cpp"
+  ],
+  "src/Mod/TechDraw/App/CMakeFiles/TechDraw.dir/PropertyCenterLineList.cpp.o": [
+    "src/Mod/TechDraw/App/PropertyCenterLineList.cpp"
+  ],
+  "src/Mod/TechDraw/App/CMakeFiles/TechDraw.dir/Unity/unity_11_cxx.cxx.o": [
+    "src/Mod/TechDraw/App/DrawTilePyImp.cpp",
+    "src/Mod/TechDraw/App/DrawTileWeldPyImp.cpp",
+    "src/Mod/TechDraw/App/DrawWeldSymbolPyImp.cpp",
+    "src/Mod/TechDraw/App/CosmeticExtensionPyImp.cpp",
+    "src/Mod/TechDraw/App/DrawBrokenViewPyImp.cpp"
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "variant": "expanded-pch",
+  "pch_appended": "#include <App/DocumentObject.h>\n#include <Mod/TechDraw/App/DrawView.h>\n",
+  "cmake_appended": ""
+}

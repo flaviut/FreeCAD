@@ -1,0 +1,120 @@
+{
+  "source_parent_change": "mzktnxlp",
+  "source_parent_commit": "ed8592d1f644b4055c8ae3d1a60921f663bbea54",
+  "source_sha256": {
+    "src/Mod/TechDraw/App/CMakeLists.txt": "b8ca4dbd75f5a978b514a14d90f43988029e53ad5e62e3d174e936bf70cea3bf",
+    "src/Mod/TechDraw/App/PreCompiled.h": "a43a98ff870d5ef7d8cf211d3de2304c5dbe3b77e62189ae327b01968cd0292b",
+    "src/Mod/TechDraw/App/HatchLine.cpp": "4d20c05401db87a559ae6ea558b55cead9a09219b6f5ba6b10e9f1411c45fb7f"
+  },
+  "compiler": "Clang 21.1.8",
+  "configuration": "Release, PCH enabled, time tracing enabled, ccache disabled, 8 jobs",
+  "target": "TechDraw",
+  "source_touch": "src/Mod/TechDraw/App/HatchLine.cpp",
+  "unity_exclusions": [
+    "PropertyGeomFormatList.cpp",
+    "PropertyCenterLineList.cpp",
+    "PropertyCosmeticEdgeList.cpp",
+    "PropertyCosmeticVertexList.cpp"
+  ],
+  "failed_attempt": "Initial unity8 compatibility build failed due namespace App leaking from four Property*.cpp sources into GeometryMatcher.cpp; log retained as provenance/unity8-initial-compatibility.log. Excluded from timing.",
+  "memory_definition": "0.1 s sampled sum of fc-build descendant process RSS, including wrapper, may double count shared pages",
+  "baseline": {
+    "target_elapsed_s": 45.83025067998096,
+    "target_compiler_outputs": 98,
+    "target_tus": 97,
+    "target_pch": 1,
+    "target_frontend_s": 159.857311,
+    "target_compiler_s": 275.976718,
+    "target_peak_descendant_rss_kib": 3382244,
+    "target_peak_single_process_rss_kib": 764484,
+    "source_touch_elapsed_s": 6.558934256026987,
+    "source_touch_compiler_outputs": 1,
+    "source_touch_members": [
+      "HatchLine.cpp"
+    ],
+    "source_touch_frontend_s": 1.784466,
+    "target_trace_coverage": "98/98",
+    "source_touch_trace_coverage": "1/1"
+  },
+  "expanded-pch": {
+    "target_elapsed_s": 40.41636535600992,
+    "target_compiler_outputs": 98,
+    "target_tus": 97,
+    "target_pch": 1,
+    "target_frontend_s": 109.135429,
+    "target_compiler_s": 225.402472,
+    "target_peak_descendant_rss_kib": 3202568,
+    "target_peak_single_process_rss_kib": 814192,
+    "source_touch_elapsed_s": 5.986072023981251,
+    "source_touch_compiler_outputs": 1,
+    "source_touch_members": [
+      "HatchLine.cpp"
+    ],
+    "source_touch_frontend_s": 1.335396,
+    "target_trace_coverage": "98/98",
+    "source_touch_trace_coverage": "1/1"
+  },
+  "unity4": {
+    "target_elapsed_s": 34.95527608500561,
+    "target_compiler_outputs": 29,
+    "target_tus": 28,
+    "target_pch": 1,
+    "target_frontend_s": 71.578083,
+    "target_compiler_s": 150.44721,
+    "target_peak_descendant_rss_kib": 3484400,
+    "target_peak_single_process_rss_kib": 764420,
+    "source_touch_elapsed_s": 11.419214666006155,
+    "source_touch_compiler_outputs": 1,
+    "source_touch_members": [
+      "ShapeExtractor.cpp",
+      "DrawDimHelper.cpp",
+      "HatchLine.cpp",
+      "EdgeWalker.cpp"
+    ],
+    "source_touch_frontend_s": 3.209274,
+    "target_trace_coverage": "29/29",
+    "source_touch_trace_coverage": "1/1"
+  },
+  "unity8": {
+    "target_elapsed_s": 31.824635654047597,
+    "target_compiler_outputs": 17,
+    "target_tus": 16,
+    "target_pch": 1,
+    "target_frontend_s": 46.496166,
+    "target_compiler_s": 106.739696,
+    "target_peak_descendant_rss_kib": 3584708,
+    "target_peak_single_process_rss_kib": 764384,
+    "source_touch_elapsed_s": 16.780437509005424,
+    "source_touch_compiler_outputs": 1,
+    "source_touch_members": [
+      "AppTechDraw.cpp",
+      "AppTechDrawPy.cpp",
+      "DrawUtil.cpp",
+      "ShapeExtractor.cpp",
+      "DrawDimHelper.cpp",
+      "HatchLine.cpp",
+      "EdgeWalker.cpp"
+    ],
+    "source_touch_frontend_s": 4.403311,
+    "target_trace_coverage": "17/17",
+    "source_touch_trace_coverage": "1/1"
+  },
+  "baseline_dependency_coverage": {
+    "ordinary_objects": 97,
+    "pch_outputs": 1,
+    "App/DocumentObject.h": 90,
+    "TechDraw/App/DrawView.h": 69,
+    "TechDraw/App/DrawViewPart.h": 52,
+    "Part/App/TopoShape.h": 52,
+    "method": "Archived baseline compiler outputs intersected with live Ninja dependency records; counts exclude the PCH output."
+  },
+  "unity_source_coverage": {
+    "baseline_ordinary_sources": 97,
+    "unity4_grouped_sources": 93,
+    "unity8_grouped_sources": 93,
+    "standalone_sources": 4,
+    "identical_grouped_set": true,
+    "identical_standalone_set": true,
+    "manifest_method": "Archived unity trace Source events intersected with TechDraw compile database; generated mocs_compilation.cpp included from CMake-generated unity_0 source (empty generated TU lacks a trace Source event)."
+  }
+}

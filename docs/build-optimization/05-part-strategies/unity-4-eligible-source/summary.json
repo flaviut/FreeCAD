@@ -1,0 +1,1666 @@
+{
+  "build_dir": "/home/user/dev/FreeCAD/docs/build-optimization/05-part-strategies/provenance/unity-4-eligible-source",
+  "repo_root": "/home/user/dev/FreeCAD",
+  "ninja_log": {
+    "recorded_start_ms": 128,
+    "recorded_end_ms": 4707,
+    "recorded_span_s": 4.579,
+    "duplicate_output_entries": 0,
+    "malformed_entries": 0
+  },
+  "aggregates": {
+    "translation_unit": {
+      "count": 1,
+      "phase_seconds": {
+        "ExecuteCompiler": 2.881667,
+        "Frontend": 2.546662,
+        "Backend": 0.303807,
+        "Source": 0.0,
+        "InstantiateFunction": 0.639919,
+        "InstantiateClass": 0.809672,
+        "Optimizer": 0.190264,
+        "CodeGenPasses": 0.111698
+      },
+      "source_ranking": [
+        {
+          "name": "src/Mod/Part/App/FeaturePartBoolean.cpp",
+          "seconds": 2.072035
+        },
+        {
+          "name": "src/Mod/Part/App/FeaturePartBoolean.h",
+          "seconds": 1.411761
+        },
+        {
+          "name": "src/Mod/Part/App/PartFeature.h",
+          "seconds": 1.284043
+        },
+        {
+          "name": "src/Mod/Material/App/PropertyMaterial.h",
+          "seconds": 0.733625
+        },
+        {
+          "name": "src/Mod/Material/App/Materials.h",
+          "seconds": 0.695483
+        },
+        {
+          "name": "src/App/Application.h",
+          "seconds": 0.596635
+        },
+        {
+          "name": "src/App/FeaturePython.h",
+          "seconds": 0.37457
+        },
+        {
+          "name": "src/Mod/Material/App/MaterialValue.h",
+          "seconds": 0.353271
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qtextstream.h",
+          "seconds": 0.275496
+        },
+        {
+          "name": "src/App/GeoFeature.h",
+          "seconds": 0.272945
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/QSet",
+          "seconds": 0.271138
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qset.h",
+          "seconds": 0.271066
+        },
+        {
+          "name": "src/App/DocumentObject.h",
+          "seconds": 0.269364
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qhash.h",
+          "seconds": 0.267252
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qchar.h",
+          "seconds": 0.249417
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qhashfunctions.h",
+          "seconds": 0.217633
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qstring.h",
+          "seconds": 0.20256
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qstringview.h",
+          "seconds": 0.189541
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/QMetaType",
+          "seconds": 0.177351
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qmetatype.h",
+          "seconds": 0.177274
+        },
+        {
+          "name": "src/Mod/Part/App/PropertyTopoShape.h",
+          "seconds": 0.1646
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qbytearray.h",
+          "seconds": 0.155954
+        },
+        {
+          "name": "src/Mod/Part/App/TopoShape.h",
+          "seconds": 0.136942
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/QVariant",
+          "seconds": 0.128892
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qvariant.h",
+          "seconds": 0.128813
+        },
+        {
+          "name": "src/Mod/Part/App/FeaturePartBox.cpp",
+          "seconds": 0.128685
+        },
+        {
+          "name": "src/App/PropertyLinks.h",
+          "seconds": 0.125683
+        },
+        {
+          "name": "src/App/PropertyStandard.h",
+          "seconds": 0.115346
+        },
+        {
+          "name": "src/Mod/Part/App/FeaturePartBox.h",
+          "seconds": 0.115264
+        },
+        {
+          "name": "src/Mod/Part/App/PrimitiveFeature.h",
+          "seconds": 0.113322
+        },
+        {
+          "name": "src/App/ComplexGeoData.h",
+          "seconds": 0.109306
+        },
+        {
+          "name": "src/Base/Exception.h",
+          "seconds": 0.100651
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qdebug.h",
+          "seconds": 0.100499
+        },
+        {
+          "name": "src/App/PropertyPythonObject.h",
+          "seconds": 0.096988
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/Objects.hxx",
+          "seconds": 0.096258
+        },
+        {
+          "name": "src/Base/FileInfo.h",
+          "seconds": 0.085471
+        },
+        {
+          "name": "/nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/filesystem",
+          "seconds": 0.083826
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/dynamic_bitset.hpp",
+          "seconds": 0.082171
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/dynamic_bitset/dynamic_bitset.hpp",
+          "seconds": 0.082009
+        },
+        {
+          "name": "src/App/MappedName.h",
+          "seconds": 0.077159
+        },
+        {
+          "name": "src/Mod/Part/App/AttachExtension.h",
+          "seconds": 0.077028
+        },
+        {
+          "name": "/nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/thread",
+          "seconds": 0.070798
+        },
+        {
+          "name": "/nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/stop_token",
+          "seconds": 0.065067
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qnamespace.h",
+          "seconds": 0.063972
+        },
+        {
+          "name": "/nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/bits/fs_path.h",
+          "seconds": 0.061684
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/WrapPython.h",
+          "seconds": 0.054392
+        },
+        {
+          "name": "/nix/store/h3l4z7p6wny3phbckwwhy1i2g52pdnj4-python3-3.13.15/include/python3.13/Python.h",
+          "seconds": 0.054272
+        },
+        {
+          "name": "src/App/PropertyGeo.h",
+          "seconds": 0.051221
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/functional/hash/hash.hpp",
+          "seconds": 0.047666
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/container_hash/hash.hpp",
+          "seconds": 0.04763
+        },
+        {
+          "name": "src/Mod/Part/App/Attacher.h",
+          "seconds": 0.047222
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qcompare.h",
+          "seconds": 0.04436
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/Python3/Objects.hxx",
+          "seconds": 0.041744
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qdatastream.h",
+          "seconds": 0.040117
+        },
+        {
+          "name": "src/Base/BoundBox.h",
+          "seconds": 0.03966
+        },
+        {
+          "name": "/nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/semaphore",
+          "seconds": 0.038291
+        },
+        {
+          "name": "/nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/bits/semaphore_base.h",
+          "seconds": 0.037658
+        },
+        {
+          "name": "src/Base/Reader.h",
+          "seconds": 0.03755
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qlatin1stringview.h",
+          "seconds": 0.036162
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/container_hash/is_described_class.hpp",
+          "seconds": 0.035835
+        },
+        {
+          "name": "src/3rdParty/FastSignals/libfastsignals/include/fastsignals/signal.h",
+          "seconds": 0.034566
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/describe/bases.hpp",
+          "seconds": 0.032567
+        },
+        {
+          "name": "/nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/bits/atomic_timed_wait.h",
+          "seconds": 0.031838
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/mp11/algorithm.hpp",
+          "seconds": 0.03179
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qobjectdefs.h",
+          "seconds": 0.030985
+        },
+        {
+          "name": "src/App/ProcessArguments.h",
+          "seconds": 0.030316
+        },
+        {
+          "name": "src/App/TransactionalObject.h",
+          "seconds": 0.030029
+        },
+        {
+          "name": "src/Base/Observer.h",
+          "seconds": 0.02865
+        },
+        {
+          "name": "src/App/Property.h",
+          "seconds": 0.027894
+        },
+        {
+          "name": "src/App/ExtensionContainer.h",
+          "seconds": 0.027386
+        },
+        {
+          "name": "src/App/PropertyExpressionEngine.h",
+          "seconds": 0.026948
+        },
+        {
+          "name": "src/App/DepEdge.h",
+          "seconds": 0.025551
+        },
+        {
+          "name": "src/App/StringHasher.h",
+          "seconds": 0.025195
+        },
+        {
+          "name": "src/Base/Tools2D.h",
+          "seconds": 0.025055
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qlist.h",
+          "seconds": 0.024325
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qfloat16.h",
+          "seconds": 0.02353
+        },
+        {
+          "name": "src/3rdParty/FastSignals/libfastsignals/include/fastsignals/connection.h",
+          "seconds": 0.02343
+        },
+        {
+          "name": "src/App/DocumentObserver.h",
+          "seconds": 0.02326
+        },
+        {
+          "name": "/nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/unordered_set",
+          "seconds": 0.022045
+        },
+        {
+          "name": "src/App/PropertyContainer.h",
+          "seconds": 0.021998
+        },
+        {
+          "name": "src/Mod/Material/App/Model.h",
+          "seconds": 0.021785
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qobjectdefs_impl.h",
+          "seconds": 0.02099
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qbytearrayview.h",
+          "seconds": 0.020831
+        },
+        {
+          "name": "/nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/bits/unordered_set.h",
+          "seconds": 0.020735
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qvarlengtharray.h",
+          "seconds": 0.020448
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qarraydatapointer.h",
+          "seconds": 0.020088
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qanystringview.h",
+          "seconds": 0.019417
+        },
+        {
+          "name": "/nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/bits/std_thread.h",
+          "seconds": 0.018334
+        },
+        {
+          "name": "src/App/ElementMap.h",
+          "seconds": 0.017843
+        },
+        {
+          "name": "src/Base/Console.h",
+          "seconds": 0.017771
+        },
+        {
+          "name": "/nix/store/s9k3wqxph2axp6xr2xia5acrmx4rgl4v-xerces-c-3.3.0/include/xercesc/sax2/DefaultHandler.hpp",
+          "seconds": 0.017736
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/QMap",
+          "seconds": 0.017254
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qmap.h",
+          "seconds": 0.017194
+        },
+        {
+          "name": "src/3rdParty/FastSignals/libfastsignals/include/fastsignals/signal_impl.h",
+          "seconds": 0.016999
+        },
+        {
+          "name": "src/App/ExtensionPython.h",
+          "seconds": 0.01666
+        },
+        {
+          "name": "src/Base/Interpreter.h",
+          "seconds": 0.016355
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qmetacontainer.h",
+          "seconds": 0.015717
+        },
+        {
+          "name": "src/Base/ProgramVersion.h",
+          "seconds": 0.015683
+        },
+        {
+          "name": "/nix/store/s9k3wqxph2axp6xr2xia5acrmx4rgl4v-xerces-c-3.3.0/include/xercesc/sax/SAXParseException.hpp",
+          "seconds": 0.015169
+        },
+        {
+          "name": "/nix/store/s9k3wqxph2axp6xr2xia5acrmx4rgl4v-xerces-c-3.3.0/include/xercesc/sax/SAXException.hpp",
+          "seconds": 0.014904
+        }
+      ],
+      "template_ranking": [
+        {
+          "name": "std::map<App::DocumentObject *, std::vector<std::basic_string<char>>>::operator[]",
+          "seconds": 0.020312
+        },
+        {
+          "name": "std::map<QString, Materials::ModelProperty>::operator[]",
+          "seconds": 0.016284
+        },
+        {
+          "name": "std::sort<QList<App::StringIDRef>::iterator>",
+          "seconds": 0.015009
+        },
+        {
+          "name": "std::__sort<QList<App::StringIDRef>::iterator, __gnu_cxx::__ops::_Iter_less_iter>",
+          "seconds": 0.014904
+        },
+        {
+          "name": "QList<QString>::operator<<",
+          "seconds": 0.014389
+        },
+        {
+          "name": "std::unique_ptr<QTextStreamPrivate>",
+          "seconds": 0.014369
+        },
+        {
+          "name": "QList<QString>::append",
+          "seconds": 0.014333
+        },
+        {
+          "name": "QList<QString>::emplaceBack<const QString &>",
+          "seconds": 0.014289
+        },
+        {
+          "name": "qRegisterNormalizedMetaType<std::shared_ptr<Materials::Array3D>>",
+          "seconds": 0.01387
+        },
+        {
+          "name": "qRegisterNormalizedMetaTypeImplementation<std::shared_ptr<Materials::Array3D>>",
+          "seconds": 0.013837
+        },
+        {
+          "name": "qRegisterNormalizedMetaType<std::shared_ptr<Materials::Array2D>>",
+          "seconds": 0.01368
+        },
+        {
+          "name": "qRegisterNormalizedMetaTypeImplementation<std::shared_ptr<Materials::Array2D>>",
+          "seconds": 0.013653
+        },
+        {
+          "name": "QtPrivate::QMovableArrayOps<QString>::emplace<const QString &>",
+          "seconds": 0.013628
+        },
+        {
+          "name": "qRegisterNormalizedMetaType<std::shared_ptr<Materials::Material>>",
+          "seconds": 0.013185
+        },
+        {
+          "name": "qRegisterNormalizedMetaTypeImplementation<std::shared_ptr<Materials::Material>>",
+          "seconds": 0.013159
+        },
+        {
+          "name": "std::_Rb_tree<App::DocumentObject *, std::pair<App::DocumentObject *const, std::vector<std::basic_string<char>>>, std::_Select1st<std::pair<App::DocumentObject *const, std::vector<std::basic_string<char>>>>, std::less<App::DocumentObject *>>::_M_emplace_hint_unique<const std::piecewise_construct_t &, std::tuple<App::DocumentObject *const &>, std::tuple<>>",
+          "seconds": 0.012939
+        },
+        {
+          "name": "std::__uniq_ptr_data<QTextStreamPrivate, std::default_delete<QTextStreamPrivate>>",
+          "seconds": 0.012743
+        },
+        {
+          "name": "std::__uniq_ptr_impl<QTextStreamPrivate, std::default_delete<QTextStreamPrivate>>",
+          "seconds": 0.012646
+        },
+        {
+          "name": "std::map<QString, std::shared_ptr<Materials::MaterialProperty>>",
+          "seconds": 0.012516
+        },
+        {
+          "name": "std::vector<Base::Vector2d>::operator=",
+          "seconds": 0.012440000000000001
+        },
+        {
+          "name": "QArrayDataPointer<QString>::detachAndGrow",
+          "seconds": 0.011556
+        },
+        {
+          "name": "std::_Rb_tree<QString, std::pair<const QString, std::shared_ptr<Materials::MaterialProperty>>, std::_Select1st<std::pair<const QString, std::shared_ptr<Materials::MaterialProperty>>>, std::less<QString>>",
+          "seconds": 0.011294
+        },
+        {
+          "name": "std::unique_ptr<std::thread::_State>",
+          "seconds": 0.010723
+        },
+        {
+          "name": "std::unique_ptr<std::vector<App::PropertyXLinkContainer::RestoreInfo>>",
+          "seconds": 0.010709
+        },
+        {
+          "name": "std::unique_ptr<Data::MappedNameRef>",
+          "seconds": 0.010477
+        },
+        {
+          "name": "std::__introsort_loop<QList<App::StringIDRef>::iterator, long long, __gnu_cxx::__ops::_Iter_less_iter>",
+          "seconds": 0.01025
+        },
+        {
+          "name": "std::unique_ptr<App::StringHasher::HashMap>",
+          "seconds": 0.010227
+        },
+        {
+          "name": "std::unique_ptr<App::PropertyExpressionEngine::Private>",
+          "seconds": 0.010203
+        },
+        {
+          "name": "std::__format::_Seq_sink<std::basic_string<char>>::_M_reserve",
+          "seconds": 0.010166
+        },
+        {
+          "name": "std::unique_ptr<std::basic_istream<char>>",
+          "seconds": 0.010055
+        },
+        {
+          "name": "std::unique_ptr<Base::Exception>",
+          "seconds": 0.010041
+        },
+        {
+          "name": "std::unique_ptr<BRepAlgoAPI_BooleanOperation>",
+          "seconds": 0.009959
+        },
+        {
+          "name": "std::unique_ptr<Attacher::AttachEngine>",
+          "seconds": 0.009839
+        },
+        {
+          "name": "std::unique_ptr<App::DocumentObjectWeakPtrT::Private>",
+          "seconds": 0.009754
+        },
+        {
+          "name": "std::unique_ptr<App::PropertyXLink>",
+          "seconds": 0.009732
+        },
+        {
+          "name": "std::unique_ptr<App::DocumentWeakPtrT::Private>",
+          "seconds": 0.009704
+        },
+        {
+          "name": "std::__uniq_ptr_data<std::vector<App::PropertyXLinkContainer::RestoreInfo>, std::default_delete<std::vector<App::PropertyXLinkContainer::RestoreInfo>>>",
+          "seconds": 0.00969
+        },
+        {
+          "name": "std::unique_ptr<QtPrivate::QSlotObjectBase, QtPrivate::QSlotObjectBase::Deleter>",
+          "seconds": 0.009633
+        },
+        {
+          "name": "std::unique_ptr<QDebugStateSaverPrivate>",
+          "seconds": 0.009631
+        },
+        {
+          "name": "std::vector<Materials::MaterialProperty>::push_back",
+          "seconds": 0.009631
+        },
+        {
+          "name": "std::__uniq_ptr_impl<std::vector<App::PropertyXLinkContainer::RestoreInfo>, std::default_delete<std::vector<App::PropertyXLinkContainer::RestoreInfo>>>",
+          "seconds": 0.009623
+        },
+        {
+          "name": "qRegisterNormalizedMetaType<Materials::MaterialValue>",
+          "seconds": 0.009577
+        },
+        {
+          "name": "std::vector<std::basic_string<char>>::vector<__gnu_cxx::__normal_iterator<char *const *, std::vector<char *>>, void>",
+          "seconds": 0.009548
+        },
+        {
+          "name": "qRegisterNormalizedMetaTypeImplementation<Materials::MaterialValue>",
+          "seconds": 0.009542
+        },
+        {
+          "name": "std::unique_ptr<std::filesystem::path::_List::_Impl, std::filesystem::path::_List::_Impl_deleter>",
+          "seconds": 0.00952
+        },
+        {
+          "name": "std::__uniq_ptr_data<std::thread::_State, std::default_delete<std::thread::_State>>",
+          "seconds": 0.009441
+        },
+        {
+          "name": "std::__uniq_ptr_data<Data::MappedNameRef, std::default_delete<Data::MappedNameRef>>",
+          "seconds": 0.009424
+        },
+        {
+          "name": "std::unique_ptr<std::vector<App::PropertyExpressionEngine::RestoredExpression>>",
+          "seconds": 0.009385
+        },
+        {
+          "name": "std::__uniq_ptr_impl<std::thread::_State, std::default_delete<std::thread::_State>>",
+          "seconds": 0.009371
+        },
+        {
+          "name": "std::__uniq_ptr_impl<Data::MappedNameRef, std::default_delete<Data::MappedNameRef>>",
+          "seconds": 0.009355
+        },
+        {
+          "name": "std::unique_ptr<App::DynamicProperty::Impl>",
+          "seconds": 0.009326
+        },
+        {
+          "name": "std::__format::_Seq_sink<std::basic_string<wchar_t>>::_M_reserve",
+          "seconds": 0.009233
+        },
+        {
+          "name": "std::__uniq_ptr_data<App::PropertyExpressionEngine::Private, std::default_delete<App::PropertyExpressionEngine::Private>>",
+          "seconds": 0.009202
+        },
+        {
+          "name": "App::PropertyListsT<App::Material>::setValue",
+          "seconds": 0.00918
+        },
+        {
+          "name": "App::PropertyListsT<App::Material>::setValues",
+          "seconds": 0.009147
+        },
+        {
+          "name": "std::__uniq_ptr_impl<App::PropertyExpressionEngine::Private, std::default_delete<App::PropertyExpressionEngine::Private>>",
+          "seconds": 0.009135
+        },
+        {
+          "name": "std::__uniq_ptr_data<App::StringHasher::HashMap, std::default_delete<App::StringHasher::HashMap>>",
+          "seconds": 0.009124
+        },
+        {
+          "name": "std::vector<fastsignals::detail::packed_function>",
+          "seconds": 0.009123
+        },
+        {
+          "name": "std::unique_ptr<App::PropertyData::Impl>",
+          "seconds": 0.009117
+        },
+        {
+          "name": "std::unique_ptr<void, QVLABaseBase::free_deleter>",
+          "seconds": 0.009105
+        },
+        {
+          "name": "std::__uniq_ptr_impl<App::StringHasher::HashMap, std::default_delete<App::StringHasher::HashMap>>",
+          "seconds": 0.009053
+        },
+        {
+          "name": "std::__uniq_ptr_data<std::basic_istream<char>, std::default_delete<std::basic_istream<char>>>",
+          "seconds": 0.00895
+        },
+        {
+          "name": "std::__uniq_ptr_impl<std::basic_istream<char>, std::default_delete<std::basic_istream<char>>>",
+          "seconds": 0.008878
+        },
+        {
+          "name": "std::__uniq_ptr_data<Base::Exception, std::default_delete<Base::Exception>>",
+          "seconds": 0.008876
+        },
+        {
+          "name": "std::__uniq_ptr_data<BRepAlgoAPI_BooleanOperation, std::default_delete<BRepAlgoAPI_BooleanOperation>>",
+          "seconds": 0.008875
+        },
+        {
+          "name": "std::__uniq_ptr_impl<BRepAlgoAPI_BooleanOperation, std::default_delete<BRepAlgoAPI_BooleanOperation>>",
+          "seconds": 0.008797
+        },
+        {
+          "name": "std::__uniq_ptr_impl<Base::Exception, std::default_delete<Base::Exception>>",
+          "seconds": 0.008789
+        },
+        {
+          "name": "std::__uniq_ptr_data<App::DocumentObjectWeakPtrT::Private, std::default_delete<App::DocumentObjectWeakPtrT::Private>>",
+          "seconds": 0.008736
+        },
+        {
+          "name": "std::__uniq_ptr_data<Attacher::AttachEngine, std::default_delete<Attacher::AttachEngine>>",
+          "seconds": 0.008707
+        },
+        {
+          "name": "std::__uniq_ptr_data<App::PropertyXLink, std::default_delete<App::PropertyXLink>>",
+          "seconds": 0.008702
+        },
+        {
+          "name": "std::__uniq_ptr_data<App::DocumentWeakPtrT::Private, std::default_delete<App::DocumentWeakPtrT::Private>>",
+          "seconds": 0.008677
+        },
+        {
+          "name": "std::__uniq_ptr_impl<App::DocumentObjectWeakPtrT::Private, std::default_delete<App::DocumentObjectWeakPtrT::Private>>",
+          "seconds": 0.008664
+        },
+        {
+          "name": "std::__uniq_ptr_impl<Attacher::AttachEngine, std::default_delete<Attacher::AttachEngine>>",
+          "seconds": 0.008637
+        },
+        {
+          "name": "std::__uniq_ptr_impl<App::PropertyXLink, std::default_delete<App::PropertyXLink>>",
+          "seconds": 0.008631
+        },
+        {
+          "name": "std::__uniq_ptr_impl<App::DocumentWeakPtrT::Private, std::default_delete<App::DocumentWeakPtrT::Private>>",
+          "seconds": 0.008604
+        },
+        {
+          "name": "std::__uniq_ptr_data<QDebugStateSaverPrivate, std::default_delete<QDebugStateSaverPrivate>>",
+          "seconds": 0.008587
+        },
+        {
+          "name": "std::__uniq_ptr_data<QtPrivate::QSlotObjectBase, QtPrivate::QSlotObjectBase::Deleter>",
+          "seconds": 0.008565
+        },
+        {
+          "name": "std::__uniq_ptr_impl<QDebugStateSaverPrivate, std::default_delete<QDebugStateSaverPrivate>>",
+          "seconds": 0.008516
+        },
+        {
+          "name": "std::__uniq_ptr_impl<QtPrivate::QSlotObjectBase, QtPrivate::QSlotObjectBase::Deleter>",
+          "seconds": 0.008492
+        },
+        {
+          "name": "std::__uniq_ptr_data<std::filesystem::path::_List::_Impl, std::filesystem::path::_List::_Impl_deleter>",
+          "seconds": 0.008472
+        },
+        {
+          "name": "std::__uniq_ptr_impl<std::filesystem::path::_List::_Impl, std::filesystem::path::_List::_Impl_deleter>",
+          "seconds": 0.008402
+        },
+        {
+          "name": "std::__uniq_ptr_data<std::vector<App::PropertyExpressionEngine::RestoredExpression>, std::default_delete<std::vector<App::PropertyExpressionEngine::RestoredExpression>>>",
+          "seconds": 0.008399
+        },
+        {
+          "name": "std::vector<App::Material>::operator=",
+          "seconds": 0.008351
+        },
+        {
+          "name": "std::__uniq_ptr_data<App::DynamicProperty::Impl, std::default_delete<App::DynamicProperty::Impl>>",
+          "seconds": 0.008346
+        },
+        {
+          "name": "std::__uniq_ptr_impl<std::vector<App::PropertyExpressionEngine::RestoredExpression>, std::default_delete<std::vector<App::PropertyExpressionEngine::RestoredExpression>>>",
+          "seconds": 0.00833
+        },
+        {
+          "name": "std::operator<=><App::DocumentObject *const &, const std::basic_string<char> &, App::DocumentObject *const &, const std::basic_string<char> &, App::DocumentObject *const &, const std::basic_string<char> &, App::DocumentObject *const &, const std::basic_string<char> &>",
+          "seconds": 0.008304
+        },
+        {
+          "name": "std::__uniq_ptr_impl<App::DynamicProperty::Impl, std::default_delete<App::DynamicProperty::Impl>>",
+          "seconds": 0.008274
+        },
+        {
+          "name": "std::__uniq_ptr_data<App::PropertyData::Impl, std::default_delete<App::PropertyData::Impl>>",
+          "seconds": 0.008145
+        },
+        {
+          "name": "std::vector<Materials::ModelProperty>::push_back",
+          "seconds": 0.008103
+        },
+        {
+          "name": "std::__uniq_ptr_impl<App::PropertyData::Impl, std::default_delete<App::PropertyData::Impl>>",
+          "seconds": 0.008078
+        },
+        {
+          "name": "std::__uniq_ptr_data<void, QVLABaseBase::free_deleter>",
+          "seconds": 0.008037
+        },
+        {
+          "name": "std::__uniq_ptr_impl<void, QVLABaseBase::free_deleter>",
+          "seconds": 0.007967
+        },
+        {
+          "name": "std::__tuple_cmp<std::strong_ordering, std::tuple<App::DocumentObject *const &, const std::basic_string<char> &, App::DocumentObject *const &, const std::basic_string<char> &>, std::tuple<App::DocumentObject *const &, const std::basic_string<char> &, App::DocumentObject *const &, const std::basic_string<char> &>, std::integer_sequence<unsigned long, 0, 1, 2, 3>>",
+          "seconds": 0.007953
+        },
+        {
+          "name": "std::_Rb_tree<QString, std::pair<const QString, Materials::ModelProperty>, std::_Select1st<std::pair<const QString, Materials::ModelProperty>>, std::less<QString>>::_M_emplace_hint_unique<const std::piecewise_construct_t &, std::tuple<const QString &>, std::tuple<>>",
+          "seconds": 0.007857
+        },
+        {
+          "name": "qRegisterNormalizedMetaType<Materials::Material *>",
+          "seconds": 0.007766
+        },
+        {
+          "name": "qRegisterNormalizedMetaTypeImplementation<Materials::Material *>",
+          "seconds": 0.007731
+        },
+        {
+          "name": "std::unordered_set<int>",
+          "seconds": 0.007525
+        },
+        {
+          "name": "std::tuple<QTextStreamPrivate *, std::default_delete<QTextStreamPrivate>>",
+          "seconds": 0.007495
+        },
+        {
+          "name": "std::reverse_iterator<const QChar *>",
+          "seconds": 0.007462
+        },
+        {
+          "name": "std::__tuple_cmp(const std::tuple<App::DocumentObject *const &, const std::basic_string<char> &, App::DocumentObject *const &, const std::basic_string<char> &> &, const std::tuple<App::DocumentObject *const &, const std::basic_string<char> &, App::DocumentObject *const &, const std::basic_string<char> &> &, std::integer_sequence<unsigned long, 0, 1, 2, 3>)::(anonymous class)::operator()<0UL, 1UL, 2UL, 3UL>",
+          "seconds": 0.007338
+        }
+      ]
+    },
+    "pch": {
+      "count": 0,
+      "phase_seconds": {
+        "ExecuteCompiler": 0,
+        "Frontend": 0,
+        "Backend": 0,
+        "Source": 0,
+        "InstantiateFunction": 0,
+        "InstantiateClass": 0,
+        "Optimizer": 0,
+        "CodeGenPasses": 0
+      },
+      "source_ranking": [],
+      "template_ranking": []
+    },
+    "combined": {
+      "count": 1,
+      "phase_seconds": {
+        "ExecuteCompiler": 2.881667,
+        "Frontend": 2.546662,
+        "Backend": 0.303807,
+        "Source": 0.0,
+        "InstantiateFunction": 0.639919,
+        "InstantiateClass": 0.809672,
+        "Optimizer": 0.190264,
+        "CodeGenPasses": 0.111698
+      },
+      "source_ranking": [
+        {
+          "name": "src/Mod/Part/App/FeaturePartBoolean.cpp",
+          "seconds": 2.072035
+        },
+        {
+          "name": "src/Mod/Part/App/FeaturePartBoolean.h",
+          "seconds": 1.411761
+        },
+        {
+          "name": "src/Mod/Part/App/PartFeature.h",
+          "seconds": 1.284043
+        },
+        {
+          "name": "src/Mod/Material/App/PropertyMaterial.h",
+          "seconds": 0.733625
+        },
+        {
+          "name": "src/Mod/Material/App/Materials.h",
+          "seconds": 0.695483
+        },
+        {
+          "name": "src/App/Application.h",
+          "seconds": 0.596635
+        },
+        {
+          "name": "src/App/FeaturePython.h",
+          "seconds": 0.37457
+        },
+        {
+          "name": "src/Mod/Material/App/MaterialValue.h",
+          "seconds": 0.353271
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qtextstream.h",
+          "seconds": 0.275496
+        },
+        {
+          "name": "src/App/GeoFeature.h",
+          "seconds": 0.272945
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/QSet",
+          "seconds": 0.271138
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qset.h",
+          "seconds": 0.271066
+        },
+        {
+          "name": "src/App/DocumentObject.h",
+          "seconds": 0.269364
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qhash.h",
+          "seconds": 0.267252
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qchar.h",
+          "seconds": 0.249417
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qhashfunctions.h",
+          "seconds": 0.217633
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qstring.h",
+          "seconds": 0.20256
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qstringview.h",
+          "seconds": 0.189541
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/QMetaType",
+          "seconds": 0.177351
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qmetatype.h",
+          "seconds": 0.177274
+        },
+        {
+          "name": "src/Mod/Part/App/PropertyTopoShape.h",
+          "seconds": 0.1646
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qbytearray.h",
+          "seconds": 0.155954
+        },
+        {
+          "name": "src/Mod/Part/App/TopoShape.h",
+          "seconds": 0.136942
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/QVariant",
+          "seconds": 0.128892
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qvariant.h",
+          "seconds": 0.128813
+        },
+        {
+          "name": "src/Mod/Part/App/FeaturePartBox.cpp",
+          "seconds": 0.128685
+        },
+        {
+          "name": "src/App/PropertyLinks.h",
+          "seconds": 0.125683
+        },
+        {
+          "name": "src/App/PropertyStandard.h",
+          "seconds": 0.115346
+        },
+        {
+          "name": "src/Mod/Part/App/FeaturePartBox.h",
+          "seconds": 0.115264
+        },
+        {
+          "name": "src/Mod/Part/App/PrimitiveFeature.h",
+          "seconds": 0.113322
+        },
+        {
+          "name": "src/App/ComplexGeoData.h",
+          "seconds": 0.109306
+        },
+        {
+          "name": "src/Base/Exception.h",
+          "seconds": 0.100651
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qdebug.h",
+          "seconds": 0.100499
+        },
+        {
+          "name": "src/App/PropertyPythonObject.h",
+          "seconds": 0.096988
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/Objects.hxx",
+          "seconds": 0.096258
+        },
+        {
+          "name": "src/Base/FileInfo.h",
+          "seconds": 0.085471
+        },
+        {
+          "name": "/nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/filesystem",
+          "seconds": 0.083826
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/dynamic_bitset.hpp",
+          "seconds": 0.082171
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/dynamic_bitset/dynamic_bitset.hpp",
+          "seconds": 0.082009
+        },
+        {
+          "name": "src/App/MappedName.h",
+          "seconds": 0.077159
+        },
+        {
+          "name": "src/Mod/Part/App/AttachExtension.h",
+          "seconds": 0.077028
+        },
+        {
+          "name": "/nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/thread",
+          "seconds": 0.070798
+        },
+        {
+          "name": "/nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/stop_token",
+          "seconds": 0.065067
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qnamespace.h",
+          "seconds": 0.063972
+        },
+        {
+          "name": "/nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/bits/fs_path.h",
+          "seconds": 0.061684
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/WrapPython.h",
+          "seconds": 0.054392
+        },
+        {
+          "name": "/nix/store/h3l4z7p6wny3phbckwwhy1i2g52pdnj4-python3-3.13.15/include/python3.13/Python.h",
+          "seconds": 0.054272
+        },
+        {
+          "name": "src/App/PropertyGeo.h",
+          "seconds": 0.051221
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/functional/hash/hash.hpp",
+          "seconds": 0.047666
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/container_hash/hash.hpp",
+          "seconds": 0.04763
+        },
+        {
+          "name": "src/Mod/Part/App/Attacher.h",
+          "seconds": 0.047222
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qcompare.h",
+          "seconds": 0.04436
+        },
+        {
+          "name": "src/3rdParty/PyCXX/CXX/Python3/Objects.hxx",
+          "seconds": 0.041744
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qdatastream.h",
+          "seconds": 0.040117
+        },
+        {
+          "name": "src/Base/BoundBox.h",
+          "seconds": 0.03966
+        },
+        {
+          "name": "/nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/semaphore",
+          "seconds": 0.038291
+        },
+        {
+          "name": "/nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/bits/semaphore_base.h",
+          "seconds": 0.037658
+        },
+        {
+          "name": "src/Base/Reader.h",
+          "seconds": 0.03755
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qlatin1stringview.h",
+          "seconds": 0.036162
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/container_hash/is_described_class.hpp",
+          "seconds": 0.035835
+        },
+        {
+          "name": "src/3rdParty/FastSignals/libfastsignals/include/fastsignals/signal.h",
+          "seconds": 0.034566
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/describe/bases.hpp",
+          "seconds": 0.032567
+        },
+        {
+          "name": "/nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/bits/atomic_timed_wait.h",
+          "seconds": 0.031838
+        },
+        {
+          "name": "/nix/store/0bin3mhz9h5x0rlhfi0hwnjc91i4vx77-boost-1.89.0-dev/include/boost/mp11/algorithm.hpp",
+          "seconds": 0.03179
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qobjectdefs.h",
+          "seconds": 0.030985
+        },
+        {
+          "name": "src/App/ProcessArguments.h",
+          "seconds": 0.030316
+        },
+        {
+          "name": "src/App/TransactionalObject.h",
+          "seconds": 0.030029
+        },
+        {
+          "name": "src/Base/Observer.h",
+          "seconds": 0.02865
+        },
+        {
+          "name": "src/App/Property.h",
+          "seconds": 0.027894
+        },
+        {
+          "name": "src/App/ExtensionContainer.h",
+          "seconds": 0.027386
+        },
+        {
+          "name": "src/App/PropertyExpressionEngine.h",
+          "seconds": 0.026948
+        },
+        {
+          "name": "src/App/DepEdge.h",
+          "seconds": 0.025551
+        },
+        {
+          "name": "src/App/StringHasher.h",
+          "seconds": 0.025195
+        },
+        {
+          "name": "src/Base/Tools2D.h",
+          "seconds": 0.025055
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qlist.h",
+          "seconds": 0.024325
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qfloat16.h",
+          "seconds": 0.02353
+        },
+        {
+          "name": "src/3rdParty/FastSignals/libfastsignals/include/fastsignals/connection.h",
+          "seconds": 0.02343
+        },
+        {
+          "name": "src/App/DocumentObserver.h",
+          "seconds": 0.02326
+        },
+        {
+          "name": "/nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/unordered_set",
+          "seconds": 0.022045
+        },
+        {
+          "name": "src/App/PropertyContainer.h",
+          "seconds": 0.021998
+        },
+        {
+          "name": "src/Mod/Material/App/Model.h",
+          "seconds": 0.021785
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qobjectdefs_impl.h",
+          "seconds": 0.02099
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qbytearrayview.h",
+          "seconds": 0.020831
+        },
+        {
+          "name": "/nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/bits/unordered_set.h",
+          "seconds": 0.020735
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qvarlengtharray.h",
+          "seconds": 0.020448
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qarraydatapointer.h",
+          "seconds": 0.020088
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qanystringview.h",
+          "seconds": 0.019417
+        },
+        {
+          "name": "/nix/store/6hjng4hd5c688hjgdcyb1rzfjz220srh-gcc-15.2.0/include/c++/15.2.0/bits/std_thread.h",
+          "seconds": 0.018334
+        },
+        {
+          "name": "src/App/ElementMap.h",
+          "seconds": 0.017843
+        },
+        {
+          "name": "src/Base/Console.h",
+          "seconds": 0.017771
+        },
+        {
+          "name": "/nix/store/s9k3wqxph2axp6xr2xia5acrmx4rgl4v-xerces-c-3.3.0/include/xercesc/sax2/DefaultHandler.hpp",
+          "seconds": 0.017736
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/QMap",
+          "seconds": 0.017254
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qmap.h",
+          "seconds": 0.017194
+        },
+        {
+          "name": "src/3rdParty/FastSignals/libfastsignals/include/fastsignals/signal_impl.h",
+          "seconds": 0.016999
+        },
+        {
+          "name": "src/App/ExtensionPython.h",
+          "seconds": 0.01666
+        },
+        {
+          "name": "src/Base/Interpreter.h",
+          "seconds": 0.016355
+        },
+        {
+          "name": "/nix/store/73fffgyahdpj0znw0p152i7q1xq5kkks-qtbase-6.11.1/include/QtCore/qmetacontainer.h",
+          "seconds": 0.015717
+        },
+        {
+          "name": "src/Base/ProgramVersion.h",
+          "seconds": 0.015683
+        },
+        {
+          "name": "/nix/store/s9k3wqxph2axp6xr2xia5acrmx4rgl4v-xerces-c-3.3.0/include/xercesc/sax/SAXParseException.hpp",
+          "seconds": 0.015169
+        },
+        {
+          "name": "/nix/store/s9k3wqxph2axp6xr2xia5acrmx4rgl4v-xerces-c-3.3.0/include/xercesc/sax/SAXException.hpp",
+          "seconds": 0.014904
+        }
+      ],
+      "template_ranking": [
+        {
+          "name": "std::map<App::DocumentObject *, std::vector<std::basic_string<char>>>::operator[]",
+          "seconds": 0.020312
+        },
+        {
+          "name": "std::map<QString, Materials::ModelProperty>::operator[]",
+          "seconds": 0.016284
+        },
+        {
+          "name": "std::sort<QList<App::StringIDRef>::iterator>",
+          "seconds": 0.015009
+        },
+        {
+          "name": "std::__sort<QList<App::StringIDRef>::iterator, __gnu_cxx::__ops::_Iter_less_iter>",
+          "seconds": 0.014904
+        },
+        {
+          "name": "QList<QString>::operator<<",
+          "seconds": 0.014389
+        },
+        {
+          "name": "std::unique_ptr<QTextStreamPrivate>",
+          "seconds": 0.014369
+        },
+        {
+          "name": "QList<QString>::append",
+          "seconds": 0.014333
+        },
+        {
+          "name": "QList<QString>::emplaceBack<const QString &>",
+          "seconds": 0.014289
+        },
+        {
+          "name": "qRegisterNormalizedMetaType<std::shared_ptr<Materials::Array3D>>",
+          "seconds": 0.01387
+        },
+        {
+          "name": "qRegisterNormalizedMetaTypeImplementation<std::shared_ptr<Materials::Array3D>>",
+          "seconds": 0.013837
+        },
+        {
+          "name": "qRegisterNormalizedMetaType<std::shared_ptr<Materials::Array2D>>",
+          "seconds": 0.01368
+        },
+        {
+          "name": "qRegisterNormalizedMetaTypeImplementation<std::shared_ptr<Materials::Array2D>>",
+          "seconds": 0.013653
+        },
+        {
+          "name": "QtPrivate::QMovableArrayOps<QString>::emplace<const QString &>",
+          "seconds": 0.013628
+        },
+        {
+          "name": "qRegisterNormalizedMetaType<std::shared_ptr<Materials::Material>>",
+          "seconds": 0.013185
+        },
+        {
+          "name": "qRegisterNormalizedMetaTypeImplementation<std::shared_ptr<Materials::Material>>",
+          "seconds": 0.013159
+        },
+        {
+          "name": "std::_Rb_tree<App::DocumentObject *, std::pair<App::DocumentObject *const, std::vector<std::basic_string<char>>>, std::_Select1st<std::pair<App::DocumentObject *const, std::vector<std::basic_string<char>>>>, std::less<App::DocumentObject *>>::_M_emplace_hint_unique<const std::piecewise_construct_t &, std::tuple<App::DocumentObject *const &>, std::tuple<>>",
+          "seconds": 0.012939
+        },
+        {
+          "name": "std::__uniq_ptr_data<QTextStreamPrivate, std::default_delete<QTextStreamPrivate>>",
+          "seconds": 0.012743
+        },
+        {
+          "name": "std::__uniq_ptr_impl<QTextStreamPrivate, std::default_delete<QTextStreamPrivate>>",
+          "seconds": 0.012646
+        },
+        {
+          "name": "std::map<QString, std::shared_ptr<Materials::MaterialProperty>>",
+          "seconds": 0.012516
+        },
+        {
+          "name": "std::vector<Base::Vector2d>::operator=",
+          "seconds": 0.012440000000000001
+        },
+        {
+          "name": "QArrayDataPointer<QString>::detachAndGrow",
+          "seconds": 0.011556
+        },
+        {
+          "name": "std::_Rb_tree<QString, std::pair<const QString, std::shared_ptr<Materials::MaterialProperty>>, std::_Select1st<std::pair<const QString, std::shared_ptr<Materials::MaterialProperty>>>, std::less<QString>>",
+          "seconds": 0.011294
+        },
+        {
+          "name": "std::unique_ptr<std::thread::_State>",
+          "seconds": 0.010723
+        },
+        {
+          "name": "std::unique_ptr<std::vector<App::PropertyXLinkContainer::RestoreInfo>>",
+          "seconds": 0.010709
+        },
+        {
+          "name": "std::unique_ptr<Data::MappedNameRef>",
+          "seconds": 0.010477
+        },
+        {
+          "name": "std::__introsort_loop<QList<App::StringIDRef>::iterator, long long, __gnu_cxx::__ops::_Iter_less_iter>",
+          "seconds": 0.01025
+        },
+        {
+          "name": "std::unique_ptr<App::StringHasher::HashMap>",
+          "seconds": 0.010227
+        },
+        {
+          "name": "std::unique_ptr<App::PropertyExpressionEngine::Private>",
+          "seconds": 0.010203
+        },
+        {
+          "name": "std::__format::_Seq_sink<std::basic_string<char>>::_M_reserve",
+          "seconds": 0.010166
+        },
+        {
+          "name": "std::unique_ptr<std::basic_istream<char>>",
+          "seconds": 0.010055
+        },
+        {
+          "name": "std::unique_ptr<Base::Exception>",
+          "seconds": 0.010041
+        },
+        {
+          "name": "std::unique_ptr<BRepAlgoAPI_BooleanOperation>",
+          "seconds": 0.009959
+        },
+        {
+          "name": "std::unique_ptr<Attacher::AttachEngine>",
+          "seconds": 0.009839
+        },
+        {
+          "name": "std::unique_ptr<App::DocumentObjectWeakPtrT::Private>",
+          "seconds": 0.009754
+        },
+        {
+          "name": "std::unique_ptr<App::PropertyXLink>",
+          "seconds": 0.009732
+        },
+        {
+          "name": "std::unique_ptr<App::DocumentWeakPtrT::Private>",
+          "seconds": 0.009704
+        },
+        {
+          "name": "std::__uniq_ptr_data<std::vector<App::PropertyXLinkContainer::RestoreInfo>, std::default_delete<std::vector<App::PropertyXLinkContainer::RestoreInfo>>>",
+          "seconds": 0.00969
+        },
+        {
+          "name": "std::unique_ptr<QtPrivate::QSlotObjectBase, QtPrivate::QSlotObjectBase::Deleter>",
+          "seconds": 0.009633
+        },
+        {
+          "name": "std::unique_ptr<QDebugStateSaverPrivate>",
+          "seconds": 0.009631
+        },
+        {
+          "name": "std::vector<Materials::MaterialProperty>::push_back",
+          "seconds": 0.009631
+        },
+        {
+          "name": "std::__uniq_ptr_impl<std::vector<App::PropertyXLinkContainer::RestoreInfo>, std::default_delete<std::vector<App::PropertyXLinkContainer::RestoreInfo>>>",
+          "seconds": 0.009623
+        },
+        {
+          "name": "qRegisterNormalizedMetaType<Materials::MaterialValue>",
+          "seconds": 0.009577
+        },
+        {
+          "name": "std::vector<std::basic_string<char>>::vector<__gnu_cxx::__normal_iterator<char *const *, std::vector<char *>>, void>",
+          "seconds": 0.009548
+        },
+        {
+          "name": "qRegisterNormalizedMetaTypeImplementation<Materials::MaterialValue>",
+          "seconds": 0.009542
+        },
+        {
+          "name": "std::unique_ptr<std::filesystem::path::_List::_Impl, std::filesystem::path::_List::_Impl_deleter>",
+          "seconds": 0.00952
+        },
+        {
+          "name": "std::__uniq_ptr_data<std::thread::_State, std::default_delete<std::thread::_State>>",
+          "seconds": 0.009441
+        },
+        {
+          "name": "std::__uniq_ptr_data<Data::MappedNameRef, std::default_delete<Data::MappedNameRef>>",
+          "seconds": 0.009424
+        },
+        {
+          "name": "std::unique_ptr<std::vector<App::PropertyExpressionEngine::RestoredExpression>>",
+          "seconds": 0.009385
+        },
+        {
+          "name": "std::__uniq_ptr_impl<std::thread::_State, std::default_delete<std::thread::_State>>",
+          "seconds": 0.009371
+        },
+        {
+          "name": "std::__uniq_ptr_impl<Data::MappedNameRef, std::default_delete<Data::MappedNameRef>>",
+          "seconds": 0.009355
+        },
+        {
+          "name": "std::unique_ptr<App::DynamicProperty::Impl>",
+          "seconds": 0.009326
+        },
+        {
+          "name": "std::__format::_Seq_sink<std::basic_string<wchar_t>>::_M_reserve",
+          "seconds": 0.009233
+        },
+        {
+          "name": "std::__uniq_ptr_data<App::PropertyExpressionEngine::Private, std::default_delete<App::PropertyExpressionEngine::Private>>",
+          "seconds": 0.009202
+        },
+        {
+          "name": "App::PropertyListsT<App::Material>::setValue",
+          "seconds": 0.00918
+        },
+        {
+          "name": "App::PropertyListsT<App::Material>::setValues",
+          "seconds": 0.009147
+        },
+        {
+          "name": "std::__uniq_ptr_impl<App::PropertyExpressionEngine::Private, std::default_delete<App::PropertyExpressionEngine::Private>>",
+          "seconds": 0.009135
+        },
+        {
+          "name": "std::__uniq_ptr_data<App::StringHasher::HashMap, std::default_delete<App::StringHasher::HashMap>>",
+          "seconds": 0.009124
+        },
+        {
+          "name": "std::vector<fastsignals::detail::packed_function>",
+          "seconds": 0.009123
+        },
+        {
+          "name": "std::unique_ptr<App::PropertyData::Impl>",
+          "seconds": 0.009117
+        },
+        {
+          "name": "std::unique_ptr<void, QVLABaseBase::free_deleter>",
+          "seconds": 0.009105
+        },
+        {
+          "name": "std::__uniq_ptr_impl<App::StringHasher::HashMap, std::default_delete<App::StringHasher::HashMap>>",
+          "seconds": 0.009053
+        },
+        {
+          "name": "std::__uniq_ptr_data<std::basic_istream<char>, std::default_delete<std::basic_istream<char>>>",
+          "seconds": 0.00895
+        },
+        {
+          "name": "std::__uniq_ptr_impl<std::basic_istream<char>, std::default_delete<std::basic_istream<char>>>",
+          "seconds": 0.008878
+        },
+        {
+          "name": "std::__uniq_ptr_data<Base::Exception, std::default_delete<Base::Exception>>",
+          "seconds": 0.008876
+        },
+        {
+          "name": "std::__uniq_ptr_data<BRepAlgoAPI_BooleanOperation, std::default_delete<BRepAlgoAPI_BooleanOperation>>",
+          "seconds": 0.008875
+        },
+        {
+          "name": "std::__uniq_ptr_impl<BRepAlgoAPI_BooleanOperation, std::default_delete<BRepAlgoAPI_BooleanOperation>>",
+          "seconds": 0.008797
+        },
+        {
+          "name": "std::__uniq_ptr_impl<Base::Exception, std::default_delete<Base::Exception>>",
+          "seconds": 0.008789
+        },
+        {
+          "name": "std::__uniq_ptr_data<App::DocumentObjectWeakPtrT::Private, std::default_delete<App::DocumentObjectWeakPtrT::Private>>",
+          "seconds": 0.008736
+        },
+        {
+          "name": "std::__uniq_ptr_data<Attacher::AttachEngine, std::default_delete<Attacher::AttachEngine>>",
+          "seconds": 0.008707
+        },
+        {
+          "name": "std::__uniq_ptr_data<App::PropertyXLink, std::default_delete<App::PropertyXLink>>",
+          "seconds": 0.008702
+        },
+        {
+          "name": "std::__uniq_ptr_data<App::DocumentWeakPtrT::Private, std::default_delete<App::DocumentWeakPtrT::Private>>",
+          "seconds": 0.008677
+        },
+        {
+          "name": "std::__uniq_ptr_impl<App::DocumentObjectWeakPtrT::Private, std::default_delete<App::DocumentObjectWeakPtrT::Private>>",
+          "seconds": 0.008664
+        },
+        {
+          "name": "std::__uniq_ptr_impl<Attacher::AttachEngine, std::default_delete<Attacher::AttachEngine>>",
+          "seconds": 0.008637
+        },
+        {
+          "name": "std::__uniq_ptr_impl<App::PropertyXLink, std::default_delete<App::PropertyXLink>>",
+          "seconds": 0.008631
+        },
+        {
+          "name": "std::__uniq_ptr_impl<App::DocumentWeakPtrT::Private, std::default_delete<App::DocumentWeakPtrT::Private>>",
+          "seconds": 0.008604
+        },
+        {
+          "name": "std::__uniq_ptr_data<QDebugStateSaverPrivate, std::default_delete<QDebugStateSaverPrivate>>",
+          "seconds": 0.008587
+        },
+        {
+          "name": "std::__uniq_ptr_data<QtPrivate::QSlotObjectBase, QtPrivate::QSlotObjectBase::Deleter>",
+          "seconds": 0.008565
+        },
+        {
+          "name": "std::__uniq_ptr_impl<QDebugStateSaverPrivate, std::default_delete<QDebugStateSaverPrivate>>",
+          "seconds": 0.008516
+        },
+        {
+          "name": "std::__uniq_ptr_impl<QtPrivate::QSlotObjectBase, QtPrivate::QSlotObjectBase::Deleter>",
+          "seconds": 0.008492
+        },
+        {
+          "name": "std::__uniq_ptr_data<std::filesystem::path::_List::_Impl, std::filesystem::path::_List::_Impl_deleter>",
+          "seconds": 0.008472
+        },
+        {
+          "name": "std::__uniq_ptr_impl<std::filesystem::path::_List::_Impl, std::filesystem::path::_List::_Impl_deleter>",
+          "seconds": 0.008402
+        },
+        {
+          "name": "std::__uniq_ptr_data<std::vector<App::PropertyExpressionEngine::RestoredExpression>, std::default_delete<std::vector<App::PropertyExpressionEngine::RestoredExpression>>>",
+          "seconds": 0.008399
+        },
+        {
+          "name": "std::vector<App::Material>::operator=",
+          "seconds": 0.008351
+        },
+        {
+          "name": "std::__uniq_ptr_data<App::DynamicProperty::Impl, std::default_delete<App::DynamicProperty::Impl>>",
+          "seconds": 0.008346
+        },
+        {
+          "name": "std::__uniq_ptr_impl<std::vector<App::PropertyExpressionEngine::RestoredExpression>, std::default_delete<std::vector<App::PropertyExpressionEngine::RestoredExpression>>>",
+          "seconds": 0.00833
+        },
+        {
+          "name": "std::operator<=><App::DocumentObject *const &, const std::basic_string<char> &, App::DocumentObject *const &, const std::basic_string<char> &, App::DocumentObject *const &, const std::basic_string<char> &, App::DocumentObject *const &, const std::basic_string<char> &>",
+          "seconds": 0.008304
+        },
+        {
+          "name": "std::__uniq_ptr_impl<App::DynamicProperty::Impl, std::default_delete<App::DynamicProperty::Impl>>",
+          "seconds": 0.008274
+        },
+        {
+          "name": "std::__uniq_ptr_data<App::PropertyData::Impl, std::default_delete<App::PropertyData::Impl>>",
+          "seconds": 0.008145
+        },
+        {
+          "name": "std::vector<Materials::ModelProperty>::push_back",
+          "seconds": 0.008103
+        },
+        {
+          "name": "std::__uniq_ptr_impl<App::PropertyData::Impl, std::default_delete<App::PropertyData::Impl>>",
+          "seconds": 0.008078
+        },
+        {
+          "name": "std::__uniq_ptr_data<void, QVLABaseBase::free_deleter>",
+          "seconds": 0.008037
+        },
+        {
+          "name": "std::__uniq_ptr_impl<void, QVLABaseBase::free_deleter>",
+          "seconds": 0.007967
+        },
+        {
+          "name": "std::__tuple_cmp<std::strong_ordering, std::tuple<App::DocumentObject *const &, const std::basic_string<char> &, App::DocumentObject *const &, const std::basic_string<char> &>, std::tuple<App::DocumentObject *const &, const std::basic_string<char> &, App::DocumentObject *const &, const std::basic_string<char> &>, std::integer_sequence<unsigned long, 0, 1, 2, 3>>",
+          "seconds": 0.007953
+        },
+        {
+          "name": "std::_Rb_tree<QString, std::pair<const QString, Materials::ModelProperty>, std::_Select1st<std::pair<const QString, Materials::ModelProperty>>, std::less<QString>>::_M_emplace_hint_unique<const std::piecewise_construct_t &, std::tuple<const QString &>, std::tuple<>>",
+          "seconds": 0.007857
+        },
+        {
+          "name": "qRegisterNormalizedMetaType<Materials::Material *>",
+          "seconds": 0.007766
+        },
+        {
+          "name": "qRegisterNormalizedMetaTypeImplementation<Materials::Material *>",
+          "seconds": 0.007731
+        },
+        {
+          "name": "std::unordered_set<int>",
+          "seconds": 0.007525
+        },
+        {
+          "name": "std::tuple<QTextStreamPrivate *, std::default_delete<QTextStreamPrivate>>",
+          "seconds": 0.007495
+        },
+        {
+          "name": "std::reverse_iterator<const QChar *>",
+          "seconds": 0.007462
+        },
+        {
+          "name": "std::__tuple_cmp(const std::tuple<App::DocumentObject *const &, const std::basic_string<char> &, App::DocumentObject *const &, const std::basic_string<char> &> &, const std::tuple<App::DocumentObject *const &, const std::basic_string<char> &, App::DocumentObject *const &, const std::basic_string<char> &> &, std::integer_sequence<unsigned long, 0, 1, 2, 3>)::(anonymous class)::operator()<0UL, 1UL, 2UL, 3UL>",
+          "seconds": 0.007338
+        }
+      ]
+    }
+  },
+  "diagnostics": {
+    "missing_traces": [],
+    "invalid_traces": []
+  }
+}

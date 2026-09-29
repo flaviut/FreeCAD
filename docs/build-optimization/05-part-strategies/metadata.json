@@ -1,0 +1,19 @@
+{
+  "source_parent_change_id": "mzktnxlpnswkqurnyykwmwwrmuqpotsk",
+  "source_parent_commit": "ed8592d1f644b4055c8ae3d1a60921f663bbea54",
+  "source_hashes_sha256": {
+    "src/Mod/Part/App/CMakeLists.txt": "fc22fbdb73066314a7b47bb890fa0c7b116a52d818e2aa5110eedeff7488bdfd",
+    "src/Mod/Part/App/PreCompiled.h": "d040377ccd3bb24407be304805b481e5255fab574d1c56b519eb7bd11ba1cd9f",
+    "src/Mod/Part/App/PartFeature.cpp": "f75b38817bac5a46860c956ea78e76d3561815ad6390bb9f521eb86e2e6056fd",
+    "src/Mod/Part/App/FeaturePartBox.cpp": "36148a5db46ca4982e0f963950d768c4997cbe2ff32d1d4348017be6138ef6ad",
+    "src/App/ComplexGeoData.h": "536da92e3e58453d8abdfdecc07c4030e17c0d9b85acb8fde46533a1a1db8116",
+    "src/Mod/Part/App/TopoShape.h": "cf0354bb7fc9c37e82dc37b5fde187860e69b6170c3fe9688482c69cbe2731b4"
+  },
+  "build_directory": "build/clang-profile",
+  "compiler": "Clang 21.1.8",
+  "build_type": "Release",
+  "jobs": 8,
+  "pch": true,
+  "time_trace": true,
+  "ccache": false
+}

@@ -1,0 +1,2 @@
+output,ninja_s,trace_s,frontend_s,backend_s,source_s,instantiate_function_s,instantiate_class_s,optimizer_s,codegen_s
+src/Mod/Part/App/CMakeFiles/Part.dir/FeaturePartBox.cpp.o,0.526,0.476108,0.322336,0.130274,0.186453,0.068169,0.096528,0.081818,0.047142

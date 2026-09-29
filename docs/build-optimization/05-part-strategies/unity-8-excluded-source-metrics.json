@@ -1,0 +1,19 @@
+{
+  "label": "unity-8-excluded-source",
+  "command": [
+    "fc-build",
+    "--target",
+    "Part"
+  ],
+  "started_utc": "2026-09-28T23:31:20.135048+00:00",
+  "elapsed_s": 9.373511440004222,
+  "exit_code": 0,
+  "jobs": 8,
+  "changed_ninja_outputs": 7,
+  "compiler_outputs": 1,
+  "traced_compiler_outputs": 1,
+  "missing_traces": [],
+  "peak_sampled_descendant_rss_kib": 564340,
+  "peak_sampled_single_process_rss_kib": 447612,
+  "memory_note": "RSS sampled at 0.1 s intervals for fc-build and descendants; aggregate is concurrent process RSS and may double count shared pages."
+}

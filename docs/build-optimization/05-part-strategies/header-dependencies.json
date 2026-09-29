@@ -1,0 +1,1310 @@
+{
+  "source": "Current build/clang-profile Ninja dependency database, Part ordinary object outputs",
+  "expected_part_objects": 203,
+  "objects_with_dependency_records": 203,
+  "missing_dependency_records": [],
+  "headers": {
+    "DocumentObject.h": {
+      "dependent_objects": 63,
+      "object_outputs": [
+        "src/Mod/Part/App/CMakeFiles/Part.dir/AppPart.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/AppPartPy.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/AttachEnginePyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/AttachExtension.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/AttachExtensionPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/Attacher.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/BodyBase.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/BodyBasePyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/CircularPatternExtension.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/CustomFeature.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/DatumFeature.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/Datums.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeatureChamfer.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeatureCompound.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeatureExtrusion.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeatureFace.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeatureFillet.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeatureGeometrySet.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeatureMirroring.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeatureOffset.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeaturePartBoolean.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeaturePartBox.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeaturePartCircle.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeaturePartCommon.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeaturePartCurveNet.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeaturePartCut.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeaturePartFuse.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeaturePartImportBrep.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeaturePartImportIges.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeaturePartImportStep.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeaturePartPolygon.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeaturePartSection.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeaturePartSpline.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeatureProjectOnSurface.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeatureRevolution.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeatureScale.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/ImportIges.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/ImportStep.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/LinearPatternExtension.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/LinkArray.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/LinkArrayCircular.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/LinkArrayLinear.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/LinkArrayPath.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/LinkArrayPoint.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/LinkArrayPolar.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/MeasureClient.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/Part2DObject.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/Part2DObjectPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/PartFeature.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/PartFeaturePyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/PartFeatureReference.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/PartFeatures.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/PathPatternExtension.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/PointPatternExtension.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/PolarPatternExtension.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/PreviewExtension.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/PreviewExtensionPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/PrimitiveFeature.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/PropertyGeometryList.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/PropertyTopoShape.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/Services.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/VectorAdapter.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/WireJoiner.cpp.o"
+      ]
+    },
+    "PartFeature.h": {
+      "dependent_objects": 54,
+      "object_outputs": [
+        "src/Mod/Part/App/CMakeFiles/Part.dir/AppPart.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/AppPartPy.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/AttachEnginePyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/AttachExtension.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/AttachExtensionPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/Attacher.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/BodyBase.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/BodyBasePyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/CircularPatternExtension.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/CustomFeature.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/DatumFeature.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/Datums.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeatureChamfer.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeatureCompound.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeatureExtrusion.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeatureFace.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeatureFillet.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeatureGeometrySet.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeatureMirroring.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeatureOffset.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeaturePartBoolean.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeaturePartBox.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeaturePartCircle.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeaturePartCommon.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeaturePartCurveNet.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeaturePartCut.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeaturePartFuse.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeaturePartImportBrep.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeaturePartImportIges.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeaturePartImportStep.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeaturePartPolygon.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeaturePartSection.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeaturePartSpline.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeatureProjectOnSurface.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeatureRevolution.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeatureScale.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/ImportIges.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/ImportStep.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/LinearPatternExtension.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/MeasureClient.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/Part2DObject.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/Part2DObjectPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/PartFeature.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/PartFeaturePyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/PartFeatures.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/PathPatternExtension.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/PointPatternExtension.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/PolarPatternExtension.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/PrimitiveFeature.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/PropertyGeometryList.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/PropertyTopoShape.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/Services.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/VectorAdapter.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/WireJoiner.cpp.o"
+      ]
+    },
+    "ComplexGeoData.h": {
+      "dependent_objects": 116,
+      "object_outputs": [
+        "src/Mod/Part/App/CMakeFiles/Part.dir/AppPart.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/AppPartPy.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/AttachEnginePyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/AttachExtension.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/AttachExtensionPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/Attacher.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/BRepFeat/MakePrismPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/BRepMesh.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/BRepOffsetAPI_MakeFillingPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/BRepOffsetAPI_MakePipeShellPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/BodyBase.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/BodyBasePyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/ChFi2d/ChFi2d_AnaFilletAlgoPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/ChFi2d/ChFi2d_ChamferAPIPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/ChFi2d/ChFi2d_FilletAPIPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/ChFi2d/ChFi2d_FilletAlgoPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/CircularPatternExtension.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/CrossSection.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/CustomFeature.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/DatumFeature.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/Datums.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/ExtrusionHelper.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FT2FC.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FaceMaker.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FaceMakerBuildFace.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FaceMakerBullseye.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FaceMakerCheese.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FaceMakerUnified.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeatureChamfer.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeatureCompound.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeatureExtrusion.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeatureFace.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeatureFillet.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeatureGeometrySet.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeatureMirroring.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeatureOffset.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeaturePartBoolean.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeaturePartBox.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeaturePartCircle.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeaturePartCommon.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeaturePartCurveNet.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeaturePartCut.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeaturePartFuse.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeaturePartImportBrep.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeaturePartImportIges.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeaturePartImportStep.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeaturePartPolygon.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeaturePartSection.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeaturePartSpline.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeatureProjectOnSurface.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeatureRevolution.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeatureScale.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/Geom2d/Curve2dPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/Geometry.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/GeometryCurvePyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/GeometrySurfacePyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/GizmoHelper.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/HLRBRep/HLRBRep_AlgoPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/HLRBRep/HLRBRep_PolyAlgoPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/HLRBRep/HLRToShapePyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/HLRBRep/PolyHLRToShapePyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/ImportIges.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/ImportStep.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/LinearPatternExtension.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/MeasureClient.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/Part2DObject.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/Part2DObjectPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/PartFeature.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/PartFeaturePyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/PartFeatureReference.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/PartFeatures.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/PartPyCXX.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/PathPatternExtension.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/PointPatternExtension.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/PointPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/PolarPatternExtension.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/PreviewExtension.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/PreviewExtensionPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/PrimitiveFeature.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/PropertyGeometryList.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/PropertyTopoShape.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/PropertyTopoShapeList.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/Services.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/ShapeFix/ShapeFix_EdgeConnectPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/ShapeFix/ShapeFix_EdgePyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/ShapeFix/ShapeFix_FaceConnectPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/ShapeFix/ShapeFix_FacePyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/ShapeFix/ShapeFix_FixSmallFacePyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/ShapeFix/ShapeFix_FixSmallSolidPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/ShapeFix/ShapeFix_FreeBoundsPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/ShapeFix/ShapeFix_ShapePyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/ShapeFix/ShapeFix_ShapeTolerancePyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/ShapeFix/ShapeFix_ShellPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/ShapeFix/ShapeFix_SolidPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/ShapeFix/ShapeFix_SplitCommonVertexPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/ShapeFix/ShapeFix_SplitToolPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/ShapeFix/ShapeFix_WirePyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/ShapeFix/ShapeFix_WireVertexPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/ShapeFix/ShapeFix_WireframePyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/ShapeUpgrade/UnifySameDomainPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/Tools.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/TopoShape.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/TopoShapeCache.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/TopoShapeCompSolidPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/TopoShapeCompoundPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/TopoShapeEdgePyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/TopoShapeExpansion.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/TopoShapeFacePyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/TopoShapeMapper.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/TopoShapePyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/TopoShapeShellPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/TopoShapeSolidPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/TopoShapeVertexPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/TopoShapeWirePyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/VectorAdapter.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/WireJoiner.cpp.o"
+      ]
+    },
+    "TopoShape.h": {
+      "dependent_objects": 115,
+      "object_outputs": [
+        "src/Mod/Part/App/CMakeFiles/Part.dir/AppPart.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/AppPartPy.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/AttachEnginePyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/AttachExtension.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/AttachExtensionPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/Attacher.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/BRepFeat/MakePrismPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/BRepOffsetAPI_MakeFillingPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/BRepOffsetAPI_MakePipeShellPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/BodyBase.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/BodyBasePyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/ChFi2d/ChFi2d_AnaFilletAlgoPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/ChFi2d/ChFi2d_ChamferAPIPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/ChFi2d/ChFi2d_FilletAPIPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/ChFi2d/ChFi2d_FilletAlgoPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/CircularPatternExtension.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/CrossSection.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/CustomFeature.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/DatumFeature.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/Datums.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/ExtrusionHelper.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FT2FC.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FaceMaker.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FaceMakerBuildFace.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FaceMakerBullseye.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FaceMakerCheese.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FaceMakerUnified.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeatureChamfer.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeatureCompound.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeatureExtrusion.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeatureFace.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeatureFillet.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeatureGeometrySet.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeatureMirroring.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeatureOffset.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeaturePartBoolean.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeaturePartBox.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeaturePartCircle.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeaturePartCommon.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeaturePartCurveNet.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeaturePartCut.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeaturePartFuse.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeaturePartImportBrep.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeaturePartImportIges.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeaturePartImportStep.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeaturePartPolygon.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeaturePartSection.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeaturePartSpline.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeatureProjectOnSurface.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeatureRevolution.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/FeatureScale.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/Geom2d/Curve2dPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/Geometry.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/GeometryCurvePyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/GeometrySurfacePyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/GizmoHelper.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/HLRBRep/HLRBRep_AlgoPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/HLRBRep/HLRBRep_PolyAlgoPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/HLRBRep/HLRToShapePyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/HLRBRep/PolyHLRToShapePyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/ImportIges.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/ImportStep.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/LinearPatternExtension.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/MeasureClient.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/Part2DObject.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/Part2DObjectPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/PartFeature.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/PartFeaturePyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/PartFeatureReference.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/PartFeatures.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/PartPyCXX.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/PathPatternExtension.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/PointPatternExtension.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/PointPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/PolarPatternExtension.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/PreviewExtension.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/PreviewExtensionPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/PrimitiveFeature.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/PropertyGeometryList.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/PropertyTopoShape.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/PropertyTopoShapeList.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/Services.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/ShapeFix/ShapeFix_EdgeConnectPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/ShapeFix/ShapeFix_EdgePyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/ShapeFix/ShapeFix_FaceConnectPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/ShapeFix/ShapeFix_FacePyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/ShapeFix/ShapeFix_FixSmallFacePyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/ShapeFix/ShapeFix_FixSmallSolidPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/ShapeFix/ShapeFix_FreeBoundsPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/ShapeFix/ShapeFix_ShapePyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/ShapeFix/ShapeFix_ShapeTolerancePyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/ShapeFix/ShapeFix_ShellPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/ShapeFix/ShapeFix_SolidPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/ShapeFix/ShapeFix_SplitCommonVertexPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/ShapeFix/ShapeFix_SplitToolPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/ShapeFix/ShapeFix_WirePyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/ShapeFix/ShapeFix_WireVertexPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/ShapeFix/ShapeFix_WireframePyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/ShapeUpgrade/UnifySameDomainPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/Tools.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/TopoShape.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/TopoShapeCache.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/TopoShapeCompSolidPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/TopoShapeCompoundPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/TopoShapeEdgePyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/TopoShapeExpansion.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/TopoShapeFacePyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/TopoShapeMapper.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/TopoShapePyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/TopoShapeShellPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/TopoShapeSolidPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/TopoShapeVertexPyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/TopoShapeWirePyImp.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/VectorAdapter.cpp.o",
+        "src/Mod/Part/App/CMakeFiles/Part.dir/WireJoiner.cpp.o"
+      ]
+    }
+  },
+  "project_header_ranking": [
+    {
+      "header": "src/FCConfig.h",
+      "dependent_objects": 203
+    },
+    {
+      "header": "src/FCGlobal.h",
+      "dependent_objects": 203
+    },
+    {
+      "header": "src/Mod/Part/App/FCBRepAlgoAPI_BooleanOperation.h",
+      "dependent_objects": 203
+    },
+    {
+      "header": "src/Mod/Part/App/FCBRepAlgoAPI_Common.h",
+      "dependent_objects": 203
+    },
+    {
+      "header": "src/Mod/Part/App/FCBRepAlgoAPI_Cut.h",
+      "dependent_objects": 203
+    },
+    {
+      "header": "src/Mod/Part/App/FCBRepAlgoAPI_Fuse.h",
+      "dependent_objects": 203
+    },
+    {
+      "header": "src/Mod/Part/App/FCBRepAlgoAPI_Section.h",
+      "dependent_objects": 203
+    },
+    {
+      "header": "src/Mod/Part/App/OpenCascadeAll.h",
+      "dependent_objects": 203
+    },
+    {
+      "header": "src/Mod/Part/App/PreCompiled.h",
+      "dependent_objects": 203
+    },
+    {
+      "header": "src/Mod/Part/PartGlobal.h",
+      "dependent_objects": 203
+    },
+    {
+      "header": "src/Base/BaseClass.h",
+      "dependent_objects": 188
+    },
+    {
+      "header": "src/Base/Type.h",
+      "dependent_objects": 188
+    },
+    {
+      "header": "src/Base/Exception.h",
+      "dependent_objects": 187
+    },
+    {
+      "header": "src/Base/FileInfo.h",
+      "dependent_objects": 187
+    },
+    {
+      "header": "src/Base/Console.h",
+      "dependent_objects": 185
+    },
+    {
+      "header": "src/3rdParty/PyCXX/CXX/WrapPython.h",
+      "dependent_objects": 182
+    },
+    {
+      "header": "src/Base/Persistence.h",
+      "dependent_objects": 182
+    },
+    {
+      "header": "src/Base/PyObjectBase.h",
+      "dependent_objects": 176
+    },
+    {
+      "header": "src/Base/Vector3D.h",
+      "dependent_objects": 171
+    },
+    {
+      "header": "src/Base/Matrix.h",
+      "dependent_objects": 169
+    },
+    {
+      "header": "src/Base/Tools2D.h",
+      "dependent_objects": 143
+    },
+    {
+      "header": "src/Base/Placement.h",
+      "dependent_objects": 139
+    },
+    {
+      "header": "src/Base/Rotation.h",
+      "dependent_objects": 139
+    },
+    {
+      "header": "src/Base/BoundBox.h",
+      "dependent_objects": 138
+    },
+    {
+      "header": "src/Base/ViewProj.h",
+      "dependent_objects": 138
+    },
+    {
+      "header": "src/3rdParty/FastSignals/libfastsignals/include/fastsignals/combiners.h",
+      "dependent_objects": 126
+    },
+    {
+      "header": "src/3rdParty/FastSignals/libfastsignals/include/fastsignals/connection.h",
+      "dependent_objects": 126
+    },
+    {
+      "header": "src/3rdParty/FastSignals/libfastsignals/include/fastsignals/function.h",
+      "dependent_objects": 126
+    },
+    {
+      "header": "src/3rdParty/FastSignals/libfastsignals/include/fastsignals/function_detail.h",
+      "dependent_objects": 126
+    },
+    {
+      "header": "src/3rdParty/FastSignals/libfastsignals/include/fastsignals/signal.h",
+      "dependent_objects": 126
+    },
+    {
+      "header": "src/3rdParty/FastSignals/libfastsignals/include/fastsignals/signal_impl.h",
+      "dependent_objects": 126
+    },
+    {
+      "header": "src/3rdParty/FastSignals/libfastsignals/include/fastsignals/spin_mutex.h",
+      "dependent_objects": 126
+    },
+    {
+      "header": "src/3rdParty/FastSignals/libfastsignals/include/fastsignals/type_traits.h",
+      "dependent_objects": 126
+    },
+    {
+      "header": "src/Base/Color.h",
+      "dependent_objects": 126
+    },
+    {
+      "header": "src/Base/Handle.h",
+      "dependent_objects": 125
+    },
+    {
+      "header": "src/Base/Observer.h",
+      "dependent_objects": 125
+    },
+    {
+      "header": "src/Base/Parameter.h",
+      "dependent_objects": 125
+    },
+    {
+      "header": "src/App/ElementNamingUtils.h",
+      "dependent_objects": 123
+    },
+    {
+      "header": "src/App/TransactionDefs.h",
+      "dependent_objects": 122
+    },
+    {
+      "header": "src/Base/Bitmask.h",
+      "dependent_objects": 122
+    },
+    {
+      "header": "src/App/Application.h",
+      "dependent_objects": 119
+    },
+    {
+      "header": "src/App/ProcessArguments.h",
+      "dependent_objects": 119
+    },
+    {
+      "header": "src/App/ComplexGeoData.h",
+      "dependent_objects": 116
+    },
+    {
+      "header": "src/App/ElementMap.h",
+      "dependent_objects": 116
+    },
+    {
+      "header": "src/App/IndexedName.h",
+      "dependent_objects": 116
+    },
+    {
+      "header": "src/App/MappedElement.h",
+      "dependent_objects": 116
+    },
+    {
+      "header": "src/App/MappedName.h",
+      "dependent_objects": 116
+    },
+    {
+      "header": "src/App/StringHasher.h",
+      "dependent_objects": 116
+    },
+    {
+      "header": "src/Mod/Part/App/TopoShape.h",
+      "dependent_objects": 115
+    },
+    {
+      "header": "src/Mod/Part/App/GeometryExtension.h",
+      "dependent_objects": 72
+    },
+    {
+      "header": "src/App/Material.h",
+      "dependent_objects": 67
+    },
+    {
+      "header": "src/App/Property.h",
+      "dependent_objects": 67
+    },
+    {
+      "header": "src/App/Enumeration.h",
+      "dependent_objects": 66
+    },
+    {
+      "header": "src/App/PropertyStandard.h",
+      "dependent_objects": 66
+    },
+    {
+      "header": "src/Base/Uuid.h",
+      "dependent_objects": 66
+    },
+    {
+      "header": "src/Mod/Part/App/OCCError.h",
+      "dependent_objects": 66
+    },
+    {
+      "header": "src/Mod/Part/App/Geometry.h",
+      "dependent_objects": 65
+    },
+    {
+      "header": "src/App/DynamicProperty.h",
+      "dependent_objects": 64
+    },
+    {
+      "header": "src/App/PropertyContainer.h",
+      "dependent_objects": 64
+    },
+    {
+      "header": "src/Base/SmartPtrPy.h",
+      "dependent_objects": 64
+    },
+    {
+      "header": "src/Base/Unit.h",
+      "dependent_objects": 64
+    },
+    {
+      "header": "src/App/DepEdge.h",
+      "dependent_objects": 63
+    },
+    {
+      "header": "src/App/DocumentObject.h",
+      "dependent_objects": 63
+    },
+    {
+      "header": "src/App/ExtensionContainer.h",
+      "dependent_objects": 63
+    },
+    {
+      "header": "src/App/PropertyExpressionEngine.h",
+      "dependent_objects": 63
+    },
+    {
+      "header": "src/App/PropertyGeo.h",
+      "dependent_objects": 63
+    },
+    {
+      "header": "src/App/PropertyLinks.h",
+      "dependent_objects": 63
+    },
+    {
+      "header": "src/App/TransactionalObject.h",
+      "dependent_objects": 63
+    },
+    {
+      "header": "src/App/PropertyPythonObject.h",
+      "dependent_objects": 62
+    },
+    {
+      "header": "src/App/GeoFeature.h",
+      "dependent_objects": 61
+    },
+    {
+      "header": "src/App/FeaturePython.h",
+      "dependent_objects": 60
+    },
+    {
+      "header": "src/Base/Reader.h",
+      "dependent_objects": 60
+    },
+    {
+      "header": "src/Base/Quantity.h",
+      "dependent_objects": 59
+    },
+    {
+      "header": "src/Mod/Part/App/PropertyTopoShape.h",
+      "dependent_objects": 57
+    },
+    {
+      "header": "src/Mod/Material/App/FolderTree.h",
+      "dependent_objects": 54
+    },
+    {
+      "header": "src/Mod/Material/App/MaterialValue.h",
+      "dependent_objects": 54
+    },
+    {
+      "header": "src/Mod/Material/App/Materials.h",
+      "dependent_objects": 54
+    },
+    {
+      "header": "src/Mod/Material/App/Model.h",
+      "dependent_objects": 54
+    },
+    {
+      "header": "src/Mod/Material/App/PropertyMaterial.h",
+      "dependent_objects": 54
+    },
+    {
+      "header": "src/Mod/Material/MaterialGlobal.h",
+      "dependent_objects": 54
+    },
+    {
+      "header": "src/Mod/Part/App/PartFeature.h",
+      "dependent_objects": 54
+    },
+    {
+      "header": "src/Base/GeometryPyCXX.h",
+      "dependent_objects": 48
+    },
+    {
+      "header": "src/Base/Interpreter.h",
+      "dependent_objects": 44
+    },
+    {
+      "header": "src/App/DocumentObjectExtension.h",
+      "dependent_objects": 37
+    },
+    {
+      "header": "src/App/Extension.h",
+      "dependent_objects": 37
+    },
+    {
+      "header": "src/App/ExtensionPython.h",
+      "dependent_objects": 34
+    },
+    {
+      "header": "src/Base/PyWrapParseTupleAndKeywords.h",
+      "dependent_objects": 33
+    },
+    {
+      "header": "src/Base/Converter.h",
+      "dependent_objects": 29
+    },
+    {
+      "header": "src/Mod/Part/App/Tools.h",
+      "dependent_objects": 29
+    },
+    {
+      "header": "src/Base/Tools.h",
+      "dependent_objects": 28
+    },
+    {
+      "header": "src/Mod/Part/App/Geometry2d.h",
+      "dependent_objects": 23
+    },
+    {
+      "header": "src/App/DocumentObserver.h",
+      "dependent_objects": 21
+    },
+    {
+      "header": "src/App/GroupExtension.h",
+      "dependent_objects": 21
+    },
+    {
+      "header": "src/Mod/Part/App/Attacher.h",
+      "dependent_objects": 21
+    },
+    {
+      "header": "src/Mod/Part/App/AttachExtension.h",
+      "dependent_objects": 20
+    },
+    {
+      "header": "src/App/PropertyUnits.h",
+      "dependent_objects": 19
+    },
+    {
+      "header": "src/App/Document.h",
+      "dependent_objects": 17
+    },
+    {
+      "header": "src/App/ExportInfo.h",
+      "dependent_objects": 17
+    },
+    {
+      "header": "src/App/MainThreadSignal.h",
+      "dependent_objects": 17
+    },
+    {
+      "header": "src/Mod/Part/App/TopoShapeOpCode.h",
+      "dependent_objects": 16
+    },
+    {
+      "header": "src/App/GeoFeatureGroupExtension.h",
+      "dependent_objects": 15
+    },
+    {
+      "header": "src/Mod/Part/App/FaceMaker.h",
+      "dependent_objects": 14
+    },
+    {
+      "header": "src/App/Datums.h",
+      "dependent_objects": 12
+    },
+    {
+      "header": "src/App/Link.h",
+      "dependent_objects": 12
+    },
+    {
+      "header": "src/App/SuppressibleExtension.h",
+      "dependent_objects": 12
+    },
+    {
+      "header": "src/Mod/Part/App/PartPyCXX.h",
+      "dependent_objects": 12
+    },
+    {
+      "header": "src/3rdParty/zipios++/deflateoutputstreambuf.h",
+      "dependent_objects": 8
+    },
+    {
+      "header": "src/3rdParty/zipios++/fcoll.h",
+      "dependent_objects": 8
+    },
+    {
+      "header": "src/3rdParty/zipios++/fcollexceptions.h",
+      "dependent_objects": 8
+    },
+    {
+      "header": "src/3rdParty/zipios++/fileentry.h",
+      "dependent_objects": 8
+    },
+    {
+      "header": "src/3rdParty/zipios++/filteroutputstreambuf.h",
+      "dependent_objects": 8
+    },
+    {
+      "header": "src/3rdParty/zipios++/meta-iostreams.h",
+      "dependent_objects": 8
+    },
+    {
+      "header": "src/3rdParty/zipios++/simplesmartptr.h",
+      "dependent_objects": 8
+    },
+    {
+      "header": "src/3rdParty/zipios++/ziphead.h",
+      "dependent_objects": 8
+    },
+    {
+      "header": "src/3rdParty/zipios++/zipios-config.h",
+      "dependent_objects": 8
+    },
+    {
+      "header": "src/3rdParty/zipios++/zipios_defs.h",
+      "dependent_objects": 8
+    },
+    {
+      "header": "src/3rdParty/zipios++/zipoutputstream.h",
+      "dependent_objects": 8
+    },
+    {
+      "header": "src/3rdParty/zipios++/zipoutputstreambuf.h",
+      "dependent_objects": 8
+    },
+    {
+      "header": "src/Base/Axis.h",
+      "dependent_objects": 8
+    },
+    {
+      "header": "src/Base/UniqueNameManager.h",
+      "dependent_objects": 8
+    },
+    {
+      "header": "src/Base/UnlimitedUnsigned.h",
+      "dependent_objects": 8
+    },
+    {
+      "header": "src/Base/Writer.h",
+      "dependent_objects": 8
+    },
+    {
+      "header": "src/Mod/Part/App/Part2DObject.h",
+      "dependent_objects": 8
+    },
+    {
+      "header": "src/Mod/Part/App/Interface.h",
+      "dependent_objects": 7
+    },
+    {
+      "header": "src/Mod/Part/App/LinkArray.h",
+      "dependent_objects": 7
+    },
+    {
+      "header": "src/Mod/Part/App/PrismExtension.h",
+      "dependent_objects": 7
+    },
+    {
+      "header": "src/Mod/Part/App/modelRefine.h",
+      "dependent_objects": 7
+    },
+    {
+      "header": "src/Mod/Part/App/FeaturePartBoolean.h",
+      "dependent_objects": 6
+    },
+    {
+      "header": "src/Mod/Part/App/GeometryDefaultExtension.h",
+      "dependent_objects": 6
+    },
+    {
+      "header": "src/Mod/Part/App/PrimitiveFeature.h",
+      "dependent_objects": 6
+    },
+    {
+      "header": "src/Base/ProgramVersion.h",
+      "dependent_objects": 5
+    },
+    {
+      "header": "src/Base/Sequencer.h",
+      "dependent_objects": 5
+    },
+    {
+      "header": "src/Mod/Part/App/FaceMakerCheese.h",
+      "dependent_objects": 5
+    },
+    {
+      "header": "src/Mod/Part/App/ShapeAnalysis_FreeBoundsFix.h",
+      "dependent_objects": 5
+    },
+    {
+      "header": "src/Mod/Part/App/TopoShapeMapper.h",
+      "dependent_objects": 5
+    },
+    {
+      "header": "src/App/OriginGroupExtension.h",
+      "dependent_objects": 4
+    },
+    {
+      "header": "src/Mod/Part/App/BRepOffsetAPI_MakeOffsetFix.h",
+      "dependent_objects": 4
+    },
+    {
+      "header": "src/Mod/Part/App/DatumFeature.h",
+      "dependent_objects": 4
+    },
+    {
+      "header": "src/Mod/Part/App/FuzzyHelper.h",
+      "dependent_objects": 4
+    },
+    {
+      "header": "src/Mod/Part/App/GeometryMigrationExtension.h",
+      "dependent_objects": 4
+    },
+    {
+      "header": "src/Mod/Part/App/SignalException.h",
+      "dependent_objects": 4
+    },
+    {
+      "header": "src/Mod/Part/App/WireJoiner.h",
+      "dependent_objects": 4
+    },
+    {
+      "header": "src/App/FeaturePythonPyImp.h",
+      "dependent_objects": 3
+    },
+    {
+      "header": "src/Base/Stream.h",
+      "dependent_objects": 3
+    },
+    {
+      "header": "src/Mod/Part/App/BodyBase.h",
+      "dependent_objects": 3
+    },
+    {
+      "header": "src/Mod/Part/App/CircularPatternExtension.h",
+      "dependent_objects": 3
+    },
+    {
+      "header": "src/Mod/Part/App/CrossSection.h",
+      "dependent_objects": 3
+    },
+    {
+      "header": "src/Mod/Part/App/ExtrusionHelper.h",
+      "dependent_objects": 3
+    },
+    {
+      "header": "src/Mod/Part/App/FaceMakerBuildFace.h",
+      "dependent_objects": 3
+    },
+    {
+      "header": "src/Mod/Part/App/FaceMakerBullseye.h",
+      "dependent_objects": 3
+    },
+    {
+      "header": "src/Mod/Part/App/ImportStep.h",
+      "dependent_objects": 3
+    },
+    {
+      "header": "src/Mod/Part/App/LinearPatternExtension.h",
+      "dependent_objects": 3
+    },
+    {
+      "header": "src/Mod/Part/App/PathPatternExtension.h",
+      "dependent_objects": 3
+    },
+    {
+      "header": "src/Mod/Part/App/PointPatternExtension.h",
+      "dependent_objects": 3
+    },
+    {
+      "header": "src/Mod/Part/App/PolarPatternExtension.h",
+      "dependent_objects": 3
+    },
+    {
+      "header": "src/Mod/Part/App/PreviewExtension.h",
+      "dependent_objects": 3
+    },
+    {
+      "header": "src/Mod/Part/App/ProgressIndicator.h",
+      "dependent_objects": 3
+    },
+    {
+      "header": "src/Mod/Part/App/PropertyGeometryList.h",
+      "dependent_objects": 3
+    },
+    {
+      "header": "src/App/ObjectIdentifier.h",
+      "dependent_objects": 2
+    },
+    {
+      "header": "src/App/Services.h",
+      "dependent_objects": 2
+    },
+    {
+      "header": "src/Base/PyException.h",
+      "dependent_objects": 2
+    },
+    {
+      "header": "src/Mod/Part/App/BRepMesh.h",
+      "dependent_objects": 2
+    },
+    {
+      "header": "src/Mod/Part/App/BSplineCurveBiArcs.h",
+      "dependent_objects": 2
+    },
+    {
+      "header": "src/Mod/Part/App/CustomFeature.h",
+      "dependent_objects": 2
+    },
+    {
+      "header": "src/Mod/Part/App/Datums.h",
+      "dependent_objects": 2
+    },
+    {
+      "header": "src/Mod/Part/App/FT2FC.h",
+      "dependent_objects": 2
+    },
+    {
+      "header": "src/Mod/Part/App/FaceMakerUnified.h",
+      "dependent_objects": 2
+    },
+    {
+      "header": "src/Mod/Part/App/FeatureChamfer.h",
+      "dependent_objects": 2
+    },
+    {
+      "header": "src/Mod/Part/App/FeatureCompound.h",
+      "dependent_objects": 2
+    },
+    {
+      "header": "src/Mod/Part/App/FeatureExtrusion.h",
+      "dependent_objects": 2
+    },
+    {
+      "header": "src/Mod/Part/App/FeatureFace.h",
+      "dependent_objects": 2
+    },
+    {
+      "header": "src/Mod/Part/App/FeatureFillet.h",
+      "dependent_objects": 2
+    },
+    {
+      "header": "src/Mod/Part/App/FeatureGeometrySet.h",
+      "dependent_objects": 2
+    },
+    {
+      "header": "src/Mod/Part/App/FeatureMirroring.h",
+      "dependent_objects": 2
+    },
+    {
+      "header": "src/Mod/Part/App/FeatureOffset.h",
+      "dependent_objects": 2
+    },
+    {
+      "header": "src/Mod/Part/App/FeaturePartBox.h",
+      "dependent_objects": 2
+    },
+    {
+      "header": "src/Mod/Part/App/FeaturePartCircle.h",
+      "dependent_objects": 2
+    },
+    {
+      "header": "src/Mod/Part/App/FeaturePartCommon.h",
+      "dependent_objects": 2
+    },
+    {
+      "header": "src/Mod/Part/App/FeaturePartCurveNet.h",
+      "dependent_objects": 2
+    },
+    {
+      "header": "src/Mod/Part/App/FeaturePartCut.h",
+      "dependent_objects": 2
+    },
+    {
+      "header": "src/Mod/Part/App/FeaturePartFuse.h",
+      "dependent_objects": 2
+    },
+    {
+      "header": "src/Mod/Part/App/FeaturePartImportBrep.h",
+      "dependent_objects": 2
+    },
+    {
+      "header": "src/Mod/Part/App/FeaturePartImportIges.h",
+      "dependent_objects": 2
+    },
+    {
+      "header": "src/Mod/Part/App/FeaturePartImportStep.h",
+      "dependent_objects": 2
+    },
+    {
+      "header": "src/Mod/Part/App/FeaturePartPolygon.h",
+      "dependent_objects": 2
+    },
+    {
+      "header": "src/Mod/Part/App/FeaturePartSection.h",
+      "dependent_objects": 2
+    },
+    {
+      "header": "src/Mod/Part/App/FeaturePartSpline.h",
+      "dependent_objects": 2
+    },
+    {
+      "header": "src/Mod/Part/App/FeatureProjectOnSurface.h",
+      "dependent_objects": 2
+    },
+    {
+      "header": "src/Mod/Part/App/FeatureRevolution.h",
+      "dependent_objects": 2
+    },
+    {
+      "header": "src/Mod/Part/App/FeatureScale.h",
+      "dependent_objects": 2
+    },
+    {
+      "header": "src/Mod/Part/App/IGES/ImportExportSettings.h",
+      "dependent_objects": 2
+    },
+    {
+      "header": "src/Mod/Part/App/ImportIges.h",
+      "dependent_objects": 2
+    },
+    {
+      "header": "src/Mod/Part/App/LinkArrayCircular.h",
+      "dependent_objects": 2
+    },
+    {
+      "header": "src/Mod/Part/App/LinkArrayLinear.h",
+      "dependent_objects": 2
+    },
+    {
+      "header": "src/Mod/Part/App/LinkArrayPath.h",
+      "dependent_objects": 2
+    },
+    {
+      "header": "src/Mod/Part/App/LinkArrayPoint.h",
+      "dependent_objects": 2
+    },
+    {
+      "header": "src/Mod/Part/App/LinkArrayPolar.h",
+      "dependent_objects": 2
+    },
+    {
+      "header": "src/Mod/Part/App/MeasureClient.h",
+      "dependent_objects": 2
+    },
+    {
+      "header": "src/Mod/Part/App/MeasureInfo.h",
+      "dependent_objects": 2
+    },
+    {
+      "header": "src/Mod/Part/App/OCAF/ImportExportSettings.h",
+      "dependent_objects": 2
+    },
+    {
+      "header": "src/Mod/Part/App/OCCTMessagePrinter.h",
+      "dependent_objects": 2
+    },
+    {
+      "header": "src/Mod/Part/App/PartFeatures.h",
+      "dependent_objects": 2
+    },
+    {
+      "header": "src/Mod/Part/App/PatternConstants.h",
+      "dependent_objects": 2
+    },
+    {
+      "header": "src/Mod/Part/App/PropertyTopoShapeList.h",
+      "dependent_objects": 2
+    },
+    {
+      "header": "src/Mod/Part/App/PyException.h",
+      "dependent_objects": 2
+    },
+    {
+      "header": "src/Mod/Part/App/STEP/ImportExportSettings.h",
+      "dependent_objects": 2
+    },
+    {
+      "header": "src/Mod/Part/App/Services.h",
+      "dependent_objects": 2
+    },
+    {
+      "header": "src/Mod/Part/App/ShapeMapHasher.h",
+      "dependent_objects": 2
+    },
+    {
+      "header": "src/Mod/Part/App/TopoShapeCache.h",
+      "dependent_objects": 2
+    },
+    {
+      "header": "src/Mod/Part/App/VectorAdapter.h",
+      "dependent_objects": 2
+    },
+    {
+      "header": "src/Mod/Part/App/edgecluster.h",
+      "dependent_objects": 2
+    },
+    {
+      "header": "src/Mod/Part/App/encodeFilename.h",
+      "dependent_objects": 2
+    },
+    {
+      "header": "src/App/Expression.h",
+      "dependent_objects": 1
+    },
+    {
+      "header": "src/App/Expression.tab.h",
+      "dependent_objects": 1
+    },
+    {
+      "header": "src/App/ExpressionParser.h",
+      "dependent_objects": 1
+    },
+    {
+      "header": "src/App/MeasureManager.h",
+      "dependent_objects": 1
+    },
+    {
+      "header": "src/App/Part.h",
+      "dependent_objects": 1
+    },
+    {
+      "header": "src/App/Placement.h",
+      "dependent_objects": 1
+    },
+    {
+      "header": "src/App/Range.h",
+      "dependent_objects": 1
+    },
+    {
+      "header": "src/Base/Builder3D.h",
+      "dependent_objects": 1
+    },
+    {
+      "header": "src/Base/ExceptionFactory.h",
+      "dependent_objects": 1
+    },
+    {
+      "header": "src/Base/Factory.h",
+      "dependent_objects": 1
+    },
+    {
+      "header": "src/Base/Precision.h",
+      "dependent_objects": 1
+    },
+    {
+      "header": "src/Base/ServiceProvider.h",
+      "dependent_objects": 1
+    },
+    {
+      "header": "src/Base/SystemHandler.h",
+      "dependent_objects": 1
+    },
+    {
+      "header": "src/Base/Tools3D.h",
+      "dependent_objects": 1
+    },
+    {
+      "header": "src/Mod/Material/App/Library.h",
+      "dependent_objects": 1
+    },
+    {
+      "header": "src/Mod/Material/App/MaterialFilter.h",
+      "dependent_objects": 1
+    },
+    {
+      "header": "src/Mod/Material/App/MaterialLibrary.h",
+      "dependent_objects": 1
+    },
+    {
+      "header": "src/Mod/Material/App/MaterialManager.h",
+      "dependent_objects": 1
+    },
+    {
+      "header": "src/Mod/Material/App/ModelLibrary.h",
+      "dependent_objects": 1
+    },
+    {
+      "header": "src/Mod/Part/App/GizmoHelper.h",
+      "dependent_objects": 1
+    },
+    {
+      "header": "src/Mod/Part/App/PartFeatureReference.h",
+      "dependent_objects": 1
+    }
+  ]
+}

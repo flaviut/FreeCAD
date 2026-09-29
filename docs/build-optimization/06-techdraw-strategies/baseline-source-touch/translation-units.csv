@@ -1,0 +1,2 @@
+output,ninja_s,trace_s,frontend_s,backend_s,source_s,instantiate_function_s,instantiate_class_s,optimizer_s,codegen_s
+src/Mod/TechDraw/App/CMakeFiles/TechDraw.dir/HatchLine.cpp.o,3.057,2.978115,1.784466,1.152202,1.184028,0.694311,0.670349,0.754297,0.39596

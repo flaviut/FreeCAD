@@ -1,0 +1,5 @@
+{
+  "variant": "unity8",
+  "pch_appended": "",
+  "cmake_appended": "\nset_target_properties(TechDraw PROPERTIES UNITY_BUILD ON UNITY_BUILD_BATCH_SIZE 8)\nset_source_files_properties(\n    PropertyGeomFormatList.cpp\n    PropertyCenterLineList.cpp\n    PropertyCosmeticEdgeList.cpp\n    PropertyCosmeticVertexList.cpp\n    PROPERTIES SKIP_UNITY_BUILD_INCLUSION ON\n)\n"
+}

@@ -1,0 +1,23 @@
+{
+  "label": "candidate-3-prepare",
+  "command": [
+    "fc-build",
+    "--target",
+    "Materials",
+    "MatGui",
+    "Part",
+    "SketcherGui"
+  ],
+  "started_utc": "2026-09-28T22:31:09.111128+00:00",
+  "elapsed_s": 159.66926523396978,
+  "elapsed_including_suspend_s": 159.66927007306367,
+  "suspend_detected": false,
+  "exit_code": 0,
+  "jobs": 8,
+  "changed_ninja_outputs": 433,
+  "build_dir": "/home/user/dev/FreeCAD/build/clang-profile",
+  "children_user_s": 762.970068,
+  "children_system_s": 69.376381,
+  "max_child_rss_kib": 849892,
+  "memory_note": "Largest individual child RSS, not aggregate concurrent build memory."
+}
