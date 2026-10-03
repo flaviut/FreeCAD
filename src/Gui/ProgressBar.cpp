@@ -49,7 +49,6 @@ struct SequencerBarPrivate
     WaitCursor* waitCursor;
     QElapsedTimer measureTime;
     QElapsedTimer progressTime;
-    QElapsedTimer checkAbortTime;
     QString text;
     bool guiThread;
 };
@@ -153,7 +152,6 @@ void SequencerBar::startStep()
             Q_ARG(int, (int)nTotalSteps)
         );
         d->progressTime.start();
-        d->checkAbortTime.start();
         d->measureTime.start();
         QMetaObject::invokeMethod(d->bar, "aboutToShow", Qt::QueuedConnection);
         d->bar->enterControlEvents(d->guiThread);
@@ -162,7 +160,6 @@ void SequencerBar::startStep()
         d->guiThread = true;
         d->bar->setRangeEx(0, (int)nTotalSteps);
         d->progressTime.start();
-        d->checkAbortTime.start();
         d->measureTime.start();
         d->waitCursor = new Gui::WaitCursor;
         d->bar->enterControlEvents(d->guiThread);
@@ -181,60 +178,18 @@ void SequencerBar::checkAbort()
         return;
     }
     if (!wasCanceled()) {
-        if (d->checkAbortTime.elapsed() < 500) {
-            return;
-        }
-        d->checkAbortTime.restart();
-        qApp->processEvents();
         return;
     }
-    // restore cursor
-    pause();
-    bool ok = d->bar->canAbort();
-    // continue and show up wait cursor if needed
-    resume();
-
-    // force to abort the operation
-    if (ok) {
-        abort();
-    }
-    else {
-        rejectCancel();
-    }
+    abort();
 }
 
 void SequencerBar::nextStep(bool canAbort)
 {
-    QThread* currentThread = QThread::currentThread();
-    QThread* thr = d->bar->thread();  // this is the main thread
-    if (thr != currentThread) {
-        if (wasCanceled() && canAbort) {
-            abort();
-        }
-        else {
-            setValue((int)nProgress + 1);
-        }
+    if (wasCanceled() && canAbort) {
+        abort();
     }
     else {
-        if (wasCanceled() && canAbort) {
-            // restore cursor
-            pause();
-            bool ok = d->bar->canAbort();
-            // continue and show up wait cursor if needed
-            resume();
-
-            // force to abort the operation
-            if (ok) {
-                abort();
-            }
-            else {
-                rejectCancel();
-                setValue((int)nProgress + 1);
-            }
-        }
-        else {
-            setValue((int)nProgress + 1);
-        }
+        setValue((int)nProgress + 1);
     }
 }
 
@@ -272,7 +227,6 @@ void SequencerBar::setValue(int step)
             }
             else {
                 d->bar->setValueEx(d->bar->value() + 1);
-                qApp->processEvents();
             }
         }
     }
@@ -298,7 +252,6 @@ void SequencerBar::setValue(int step)
                     showRemainingTime();
                 }
                 d->bar->resetObserveEventFilter();
-                qApp->processEvents();
             }
         }
     }
@@ -334,7 +287,9 @@ void SequencerBar::showRemainingTime()
                 );
             }
             else {
-                getMainWindow()->showMessage(status);
+                if (auto* window = getMainWindow()) {
+                    window->showMessage(status);
+                }
             }
         }
     }
@@ -371,8 +326,10 @@ void SequencerBar::resetData()
         delete d->waitCursor;
         d->waitCursor = nullptr;
         d->bar->leaveControlEvents(d->guiThread);
-        getMainWindow()->setPaneText(1, QString());
-        getMainWindow()->showMessage(QString());
+        if (auto* window = getMainWindow()) {
+            window->setPaneText(1, QString());
+            window->showMessage(QString());
+        }
     }
 
     SequencerBase::resetData();
@@ -402,7 +359,9 @@ void SequencerBar::setText(const char* pszTxt)
         );
     }
     else {
-        getMainWindow()->showMessage(d->text);
+        if (auto* window = getMainWindow()) {
+            window->showMessage(d->text);
+        }
     }
 }
 
