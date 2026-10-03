@@ -699,7 +699,7 @@ bool TaskView::showDialog(TaskDialog* dlg, App::Document* doc)
     return true;
 }
 
-void TaskView::removeDialog(App::Document* doc)
+void TaskView::removeDialog(const App::Document* doc)
 {
     auto foundTaskInfo = std::ranges::find(taskInfos, doc, &TaskInfo::Document);
     if (foundTaskInfo != taskInfos.end()) {
@@ -1017,12 +1017,12 @@ void TaskView::removeTaskWatcher(TaskInfo& taskInfo)
     taskInfo.hasTaskWatcher = false;
 }
 
-void TaskView::accept(App::Document* doc)
+void TaskView::accept(const App::Document* doc)
 {
     closeDialog(doc, true);
 }
 
-void TaskView::reject(App::Document* doc)
+void TaskView::reject(const App::Document* doc)
 {
     closeDialog(doc, false);
 }
@@ -1049,13 +1049,13 @@ bool TaskView::deferDialogAction(const App::Document* doc, TaskInfo::DeferredAct
         auto* document = found->Document;
         switch (action) {
             case TaskInfo::DeferredAction::Accept:
-                view->closeDialog(document, true);
+                view->accept(document);
                 break;
             case TaskInfo::DeferredAction::Reject:
-                view->closeDialog(document, false);
+                view->reject(document);
                 break;
             case TaskInfo::DeferredAction::Remove:
-                view->removeDialog(found);
+                view->removeDialog(document);
                 break;
             case TaskInfo::DeferredAction::None:
                 break;
