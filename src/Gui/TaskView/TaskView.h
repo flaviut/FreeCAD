@@ -203,8 +203,8 @@ Q_SIGNALS:
     void taskUpdate();
 
 protected:
-    void accept(App::Document* doc);
-    void reject(App::Document* doc);
+    void accept(const App::Document* doc);
+    void reject(const App::Document* doc);
     void helpRequested(App::Document* doc);
     void clicked(QAbstractButton* button, App::Document* doc);
 
@@ -242,7 +242,7 @@ protected:
     /// used by Gui::Control to register Dialogs, returns true if the dialog was not already there
     bool showDialog(TaskDialog* dlg, App::Document* doc);
     // removes the running dialog after accept() or reject() from the TaskView
-    void removeDialog(App::Document* doc);
+    void removeDialog(const App::Document* doc);
     void removeDialog(std::vector<TaskInfo>::iterator infoIt);
 
     void setShowTaskWatcher(bool show);
