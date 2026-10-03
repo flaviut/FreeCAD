@@ -581,6 +581,7 @@ void Application::setupPythonException(PyObject* module)
 
 Document* Application::newDocument(const char * proposedName, const char * proposedLabel, DocumentInitFlags CreateFlags)
 {
+    Document::requireRecomputeMutationAllowed("create a document");
     bool isUsingDefaultName = Base::Tools::isNullOrEmpty(proposedName);
     // get a valid name anyway!
     if (isUsingDefaultName) {
@@ -673,7 +674,28 @@ bool Application::closeDocument(const char* name)
 {
     const std::string documentName(name);
 
+    if (_recomputeThread.joinable() && _recomputeThread.get_id() == std::this_thread::get_id()) {
+        return false;
+    }
+
+    if (Document::isRecomputingOnCurrentThread()
+        || (MainThreadSignalConfig::hasHooks() && MainThreadSignalConfig::isMainThread()
+            && Document::isAnyRecomputing())) {
+        return false;
+    }
+
+    if (MainThreadSignalConfig::hasHooks() && MainThreadSignalConfig::isMainThread()) {
+        std::lock_guard<std::mutex> lock(_recomputeMutex);
+        if (_recomputeDocumentsInProgress.contains(documentName)) {
+            return false;
+        }
+    }
+
     cancelRecomputeRequestsForDocument(documentName);
+
+    if (Document::isAnyRecomputing()) {
+        return false;
+    }
 
     const auto pos = DocMap.find( name );
     if (pos == DocMap.end()) // no such document
@@ -703,10 +725,16 @@ bool Application::closeDocument(const char* name)
 
 void Application::closeAllDocuments()
 {
+    if (Document::isAnyRecomputing()) {
+        throw Base::RuntimeError("Cannot close all documents while recomputing");
+    }
     Base::FlagToggler<bool> flag(_isClosingAll);
     std::map<std::string,Document*>::iterator pos;
-    while((pos = DocMap.begin()) != DocMap.end())
-        closeDocument(pos->first.c_str());
+    while((pos = DocMap.begin()) != DocMap.end()) {
+        if (!closeDocument(pos->first.c_str())) {
+            break;
+        }
+    }
 }
 
 Document* Application::getDocument(const char *Name) const

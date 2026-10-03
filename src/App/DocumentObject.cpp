@@ -820,6 +820,9 @@ void DocumentObject::setDocument(App::Document* doc)
 
 bool DocumentObject::removeDynamicProperty(const char* name)
 {
+    if (_pDoc) {
+        Document::requireRecomputeMutationAllowed("remove an object property");
+    }
     if (!_pDoc || testStatus(ObjectStatus::Destroy)) {
         return false;
     }
@@ -1025,6 +1028,9 @@ App::Property* DocumentObject::addDynamicProperty(
     bool hidden
 )
 {
+    if (_pDoc) {
+        Document::requireRecomputeMutationAllowed("add an object property");
+    }
     auto prop = TransactionalObject::addDynamicProperty(type, name, group, doc, attr, ro, hidden);
     if (prop && _pDoc) {
         _pDoc->addOrRemovePropertyOfObject(this, prop, true);
@@ -1034,6 +1040,9 @@ App::Property* DocumentObject::addDynamicProperty(
 
 void DocumentObject::onBeforeChange(const Property* prop)
 {
+    if (_pDoc) {
+        Document::requireRecomputeMutationAllowed("change object properties");
+    }
     if (isFreezed() && prop != &Visibility) {
         return;
     }

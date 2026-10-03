@@ -729,7 +729,7 @@ void LinkBaseExtension::syncCopyOnChange()
     for (const auto& objT : oldObjs) {
         auto obj = objT.getObject();
         if (obj && std::binary_search(objs.begin(), objs.end(), obj)) {
-            obj->getDocument()->removeObject(obj->getNameInDocument());
+            obj->getDocument()->removeObjectAfterRecompute(obj->getNameInDocument());
         }
     }
 }
@@ -975,7 +975,7 @@ App::DocumentObject* LinkBaseExtension::makeCopyOnChange()
     if (auto prop = getLinkCopyOnChangeGroupProperty()) {
         if (auto obj = prop->getValue()) {
             if (obj->isAttachedToDocument() && obj->getDocument()) {
-                obj->getDocument()->removeObject(obj->getNameInDocument());
+                obj->getDocument()->removeObjectAfterRecompute(obj->getNameInDocument());
             }
         }
         auto group = new LinkGroup;
@@ -1686,7 +1686,7 @@ void LinkBaseExtension::onExtendedUnsetupObject()
     detachElements();
     if (auto obj = getLinkCopyOnChangeGroupValue()) {
         if (obj->isAttachedToDocument() && !obj->isRemoving()) {
-            obj->getDocument()->removeObject(obj->getNameInDocument());
+            obj->getDocument()->removeObjectAfterRecompute(obj->getNameInDocument());
         }
     }
 }
@@ -1947,7 +1947,7 @@ void LinkBaseExtension::update(App::DocumentObject* parent, const Property* prop
 
             for (auto obj : objs) {
                 if (obj && obj->isAttachedToDocument()) {
-                    obj->getDocument()->removeObject(obj->getNameInDocument());
+                    obj->getDocument()->removeObjectAfterRecompute(obj->getNameInDocument());
                 }
             }
         }
@@ -2064,7 +2064,7 @@ void LinkBaseExtension::update(App::DocumentObject* parent, const Property* prop
                 getElementListProperty()->setValue(objs);
                 for (auto obj : tmpObjs) {
                     if (obj && obj->isAttachedToDocument()) {
-                        obj->getDocument()->removeObject(obj->getNameInDocument());
+                        obj->getDocument()->removeObjectAfterRecompute(obj->getNameInDocument());
                     }
                 }
             }
@@ -2511,7 +2511,7 @@ void LinkBaseExtension::detachElement(DocumentObject* obj)
         }
         return;
     }
-    obj->getDocument()->removeObject(obj->getNameInDocument());
+    obj->getDocument()->removeObjectAfterRecompute(obj->getNameInDocument());
 }
 
 std::vector<App::DocumentObject*> LinkBaseExtension::getLinkedChildren(bool filter) const

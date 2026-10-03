@@ -136,6 +136,14 @@ public:
 
 struct TaskInfo
 {
+    enum class DeferredAction
+    {
+        None,
+        Accept,
+        Reject,
+        Remove
+    };
+
     TaskPanel* taskPanel {nullptr};
     TaskDialog* ActiveDialog {nullptr};
     TaskEditControl* ActiveCtrl {nullptr};
@@ -201,6 +209,9 @@ protected:
     void clicked(QAbstractButton* button, App::Document* doc);
 
 private:
+    bool deferDialogAction(const App::Document* doc, TaskInfo::DeferredAction action);
+    void closeDialog(const App::Document* doc, bool accepting);
+
     void triggerMinimumSizeHint();
     void adjustMinimumSizeHint();
     void saveCurrentWidth();
