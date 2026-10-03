@@ -105,7 +105,7 @@ void SequencerDialog::startStep()
     else {
         d->guiThread = true;
         d->dlg->setRangeEx(0, (int)nTotalSteps);
-        d->dlg->setModal(true);
+        d->dlg->setModal(false);
         if (nTotalSteps == 0) {
             d->progressTime.start();
         }
@@ -119,36 +119,11 @@ void SequencerDialog::startStep()
 void SequencerDialog::nextStep(bool canAbort)
 {
     d->canabort = canAbort;
-    QThread* currentThread = QThread::currentThread();
-    QThread* thr = d->dlg->thread();  // this is the main thread
-    if (thr != currentThread) {
-        if (wasCanceled() && canAbort) {
-            abort();
-        }
-        else {
-            setValue((int)nProgress + 1);
-        }
+    if (wasCanceled() && canAbort) {
+        abort();
     }
     else {
-        if (wasCanceled() && canAbort) {
-            // restore cursor
-            pause();
-            bool ok = d->dlg->canAbort();
-            // continue and show up wait cursor if needed
-            resume();
-
-            // force to abort the operation
-            if (ok) {
-                abort();
-            }
-            else {
-                rejectCancel();
-                setValue((int)nProgress + 1);
-            }
-        }
-        else {
-            setValue((int)nProgress + 1);
-        }
+        setValue((int)nProgress + 1);
     }
 }
 
@@ -186,7 +161,6 @@ void SequencerDialog::setValue(int step)
             }
             else {
                 d->dlg->setValueEx(d->dlg->value() + 1);
-                qApp->processEvents();
             }
         }
     }
@@ -207,7 +181,6 @@ void SequencerDialog::setValue(int step)
             if (d->dlg->isVisible()) {
                 showRemainingTime();
             }
-            qApp->processEvents();
         }
     }
 }
