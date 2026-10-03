@@ -255,13 +255,13 @@ public:
     App::MainThreadSignal<void(const Document&, const std::string&)> signalStartSave;
     /// Signal finishing a save action to a file.
     App::MainThreadSignal<void(const Document&, const std::string&)> signalFinishSave;
-    /// Signal before recomputing the document.
+    /// Signal before recomputing the document. Observers must not modify model properties.
     App::MainThreadSignal<void(const Document&)> signalBeforeRecompute;
     /// Signal after recomputing the document but before the document is fully
-    /// stable again. Observers that require a fully stable post-recompute
-    /// state should wait for signalBecameStable().
+    /// stable again. Observers must not modify model properties. Observers that
+    /// require a fully stable post-recompute state should wait for signalBecameStable().
     App::MainThreadSignal<void(const Document&, const std::vector<DocumentObject*>&)> signalRecomputed;
-    /// Signal after recomputing an object.
+    /// Signal after recomputing an object. Dependency propagation may write derived properties.
     App::MainThreadSignal<void(const DocumentObject&)> signalRecomputedObject;
     /// Signal on a new opened transaction.
     App::MainThreadSignal<void(const Document&, std::string)> signalOpenTransaction;
@@ -270,7 +270,8 @@ public:
     /// Signal on an aborted transaction.
     App::MainThreadSignal<void(const Document&)> signalAbortTransaction;
     /// Signal after document recompute/transaction state has fully unwound and
-    /// observers may treat the document as stable again.
+    /// observers may treat the document as stable again. With a Qt event loop,
+    /// recompute completion is queued rather than emitted on the recompute stack.
     App::MainThreadSignal<void(const Document&)> signalBecameStable;
     /// Signal on a skipping a recompute.
     App::MainThreadSignal<void(const Document&, const std::vector<DocumentObject*>&)> signalSkipRecompute;
@@ -541,6 +542,8 @@ public:
      * @param[in] sName The name of the object to remove.
      */
     void removeObject(const char* sName);
+    /// Internal feature cleanup may request deletion after the recompute boundary has unwound.
+    void removeObjectAfterRecompute(const char* name);
 
     /**
      * @brief Add an existing object to the document.
@@ -821,6 +824,16 @@ public:
      * @return True if the object was recomputed, false if there was an error.
      */
     bool recomputeFeature(DocumentObject* Feat, bool recursive = false);
+
+    /// Internal execution may recompute another feature without reopening the document boundary.
+    /// Outside execution this uses the normal single-feature boundary; recursive entry is forbidden.
+    bool recomputeFeatureForDependency(DocumentObject* feature);
+
+    /// Destructive document and transaction operations are forbidden while any recompute is active.
+    static bool isAnyRecomputing();
+    static bool isRecomputingOnCurrentThread();
+    /// Document recompute notifications are read-only; execution and dependency propagation may write properties.
+    static void requireRecomputeMutationAllowed(const char* operation);
 
     /**
      * @brief Get the text of the error for a specified object.
@@ -1468,6 +1481,8 @@ protected:
     void _abortTransaction();
 
 private:
+    class RecomputeGuard;
+
     void changePropertyOfObject(TransactionalObject* obj, const Property* prop,
                                 const std::function<void()>& changeFunc);
     [[nodiscard]] Base::ScopeGuard setDefiningTransaction();

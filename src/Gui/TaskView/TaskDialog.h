@@ -29,6 +29,9 @@
 
 #include <QDialogButtonBox>
 #include <QPointer>
+#include <optional>
+#include <functional>
+#include <memory>
 #include <FCGlobal.h>
 
 
@@ -216,6 +219,9 @@ public:
     virtual bool accept();
     /// is called by the framework if the dialog is rejected (Cancel)
     virtual bool reject();
+    /// Returns no decision if another close callback or a recompute is active.
+    std::optional<bool> tryClose(bool accepting);
+    bool deferUntilStable(std::function<void()> action);
     /// is called by the framework if the user press the help button
     virtual void helpRequested();
     /// is called by the framework if the user press the undo button
@@ -245,6 +251,9 @@ protected:
     ButtonPosition pos;
 
 private:
+    struct DeferredAction;
+    std::unique_ptr<DeferredAction> deferredAction;
+
     std::string documentName;
     const Gui::MDIView* associatedView;
     bool escapeButton;

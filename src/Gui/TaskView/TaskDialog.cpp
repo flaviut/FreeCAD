@@ -23,6 +23,8 @@
 
 
 #include <QMessageBox>
+#include <QScopeGuard>
+#include <QTimer>
 
 
 #include <App/Document.h>
@@ -37,6 +39,72 @@
 #include "TaskView.h"
 
 using namespace Gui::TaskView;
+
+struct TaskDialog::DeferredAction
+{
+    fastsignals::connection connection;
+    std::function<void()> action;
+
+    ~DeferredAction()
+    {
+        connection.disconnect();
+    }
+};
+
+bool TaskDialog::deferUntilStable(std::function<void()> action)
+{
+    if (!App::Document::isAnyRecomputing()) {
+        return false;
+    }
+    if (deferredAction) {
+        return true;
+    }
+    deferredAction = std::make_unique<DeferredAction>();
+    deferredAction->action = std::move(action);
+    QPointer<TaskDialog> alive(this);
+    auto queue = [alive]() {
+        if (!alive) {
+            return;
+        }
+        QTimer::singleShot(0, alive, [alive]() {
+            if (!alive || !alive->deferredAction) {
+                return;
+            }
+            auto action = std::move(alive->deferredAction->action);
+            alive->deferredAction.reset();
+            action();
+        });
+    };
+    for (auto* document : App::GetApplication().getDocuments()) {
+        if (document->testStatus(App::Document::Recomputing)) {
+            deferredAction->connection = document->signalBecameStable.connect(
+                [queue](const App::Document&) { queue(); }
+            );
+            return true;
+        }
+    }
+    queue();
+    return true;
+}
+
+std::optional<bool> TaskDialog::tryClose(bool accepting)
+{
+    if (App::Document::isAnyRecomputing() || property("taskview_accept_or_reject").isValid()) {
+        return std::nullopt;
+    }
+
+    QPointer<TaskDialog> alive(this);
+    setProperty("taskview_accept_or_reject", true);
+    if (!alive) {
+        return std::nullopt;
+    }
+    const auto clear = qScopeGuard([alive]() {
+        if (alive) {
+            alive->setProperty("taskview_accept_or_reject", QVariant());
+        }
+    });
+    return accepting ? accept() : reject();
+}
 
 
 //**************************************************************************
@@ -56,6 +124,7 @@ TaskDialog::TaskDialog()
 
 TaskDialog::~TaskDialog()
 {
+    deferredAction.reset();
     for (auto it : Content) {
         delete it;
         it = nullptr;
