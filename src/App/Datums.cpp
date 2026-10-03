@@ -328,7 +328,7 @@ void LocalCoordinateSystem::unsetupObject()
         const auto& objsLnk2 = OriginFeatures.getValues();
         if (std::ranges::find(objsLnk2, obj) != objsLnk2.end()) {
             if (!obj->isRemoving()) {
-                obj->getDocument()->removeObject(obj->getNameInDocument());
+                obj->getDocument()->removeObjectAfterRecompute(obj->getNameInDocument());
             }
         }
     }

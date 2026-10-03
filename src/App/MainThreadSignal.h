@@ -26,6 +26,7 @@
 #include <FCGlobal.h>
 #include <fastsignals/signal.h>
 #include <functional>
+#include <exception>
 #include <memory>
 #include <optional>
 #include <tuple>
@@ -69,7 +70,21 @@ public:
     static inline void invoke(std::function<void()>&& fn, bool blocking)
     {
         auto* f = invokeSlot();
-        if (f) {
+        if (f && blocking) {
+            std::exception_ptr failure;
+            f([callback = std::move(fn), &failure]() {
+                try {
+                    callback();
+                }
+                catch (...) {
+                    failure = std::current_exception();
+                }
+            }, true);
+            if (failure) {
+                std::rethrow_exception(failure);
+            }
+        }
+        else if (f) {
             f(std::move(fn), blocking);
         }
         else {
