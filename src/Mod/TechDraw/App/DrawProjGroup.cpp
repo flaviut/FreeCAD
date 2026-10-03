@@ -479,7 +479,7 @@ App::DocumentObject* DrawProjGroup::addProjection(const char* viewProjType)
             vecs = getDirsFromFront(view);
             view->Direction.setValue(vecs.first);
             view->XDirection.setValue(vecs.second);
-            view->recomputeFeature();
+            getDocument()->recomputeFeatureForDependency(view);
         }
         else {//Front
             Anchor.setValue(view);
@@ -940,7 +940,7 @@ void DrawProjGroup::recomputeChildren()
             throw Base::TypeError("Error: projection in DPG list is not a DPGI!");
         }
         else {
-            view->recomputeFeature();
+            getDocument()->recomputeFeatureForDependency(view);
         }
     }
 }
