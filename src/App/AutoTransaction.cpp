@@ -58,6 +58,9 @@ void AutoTransaction::close(TransactionCloseMode mode)
 
 int Application::setActiveTransaction(TransactionName name)
 {
+    if (Document::isAnyRecomputing()) {
+        return NullTransaction;
+    }
     if (name.name.empty()) {
         name.name = "Command";
     }
@@ -70,6 +73,9 @@ int Application::setActiveTransaction(TransactionName name)
 
 int Application::openGlobalTransaction(TransactionName name)
 {
+    if (Document::isAnyRecomputing()) {
+        return NullTransaction;
+    }
     if (name.name.empty()) {
         name.name = "Command";
     }
@@ -167,6 +173,9 @@ void Application::setTransactionName(int tid, const TransactionName& name)
 
 bool Application::closeActiveTransaction(TransactionCloseMode mode, int id)
 {
+    if (Document::isAnyRecomputing()) {
+        return false;
+    }
     bool abort = (mode == TransactionCloseMode::Abort);
     
     if (id == NullTransaction) {

@@ -1302,7 +1302,7 @@ std::vector<App::DocumentObject*> AssemblyObject::getJoints(bool delBadJoints, b
             // Remove incomplete joints. Left-over when the user deletes a part.
             // Remove incoherent joints (self-pointing joints)
             if (delBadJoints) {
-                getDocument()->removeObject(joint->getNameInDocument());
+                getDocument()->removeObjectAfterRecompute(joint->getNameInDocument());
             }
             continue;
         }
@@ -2833,7 +2833,7 @@ void AssemblyObject::syncGroundedJoints()
         }
         // Delete grounding joint if placement lock was lifted
         else if (!isReadOnly && hasJoint) {
-            getDocument()->removeObject(it->second->getNameInDocument());
+            getDocument()->removeObjectAfterRecompute(it->second->getNameInDocument());
         }
     }
 }

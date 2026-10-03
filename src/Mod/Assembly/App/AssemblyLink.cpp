@@ -144,7 +144,7 @@ void AssemblyLink::onChanged(const App::Property* prop)
             }
 
             if (Rigid.getValue() ? hasObject(groundedObj) : groundedObj == this) {
-                getDocument()->removeObject(joint->getNameInDocument());
+                getDocument()->removeObjectAfterRecompute(joint->getNameInDocument());
             }
         }
 
@@ -322,7 +322,7 @@ void AssemblyLink::updateParentJoints()
             }
         }
         if (joint->isTouched()) {
-            joint->recomputeFeature();
+            getDocument()->recomputeFeatureForDependency(joint);
         }
     }
 }
@@ -555,7 +555,7 @@ void AssemblyLink::synchronizeComponents()
             continue;
         }
         if (validLinks.find(obj) == validLinks.end()) {
-            doc->removeObject(obj->getNameInDocument());
+            doc->removeObjectAfterRecompute(obj->getNameInDocument());
         }
     }
 }
@@ -621,7 +621,7 @@ void AssemblyLink::synchronizeJoints()
 
     // We delete the excess of joints if any
     for (size_t i = assemblyJoints.size(); i < assemblyLinkJoints.size(); ++i) {
-        doc->removeObject(assemblyLinkJoints[i]->getNameInDocument());
+        doc->removeObjectAfterRecompute(assemblyLinkJoints[i]->getNameInDocument());
     }
 
     // We make sure the joints match.
@@ -764,8 +764,15 @@ void AssemblyLink::ensureNoJointGroup()
     JointGroup* jGroup = getJointGroup(this);
     if (jGroup) {
         // If there is a joint group, we delete it and its content.
-        jGroup->removeObjectsFromDocument();
-        getDocument()->removeObject(jGroup->getNameInDocument());
+        if (App::Document::isAnyRecomputing()) {
+            for (auto* joint : jGroup->getAllChildren()) {
+                getDocument()->removeObjectAfterRecompute(joint->getNameInDocument());
+            }
+        }
+        else {
+            jGroup->removeObjectsFromDocument();
+        }
+        getDocument()->removeObjectAfterRecompute(jGroup->getNameInDocument());
     }
 }
 JointGroup* AssemblyLink::ensureJointGroup()

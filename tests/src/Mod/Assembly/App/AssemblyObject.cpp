@@ -12,6 +12,7 @@
 #include <Base/Console.h>
 #include <Base/Interpreter.h>
 #include <Mod/Assembly/App/AssemblyObject.h>
+#include <Mod/Assembly/App/AssemblyLink.h>
 #include <Mod/Assembly/App/Groups.h>
 #include <src/App/InitApplication.h>
 
@@ -156,4 +157,38 @@ with tempfile.TemporaryDirectory() as directory:
         App.closeDocument(source.Name)
 )PY"));
     EXPECT_EQ(observer.mismatches, 0);
+}
+
+TEST_F(AssemblyObjectTest, RecomputeRemovesObsoleteLinkedComponentsAfterExecution)
+{
+    auto* document = getObject()->getDocument();
+    auto* link = document->addObject<Assembly::AssemblyLink>("LinkedAssembly");
+    link->LinkedObject.setValue(getObject());
+    const auto initialObjectCount = document->getObjects().size();
+    auto* obsolete = document->addObject("App::Part", "ObsoleteComponent");
+    link->Group.setValues({obsolete});
+    link->enforceRecompute();
+
+    EXPECT_TRUE(document->recomputeFeature(link));
+    EXPECT_EQ(document->getObject("ObsoleteComponent"), nullptr);
+    EXPECT_EQ(document->getObjects().size(), initialObjectCount);
+    EXPECT_FALSE(App::Document::isAnyRecomputing());
+}
+
+TEST_F(AssemblyObjectTest, RigidLinkedAssemblyCleanupPreservesRecomputeBoundary)
+{
+    auto* document = getObject()->getDocument();
+    auto* link = document->addObject<Assembly::AssemblyLink>("LinkedAssembly");
+    link->LinkedObject.setValue(getObject());
+    link->Rigid.setValue(true);
+    auto* group = link->ensureJointGroup();
+    auto* joint = document->addObject("App::FeaturePython", "ObsoleteJoint");
+    group->Group.setValues({joint});
+    const std::string groupName = group->getNameInDocument();
+    link->enforceRecompute();
+
+    EXPECT_TRUE(document->recomputeFeature(link));
+    EXPECT_EQ(document->getObject("ObsoleteJoint"), nullptr);
+    EXPECT_EQ(document->getObject(groupName.c_str()), nullptr);
+    EXPECT_FALSE(App::Document::isAnyRecomputing());
 }
