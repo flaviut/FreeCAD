@@ -1545,6 +1545,9 @@ bool Application::isInEdit(Gui::Document* pcDocument) const
 }
 void Application::unsetEditDocument(Gui::Document* pcDocument)
 {
+    if (App::Document::isAnyRecomputing()) {
+        throw Base::RuntimeError("Cannot reset edit mode while recomputing");
+    }
     if (std::erase(d->editDocuments, pcDocument) == 0) {
         return;
     }
@@ -1554,6 +1557,9 @@ void Application::unsetEditDocument(Gui::Document* pcDocument)
 }
 void Application::unsetEditDocumentIf(const std::function<bool(Gui::Document*)>& eval)
 {
+    if (App::Document::isAnyRecomputing()) {
+        throw Base::RuntimeError("Cannot reset edit mode while recomputing");
+    }
     std::vector<Gui::Document*> matched, unmatched;
     ranges::partition_copy(d->editDocuments, back_inserter(matched), back_inserter(unmatched), eval);
     std::swap(d->editDocuments, unmatched);

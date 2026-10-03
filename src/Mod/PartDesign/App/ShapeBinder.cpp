@@ -586,7 +586,7 @@ void SubShapeBinder::clearCopiedObjects()
     for (auto& o : objs) {
         auto obj = o.getObject();
         if (obj) {
-            obj->getDocument()->removeObject(obj->getNameInDocument());
+            obj->getDocument()->removeObjectAfterRecompute(obj->getNameInDocument());
         }
     }
     _CopiedLink.setValue(nullptr);

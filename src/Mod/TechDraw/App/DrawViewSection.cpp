@@ -739,7 +739,7 @@ void DrawViewSection::postSectionCutTasks()
     for (auto& c : children) {
         if (c->isDerivedFrom<DrawViewPart>()) {
             // details or sections of this need cut shape
-            c->recomputeFeature();
+            getDocument()->recomputeFeatureForDependency(c);
         }
     }
 }

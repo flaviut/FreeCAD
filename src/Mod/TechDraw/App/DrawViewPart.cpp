@@ -567,13 +567,13 @@ void DrawViewPart::postHlrTasks()
     //references will be invalid until the geometry exists
     std::vector<TechDraw::DrawViewBalloon*> balloonsAll = getBalloons();
     for (auto& balloon : balloonsAll) {
-        balloon->recomputeFeature();
+        getDocument()->recomputeFeatureForDependency(balloon);
     }
     // Dimensions need to be recomputed now if face finding is not going to take place.
     if (!handleFaces() || CoarseView.getValue()) {
         std::vector<TechDraw::DrawViewDimension*> dimsAll = getDimensions();
         for (auto& dim : dimsAll) {
-            dim->recomputeFeature();
+            getDocument()->recomputeFeatureForDependency(dim);
         }
     }
 
@@ -599,7 +599,7 @@ void DrawViewPart::postFaceExtractionTasks()
     //  until all the geometry (including centerlines dependent on faces) exists.
     std::vector<TechDraw::DrawViewDimension*> dimsAll = getDimensions();
     for (auto& dim : dimsAll) {
-        dim->recomputeFeature();
+        getDocument()->recomputeFeatureForDependency(dim);
     }
 
     requestPaint();

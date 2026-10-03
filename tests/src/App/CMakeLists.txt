@@ -9,6 +9,7 @@ add_executable(App_tests_run
         ComplexGeoData.cpp
         CommandLine.cpp
         Document.cpp
+        RecomputeLifecycle.cpp
         DocumentObject.cpp
         DocumentObserver.cpp
         Expression.cpp

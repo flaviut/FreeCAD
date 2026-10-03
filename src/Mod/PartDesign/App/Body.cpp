@@ -467,7 +467,7 @@ void Body::onChanged(const App::Property* prop)
 
             if (bf && (bf->BaseFeature.getValue() != BaseFeature.getValue())) {
                 bf->BaseFeature.setValue(BaseFeature.getValue());
-                bf->recomputeFeature();
+                getDocument()->recomputeFeatureForDependency(bf);
             }
             if (bf && createdBaseFeature) {
                 if (auto* base = freecad_cast<App::GeoFeature*>(BaseFeature.getValue())) {

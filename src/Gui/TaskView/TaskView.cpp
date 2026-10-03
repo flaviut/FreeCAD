@@ -677,7 +677,19 @@ void TaskView::removeDialog(std::vector<TaskInfo>::iterator infoIt)
     if (infoIt == taskInfos.end()) {
         return;
     }
+    if (deferDialogAction(infoIt->Document, TaskInfo::DeferredAction::Remove)) {
+        return;
+    }
+    QPointer<TaskView> alive(this);
+    QPointer<TaskDialog> target(infoIt->ActiveDialog);
     getMainWindow()->updateActions();
+    if (!alive || !target) {
+        return;
+    }
+    infoIt = std::ranges::find(taskInfos, target.data(), &TaskInfo::ActiveDialog);
+    if (infoIt == taskInfos.end()) {
+        return;
+    }
 
     std::optional<TaskInfo> remove = std::nullopt;
     if (infoIt->ActiveDialog) {
@@ -701,11 +713,19 @@ void TaskView::removeDialog(std::vector<TaskInfo>::iterator infoIt)
     addTaskWatcher();
 
     if (remove) {
-        remove->ActiveDialog->closed();
-        remove->ActiveDialog->emitDestructionSignal();
-        delete remove->ActiveCtrl;
-        delete remove->ActiveDialog;
-        delete remove->taskPanel;
+        QPointer<TaskEditControl> control(remove->ActiveCtrl);
+        QPointer<TaskDialog> dialog(remove->ActiveDialog);
+        QPointer<TaskPanel> panel(remove->taskPanel);
+        dialog->closed();
+        if (dialog) {
+            dialog->emitDestructionSignal();
+        }
+        delete control.data();
+        delete dialog.data();
+        delete panel.data();
+    }
+    if (!alive) {
+        return;
     }
 
     tryRestoreWidth();
@@ -949,37 +969,73 @@ void TaskView::removeTaskWatcher()
 
 void TaskView::accept(App::Document* doc)
 {
-    auto foundTaskInfo = std::ranges::find(taskInfos, doc, &TaskInfo::Document);
-    if (foundTaskInfo == taskInfos.end()) {  // Protect against segfaults due to out-of-order deletions
-        Base::Console().warning("ActiveDialog was null in call to TaskView::accept()\n");
-        return;
-    }
-
-    // Make sure that if 'accept' calls 'closeDialog' the deletion is postponed until
-    // the dialog leaves the 'accept' method
-    foundTaskInfo->ActiveDialog->setProperty("taskview_accept_or_reject", true);
-    bool success = foundTaskInfo->ActiveDialog->accept();
-    foundTaskInfo->ActiveDialog->setProperty("taskview_accept_or_reject", QVariant());
-    if (success || foundTaskInfo->ActiveDialog->property("taskview_remove_dialog").isValid()) {
-        removeDialog(doc);
-    }
+    closeDialog(doc, true);
 }
 
 void TaskView::reject(App::Document* doc)
 {
+    closeDialog(doc, false);
+}
+
+bool TaskView::deferDialogAction(App::Document* doc, TaskInfo::DeferredAction action)
+{
+    if (!App::Document::isAnyRecomputing()) {
+        return false;
+    }
     auto foundTaskInfo = std::ranges::find(taskInfos, doc, &TaskInfo::Document);
-    if (foundTaskInfo == taskInfos.end()) {  // Protect against segfaults due to out-of-order deletions
-        Base::Console().warning("ActiveDialog was null in call to TaskView::reject()\n");
+    if (foundTaskInfo == taskInfos.end()) {
+        return true;
+    }
+    QPointer<TaskView> view(this);
+    QPointer<TaskDialog> dialog(foundTaskInfo->ActiveDialog);
+    return dialog->deferUntilStable([view, dialog, action]() {
+        if (!view || !dialog) {
+            return;
+        }
+        auto found = std::ranges::find(view->taskInfos, dialog.data(), &TaskInfo::ActiveDialog);
+        if (found == view->taskInfos.end()) {
+            return;
+        }
+        auto* document = found->Document;
+        switch (action) {
+            case TaskInfo::DeferredAction::Accept:
+                view->accept(document);
+                break;
+            case TaskInfo::DeferredAction::Reject:
+                view->reject(document);
+                break;
+            case TaskInfo::DeferredAction::Remove:
+                view->removeDialog(document);
+                break;
+            case TaskInfo::DeferredAction::None:
+                break;
+        }
+    });
+}
+
+void TaskView::closeDialog(App::Document* doc, bool accepting)
+{
+    if (deferDialogAction(
+            doc,
+            accepting ? TaskInfo::DeferredAction::Accept : TaskInfo::DeferredAction::Reject
+        )) {
         return;
     }
-
-    // Make sure that if 'reject' calls 'closeDialog' the deletion is postponed until
-    // the dialog leaves the 'reject' method
-    foundTaskInfo->ActiveDialog->setProperty("taskview_accept_or_reject", true);
-    bool success = foundTaskInfo->ActiveDialog->reject();
-    foundTaskInfo->ActiveDialog->setProperty("taskview_accept_or_reject", QVariant());
-    if (success || foundTaskInfo->ActiveDialog->property("taskview_remove_dialog").isValid()) {
-        removeDialog(doc);
+    auto found = std::ranges::find(taskInfos, doc, &TaskInfo::Document);
+    if (found == taskInfos.end()) {
+        return;
+    }
+    QPointer<TaskDialog> dialog(found->ActiveDialog);
+    QPointer<TaskView> alive(this);
+    const auto success = dialog->tryClose(accepting);
+    if (!alive || !dialog || !success) {
+        return;
+    }
+    if (*success || dialog->property("taskview_remove_dialog").isValid()) {
+        found = std::ranges::find(taskInfos, dialog.data(), &TaskInfo::ActiveDialog);
+        if (found != taskInfos.end()) {
+            removeDialog(found);
+        }
     }
 }
 

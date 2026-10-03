@@ -71,6 +71,7 @@ class Transaction;
 // Pimpl class
 struct DocumentP
 {
+    std::shared_ptr<const bool> lifetimeToken = std::make_shared<const bool>(true);
     // Array to preserve the creation order of created objects
     std::vector<DocumentObject*> objectArray;
     std::unordered_set<App::DocumentObject*> touchedObjs;
@@ -79,7 +80,18 @@ struct DocumentP
     Base::UniqueNameManager objectLabelManager;
     std::unordered_map<long, DocumentObject*> objectIdMap;
     std::unordered_map<std::string, bool> partialLoadObjects;
-    std::vector<DocumentObjectT> pendingRemove;
+    struct PendingRemoval
+    {
+        std::shared_ptr<DocumentObjectWeakPtrT> object;
+        long objectId;
+
+        DocumentObject* getObject() const
+        {
+            auto* current = **object;
+            return current && current->getID() == objectId ? current : nullptr;
+        }
+    };
+    std::vector<PendingRemoval> pendingRemove;
     long lastObjectId {};
     DocumentObject* activeObject {nullptr};
     Transaction* activeUndoTransaction {nullptr};

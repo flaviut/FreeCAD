@@ -38,6 +38,7 @@
 #include <filesystem>
 #include <format>
 #include <optional>
+#include <atomic>
 
 #include <boost/algorithm/string.hpp>
 #include <boost/bimap.hpp>
@@ -110,6 +111,34 @@ namespace fs = std::filesystem;
 namespace
 {
 
+std::atomic<unsigned> activeRecomputes {0};
+thread_local unsigned threadRecomputes = 0;
+thread_local unsigned recomputeObservers = 0;
+thread_local std::vector<DocumentObject*> executingFeatures;
+
+void notifyRecomputeObservers(const std::function<void()>& callback)
+{
+    auto guarded = [&callback]() {
+        ++recomputeObservers;
+        const Base::ScopeGuard restore([]() { --recomputeObservers; });
+        callback();
+    };
+    if (MainThreadSignalConfig::isMainThread()) {
+        guarded();
+    }
+    else {
+        Base::PyGILStateRelease release;
+        MainThreadSignalConfig::invoke(guarded, true);
+    }
+}
+
+void requireStableDocuments(const char* operation)
+{
+    if (Document::isAnyRecomputing()) {
+        throw Base::RuntimeError(std::format("Cannot {} while recomputing", operation));
+    }
+}
+
 bool transactionStateBlocksRecoveryWrite(const DocumentP& documentPrivate)
 {
     return documentPrivate.bookedTransaction != NullTransaction
@@ -142,6 +171,143 @@ DocumentP::DocumentP()
 
 PROPERTY_SOURCE(App::Document, App::PropertyContainer)
 
+class Document::RecomputeGuard
+{
+public:
+    explicit RecomputeGuard(Document& document, const std::vector<DocumentObject*>* pendingObjects = nullptr)
+        : document(document)
+        , pendingObjects(pendingObjects)
+    {
+        document.setStatus(Document::Recomputing, true);
+        ++activeRecomputes;
+        ++threadRecomputes;
+    }
+
+    ~RecomputeGuard()
+    {
+        if (pendingObjects) {
+            for (auto* object : *pendingObjects) {
+                object->setStatus(ObjectStatus::PendingRecompute, false);
+                object->setStatus(ObjectStatus::Recompute2, false);
+            }
+        }
+        if (activeRecomputes.load() == 1) {
+            auto collectRemovals = []() {
+                std::vector<DocumentP::PendingRemoval> removals;
+                for (auto* owner : GetApplication().getDocuments()) {
+                    for (auto& object : owner->d->pendingRemove) {
+                        removals.push_back(std::move(object));
+                    }
+                    owner->d->pendingRemove.clear();
+                }
+                return removals;
+            };
+            auto removals = collectRemovals();
+            if (!removals.empty()) {
+                if (auto* application = QCoreApplication::instance()) {
+                    QMetaObject::invokeMethod(application, [removals = std::move(removals)]() {
+                        for (const auto& reference : removals) {
+                            if (auto* object = reference.getObject()) {
+                                try {
+                                    object->getDocument()->removeObjectAfterRecompute(object->getNameInDocument());
+                                }
+                                catch (const Base::Exception& error) {
+                                    Base::Console().error("Deferred object removal failed: {}\n", error.what());
+                                }
+                                catch (const std::exception& error) {
+                                    Base::Console().error("Deferred object removal failed: {}\n", error.what());
+                                }
+                                catch (...) {
+                                    Base::Console().error("Deferred object removal failed\n");
+                                }
+                            }
+                        }
+                    }, Qt::QueuedConnection);
+                }
+                else {
+                    do {
+                        for (const auto& reference : removals) {
+                            if (auto* object = reference.getObject()) {
+                                try {
+                                    object->getDocument()->_removeObject(object,
+                                        RemoveObjectOption::MayRemoveWhileRecomputing
+                                        | RemoveObjectOption::MayDestroyOutOfTransaction);
+                                }
+                                catch (const Base::Exception& error) {
+                                    Base::Console().error("Deferred object removal failed: {}\n", error.what());
+                                }
+                                catch (const std::exception& error) {
+                                    Base::Console().error("Deferred object removal failed: {}\n", error.what());
+                                }
+                                catch (...) {
+                                    Base::Console().error("Deferred object removal failed\n");
+                                }
+                            }
+                        }
+                        removals = collectRemovals();
+                    } while (!removals.empty());
+                }
+            }
+        }
+        document.setStatus(Document::Recomputing, false);
+        --threadRecomputes;
+        --activeRecomputes;
+        const std::string name = document.getName();
+        const std::weak_ptr<const bool> lifetime = document.d->lifetimeToken;
+        auto notify = [name, lifetime]() {
+            if (lifetime.expired()) {
+                return;
+            }
+            auto* current = GetApplication().getDocument(name.c_str());
+            if (!current) {
+                return;
+            }
+            try {
+                current->signalBecameStable(*current);
+            }
+            catch (const Base::Exception& error) {
+                Base::Console().error("Recompute completion observer failed: {}\n", error.what());
+            }
+            catch (const std::exception& error) {
+                Base::Console().error("Recompute completion observer failed: {}\n", error.what());
+            }
+            catch (...) {
+                Base::Console().error("Recompute completion observer failed\n");
+            }
+        };
+        if (auto* application = QCoreApplication::instance()) {
+            QMetaObject::invokeMethod(application, std::move(notify), Qt::QueuedConnection);
+        }
+        else {
+            notify();
+        }
+    }
+
+    RecomputeGuard(const RecomputeGuard&) = delete;
+    RecomputeGuard& operator=(const RecomputeGuard&) = delete;
+
+private:
+    Document& document;
+    const std::vector<DocumentObject*>* pendingObjects;
+};
+
+bool Document::isAnyRecomputing()
+{
+    return activeRecomputes.load() != 0;
+}
+
+bool Document::isRecomputingOnCurrentThread()
+{
+    return threadRecomputes != 0;
+}
+
+void Document::requireRecomputeMutationAllowed(const char* operation)
+{
+    if (recomputeObservers != 0 && isAnyRecomputing()) {
+        throw Base::RuntimeError(std::format("Cannot {} from a recompute observer", operation));
+    }
+}
+
 bool Document::testStatus(const Status pos) const
 {
     return d->StatusBits.test(static_cast<size_t>(pos));
@@ -173,6 +339,7 @@ bool Document::checkOnCycle()
 
 bool Document::undo(const int id)
 {
+    requireStableDocuments("undo");
     if (id != 0) {
         const auto it = mUndoMap.find(id);
         if (it == mUndoMap.end()) {
@@ -226,6 +393,7 @@ bool Document::undo(const int id)
 
 bool Document::redo(const int id)
 {
+    requireStableDocuments("redo");
     if (id != 0) {
         const auto it = mRedoMap.find(id);
         if (it == mRedoMap.end()) {
@@ -360,6 +528,7 @@ std::vector<std::string> Document::getAvailableRedoNames() const
 
 int Document::openTransaction(TransactionName name, int tid) // NOLINT
 {
+    requireStableDocuments("open a transaction");
     if (tid != NullTransaction && tid == d->bookedTransaction) {
         return tid; // Early exit without warning
     }
@@ -452,6 +621,7 @@ void Document::renameTransaction(const std::string& name, const int id) const
 }
 int Document::setActiveTransaction(TransactionName name, int tid)
 {
+    requireStableDocuments("change the active transaction");
     // Probably a group transaction situation
     if (tid != NullTransaction) {
         if (!GetApplication().transactionIsActive(tid)) {
@@ -572,6 +742,7 @@ void Document::_clearRedos()
 
 void Document::commitTransaction() // NOLINT
 {
+    requireStableDocuments("commit a transaction");
     if (isPerformingTransaction() || d->committing) {
         if (FC_LOG_INSTANCE.isEnabled(FC_LOGLEVEL_LOG)) {
             FC_WARN("Cannot commit transaction while transacting");
@@ -594,6 +765,7 @@ void Document::commitTransaction() // NOLINT
 
 bool Document::_commitTransaction(const bool notify)
 {
+    requireStableDocuments("commit a transaction");
     if (isPerformingTransaction()) {
         if (FC_LOG_INSTANCE.isEnabled(FC_LOGLEVEL_LOG)) {
             FC_WARN("Cannot commit transaction while transacting");
@@ -639,6 +811,7 @@ bool Document::_commitTransaction(const bool notify)
 
 void Document::abortTransaction() const
 {
+    requireStableDocuments("abort a transaction");
     if (isPerformingTransaction() || d->committing) {
         if (FC_LOG_INSTANCE.isEnabled(FC_LOGLEVEL_LOG)) {
             FC_WARN("Cannot abort transaction while transacting");
@@ -658,6 +831,7 @@ void Document::abortTransaction() const
 
 void Document::_abortTransaction()
 {
+    requireStableDocuments("abort a transaction");
     if (isPerformingTransaction() || d->committing) {
         if (FC_LOG_INSTANCE.isEnabled(FC_LOGLEVEL_LOG)) {
             FC_WARN("Cannot abort transaction while transacting");
@@ -733,6 +907,7 @@ bool Document::isTransactionEmpty() const
 
 void Document::clearDocument() // NOLINT
 {
+    requireStableDocuments("clear a document");
     d->activeObject = nullptr;
 
     if (!d->objectArray.empty()) {
@@ -757,6 +932,7 @@ void Document::clearDocument() // NOLINT
 
 void Document::clearUndos()
 {
+    requireStableDocuments("clear undo history");
     if (isPerformingTransaction() || d->committing) {
         FC_ERR("Cannot clear undos while transacting");
         return;
@@ -852,6 +1028,7 @@ unsigned int Document::getMaxUndoStackSize() const
 
 void Document::onBeforeChange(const Property* prop)
 {
+    requireRecomputeMutationAllowed("change document properties");
     if (prop == &Label) {
         oldLabel = Label.getValue();
     }
@@ -922,6 +1099,7 @@ void Document::onChanged(const Property* prop)
 
 void Document::onBeforeChangeProperty(const TransactionalObject* Who, const Property* What)
 {
+    requireRecomputeMutationAllowed("change object properties");
     if (Who->isDerivedFrom<DocumentObject>()) {
         signalBeforeChangeObject(*static_cast<const DocumentObject*>(Who), *What);
     }
@@ -2857,6 +3035,7 @@ int Document::recompute(const std::vector<DocumentObject*>& objs,
                         bool* hasError,
                         int options)
 {
+    requireRecomputeMutationAllowed("recompute");
     ZoneScoped;
 
     // Recompute can execute Python-backed features. Keep the GIL for the full
@@ -2883,9 +3062,7 @@ int Document::recompute(const std::vector<DocumentObject*>& objs,
         return 0;
     }
     if (testStatus(Document::Recomputing)) {
-        // this is clearly a bug in the calling instance
-        FC_ERR("Recursive calling of recompute for document " << getName());
-        return 0;
+        throw Base::RuntimeError("Recursive calling of recompute for document " + std::string(getName()));
     }
     // The 'SkipRecompute' flag can be (tmp.) set to avoid too many
     // time expensive recomputes
@@ -2898,10 +3075,10 @@ int Document::recompute(const std::vector<DocumentObject*>& objs,
     d->clearRecomputeLog();
 
     Base::TimeTracker tracker("Document::recompute");
-    std::optional<Base::ObjectStatusLocker<Document::Status, Document>> recomputingStatus;
-    recomputingStatus.emplace(Document::Recomputing, this);
+    std::vector<DocumentObject*> topoSortedObjects;
+    RecomputeGuard recomputingStatus(*this, &topoSortedObjects);
 
-    signalBeforeRecompute(*this);
+    notifyRecomputeObservers([this]() { signalBeforeRecompute(*this); });
 
     bool fineGrained = GetApplication().isFineGrainedRecomputeEnabled();
 
@@ -2925,7 +3102,7 @@ int Document::recompute(const std::vector<DocumentObject*>& objs,
    */
 
     // alt:
-    auto topoSortedObjects =
+    topoSortedObjects =
         getDependencyList(objs.empty() ? d->objectArray : objs, DepSort | options);
 
     for (auto obj : topoSortedObjects) {
@@ -3021,6 +3198,9 @@ int Document::recompute(const std::vector<DocumentObject*>& objs,
     }
     catch (Base::Exception& e) {
         e.reportException();
+        if (hasError) {
+            *hasError = true;
+        }
     }
 
     tracker.checkpoint("Recompute");
@@ -3033,15 +3213,7 @@ int Document::recompute(const std::vector<DocumentObject*>& objs,
         obj->setStatus(ObjectStatus::Recompute2, false);
     }
 
-    // Keep the document marked as Recomputing while signalRecomputed() runs.
-    // Those observers may execute Python or GUI code; clearing the status
-    // first would let re-entrant code see the document as stable before
-    // recompute teardown has finished. signalBecameStable() is the first
-    // point where observers may treat the document as stable again.
-
-    signalRecomputed(*this, topoSortedObjects);
-    recomputingStatus.reset();
-    signalBecameStable(*this);
+    notifyRecomputeObservers([&]() { signalRecomputed(*this, topoSortedObjects); });
 
     tracker.checkpoint("Recompute total");
 
@@ -3058,22 +3230,6 @@ int Document::recompute(const std::vector<DocumentObject*>& objs,
         }
     }
 
-    for (auto doc : GetApplication().getDocuments()) {
-        decltype(doc->d->pendingRemove) objects;
-        objects.swap(doc->d->pendingRemove);
-        for (auto& o : objects) {
-            try {
-                if (auto obj = o.getObject()) {
-                    obj->getDocument()->removeObject(obj->getNameInDocument());
-                }
-            }
-            catch (Base::Exception& e) {
-                e.reportException();
-                FC_ERR("error when removing object " << o.getDocumentName() << '#'
-                                                     << o.getObjectName());
-            }
-        }
-    }
     return objectCount;
 }
 
@@ -3265,6 +3421,9 @@ int Document::_recomputeFeature(DocumentObject* Feat) // NOLINT
 {
     FC_LOG("Recomputing " << Feat->getFullName());
 
+    executingFeatures.push_back(Feat);
+    const Base::ScopeGuard restoreExecution([]() { executingFeatures.pop_back(); });
+
     DocumentObjectExecReturn* returnCode = nullptr;
     try {
         returnCode = Feat->ExpressionEngine.execute(PropertyExpressionEngine::ExecuteNonOutput);
@@ -3318,24 +3477,48 @@ int Document::_recomputeFeature(DocumentObject* Feat) // NOLINT
     return 0;
 }
 
-bool Document::recomputeFeature(DocumentObject* feature, bool recursive)
+bool Document::recomputeFeatureForDependency(DocumentObject* feature)
 {
-    // delete recompute log
-    d->clearRecomputeLog(feature);
-
-    // verify that the feature is (active) part of the document
-    if (!feature->isAttachedToDocument()) {
+    requireRecomputeMutationAllowed("recompute a dependency");
+    if (!testStatus(Document::Recomputing)) {
+        return recomputeFeature(feature);
+    }
+    if (!feature || feature->getDocument() != this || !feature->isAttachedToDocument()) {
         return false;
     }
+    if (executingFeatures.empty() || executingFeatures.back()->getDocument() != this
+        || std::ranges::find(executingFeatures, feature) != executingFeatures.end()) {
+        throw Base::RuntimeError("Dependency recompute is only allowed during execution of another feature");
+    }
+    d->clearRecomputeLog(feature);
+    const int result = _recomputeFeature(feature);
+    signalRecomputedObject(*feature);
+    return result == 0 && feature->isValid();
+}
+
+bool Document::recomputeFeature(DocumentObject* feature, bool recursive)
+{
+    requireRecomputeMutationAllowed("recompute");
+    if (testStatus(Document::Recomputing)) {
+        throw Base::RuntimeError("Recursive calling of recompute for document " + std::string(getName()));
+    }
+    if (!feature || feature->getDocument() != this || !feature->isAttachedToDocument()) {
+        return false;
+    }
+    // delete recompute log
+    d->clearRecomputeLog(feature);
 
     if (recursive) {
         bool hasError = false;
         recompute({feature}, true, &hasError);
         return !hasError;
     }
-    _recomputeFeature(feature);
+    Base::PyGILStateLocker locker;
+    RecomputeGuard recomputingStatus(*this);
+    notifyRecomputeObservers([this]() { signalBeforeRecompute(*this); });
+    const int result = _recomputeFeature(feature);
     signalRecomputedObject(*feature);
-    return feature->isValid();
+    return result == 0 && feature->isValid();
 }
 
 DocumentObject* Document::addObject(
@@ -3346,6 +3529,7 @@ DocumentObject* Document::addObject(
     const bool isPartial
 )
 {
+    requireRecomputeMutationAllowed("add an object");
     const Base::Type type =
         Base::Type::getTypeIfDerivedFrom(sType, DocumentObject::getClassTypeId(), true);
     if (type.isBad()) {
@@ -3415,6 +3599,7 @@ Document::addObjects(const char* sType, const std::vector<std::string>& objectNa
 
 void Document::addObject(DocumentObject* obj, const char* name)
 {
+    requireRecomputeMutationAllowed("add an object");
     if (obj->getDocument()) {
         throw Base::RuntimeError("Document object is already added to a document");
     }
@@ -3426,6 +3611,7 @@ void Document::addObject(DocumentObject* obj, const char* name)
 
 void Document::_addObject(DocumentObject* pcObject, const char* pObjectName, AddObjectOptions options, const char* viewType)
 {
+    requireRecomputeMutationAllowed("add an object");
     // get unique name
     string ObjectName;
     if (!Base::Tools::isNullOrEmpty(pObjectName)) {
@@ -3518,6 +3704,7 @@ void Document::removeObject(const DocumentObject* object)
 /// Remove an object out of the document
 void Document::removeObject(const char* sName)
 {
+    requireStableDocuments("remove an object");
     auto pos = d->objectMap.find(sName);
     if (pos == d->objectMap.end()){
         FC_MSG("Object " << sName << " already deleted in document " << getName());
@@ -3529,14 +3716,18 @@ void Document::removeObject(const char* sName)
         return;
     }
 
-    if (pos->second->testStatus(ObjectStatus::PendingRecompute)) {
-        // TODO: shall we allow removal if there is active undo transaction?
-        FC_MSG("pending remove of " << sName << " after recomputing document " << getName());
-        d->pendingRemove.emplace_back(pos->second);
+    _removeObject(pos->second, RemoveObjectOption::MayRemoveWhileRecomputing | RemoveObjectOption::MayDestroyOutOfTransaction);
+}
+
+void Document::removeObjectAfterRecompute(const char* name)
+{
+    if (isAnyRecomputing()) {
+        if (auto* object = getObject(name)) {
+            d->pendingRemove.push_back({std::make_shared<DocumentObjectWeakPtrT>(object), object->getID()});
+        }
         return;
     }
-
-    _removeObject(pos->second, RemoveObjectOption::MayRemoveWhileRecomputing | RemoveObjectOption::MayDestroyOutOfTransaction);
+    removeObject(name);
 }
 void Document::_removeObject(DocumentObject* pcObject, RemoveObjectOptions options)
 {
@@ -3790,6 +3981,7 @@ Document::importLinks(const std::vector<DocumentObject*>& objs)
 
 DocumentObject* Document::moveObject(DocumentObject* obj, const bool recursive)
 {
+    requireStableDocuments("move an object");
     if (!obj) {
         return nullptr;
     }

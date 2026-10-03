@@ -39,6 +39,7 @@ setup_qt_test(InputField)
 setup_qt_test(QuantitySpinBox)
 setup_qt_test(NumericLocaleConsumers)
 setup_qt_test(ProgressSequencer)
+setup_qt_test(TaskDialogLifecycle)
 set_tests_properties(ProgressSequencer_Tests_run PROPERTIES TIMEOUT 15)
 
 target_link_libraries(Gui_tests_run PRIVATE
