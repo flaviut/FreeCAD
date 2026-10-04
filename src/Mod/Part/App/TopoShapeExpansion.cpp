@@ -6024,7 +6024,8 @@ TopoShape& TopoShape::makeElementBoolean(
     const std::vector<TopoShape>& shapes,
     const char* op,
     double tolerance,
-    ElementMapPolicy elementMapPolicy
+    ElementMapPolicy elementMapPolicy,
+    bool useOBB
 )
 {
     if (!maker) {
@@ -6244,6 +6245,7 @@ TopoShape& TopoShape::makeElementBoolean(
         }
     }
 
+    mk->SetUseOBB(useOBB);
     mk->SetRunParallel(Standard_True);
     OSD_Parallel::SetUseOcctThreads(Standard_True);
 
