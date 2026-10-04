@@ -2132,6 +2132,7 @@ public:
      *            the operation
      * @param tol: tolerance option available to some shape making algorithm
      * @param elementMapPolicy: whether to propagate or drop mapped element names
+     * @param useOBB: enable oriented bounding box filtering
      *
      * @return The original content of this TopoShape is discarded and replaced
      *         with the new shape built by the shape maker. The function
@@ -2144,7 +2145,8 @@ public:
         const std::vector<TopoShape>& sources,
         const char* op = nullptr,
         double tol = -1.0,
-        ElementMapPolicy elementMapPolicy = ElementMapPolicy::Propagate
+        ElementMapPolicy elementMapPolicy = ElementMapPolicy::Propagate,
+        bool useOBB = false
     );
     /** Generalized shape making with mapped element name from shape history
      *
