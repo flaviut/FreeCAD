@@ -574,7 +574,14 @@ App::DocumentObjectExecReturn* Transformed::execute()
                         return new App::DocumentObjectExecReturn("User aborted");
                     }
                     if (!shapes.empty()) {
-                        supportShape.makeElementFuse(shapes);
+                        supportShape.makeElementBoolean(
+                            Part::OpCodes::Fuse,
+                            shapes,
+                            nullptr,
+                            -1.0,
+                            Part::ElementMapPolicy::Propagate,
+                            true
+                        );
                     }
                 }
                 if (!cutShape.isNull()) {
@@ -583,7 +590,14 @@ App::DocumentObjectExecReturn* Transformed::execute()
                         return new App::DocumentObjectExecReturn("User aborted");
                     }
                     if (shapes.size() > 1) {
-                        supportShape.makeElementCut(shapes);
+                        supportShape.makeElementBoolean(
+                            Part::OpCodes::Cut,
+                            shapes,
+                            nullptr,
+                            -1.0,
+                            Part::ElementMapPolicy::Propagate,
+                            true
+                        );
                     }
                 }
             }
@@ -594,7 +608,14 @@ App::DocumentObjectExecReturn* Transformed::execute()
                 return new App::DocumentObjectExecReturn("User aborted");
             }
             if (!shapes.empty()) {
-                supportShape.makeElementFuse(shapes);
+                supportShape.makeElementBoolean(
+                    Part::OpCodes::Fuse,
+                    shapes,
+                    nullptr,
+                    -1.0,
+                    Part::ElementMapPolicy::Propagate,
+                    true
+                );
             }
             break;
         }
