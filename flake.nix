@@ -84,23 +84,34 @@
               })
             ];
           };
+          freecadOcct = pkgs.opencascade-occt.overrideAttrs (
+            finalAttrs: old: {
+              patches =
+                (old.patches or [ ])
+                ++ pkgs.lib.optional (
+                  finalAttrs.version == "7.9.3"
+                ) ./contrib/patches/occt-thread-local-error-handlers.patch;
+            }
+          );
           freecadInputs = {
             inherit (pkgs.freecad) nativeBuildInputs;
             buildInputs =
-              builtins.filter (
-                dependency:
-                dependency != null
-                && !(
-                  pkgs.stdenv.isDarwin
-                  && builtins.elem (dependency.pname or "") [
-                    "qtwayland"
-                    "qtwebengine"
-                    "libxmu"
-                    "libspnav"
-                    "ifcopenshell"
-                  ]
-                )
-              ) pkgs.freecad.buildInputs
+              map (dependency: if dependency == pkgs.opencascade-occt then freecadOcct else dependency) (
+                builtins.filter (
+                  dependency:
+                  dependency != null
+                  && !(
+                    pkgs.stdenv.isDarwin
+                    && builtins.elem (dependency.pname or "") [
+                      "qtwayland"
+                      "qtwebengine"
+                      "libxmu"
+                      "libspnav"
+                      "ifcopenshell"
+                    ]
+                  )
+                ) pkgs.freecad.buildInputs
+              )
               ++ [ pkgs.python3Packages.lark ];
           };
           freecadPythonDeps = builtins.filter (
