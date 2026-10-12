@@ -26,6 +26,7 @@ import Part
 import os
 import tempfile
 import unittest
+from itertools import product
 
 import UtilsAssembly
 import JointObject
@@ -343,6 +344,38 @@ class TestCore(AssemblyTestBase):
 
         self.assertTrue(box.Placement.isSame(box2.Placement, 1e-6), "'{}'".format(operation))
 
+    def _joint(self, kind, first, second):
+        joint = self.jointgroup.newObject("App::FeaturePython", kind)
+        JointObject.Joint(joint, JointObject.JointTypes.index(kind))
+        joint.Detach1 = joint.Detach2 = True
+        joint.Reference1 = first
+        joint.Reference2 = second
+        return joint
+
+    def test_pre_solve_rotation_axis(self):
+        self.assembly.Type = "Assembly"
+        fixed = self.assembly.newObject("Part::Box", "Fixed")
+        moving = self.assembly.newObject("Part::Box", "Moving")
+        start = App.Placement(App.Vector(10, 20, 30), App.Rotation(90, 0, 0))
+        fixed.Placement = start
+        ground = self.jointgroup.newObject("App::FeaturePython", "GroundedJoint")
+        JointObject.GroundedJoint(ground, fixed)
+        joint = self._joint("Angle", (fixed, [""]), (moving, [""]))
+
+        # The nudge must use the global JCS X axis in either reference order.
+        axis = start.Rotation.multVec(App.Vector(1, 0, 0))
+        expected = App.Placement(start.Base, App.Rotation(axis, 10) * start.Rotation)
+        for kind, side, angle in product(("Angle", "Perpendicular"), (1, 2), (0, 90)):
+            with self.subTest(kind=kind, side=side, angle=angle):
+                self.assembly.Placement.Rotation = App.Rotation(0, angle, 0)
+                joint.JointType = kind
+                joint.Reference1 = (moving if side == 1 else fixed, [""])
+                joint.Reference2 = (fixed if side == 1 else moving, [""])
+                moving.Placement = start
+                self.doc.recompute()
+                joint.Proxy.preventParallel(joint)
+                self.assertTrue(moving.Placement.isSame(expected, 1e-7))
+
     def test_rack_pinion_with_slider_offset(self):
         """Rack and pinion joint whose rack slider has a yaw offset, see
         github.com/freecad/freecad/issues/17563"""
@@ -371,20 +404,11 @@ class TestCore(AssemblyTestBase):
         along_rack = App.Rotation(App.Vector(1, 0, 0), -90)
         yaw_offset = App.Rotation(App.Vector(0, 0, 1), -90)
 
-        slider = self.jointgroup.newObject("App::FeaturePython", "Slider")
-        JointObject.Joint(slider, JointObject.JointTypes.index("Slider"))
-        slider.Detach1 = True
-        slider.Detach2 = True
-        slider.Reference1 = (ground, ["Face1"])
-        slider.Reference2 = (rack, ["Face1"])
+        slider = self._joint("Slider", (ground, ["Face1"]), (rack, ["Face1"]))
         slider.Placement1 = App.Placement(App.Vector(), along_rack)
         slider.Placement2 = App.Placement(App.Vector(), along_rack * yaw_offset)
 
-        rackPinion = self.jointgroup.newObject("App::FeaturePython", "RackPinion")
-        JointObject.Joint(rackPinion, JointObject.JointTypes.index("RackPinion"))
-        rackPinion.Detach1 = True
-        rackPinion.Reference1 = (rack, ["Face1"])
-        rackPinion.Reference2 = (pinion, ["Face1"])
+        rackPinion = self._joint("RackPinion", (rack, ["Face1"]), (pinion, ["Face1"]))
         rackPinion.Placement1 = App.Placement(App.Vector(), along_rack)
         rackPinion.Distance = 10
 
@@ -407,6 +431,28 @@ class TestCore(AssemblyTestBase):
             self.assembly.exportAsASMT(fileName)
             with open(fileName) as asmt:
                 content = asmt.read()
+
+            # Solver markers must keep X along the rack and Z along the pinion.
+            slider.Placement2 = slider.Placement1
+            rackPinion.Placement2 = App.Placement()
+            for angle in range(0, 360, 45):
+                with self.subTest(angle=angle):
+                    rotation = App.Rotation(App.Vector(0, 1, 0), 90) * App.Rotation(angle, 0, 0)
+                    pinion.Placement.Rotation = rotation
+                    self.doc.recompute()
+                    self.assembly.exportAsASMT(fileName)
+                    with open(fileName) as asmt:
+                        lines = [line.strip() for line in asmt]
+                    marker = lines.index(rackPinion.FullName, lines.index(rack.FullName))
+                    matrix = lines.index("RotationMatrix", marker) + 1
+                    rows = [list(map(float, row.split())) for row in lines[matrix : matrix + 3]]
+                    for column, axis in (
+                        (0, rack_axis),
+                        (2, rotation.multVec(App.Vector(0, 0, 1))),
+                    ):
+                        self.assertLess(
+                            (App.Vector(*(row[column] for row in rows)) - axis).Length, 1e-7
+                        )
         self.assertIn(
             "pitchRadius",
             content,
