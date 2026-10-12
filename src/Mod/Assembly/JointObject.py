@@ -1019,6 +1019,10 @@ class Joint:
             # Transform the local X-axis vector (1,0,0) into the global coordinate system
             rotation_axis = globalJcsPlc.Rotation.multVec(App.Vector(1, 0, 0))
 
+            # The rotation helper expects an axis in the moving part's frame.
+            part_rotation = UtilsAssembly.getGlobalPlacement(joint.Reference2, part2).Rotation
+            rotation_axis = part_rotation.inverted().multVec(rotation_axis)
+
             part2.Placement = UtilsAssembly.applyRotationToPlacementAlongAxis(
                 part2.Placement, 10, rotation_axis
             )
@@ -1031,6 +1035,10 @@ class Joint:
             globalJcsPlc = UtilsAssembly.getJcsGlobalPlc(joint.Placement1, joint.Reference1)
             # Transform the local X-axis vector (1,0,0) into the global coordinate system
             rotation_axis = globalJcsPlc.Rotation.multVec(App.Vector(1, 0, 0))
+
+            # The rotation helper expects an axis in the moving part's frame.
+            part_rotation = UtilsAssembly.getGlobalPlacement(joint.Reference1, part1).Rotation
+            rotation_axis = part_rotation.inverted().multVec(rotation_axis)
 
             part1.Placement = UtilsAssembly.applyRotationToPlacementAlongAxis(
                 part1.Placement, 10, rotation_axis
