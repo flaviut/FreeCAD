@@ -767,7 +767,10 @@ Py::Object View3DInventorViewerPy::renderToImage(const Py::Tuple& args, const Py
     options.width = width;
     options.height = height;
     options.samples = samples;
-    options.includeViewerLighting = includeViewerLighting != 0;
+    options.source = View3DInventorViewer::ViewerCapture {
+        includeViewerLighting != 0 ? View3DInventorViewer::Lighting::Viewer
+                                  : View3DInventorViewer::Lighting::SceneOnly
+    };
     QImage img = _viewer->renderToImage(options);
 
     PythonWrapper wrap;
