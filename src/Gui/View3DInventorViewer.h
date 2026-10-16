@@ -23,10 +23,12 @@
 
 #pragma once
 
+#include <functional>
 #include <list>
 #include <map>
 #include <memory>
 #include <set>
+#include <variant>
 #include <vector>
 
 #include <QCursor>
@@ -244,6 +246,29 @@ public:
     void setRenderType(RenderType type);
     RenderType getRenderType() const;
 
+    enum class Lighting
+    {
+        Viewer,
+        SceneOnly
+    };
+
+    struct LiveSnapshot
+    {};
+
+    struct ViewerCapture
+    {
+        Lighting lighting = Lighting::Viewer;
+    };
+
+    struct CameraCapture
+    {
+        /// Already referenced; the render neither takes nor releases ownership.
+        std::reference_wrapper<SoCamera> camera;
+        Lighting lighting = Lighting::Viewer;
+    };
+
+    using RenderSource = std::variant<LiveSnapshot, ViewerCapture, CameraCapture>;
+
     /** Options for rendering the scene into a fresh image. */
     struct RenderImageOptions
     {
@@ -252,11 +277,7 @@ public:
         int samples = -1;
         QColor background;
         AlphaMode alphaMode = AlphaMode::FromBackground;
-        RenderIntent intent = RenderIntent::RasterCapture;
-        bool includeViewerLighting = true;
-        /// Render through this camera instead of the viewer's own, which is left untouched.
-        /// Must arrive already referenced; the render neither takes nor releases ownership.
-        SoCamera* camera = nullptr;
+        RenderSource source = ViewerCapture {};
     };
 
     /** Render the scene into a new image using the requested capture policy. */
@@ -650,12 +671,20 @@ private:
     void drawSingleBackground(const QColor&);
     void recoverFromRenderMemoryException();
     void renderDelayedAnnotations(SoGLRenderAction* glra);
-    void renderGLActionScene(const QColor& backgroundColor, SoGLRenderAction* glra);
+    void renderGLActionScene(
+        SoGLRenderAction* glra,
+        float pixelRatio,
+        const std::function<void()>& renderModel
+    );
     bool renderToFramebuffer(QOpenGLFramebufferObject*);
-    bool renderToFramebuffer(QOpenGLFramebufferObject*, const RenderImageOptions& options);
-    /// Assemble a scene root that renders the options' camera over the geometry alone.
+    bool renderToFramebuffer(
+        QOpenGLFramebufferObject*,
+        const RenderImageOptions& options,
+        float pixelRatio
+    );
+    /// Assemble a scene root that renders the capture's camera over the geometry alone.
     /// The returned node is unreferenced; the caller owns it.
-    SoSeparator* buildCaptureRoot(const RenderImageOptions& options) const;
+    SoSeparator* buildCaptureRoot(const CameraCapture& capture) const;
     void setCursorRepresentation(int mode);
     void aboutToDestroyGLContext();
     void createStandardCursors();
