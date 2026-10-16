@@ -296,14 +296,6 @@ class View3DRenderSnapshots(unittest.TestCase):
             self.view.saveImage(str(path), _WIDTH, _HEIGHT, "Current", "$MIBA", 0)
             image = self._snapshot(f"01-live-{style}", self.images.QImage(str(path)))
             name = f"live-{style}-matches-viewport"
-            if style == "hidden-line":
-                self._xfail(
-                    name,
-                    _changed_pixels(native, image) == 0,
-                    "FBO export bypasses the render manager's hidden-line mode",
-                )
-                continue
-
             self._same(name, native, image)
 
     def test_02_box_selection(self):
