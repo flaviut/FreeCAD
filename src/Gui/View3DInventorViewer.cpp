@@ -2481,7 +2481,8 @@ void View3DInventorViewer::savePicture(
         options.height = height;
         options.samples = sample;
         options.background = bg;
-        options.intent = intent;
+        options.source = shouldRenderDecorations(intent) ? RenderSource {LiveSnapshot {}}
+                                                        : RenderSource {ViewerCapture {}};
         img = self->renderToImage(options);
         return;
     }
@@ -3051,7 +3052,10 @@ QImage View3DInventorViewer::renderToImage(const RenderImageOptions& options)
 
     const int samples = options.samples >= 0 ? options.samples : getNumSamples();
     QImage img;
-    ScopedRenderIntent scopedIntent(*this, options.intent);
+    const auto intent = std::holds_alternative<LiveSnapshot>(options.source)
+        ? RenderIntent::LiveInteractive
+        : RenderIntent::RasterCapture;
+    ScopedRenderIntent scopedIntent(*this, intent);
 
     auto gl = static_cast<QOpenGLWidget*>(this->viewport());  // NOLINT
     gl->makeCurrent();
@@ -3112,7 +3116,8 @@ QImage View3DInventorViewer::renderToImage(const RenderImageOptions& options)
         setGradientBackground(Background::NoGradient);
     }
 
-    if (!renderToFramebuffer(&fbo, options)) {
+    // Image dimensions are physical pixels, independent of the display.
+    if (!renderToFramebuffer(&fbo, options, 1.0f)) {
         return {};
     }
     img = fbo.toImage();
@@ -3153,20 +3158,20 @@ QImage View3DInventorViewer::renderToImage(const RenderImageOptions& options)
     return img;
 }
 
-SoSeparator* View3DInventorViewer::buildCaptureRoot(const RenderImageOptions& options) const
+SoSeparator* View3DInventorViewer::buildCaptureRoot(const CameraCapture& capture) const
 {
     // Skipping the render manager's scene graph leaves the placement indicator, the rotation
     // center and the viewer's own camera out of the capture.
     auto root = new SoSeparator;
 
-    if (options.includeViewerLighting) {
+    if (capture.lighting == Lighting::Viewer) {
         root->addChild(getHeadlight());
         root->addChild(getBacklight());
         root->addChild(getFillLight());
         root->addChild(environment);
     }
 
-    root->addChild(options.camera);
+    root->addChild(&capture.camera.get());
     root->addChild(pcViewProviderRoot);
 
     return root;
@@ -3174,12 +3179,17 @@ SoSeparator* View3DInventorViewer::buildCaptureRoot(const RenderImageOptions& op
 
 bool View3DInventorViewer::renderToFramebuffer(QOpenGLFramebufferObject* fbo)
 {
-    return renderToFramebuffer(fbo, RenderImageOptions {});
+    return renderToFramebuffer(
+        fbo,
+        RenderImageOptions {.source = ViewerCapture {}},
+        devicePixelRatio()
+    );
 }
 
 bool View3DInventorViewer::renderToFramebuffer(
     QOpenGLFramebufferObject* fbo,
-    const RenderImageOptions& options
+    const RenderImageOptions& options,
+    float pixelRatio
 )
 {
     static_cast<QOpenGLWidget*>(this->viewport())->makeCurrent();  // NOLINT
@@ -3202,41 +3212,43 @@ bool View3DInventorViewer::renderToFramebuffer(
     SoBoxSelectionRenderAction gl(SbViewportRegion(width, height));
     // When creating a new GL render action we have to copy over the cache context id
     // For further details see init().
-    uint32_t id = this->getSoRenderManager()->getGLRenderAction()->getCacheContext();
-    gl.setCacheContext(id);
-    gl.setTransparencyType(SoGLRenderAction::SORTED_OBJECT_SORTED_TRIANGLE_BLEND);
+    const auto* liveAction = this->getSoRenderManager()->getGLRenderAction();
+    gl.setCacheContext(liveAction->getCacheContext());
+    gl.setTransparencyType(
+        std::holds_alternative<LiveSnapshot>(options.source)
+            ? liveAction->getTransparencyType()
+            : SoGLRenderAction::SORTED_OBJECT_SORTED_TRIANGLE_BLEND
+    );
 
-    if (!this->shading) {
-        SoLightModelElement::set(gl.getState(), selectionRoot, SoLightModelElement::BASE_COLOR);
-        SoOverrideElement::setLightModelOverride(gl.getState(), selectionRoot, true);
-    }
+    auto* manager = this->getSoRenderManager();
+    const auto renderModel = Base::Overloads {
+        [&](const LiveSnapshot&) {
+            // Keep live draw styles and clipping; the capture buffers are already cleared.
+            manager->render(&gl, TRUE, FALSE, FALSE);
+        },
+        [&](const ViewerCapture& capture) {
+            if (capture.lighting == Lighting::Viewer) {
+                gl.apply(manager->getSceneGraph());
+                return;
+            }
 
-    gl.apply(this->backgroundroot);
-    // The render action of the render manager has set the depth function to GL_LESS
-    // while creating a new render action has it set to GL_LEQUAL. So, in order to get
-    // the exact same result set it explicitly to GL_LESS.
-    glDepthFunc(GL_LESS);
-    if (options.camera) {
-        const CoinPtr<SoSeparator> captureRoot(buildCaptureRoot(options));
-        gl.apply(captureRoot);
-    }
-    else if (options.includeViewerLighting) {
-        gl.apply(this->getSoRenderManager()->getSceneGraph());
-    }
-    else {
-        gl.apply(this->getSoRenderManager()->getCamera());
-        SoNode* scene = this->getSceneGraph();
-        gl.apply(scene == this->viewerSceneRoot ? this->selectionRoot : scene);
-    }
-    renderDelayedAnnotations(&gl);
-    gl.apply(this->foregroundroot);
-    if (shouldRenderDecorations(currentRenderIntent())) {
-        gl.apply(this->decorationroot);
-    }
+            gl.apply(manager->getCamera());
+            SoNode* scene = this->getSceneGraph();
+            gl.apply(scene == this->viewerSceneRoot ? this->selectionRoot : scene);
+        },
+        [&](const CameraCapture& capture) {
+            const CoinPtr<SoSeparator> root(buildCaptureRoot(capture));
+            gl.apply(root);
+        },
+    };
 
-    if (shouldRenderDecorations(currentRenderIntent()) && this->axiscrossEnabled) {
-        this->drawAxisCross();
-    }
+    renderGLActionScene(&gl, pixelRatio, [&] {
+        // The render action of the render manager has set the depth function to GL_LESS
+        // while creating a new render action has it set to GL_LEQUAL. So, in order to get
+        // the exact same result set it explicitly to GL_LESS.
+        glDepthFunc(GL_LESS);
+        std::visit(renderModel, options.source);
+    });
 
     return true;
 }
@@ -3376,37 +3388,36 @@ void View3DInventorViewer::renderDelayedAnnotations(SoGLRenderAction* glra)
     }
 }
 
-void View3DInventorViewer::renderGLActionScene(const QColor& backgroundColor, SoGLRenderAction* glra)
+void View3DInventorViewer::renderGLActionScene(
+    SoGLRenderAction* glra,
+    float pixelRatio,
+    const std::function<void()>& renderModel
+)
 {
     SoState* state = glra->getState();
 
     {
         ZoneScopedN("Background");
-        SoDevicePixelRatioElement::set(state, devicePixelRatio());
+        SoDevicePixelRatioElement::set(state, pixelRatio);
         SoGLWidgetElement::set(state, qobject_cast<QOpenGLWidget*>(this->getGLWidget()));
         SoGLRenderActionElement::set(state, glra);
         SoGLVBOActivatedElement::set(state, this->vboEnabled);
-        drawSingleBackground(backgroundColor);
         glra->apply(this->backgroundroot);
     }
 
-    if (!this->shading) {
+    {
+        ZoneScopedN("Model");
         state->push();
-        SoLightModelElement::set(state, selectionRoot, SoLightModelElement::BASE_COLOR);
-        SoOverrideElement::setLightModelOverride(state, selectionRoot, true);
-    }
+        auto restoreState = qScopeGuard([state] { state->pop(); });
 
-    try {
-        // Render normal scenegraph.
-        inherited::actualRedraw();
+        // Limit the shading override to the model, not foreground decorations.
+        if (!this->shading) {
+            SoLightModelElement::set(state, selectionRoot, SoLightModelElement::BASE_COLOR);
+            SoOverrideElement::setLightModelOverride(state, selectionRoot, true);
+        }
+
+        renderModel();
         renderDelayedAnnotations(glra);
-    }
-    catch (const Base::MemoryException&) {
-        this->recoverFromRenderMemoryException();
-    }
-
-    if (!this->shading) {
-        state->pop();
     }
 
     {
@@ -3414,6 +3425,9 @@ void View3DInventorViewer::renderGLActionScene(const QColor& backgroundColor, So
         glra->apply(this->foregroundroot);
         if (shouldRenderDecorations(currentRenderIntent())) {
             glra->apply(this->decorationroot);
+            if (this->axiscrossEnabled) {
+                this->drawAxisCross();
+            }
         }
     }
 }
@@ -3436,10 +3450,16 @@ void View3DInventorViewer::renderScene()
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glEnable(GL_DEPTH_TEST);
 
-    this->renderGLActionScene(col, this->getSoRenderManager()->getGLRenderAction());
-
-    if (shouldRenderDecorations(currentRenderIntent()) && this->axiscrossEnabled) {
-        this->drawAxisCross();
+    drawSingleBackground(col);
+    try {
+        renderGLActionScene(
+            this->getSoRenderManager()->getGLRenderAction(),
+            devicePixelRatio(),
+            [this] { inherited::actualRedraw(); }
+        );
+    }
+    catch (const Base::MemoryException&) {
+        this->recoverFromRenderMemoryException();
     }
 
     // Immediately reschedule to get continuous animation.

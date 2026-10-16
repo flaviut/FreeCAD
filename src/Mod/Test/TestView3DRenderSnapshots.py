@@ -297,11 +297,6 @@ class View3DRenderSnapshots(unittest.TestCase):
             self.view.saveImage(str(path), _WIDTH, _HEIGHT, "Current", "$MIBA", 0)
             image = self._snapshot(f"01-live-{style}", self.images.QImage(str(path)))
             name = f"live-{style}-matches-viewport"
-            if style == "hidden-line":
-                count = _changed_pixels(native, image)
-                self._xfail(name, count == 0, f"{count} changed pixels; expected identical RGB")
-                continue
-
             self._same(name, native, image)
 
     def test_02_box_selection(self):

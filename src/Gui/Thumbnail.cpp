@@ -115,9 +115,7 @@ void Thumbnail::SaveDocFile(Base::Writer& writer) const
                 .samples = 4,
                 .background = QColor(0, 0, 0, 0),
                 .alphaMode = View3DInventorViewer::AlphaMode::PerPixel,
-                .intent = View3DInventorViewer::RenderIntent::RasterCapture,
-                .includeViewerLighting = true,
-                .camera = camera.get(),
+                .source = View3DInventorViewer::CameraCapture {*camera.get()},
             };
             img = this->viewer->renderToImage(options);
             created = !img.isNull();

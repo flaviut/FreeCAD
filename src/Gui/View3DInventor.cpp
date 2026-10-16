@@ -346,7 +346,7 @@ void View3DInventor::print(QPrinter* printer)
     options.height = rect.height();
     options.samples = 8;
     options.background = QColor(255, 255, 255);
-    options.intent = View3DInventorViewer::RenderIntent::RasterCapture;
+    options.source = View3DInventorViewer::ViewerCapture {};
     QImage img = _viewer->renderToImage(options);
     p.drawImage(0, 0, img);
     p.end();
