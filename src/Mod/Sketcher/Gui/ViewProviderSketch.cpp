@@ -930,6 +930,10 @@ EditModeCoinManager::PreselectionResult ViewProviderSketch::getPreselectionResul
     const Gui::View3DInventorViewer* viewer
 ) const
 {
+    if (!viewer) {
+        return {};
+    }
+
     SoPickedPointList points = getPickedPointsOnRay(pos, viewer);
     int hoveredPointIndex = EditModeCoinManager::PreselectionResult::InvalidPoint;
     if (viewProviderParameters.hasLastPreselectionResult
@@ -938,7 +942,9 @@ EditModeCoinManager::PreselectionResult ViewProviderSketch::getPreselectionResul
         hoveredPointIndex = viewProviderParameters.lastPreselectionResult.PointIndex;
     }
 
-    return editCoinManager->detectPreselection(points, pos, hoveredPointIndex);
+    return editCoinManager->detectPreselection(
+        points, pos, std::max(0.0F, viewer->getPickRadius()), hoveredPointIndex
+    );
 }
 
 void ViewProviderSketch::cachePreselectionResult(

@@ -174,6 +174,109 @@ class SketcherGuiTestCases(unittest.TestCase):
             FreeCAD.closeDocument(document_name)
             self.pump_gui_events()
 
+    def check_radius(self, center, probes, target="Constraint0"):
+        viewer = self.view.getViewer()
+        original = viewer.getPickRadius()
+        try:
+            for radius, offset, expected in probes:
+                with self.subTest(radius=radius, offset=offset):
+                    viewer.setPickRadius(radius)
+                    point = (center[0] + offset[0], center[1] + offset[1])
+                    info = SketcherGui.getActiveSketchPreselection(point)
+                    self.assertEqual(self.classify_preselection(info, target), expected, info)
+        finally:
+            viewer.setPickRadius(original)
+
+    def make_icons(self, count):
+        from pivy import coin
+
+        for x in (-10.0, 10.0):
+            self.sketch.addGeometry(
+                Part.LineSegment(FreeCAD.Vector(x, 0, 0), FreeCAD.Vector(x, 20, 0)), False
+            )
+        ids = [self.sketch.addConstraint(Sketcher.Constraint("Vertical", i)) for i in range(count)]
+        self.doc.recompute()
+        self.configure_view_state(self.view)
+
+        search = coin.SoSearchAction()
+        search.setName("ConstraintGroup")
+        search.setSearchingAll(True)
+        search.apply(self.view.getViewer().getSoRenderManager().getSceneGraph())
+        self.assertTrue(search.isFound())
+        group = search.getPath().getTail()
+        origin = FreeCAD.Vector(0, 10, 0.004)
+        center = self.view.getPointOnViewport(origin)
+        reference = self.view.getPointOnViewport(origin + FreeCAD.Vector(10, 0, 0))
+        pixels_per_unit = (reference[0] - center[0]) / 10.0
+        self.assertGreater(pixels_per_unit, 0.0)
+        centers = []
+
+        # Known icon sizes and positions isolate hit policy from symbol layout and geometry.
+        for i, constraint in enumerate(ids):
+            separator = group.getChild(constraint)
+            position = origin + FreeCAD.Vector(i * 10.0 / pixels_per_unit, 0, 0)
+            translation = separator.getChild(1)
+            translation.abPos = coin.SbVec3f(position.x, position.y, position.z)
+            translation.translation = coin.SbVec3f(0, 0, 0)
+            icon = separator.getChild(2)
+            icon.width = 20
+            icon.height = 20
+            centers.append(tuple(self.view.getPointOnViewport(position)))
+        self.view.redraw()
+        self.pump_gui_events()
+        return centers, ids
+
+    def testPointRadius(self):
+        point = FreeCAD.Vector(20, 20, 0)
+        self.sketch.addGeometry(Part.Point(point), False)
+        self.doc.recompute()
+        self.configure_view_state(self.view)
+        center = tuple(self.view.getPointOnViewport(point))
+        self.check_radius(center, (
+            (0.5, (6, 0), "none"),
+            (5.0, (8, 0), "vertex"),
+            (35.0, (25, 0), "vertex"),
+            (35.0, (45, 0), "none"),
+        ))
+
+    def testCurveRadius(self):
+        self.sketch.addGeometry(
+            Part.LineSegment(FreeCAD.Vector(20, 20, 0), FreeCAD.Vector(40, 20, 0)), False
+        )
+        self.doc.recompute()
+        self.configure_view_state(self.view)
+        center = tuple(self.view.getPointOnViewport(FreeCAD.Vector(30, 20, 0)))
+        self.check_radius(center, (
+            (0.5, (0, 2), "none"),
+            (5.0, (0, 4), "edge"),
+            (35.0, (0, 20), "edge"),
+            (35.0, (0, 38), "none"),
+        ))
+
+    def testIconRadius(self):
+        centers, ids = self.make_icons(1)
+        self.check_radius(centers[0], (
+            (0.5, (0, 0), "target_constraint"),
+            (0.5, (12, 0), "none"),
+            (5.0, (14, 0), "target_constraint"),
+            (5.0, (17, 0), "none"),
+            (5.0, (13, 13), "target_constraint"),
+            (5.0, (14, 14), "none"),
+            (35.0, (30, 0), "target_constraint"),
+            (35.0, (48, 0), "none"),
+        ), f"Constraint{ids[0] + 1}")
+
+    def testNearestIcon(self):
+        centers, ids = self.make_icons(2)
+        for point, expected in (
+            ((centers[1][0] - 2, centers[1][1]), ids[1]),
+            (((centers[0][0] + centers[1][0]) // 2, centers[0][1]), ids[0]),
+        ):
+            with self.subTest(point=point):
+                info = SketcherGui.getActiveSketchPreselection(point)
+                target = f"Constraint{expected + 1}"
+                self.assertEqual(self.classify_preselection(info, target), "target_constraint", info)
+
     def testPointOnObjectPreselectionMatchesTiltedHitArea(self):
         constraint_id, self.probe_point = self.build_issue_25840_sketch(self.sketch)
         self.expected_constraint_name = f"Constraint{constraint_id + 1}"

@@ -26,6 +26,7 @@
 
 #include <cstdint>
 #include <set>
+#include <tuple>
 #include <vector>
 
 #include <QColor>
@@ -159,10 +160,12 @@ public:
 
     ConstraintPreselectionResult detectPreselectionConstr(
         const SoPickedPoint* Point,
-        const SbVec2s& cursorScreenPos
+        const SbVec2s& cursorScreenPos,
+        float selectionRadiusPx
     );
     ConstraintPreselectionResult detectPreselectionConstr(
         const SbVec2s& cursorScreenPos,
+        float selectionRadiusPx,
         Base::Vector3d* pickedPoint = nullptr
     );
 
@@ -198,12 +201,18 @@ private:
         QString& constrIdsStr,
         Base::Vector3d* pickedPoint = nullptr
     ) const;
-    ConstraintPreselectionResult detectPreselectionIcon(
+    struct IconHit
+    {
+        ConstraintPreselectionResult result;
+        std::tuple<float, float, int> rank;
+    };
+
+    IconHit detectPreselectionIcon(
         SoSeparator* sep,
         SoImage* iconNode,
         int iconIndex,
         const SbVec2s& cursorScreenPos,
-        Base::Vector3d* pickedPoint = nullptr
+        float selectionRadiusPx
     ) const;
 
     /** @name Protected helpers for drawing constraint icons*/

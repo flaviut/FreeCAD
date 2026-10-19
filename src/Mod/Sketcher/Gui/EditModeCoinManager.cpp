@@ -75,10 +75,8 @@ namespace
 {
 struct ScreenPreselectionPolicy
 {
-    static constexpr float PointMarkerHitPaddingPx = 5.0F;
     static constexpr float EndpointPointHitRadiusBonusPx = 2.0F;
     static constexpr float PointHoverHysteresisPx = 2.0F;
-    static constexpr float EdgeHitPaddingPx = 2.0F;
 };
 
 struct PreselectionPriority
@@ -156,7 +154,8 @@ struct GeometryScreenPreselector
         const SketcherGui::DrawingParameters& drawingParams,
         const SketcherGui::GeoList& geoListArg,
         std::function<SbVec2f(const SbVec3f&)> screenProjectorArg,
-        Base::Placement sketchPlacementArg
+        Base::Placement sketchPlacementArg,
+        float selectionRadiusPxArg
     )
         : geometryLayerParameters(geometryLayerParams)
         , editModeScenegraphNodes(scenegraphNodes)
@@ -165,6 +164,7 @@ struct GeometryScreenPreselector
         , geolist(geoListArg)
         , projectToScreen(std::move(screenProjectorArg))
         , sketchPlacement(std::move(sketchPlacementArg))
+        , selectionRadiusPx(selectionRadiusPxArg)
 
     {}
 
@@ -416,8 +416,7 @@ private:
             && geometry->getTypeId() != Part::GeomPoint::getClassTypeId()
             && (pointPos == Sketcher::PointPos::start || pointPos == Sketcher::PointPos::end);
 
-        float pointHitRadius = markerExtent * 0.5f
-            + ScreenPreselectionPolicy::PointMarkerHitPaddingPx + extraRadiusPx;
+        float pointHitRadius = markerExtent * 0.5f + selectionRadiusPx + extraRadiusPx;
         if (isEndpointOfNonPointGeometry) {
             pointHitRadius += ScreenPreselectionPolicy::EndpointPointHitRadiusBonusPx;
         }
@@ -442,7 +441,7 @@ private:
         }
 
         float lineWidth = drawStyle ? drawStyle->lineWidth.getValue() : 1.0F;
-        return std::max(3.0F, lineWidth * 0.5F + ScreenPreselectionPolicy::EdgeHitPaddingPx);
+        return lineWidth * 0.5F + selectionRadiusPx;
     }
 
     const SketcherGui::GeometryLayerParameters& geometryLayerParameters;
@@ -452,6 +451,7 @@ private:
     const SketcherGui::GeoList& geolist;
     const std::function<SbVec2f(const SbVec3f&)> projectToScreen;
     const Base::Placement sketchPlacement;
+    const float selectionRadiusPx;
 };
 }  // namespace
 
@@ -537,8 +537,6 @@ void EditModeCoinManager::ParameterObserver::initParameters()
         {"MarkerSize", [this](const std::string&) { Client.updateElementSizeParameters(); }},
         {"EditSketcherFontName", [this](const std::string&) { Client.updateElementSizeParameters(); }},
         {"EditSketcherFontSize", [this](const std::string&) { Client.updateElementSizeParameters(); }},
-        {"ConstraintIconHitPadding",
-         [this](const std::string&) { Client.updateElementSizeParameters(); }},
         {"EdgeWidth",
          [this, &drawingParameters = Client.drawingParameters](const std::string& param) {
              updateWidth(drawingParameters.CurveWidth, param, 2);
@@ -1236,7 +1234,8 @@ void EditModeCoinManager::setAxisPickStyle(bool on)
 
 EditModeCoinManager::PreselectionResult EditModeCoinManager::detectConstraintPreselection(
     const SoPickedPointList& points,
-    const SbVec2s& cursorPos
+    const SbVec2s& cursorPos,
+    float selectionRadiusPx
 )
 {
     PreselectionResult result;
@@ -1263,7 +1262,8 @@ EditModeCoinManager::PreselectionResult EditModeCoinManager::detectConstraintPre
         }
     };
 
-    auto constraintHit = pEditModeConstraintCoinManager->detectPreselectionConstr(cursorPos);
+    auto constraintHit
+        = pEditModeConstraintCoinManager->detectPreselectionConstr(cursorPos, selectionRadiusPx);
     if (constraintHit.hasHit()) {
         toPreselectionResult(constraintHit, result);
         return result;
@@ -1275,7 +1275,9 @@ EditModeCoinManager::PreselectionResult EditModeCoinManager::detectConstraintPre
             continue;
         }
 
-        constraintHit = pEditModeConstraintCoinManager->detectPreselectionConstr(point, cursorPos);
+        constraintHit = pEditModeConstraintCoinManager->detectPreselectionConstr(
+            point, cursorPos, selectionRadiusPx
+        );
         if (!constraintHit.hasHit()) {
             continue;
         }
@@ -1423,6 +1425,7 @@ bool EditModeCoinManager::detectGeometryPreselection(
     const SoPickedPointList& points,
     const SbVec2s& cursorPos,
     int hoveredPointIndex,
+    float selectionRadiusPx,
     PreselectionResult& result
 )
 {
@@ -1439,7 +1442,8 @@ bool EditModeCoinManager::detectGeometryPreselection(
         drawingParameters,
         geolist,
         projectToScreen,
-        sketchPlacement
+        sketchPlacement,
+        selectionRadiusPx
     };
 
     if (detectPointPreselection(points, result)) {
@@ -1532,7 +1536,8 @@ bool EditModeCoinManager::detectAxisPreselection(
 EditModeCoinManager::PreselectionCandidates EditModeCoinManager::collectPreselectionCandidates(
     const SoPickedPointList& points,
     const SbVec2s& cursorPos,
-    int hoveredPointIndex
+    int hoveredPointIndex,
+    float selectionRadiusPx
 )
 {
     PreselectionCandidates candidates;
@@ -1542,10 +1547,10 @@ EditModeCoinManager::PreselectionCandidates EditModeCoinManager::collectPreselec
         }
     };
 
-    addCandidate(detectConstraintPreselection(points, cursorPos));
+    addCandidate(detectConstraintPreselection(points, cursorPos, selectionRadiusPx));
 
     PreselectionResult geometry;
-    detectGeometryPreselection(points, cursorPos, hoveredPointIndex, geometry);
+    detectGeometryPreselection(points, cursorPos, hoveredPointIndex, selectionRadiusPx, geometry);
     addCandidate(geometry);
 
     PreselectionResult axis;
@@ -1574,11 +1579,12 @@ EditModeCoinManager::PreselectionResult EditModeCoinManager::resolvePreselection
 EditModeCoinManager::PreselectionResult EditModeCoinManager::detectPreselection(
     const SoPickedPointList& points,
     const SbVec2s& cursorPos,
+    float selectionRadiusPx,
     int hoveredPointIndex
 )
 {
     return resolvePreselectionCandidates(
-        collectPreselectionCandidates(points, cursorPos, hoveredPointIndex)
+        collectPreselectionCandidates(points, cursorPos, hoveredPointIndex, selectionRadiusPx)
     );
 }
 
@@ -2132,7 +2138,6 @@ void EditModeCoinManager::updateElementSizeParameters()
 
     int sketcherfontSize = hGrp->GetInt("EditSketcherFontSize", defaultFontSizePixels);
     int constraintSymbolSizePref = hGrp->GetInt("ConstraintSymbolSize", defaultFontSizePixels);
-    drawingParameters.constraintIconHitPaddingPx = hGrp->GetInt("ConstraintIconHitPadding", 3);
 
     double dpi = getApplicationLogicalDPIX();
     double devicePixelRatio = getDevicePixelRatio();

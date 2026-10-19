@@ -139,7 +139,6 @@ struct DrawingParameters
                              // QFont internally
     static QString labelFontName;        // Font face to be used by SoDatumLabel
     int constraintIconSize = 15;         // Size of constraint icons
-    int constraintIconHitPaddingPx = 3;  // Extra hit padding for constraint icons
     int markerSize = 7;                  // Size used for markers
 
     // transparency of visible axis

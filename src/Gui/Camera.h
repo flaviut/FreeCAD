@@ -30,6 +30,10 @@
 #include <string>
 
 class SbBox3f;
+class SbVec2f;
+class SbVec3f;
+class SbViewportRegion;
+class SoCamera;
 class SoOrthographicCamera;
 
 namespace Gui
@@ -74,6 +78,13 @@ public:
 
     /// How much larger a fitted frame is than the content it holds.
     static constexpr float fitMargin = 1.1F;
+
+    /// Project a world point to window pixels, respecting the camera's viewport mapping.
+    static SbVec2f projectPoint(
+        const SoCamera& camera,
+        const SbViewportRegion& viewport,
+        const SbVec3f& point
+    );
 
     static void fitToBox(SoOrthographicCamera& camera, const SbBox3f& box, float aspect);
     static Base::Rotation convert(Orientation view);

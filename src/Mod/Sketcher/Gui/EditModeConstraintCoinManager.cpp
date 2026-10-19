@@ -25,6 +25,8 @@
 #include <FCConfig.h>
 
 #include <QPainter>
+#include <QPointF>
+#include <QRectF>
 #include <QRegularExpression>
 #include <Bnd_Box.hxx>
 #include <algorithm>
@@ -32,6 +34,7 @@
 #include <map>
 #include <ranges>
 #include <stack>
+#include <utility>
 #include <cmath>
 
 #include <Inventor/SbImage.h>
@@ -76,6 +79,16 @@
 using namespace Gui;
 using namespace SketcherGui;
 using namespace Sketcher;
+
+namespace
+{
+float distanceSquaredToRect(const QPointF& point, const QRectF& rect)
+{
+    const double dx = std::max({rect.left() - point.x(), 0.0, point.x() - rect.right()});
+    const double dy = std::max({rect.top() - point.y(), 0.0, point.y() - rect.bottom()});
+    return static_cast<float>(dx * dx + dy * dy);
+}
+}  // namespace
 
 //**************************** EditModeConstraintCoinManager class ******************************
 
@@ -2226,7 +2239,8 @@ QString EditModeConstraintCoinManager::getPresentationString(
 
 EditModeConstraintCoinManager::ConstraintPreselectionResult EditModeConstraintCoinManager::detectPreselectionConstr(
     const SoPickedPoint* Point,
-    const SbVec2s& cursorScreenPos
+    const SbVec2s& cursorScreenPos,
+    float selectionRadiusPx
 )
 {
     ConstraintPreselectionResult result;
@@ -2243,7 +2257,9 @@ EditModeConstraintCoinManager::ConstraintPreselectionResult EditModeConstraintCo
 
     for (int childIdx = 0; childIdx < sep->getNumChildren(); ++childIdx) {
         if (tail == sep->getChild(childIdx) && dynamic_cast<SoImage*>(tail)) {
-            return detectPreselectionIcon(sep, static_cast<SoImage*>(tail), childIdx, cursorScreenPos);
+            return detectPreselectionIcon(
+                sep, static_cast<SoImage*>(tail), childIdx, cursorScreenPos, selectionRadiusPx
+            ).result;
         }
     }
 
@@ -2267,10 +2283,11 @@ EditModeConstraintCoinManager::ConstraintPreselectionResult EditModeConstraintCo
 
 EditModeConstraintCoinManager::ConstraintPreselectionResult EditModeConstraintCoinManager::detectPreselectionConstr(
     const SbVec2s& cursorScreenPos,
+    float selectionRadiusPx,
     Base::Vector3d* pickedPoint
 )
 {
-    ConstraintPreselectionResult result;
+    IconHit best;
 
     for (int i = 0; i < editModeScenegraphNodes.constrGroup->getNumChildren(); ++i) {
         auto* sep = dynamic_cast<SoSeparator*>(editModeScenegraphNodes.constrGroup->getChild(i));
@@ -2278,30 +2295,31 @@ EditModeConstraintCoinManager::ConstraintPreselectionResult EditModeConstraintCo
             continue;
         }
 
-        if (int iconIndex = static_cast<int>(ConstraintNodePosition::FirstIconIndex);
-            iconIndex < sep->getNumChildren()) {
-            auto* iconNode = dynamic_cast<SoImage*>(sep->getChild(iconIndex));
-            if (iconNode) {
-                result = detectPreselectionIcon(sep, iconNode, iconIndex, cursorScreenPos, pickedPoint);
-                if (result.hasHit()) {
-                    return result;
-                }
+        for (const auto position : {ConstraintNodePosition::FirstIconIndex,
+                                    ConstraintNodePosition::SecondIconIndex}) {
+            const int iconIndex = static_cast<int>(position);
+            if (iconIndex >= sep->getNumChildren()) {
+                continue;
             }
-        }
 
-        if (int iconIndex = static_cast<int>(ConstraintNodePosition::SecondIconIndex);
-            iconIndex < sep->getNumChildren()) {
             auto* iconNode = dynamic_cast<SoImage*>(sep->getChild(iconIndex));
-            if (iconNode) {
-                result = detectPreselectionIcon(sep, iconNode, iconIndex, cursorScreenPos, pickedPoint);
-                if (result.hasHit()) {
-                    return result;
-                }
+            if (!iconNode) {
+                continue;
+            }
+
+            auto hit = detectPreselectionIcon(
+                sep, iconNode, iconIndex, cursorScreenPos, selectionRadiusPx
+            );
+            if (hit.result.hasHit() && (!best.result.hasHit() || hit.rank < best.rank)) {
+                best = std::move(hit);
             }
         }
     }
 
-    return result;
+    if (pickedPoint && best.result.hasHit()) {
+        *pickedPoint = best.result.PickedPoint;
+    }
+    return best.result;
 }
 
 std::set<int> EditModeConstraintCoinManager::parseConstraintIds(const QString& constrIdsStr) const
@@ -2372,58 +2390,54 @@ bool EditModeConstraintCoinManager::resolveIconScreenGeometry(
     return true;
 }
 
-EditModeConstraintCoinManager::ConstraintPreselectionResult EditModeConstraintCoinManager::detectPreselectionIcon(
+EditModeConstraintCoinManager::IconHit EditModeConstraintCoinManager::detectPreselectionIcon(
     SoSeparator* sep,
     SoImage* iconNode,
     int iconIndex,
     const SbVec2s& cursorScreenPos,
-    Base::Vector3d* pickedPoint
+    float selectionRadiusPx
 ) const
 {
-    ConstraintPreselectionResult result;
+    IconHit hit;
+    auto& result = hit.result;
     SbVec2f iconScreenCenter;
     SbVec3s iconSize;
     QString constrIdsStr;
-    Base::Vector3d hitPoint;
-    Base::Vector3d* resultPoint = pickedPoint ? pickedPoint : &hitPoint;
 
-    if (
-        !resolveIconScreenGeometry(sep, iconNode, iconIndex, iconScreenCenter, iconSize, constrIdsStr, resultPoint)
-    ) {
-        return result;
+    if (!resolveIconScreenGeometry(
+            sep, iconNode, iconIndex, iconScreenCenter, iconSize, constrIdsStr, &result.PickedPoint
+        )) {
+        return hit;
     }
 
-    int relativeX = static_cast<int>(cursorScreenPos[0] - iconScreenCenter[0] + iconSize[0] / 2.0f);
-    int relativeY = static_cast<int>(iconScreenCenter[1] - cursorScreenPos[1] + iconSize[1] / 2.0f);
-    const QMargins iconHitPadding(
-        drawingParameters.constraintIconHitPaddingPx,
-        drawingParameters.constraintIconHitPaddingPx,
-        drawingParameters.constraintIconHitPaddingPx,
-        drawingParameters.constraintIconHitPaddingPx
-    );
+    const float dx = cursorScreenPos[0] - iconScreenCenter[0];
+    const float dy = cursorScreenPos[1] - iconScreenCenter[1];
+    const QPointF iconPoint(dx + iconSize[0] / 2.0F, -dy + iconSize[1] / 2.0F);
+    const float radiusSquared = selectionRadiusPx * selectionRadiusPx;
+    float boundsDistance = distanceSquaredToRect(iconPoint, QRectF(0, 0, iconSize[0], iconSize[1]));
 
-    if (combinedConstrBoxes.count(constrIdsStr)) {
-        for (const auto& boxInfo : combinedConstrBoxes.at(constrIdsStr)) {
-            if (boxInfo.first.marginsAdded(iconHitPadding).contains(relativeX, relativeY)) {
-                result.ConstrIndices.insert(boxInfo.second.begin(), boxInfo.second.end());
+    if (auto boxes = combinedConstrBoxes.find(constrIdsStr); boxes != combinedConstrBoxes.end()) {
+        boundsDistance = std::numeric_limits<float>::max();
+        for (const auto& [bounds, indices] : boxes->second) {
+            const float distance = distanceSquaredToRect(iconPoint, QRectF(bounds));
+            boundsDistance = std::min(boundsDistance, distance);
+            if (distance <= radiusSquared) {
+                result.ConstrIndices.insert(indices.begin(), indices.end());
             }
         }
-        if (!result.ConstrIndices.empty()) {
-            result.Kind = ConstraintPreselectionResult::HitKind::Icon;
-            result.PickedPoint = *resultPoint;
-        }
-        return result;
     }
-
-    QRect iconBounds(0, 0, iconSize[0], iconSize[1]);
-    if (iconBounds.marginsAdded(iconHitPadding).contains(relativeX, relativeY)) {
-        result.Kind = ConstraintPreselectionResult::HitKind::Icon;
+    else if (boundsDistance <= radiusSquared) {
         result.ConstrIndices = parseConstraintIds(constrIdsStr);
-        result.PickedPoint = *resultPoint;
-        return result;
     }
 
-    return result;
+    if (result.ConstrIndices.empty()) {
+        return hit;
+    }
+
+    result.Kind = ConstraintPreselectionResult::HitKind::Icon;
+    // Prefer visible bounds, then center distance, then a stable constraint ID.
+    hit.rank = {boundsDistance, dx * dx + dy * dy, *result.ConstrIndices.begin()};
+    return hit;
 }
 
 SbVec3s EditModeConstraintCoinManager::getDisplayedSize(const SoImage* iconPtr) const

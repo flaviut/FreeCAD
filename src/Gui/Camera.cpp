@@ -31,11 +31,30 @@
 
 #include <Inventor/SbBox3f.h>
 #include <Inventor/SbMatrix.h>
+#include <Inventor/SbVec2f.h>
 #include <Inventor/SbVec3f.h>
+#include <Inventor/SbViewportRegion.h>
 #include <Inventor/nodes/SoOrthographicCamera.h>
 
 using namespace Gui;
 
+
+SbVec2f Camera::projectPoint(
+    const SoCamera& camera,
+    const SbViewportRegion& viewport,
+    const SbVec3f& point
+)
+{
+    // Coin adjusts portrait view volumes and may crop the rendering viewport.
+    SbViewportRegion renderViewport = viewport;
+    const SbViewVolume volume = camera.getViewVolume(viewport, renderViewport);
+    SbVec3f projected;
+    volume.projectToScreen(point, projected);
+
+    const SbVec2s origin = renderViewport.getViewportOriginPixels();
+    const SbVec2s size = renderViewport.getViewportSizePixels();
+    return {projected[0] * size[0] + origin[0], projected[1] * size[1] + origin[1]};
+}
 
 SbRotation Camera::top()
 {

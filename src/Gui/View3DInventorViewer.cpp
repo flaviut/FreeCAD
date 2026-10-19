@@ -2716,47 +2716,13 @@ bool View3DInventorViewer::isSelectionEnabled() const
 
 SbVec2f View3DInventorViewer::screenCoordsOfPath(SoPath* path) const
 {
-    // Generate a matrix (well, a SoGetMatrixAction) that
-    // moves us to the picked object's coordinate space.
-    SoGetMatrixAction gma(getSoRenderManager()->getViewportRegion());
-    gma.apply(path);
+    const auto* manager = getSoRenderManager();
+    SoGetMatrixAction action(manager->getViewportRegion());
+    action.apply(path);
 
-    // Use that matrix to translate the origin in the picked
-    // object's coordinate space into object space
-    SbVec3f imageCoords(0, 0, 0);
-    SbMatrix mat = gma.getMatrix().transpose();
-    mat.multMatrixVec(imageCoords, imageCoords);
-
-    // Now, project the object space coordinates of the object
-    // into "normalized" screen coordinates.
-    SbViewVolume vol = getSoRenderManager()->getCamera()->getViewVolume();
-    vol.projectToScreen(imageCoords, imageCoords);
-
-    // Translate "normalized" screen coordinates to pixel coords.
-    //
-    // Note: for some reason, projectToScreen() doesn't seem to
-    // handle non-square viewports properly.  The X and Y are
-    // scaled such that [0,1] fits within the smaller of the window
-    // width or height.  For instance, in a window that's 400px
-    // tall and 800px wide, the Y will be within [0,1], but X can
-    // vary within [-0.5,1.5]...
-    int width = getGLWidget()->width();
-    int height = getGLWidget()->height();
-
-    if (width >= height) {
-        // "Landscape" orientation, to square
-        imageCoords[0] *= height;
-        imageCoords[0] += (width - height) / 2.0;  // NOLINT
-        imageCoords[1] *= height;
-    }
-    else {
-        // "Portrait" orientation
-        imageCoords[0] *= width;
-        imageCoords[1] *= width;
-        imageCoords[1] += (height - width) / 2.0;  // NOLINT
-    }
-
-    return {imageCoords[0], imageCoords[1]};
+    SbVec3f point;
+    action.getMatrix().multVecMatrix(SbVec3f(0, 0, 0), point);
+    return Camera::projectPoint(*manager->getCamera(), manager->getViewportRegion(), point);
 }
 
 std::vector<SbVec2f> View3DInventorViewer::getGLPolygon(const std::vector<SbVec2s>& pnts) const
@@ -3956,16 +3922,11 @@ SbVec3f View3DInventorViewer::getPointOnFocalPlane(const SbVec2s& pnt) const
 
 SbVec2s View3DInventorViewer::getPointOnViewport(const SbVec3f& pnt) const
 {
-    const SbViewportRegion& vp = this->getSoRenderManager()->getViewportRegion();
-    float fRatio = vp.getViewportAspectRatio();
-    const SbVec2s& sp = vp.getViewportSizePixels();
-    SbViewVolume vv = this->getSoRenderManager()->getCamera()->getViewVolume(fRatio);
+    const auto* manager = getSoRenderManager();
+    const auto pt = Camera::projectPoint(*manager->getCamera(), manager->getViewportRegion(), pnt);
 
-    SbVec3f pt(pnt);
-    vv.projectToScreen(pt, pt);
-
-    auto xpos = short(std::roundf(pt[0] * sp[0]));  // NOLINT
-    auto ypos = short(std::roundf(pt[1] * sp[1]));  // NOLINT
+    auto xpos = short(std::roundf(pt[0]));  // NOLINT
+    auto ypos = short(std::roundf(pt[1]));  // NOLINT
 
     return {xpos, ypos};
 }
