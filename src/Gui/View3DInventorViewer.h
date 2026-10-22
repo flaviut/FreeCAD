@@ -165,7 +165,9 @@ public:
         FromBackground,
         /// Keep the framebuffer's own per-pixel alpha: cleaner edges, but no sorted-transparency
         /// workaround.
-        PerPixel
+        PerPixel,
+        /// Preserve rendered RGB with opaque alpha for interactive snapshots.
+        Opaque
     };
 
     /** @name Render mode

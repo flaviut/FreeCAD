@@ -253,6 +253,22 @@ void clearDimensionPaneState()
     dimensionPaneState() = {};
 }
 
+// Preserve RGB while making framebuffer readback and composition opaque.
+void forceOpaque()
+{
+    GLboolean colorMask[4] = {GL_TRUE, GL_TRUE, GL_TRUE, GL_TRUE};
+    glGetBooleanv(GL_COLOR_WRITEMASK, colorMask);
+    GLfloat clearColor[4] = {0.0f, 0.0f, 0.0f, 0.0f};
+    glGetFloatv(GL_COLOR_CLEAR_VALUE, clearColor);
+
+    glColorMask(false, false, false, true);
+    glClearColor(0, 0, 0, 1);
+    glClear(GL_COLOR_BUFFER_BIT);
+
+    glColorMask(colorMask[0], colorMask[1], colorMask[2], colorMask[3]);
+    glClearColor(clearColor[0], clearColor[1], clearColor[2], clearColor[3]);
+}
+
 int qImageByteCount(const QImage& image)
 {
     return static_cast<int>(image.sizeInBytes());
@@ -2964,6 +2980,23 @@ GLenum View3DInventorViewer::getInternalTextureFormat()
 
 void View3DInventorViewer::setRenderType(RenderType type)
 {
+    QImage image;
+    if (type == Image) {
+        auto gl = static_cast<QOpenGLWidget*>(this->viewport());  // NOLINT
+        if (!gl->isValid()) {
+            return;
+        }
+
+        // Image mode draws overlays separately; freeze only a fresh scene.
+        RenderImageOptions options;
+        options.source = LiveSnapshot {};
+        options.alphaMode = AlphaMode::Opaque;
+        image = renderToImage(options);
+        if (image.isNull()) {
+            return;
+        }
+    }
+
     renderType = type;
 
     glImage = QImage();
@@ -3019,7 +3052,7 @@ void View3DInventorViewer::setRenderType(RenderType type)
             break;
         case Image:
             // renderOverlayImage() consumes OpenGL-oriented rows.
-            glImage = flipVertically(grabFramebuffer());
+            glImage = flipVertically(image);
             break;
     }
 }
@@ -3070,15 +3103,10 @@ QImage View3DInventorViewer::renderToImage(const RenderImageOptions& options)
     QOpenGLFramebufferObjectFormat fboFormat;
     fboFormat.setSamples(samples);
     fboFormat.setAttachment(QOpenGLFramebufferObject::Depth);
-    // With enabled alpha a transparent background is supported but
-    // at the same time breaks semi-transparent models. A workaround
-    // is to use a certain background color using GL_RGB as texture
-    // format and in the output image search for the above color and
-    // replaces it with the color requested by the user.
-    const bool perPixelAlpha = options.alphaMode == AlphaMode::PerPixel;
-    // The InternalTextureFormat preference cannot express "must carry alpha".
+    // Preserve the legacy export format; explicit alpha policies need alpha storage.
     fboFormat.setInternalTextureFormat(
-        perPixelAlpha ? static_cast<GLenum>(GL_RGBA8) : getInternalTextureFormat()
+        options.alphaMode == AlphaMode::FromBackground ? getInternalTextureFormat()
+                                                      : static_cast<GLenum>(GL_RGBA8)
     );
 
     QOpenGLFramebufferObject fbo(width, height, fboFormat);
@@ -3095,8 +3123,8 @@ QImage View3DInventorViewer::renderToImage(const RenderImageOptions& options)
     constexpr const int maxAlpha = 255;
     QColor opaqueBackground = options.background;
     const bool overrideBackground = opaqueBackground.isValid();
-    const bool keyOutBackground = overrideBackground && opaqueBackground.alpha() < maxAlpha
-        && !perPixelAlpha;
+    const bool keyOutBackground = options.alphaMode == AlphaMode::FromBackground
+        && overrideBackground && opaqueBackground.alpha() < maxAlpha;
     const QColor previousBackground = backgroundColor();
     const Background previousGradient = getGradientBackground();
     auto restoreBackground = qScopeGuard(
@@ -3127,9 +3155,13 @@ QImage View3DInventorViewer::renderToImage(const RenderImageOptions& options)
         return {};
     }
 
-    if (perPixelAlpha) {
-        // The framebuffer already carries per-pixel alpha, so neither post-pass applies.
-        return img;
+    switch (options.alphaMode) {
+        case AlphaMode::Opaque:
+            return img.convertToFormat(QImage::Format_RGB32);
+        case AlphaMode::PerPixel:
+            return img;
+        case AlphaMode::FromBackground:
+            break;
     }
 
     if (keyOutBackground) {
@@ -3251,6 +3283,9 @@ bool View3DInventorViewer::renderToFramebuffer(
         std::visit(renderModel, options.source);
     });
 
+    if (options.alphaMode == AlphaMode::Opaque) {
+        forceOpaque();
+    }
     return true;
 }
 
@@ -3494,17 +3529,7 @@ void View3DInventorViewer::renderScene()
     // https://bugreports.qt.io/browse/QTBUG-119214
     // https://github.com/FreeCAD/FreeCAD/issues/8341
     // https://github.com/FreeCAD/FreeCAD/issues/6177
-    GLboolean colorMask[4] = {GL_TRUE, GL_TRUE, GL_TRUE, GL_TRUE};
-    glGetBooleanv(GL_COLOR_WRITEMASK, colorMask);
-    GLfloat clearColor[4] = {0.0f, 0.0f, 0.0f, 0.0f};
-    glGetFloatv(GL_COLOR_CLEAR_VALUE, clearColor);
-
-    glColorMask(false, false, false, true);
-    glClearColor(0, 0, 0, 1);
-    glClear(GL_COLOR_BUFFER_BIT);
-
-    glColorMask(colorMask[0], colorMask[1], colorMask[2], colorMask[3]);
-    glClearColor(clearColor[0], clearColor[1], clearColor[2], clearColor[3]);
+    forceOpaque();
 }
 
 void View3DInventorViewer::renderRubberbandOverlay()
