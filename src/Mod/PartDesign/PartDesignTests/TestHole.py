@@ -241,6 +241,165 @@ class TestHole(unittest.TestCase):
         self.Doc.recompute()
         self.assertEqual(len(self.Hole.Shape.Faces), 7)
 
+    def _configureModeledThread(self):
+        self.Box.Length = 40
+        self.Box.Width = 40
+        self.Box.Height = 4
+        self.Doc.recompute()
+        self.Hole.ThreadType = "ISOMetricProfile"
+        self.Hole.ThreadSize = "M3x0.5"
+        self.Hole.Threaded = True
+        self.Hole.ModelThread = True
+        self.Hole.DepthType = "ThroughAll"
+        self.Hole.ThreadDepthType = "Hole Depth"
+        self.Hole.DrillPoint = "Flat"
+
+    def _assertThreadedMaterialMatchesExplicitDepth(self):
+        """Compare all material, including the entry phase, to an unbounded reference."""
+        self.Doc.recompute()
+        self.assertNotIn("Invalid", self.Hole.State)
+        bounded = self.Hole.Shape.copy()
+        self.assertTrue(bounded.isValid())
+        depth = self.Hole.Depth.Value
+        threadDepth = self.Hole.ThreadDepth.Value
+        self.Hole.ThreadDepthType = "Dimension"
+        self.Hole.ThreadDepth = threadDepth
+        self.Doc.recompute()
+        reference = self.Hole.Shape
+        self.assertNotIn("Invalid", self.Hole.State)
+        self.assertTrue(reference.isValid())
+        self.assertAlmostEqual(self.Hole.Depth.Value, depth)
+        self.assertAlmostEqual(self.Hole.ThreadDepth.Value, threadDepth)
+        self.assertAlmostEqual(bounded.Volume, reference.Volume, places=6)
+        self.assertLess(bounded.cut(reference).Volume, 1e-6)
+        self.assertLess(reference.cut(bounded).Volume, 1e-6)
+
+    def testModeledThroughAllThreadSpan(self):
+        self._configureModeledThread()
+        self.Doc.recompute()
+        depth = self.Hole.Depth.Value
+        threadDepth = self.Hole.ThreadDepth.Value
+        cutter, thread = self.Hole.AddSubShape.Solids
+        self.assertGreater(depth, 100)
+        self.assertAlmostEqual(threadDepth, depth)
+        # Only the modeled thread is shortened, not the conservative through-all cutter.
+        self.assertGreater(cutter.BoundBox.ZMax, 100)
+        self.assertLess(thread.BoundBox.ZMax, 6)
+        self.assertLess(len(thread.Faces), 60)
+        self._assertThreadedMaterialMatchesExplicitDepth()
+        # An explicitly dimensioned thread must not be bounded, even for a Through All hole.
+        self.assertGreater(self.Hole.AddSubShape.Solids[1].BoundBox.ZMax, 100)
+
+    def testModeledThroughAllThreadReversedOffset(self):
+        self._configureModeledThread()
+        self.HoleSketch.MapMode = "Deactivated"
+        self.HoleSketch.Placement = App.Placement(App.Vector(0, 0, -7), App.Rotation())
+        self.HoleSketch.deleteAllGeometry()
+        for x in (5, 25):
+            self.HoleSketch.addGeometry(Part.Circle(App.Vector(x, 5, 0), App.Vector(0, 0, 1), 1))
+        self.Hole.Reversed = True
+        self.Hole.StartType = "Offset"
+        self.Hole.StartOffset = 2
+        self.Doc.recompute()
+        # Entry is at z=-5, so the prototype must reach 9 mm, not just the 4 mm thickness.
+        solids = self.Hole.AddSubShape.Solids
+        self.assertEqual(len(solids), 4)
+        for thread in (solids[1], solids[3]):
+            self.assertGreater(thread.BoundBox.ZMax, 4)
+            self.assertLess(thread.BoundBox.ZMax, 6)
+        self._assertThreadedMaterialMatchesExplicitDepth()
+
+    def testModeledThroughAllThreadRotated(self):
+        self._configureModeledThread()
+        self.HoleSketch.MapMode = "Deactivated"
+        rotation = App.Rotation(App.Vector(1, 2, 3), 37)
+        placement = App.Placement(App.Vector(20, -30, 15), rotation)
+        self.Box.Placement = placement
+        self.HoleSketch.Placement = placement * App.Placement(App.Vector(0, 0, 4), App.Rotation())
+        self.HoleSketch.deleteAllGeometry()
+        self.HoleSketch.addGeometry(Part.Circle(App.Vector(5, 5, 0), App.Vector(0, 0, 1), 1))
+        self.Doc.recompute()
+        thread = self.Hole.AddSubShape.Solids[1].copy()
+        thread.Placement = placement.inverse() * thread.Placement
+        self.assertLess(thread.BoundBox.ZLength, 8)
+        self._assertThreadedMaterialMatchesExplicitDepth()
+
+    def testModeledThroughAllThreadSeparatedMaterial(self):
+        self._configureModeledThread()
+        # Keep the intervening air gap: a thickness-only bound would miss the second solid.
+        base = self.Doc.addObject("PartDesign::Feature", "SeparatedBase")
+        base.Shape = Part.makeCompound(
+            [Part.makeBox(40, 40, 4), Part.makeBox(40, 40, 4, App.Vector(0, 0, 12))]
+        )
+        self.Body.addObject(base)
+        self.Body.removeObject(self.Hole)
+        self.Body.insertObject(self.Hole, base, True)
+        self.Body.Tip = self.Hole
+        self.Doc.recompute()
+        self.assertEqual(len(self.Hole.Shape.Solids), 2)
+        thread = self.Hole.AddSubShape.Solids[1]
+        self.assertGreater(thread.BoundBox.ZMax, 16)
+        self.assertLess(thread.BoundBox.ZMax, 18)
+        self._assertThreadedMaterialMatchesExplicitDepth()
+
+    def testModeledThroughAllThreadPointReference(self):
+        self._configureModeledThread()
+        self.HoleSketch.deleteAllGeometry()
+        for x in (5, 25):
+            self.HoleSketch.addGeometry(Part.Point(App.Vector(-x, 5, 0)), False)
+        self.Hole.BaseProfileType = 1
+        reference = self.Doc.addObject("Part::Feature", "StartReference")
+        reference.Shape = Part.makePlane(50, 50, App.Vector(-5, -5, -7))
+        self.Hole.StartType = "Reference"
+        self.Hole.StartReference = (reference, ["Face1"])
+        self.Hole.StartOffset = 2
+        self.Doc.recompute()
+        solids = self.Hole.AddSubShape.Solids
+        self.assertEqual(len(solids), 4)
+        for thread in (solids[1], solids[3]):
+            self.assertGreater(thread.BoundBox.ZMax, 4)
+            self.assertLess(thread.BoundBox.ZMax, 6)
+        self._assertThreadedMaterialMatchesExplicitDepth()
+
+    def testModeledThroughAllThreadTaperedFallback(self):
+        self._configureModeledThread()
+        self.Hole.Tapered = True
+        self.Hole.TaperedAngle = 89.9
+        self.Doc.recompute()
+        # Do not shorten conical sweeps: their boolean result can depend on the far end.
+        self.assertGreater(self.Hole.AddSubShape.Solids[1].BoundBox.ZMax, 100)
+        self._assertThreadedMaterialMatchesExplicitDepth()
+
+    def testModeledThroughAllThreadHoleEnds(self):
+        self._configureModeledThread()
+        for cutType, drillPoint in (
+            ("Countersink", "Flat"),
+            ("Counterbore", "Angled"),
+            ("None", "Angled"),
+        ):
+            with self.subTest(cutType=cutType, drillPoint=drillPoint):
+                self.Hole.ThreadDepthType = "Hole Depth"
+                self.Hole.HoleCutType = cutType
+                self.Hole.HoleCutDiameter = 5
+                self.Hole.HoleCutDepth = 1
+                self.Hole.DrillPoint = drillPoint
+                self._assertThreadedMaterialMatchesExplicitDepth()
+
+    def testModeledDimensionThreadUnchanged(self):
+        self._configureModeledThread()
+        self.Hole.DepthType = "Dimension"
+        self.Hole.Depth = 3
+        self.Hole.ThreadDepthType = "Dimension"
+        self.Hole.ThreadDepth = 2
+        self.Doc.recompute()
+        self.assertNotIn("Invalid", self.Hole.State)
+        thread = self.Hole.AddSubShape.Solids[1]
+        self.assertAlmostEqual(self.Hole.Depth.Value, 3)
+        self.assertAlmostEqual(self.Hole.ThreadDepth.Value, 2)
+        self.assertGreater(thread.BoundBox.ZMax, 2)
+        self.assertLess(thread.BoundBox.ZMax, 3)
+        self.assertTrue(self.Hole.Shape.isValid())
+
     def testThreadEnums(self):
         """Test thread enums for correct order"""
         # Due to the savefile use of indexes and not strings

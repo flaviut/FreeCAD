@@ -2045,9 +2045,41 @@ App::DocumentObjectExecReturn* Hole::execute()
             );
         }
 
+        std::vector<TopoShape> holes;
+        auto compound = findHoles(holes, profileshape, protoHole);
+        if (holes.empty()) {
+            return new App::DocumentObjectExecReturn(
+                QT_TRANSLATE_NOOP("Exception", "Hole error: Finding axis failed")
+            );
+        }
+
         // Make thread
         if (Threaded.getValue() && ModelThread.getValue()) {
-            TopoDS_Shape protoThread = makeThread(xDir, zDir, length);
+            double threadLength = length;
+            // Keep conical sweeps unchanged: shortening them can change the boolean result.
+            if (method == "ThroughAll" && !ThreadDepthType.isValue("Dimension")
+                && !Tapered.getValue() && !base.isNull()) {
+                const auto bounds = base.getBoundBox();
+                if (bounds.IsValid()) {
+                    threadLength = 0.0;
+                    // Both the base and the actual hole origins are in feature-local coordinates.
+                    // Use every origin because the same prototype is reused for all profile
+                    // locations, including profiles that are not coplanar. The start offset is
+                    // already applied.
+                    for (const auto& origin : _holeLocations) {
+                        for (unsigned short corner = 0; corner < 8; ++corner) {
+                            const auto point = bounds.CalcPoint(corner);
+                            const double depth = gp_Vec(origin, gp_Pnt(point.x, point.y, point.z))
+                                                     .Dot(gp_Vec(holeDirection));
+                            threadLength = std::max(threadLength, depth);
+                        }
+                    }
+                    // Keep the conservative cutter reach, but do not sweep threads through empty
+                    // space beyond the material. makeThread retains its two-pitch end allowance.
+                    threadLength = std::min(length, threadLength + Precision::Confusion());
+                }
+            }
+            TopoDS_Shape protoThread = makeThread(xDir, zDir, length, threadLength);
 
             TopoDS_Compound holeWithThread;
             holeWithThread.Nullify();
@@ -2059,13 +2091,8 @@ App::DocumentObjectExecReturn* Hole::execute()
 
             // we reuse the name protoHole (only now it is threaded)
             protoHole = holeWithThread;
-        }
-        std::vector<TopoShape> holes;
-        auto compound = findHoles(holes, profileshape, protoHole);
-        if (holes.empty()) {
-            return new App::DocumentObjectExecReturn(
-                QT_TRANSLATE_NOOP("Exception", "Hole error: Finding axis failed")
-            );
+            holes.clear();
+            compound = findHoles(holes, profileshape, protoHole);
         }
 
         TopoShape result(0);
@@ -2322,7 +2349,12 @@ std::vector<gp_Pnt> Hole::getHoleLocations() const
     return _holeLocations;
 }
 
-TopoDS_Shape Hole::makeThread(const gp_Vec& xDir, const gp_Vec& zDir, double length)
+TopoDS_Shape Hole::makeThread(
+    const gp_Vec& xDir,
+    const gp_Vec& zDir,
+    double length,
+    double throughAllThreadLength
+)
 {
     int threadType = ThreadType.getValue();
     int threadSize = ThreadSize.getValue();
@@ -2433,7 +2465,7 @@ TopoDS_Shape Hole::makeThread(const gp_Vec& xDir, const gp_Vec& zDir, double len
         if (depthMethod == "ThroughAll") {
             threadDepth = length;
             ThreadDepth.setValue(threadDepth);
-            helixLength = threadDepth + 2 * Pitch;
+            helixLength = throughAllThreadLength + 2 * Pitch;
         }
         else if (threadDepthMethod == "Tapped (DIN76)") {
             threadDepth = holeDepth - getThreadRunout();
