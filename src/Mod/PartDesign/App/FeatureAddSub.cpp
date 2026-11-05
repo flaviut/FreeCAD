@@ -29,8 +29,6 @@
 #include <App/FeaturePythonPyImp.h>
 #include <Mod/Part/App/modelRefine.h>
 #include <Mod/Part/App/TopoShapeOpCode.h>
-#include <GProp_GProps.hxx>
-#include <BRepGProp.hxx>
 
 #include "FeatureAddSub.h"
 #include "FeaturePy.h"
@@ -145,44 +143,10 @@ void FeatureAddSub::updatePreviewShape()
     // for subtractive shapes we want to also showcase removed volume, not only the tool
     if (getBooleanMaker() != Part::OpCodes::Fuse) {
         TopoShape base = getBaseTopoShape(true).moved(getLocation().Inverted());
-        const TopoShape& tool = AddSubShape.getShape();
 
-        if (!tool.isEmpty()) {
+        if (const TopoShape& addSubShape = AddSubShape.getShape(); !addSubShape.isEmpty()) {
             try {
-                TopoShape common;
-                common.makeElementBoolean(
-                    Part::OpCodes::Common,
-                    {base, tool},
-                    "Preview",
-                    Precision::Confusion()
-                );
-
-                GProp_GProps propsBefore, propsAfter;
-                BRepGProp::VolumeProperties(base.getShape(), propsBefore);
-
-                TopoShape cut;
-                cut.makeElementBoolean(
-                    Part::OpCodes::Cut,
-                    {base, tool},
-                    "PreviewCheck",
-                    Precision::Confusion()
-                );
-
-                // Check whether the selected operation removes material from the base.
-                const bool keepCommon = getBooleanOperation() == BooleanOperation::Common;
-                const TopoShape& result = keepCommon ? common : cut;
-                BRepGProp::VolumeProperties(result.getShape(), propsAfter);
-
-                const double removed = propsBefore.Mass() - propsAfter.Mass();
-
-                if (removed <= Precision::Confusion()) {
-                    notifyWarning(
-                        tr("Resulting shape is empty. That may indicate that no material will be "
-                           "removed or a problem with the model.")
-                    );
-                }
-                PreviewShape.setValue(common);
-                return;
+                base.makeElementBoolean(Part::OpCodes::Common, {base, addSubShape});
             }
             catch (Standard_Failure& e) {
                 notifyWarning(QString::fromUtf8(e.GetMessageString()));
@@ -190,6 +154,14 @@ void FeatureAddSub::updatePreviewShape()
             catch (Base::Exception& e) {
                 notifyWarning(QString::fromStdString(e.what()));
             }
+
+            if (base.isEmpty()) {
+                notifyWarning(
+                    tr("Resulting shape is empty. That may indicate that no material will be "
+                       "removed or a problem with the model.")
+                );
+            }
+
             PreviewShape.setValue(base);
             return;
         }
