@@ -40,6 +40,14 @@ setup_qt_test(QuantitySpinBox)
 setup_qt_test(NumericLocaleConsumers)
 setup_qt_test(ProgressSequencer)
 setup_qt_test(TaskDialogLifecycle)
+setup_qt_test(ComponentZoo)
+target_sources(ComponentZoo_Tests_run PRIVATE ComponentZooCases.h)
+target_compile_definitions(ComponentZoo_Tests_run PRIVATE
+    ZOO_FONT="${CMAKE_SOURCE_DIR}/tests/visual/fonts/NotoSans-Regular.ttf"
+    ZOO_BASELINES="${CMAKE_SOURCE_DIR}/tests/visual/baselines/ComponentZoo"
+    ZOO_OUTPUT="${CMAKE_CURRENT_BINARY_DIR}/visual/ComponentZoo"
+)
+set_tests_properties(ComponentZoo_Tests_run PROPERTIES LABELS "Qt;Visual" TIMEOUT 90)
 set_tests_properties(ProgressSequencer_Tests_run PROPERTIES TIMEOUT 15)
 
 target_link_libraries(Gui_tests_run PRIVATE
