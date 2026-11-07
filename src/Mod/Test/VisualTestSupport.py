@@ -75,6 +75,25 @@ def _font_files() -> list[Path]:
     return [base / n for n in _DEFAULT_FONT_FILES]
 
 
+def baseline_dir(suite: str) -> Path:
+    override = os.environ.get("FC_VISUAL_BASELINE_DIR")
+    if override:
+        return Path(override)
+    return _font_dir().parent / "baselines" / suite
+
+
+def widget_font():
+    from PySide.QtGui import QFont, QFontDatabase
+
+    font_id = QFontDatabase.addApplicationFont(str(_font_files()[0]))
+    families = QFontDatabase.applicationFontFamilies(font_id)
+    if not families:
+        raise RuntimeError("Cannot load visual test font")
+    font = QFont(families[0])
+    font.setPixelSize(14)
+    return font
+
+
 def _configure_fontconfig(font_dir: Path):
     if not sys.platform.startswith("linux"):
         return
@@ -345,7 +364,7 @@ def compare_images(
     ignore_alpha: bool,
     max_mismatched_pixels: int,
 ) -> tuple[bool, str]:
-    from PySide.QtGui import QColor, QImage  # type: ignore
+    from PySide.QtGui import QColor, QImage, QPainter  # type: ignore
 
     expected = _load_image(expected_path)
     actual = _load_image(actual_path)
@@ -355,19 +374,27 @@ def compare_images(
     if actual.isNull():
         return False, f"actual is not a readable image: {actual_path}"
 
+    size_mismatch = ""
     if expected.size() != actual.size():
-        diff_path.parent.mkdir(parents=True, exist_ok=True)
-        diff = QImage(actual.size(), QImage.Format_ARGB32)
-        diff.fill(QColor(255, 0, 255, 255))
-        diff.save(str(diff_path))
-        msg = (
+        size_mismatch = (
             f"size mismatch: expected {expected.width()}x{expected.height()} "
-            f"vs actual {actual.width()}x{actual.height()}"
+            f"vs actual {actual.width()}x{actual.height()}; top-left diff: "
         )
-        return (
-            False,
-            msg,
-        )
+        width = max(expected.width(), actual.width())
+        height = max(expected.height(), actual.height())
+
+        # Pad without scaling or cropping so size changes still have a useful diff.
+        def padded(image):
+            canvas = QImage(width, height, QImage.Format_ARGB32)
+            canvas.fill(0)
+            painter = QPainter(canvas)
+            painter.setCompositionMode(QPainter.CompositionMode_Source)
+            painter.drawImage(0, 0, image)
+            painter.end()
+            return canvas
+
+        expected = padded(expected)
+        actual = padded(actual)
 
     expected = expected.convertToFormat(QImage.Format_ARGB32)
     actual = actual.convertToFormat(QImage.Format_ARGB32)
@@ -408,9 +435,12 @@ def compare_images(
                 # Keep a lightly-dimmed version of the actual pixel for context.
                 diff.setPixel(x, y, QColor(ar // 2, ag // 2, ab // 2, 255).rgba())
 
-    if mismatched > 0:
+    if mismatched > 0 or size_mismatch:
         diff_path.parent.mkdir(parents=True, exist_ok=True)
         diff.save(str(diff_path))
+
+    if size_mismatch:
+        return False, f"{size_mismatch}mismatched pixels {mismatched}"
 
     if mismatched > max_mismatched_pixels:
         return (
