@@ -151,6 +151,7 @@
             pkgs.opencascade-occt.overrideAttrs (
               attrs: old: {
                 inherit (occt) version;
+                cmakeBuildType = "RelWithDebInfo";
                 src = pkgs.fetchFromGitHub {
                   owner = "Open-Cascade-SAS";
                   repo = "OCCT";
@@ -196,6 +197,7 @@
                   version.version_patch
                 ];
               src = self;
+              cmakeBuildType = "RelWithDebInfo";
               inherit (freecadInputs) nativeBuildInputs;
               buildInputs = freecadInputs.buildInputs ++ [
                 pkgs.gtest
