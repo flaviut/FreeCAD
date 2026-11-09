@@ -1707,6 +1707,64 @@ class CoinNodeSnapshotTestCase(unittest.TestCase):
             f"grid should not fall back to Coin's default material color: {actual_path}",
         )
 
+    def test_so_mesh_matches_coin(self):
+        """Mesh acceleration must preserve Coin's normal and material bindings."""
+        _require_gui()
+
+        preferences = FreeCAD.ParamGet("User parameter:BaseApp/Preferences/View")
+        previous_vbo = preferences.GetBool("UseVBO", True)
+        out_dir = Path(
+            os.environ.get(
+                "FC_VISUAL_OUT_DIR",
+                os.path.join(tempfile.gettempdir(), "FreeCADTesting", "CoinNodeSnapshots"),
+            )
+        )
+
+        try:
+            preferences.SetBool("UseVBO", True)
+            with _ViewerSnapshotHarness(SNAPSHOT_WIDTH, SNAPSHOT_HEIGHT) as harness:
+                for type_name in _MESH_GUI_NODES:
+                    if not type_name.startswith("SoFCIndexedFaceSet"):
+                        continue
+
+                    with self.subTest(node=type_name):
+                        scene = _make_snapshot_scene(type_name)
+                        mesh = scene.root.getChild(scene.root.getNumChildren() - 1)
+                        reference = coin.SoIndexedFaceSet()
+                        for field in ("coordIndex", "normalIndex", "materialIndex"):
+                            values = getattr(mesh, field).getValues(0)
+                            getattr(reference, field).setValues(0, len(values), values)
+
+                        paths = {}
+                        for directory in ("actual", "expected"):
+                            if directory == "expected":
+                                scene.root.replaceChild(mesh, reference)
+                            path = out_dir / directory / f"{type_name}CoinRegression.png"
+                            _render_png(
+                                harness,
+                                scene.root,
+                                path,
+                                SNAPSHOT_WIDTH,
+                                SNAPSHOT_HEIGHT,
+                                framing_policy=scene.framing_policy,
+                            )
+                            paths[directory] = path
+
+                        self.assertGreater(_non_background_pixel_count(paths["actual"]), 10)
+                        ok, message = _compare_images(
+                            paths["expected"],
+                            paths["actual"],
+                            out_dir / "diff" / f"{type_name}CoinRegression.png",
+                            tolerance=_PIXEL_TOLERANCE,
+                            ignore_alpha=_IGNORE_ALPHA,
+                            max_mismatched_pixels=int(
+                                SNAPSHOT_WIDTH * SNAPSHOT_HEIGHT * _MAX_MISMATCH_PCT / 100
+                            ),
+                        )
+                        self.assertTrue(ok, message)
+        finally:
+            preferences.SetBool("UseVBO", previous_vbo)
+
     def test_coin_node_snapshots(self):
         """Render each configured node and compare against baseline images."""
         is_ci = bool(os.environ.get("CI", "").strip())

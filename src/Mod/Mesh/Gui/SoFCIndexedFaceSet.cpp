@@ -508,8 +508,11 @@ void SoFCIndexedFaceSet::GLRender(SoGLRenderAction* action)
     SbBool useVBO = true;
     Gui::SoGLVBOActivatedElement::get(state, useVBO);
 
-    // Check for a matching OpenGL context
-    if (!render.canRenderGLArray(action)) {
+    // The buffer builder only supports vertex normals; Coin handles other bindings.
+    const auto normalBinding = SoNormalBindingElement::get(state);
+    if (!render.canRenderGLArray(action)
+        || (normalBinding != SoNormalBindingElement::PER_VERTEX
+            && normalBinding != SoNormalBindingElement::PER_VERTEX_INDEXED)) {
         useVBO = false;
     }
 
