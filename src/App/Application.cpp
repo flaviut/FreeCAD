@@ -2585,7 +2585,11 @@ StartupResult Application::initConfig(const StartupOptions& options, ProcessArgu
         Py_DECREF(pyModule);
     }
 
-    std::string pythonpath = Base::Interpreter().init(argc,argv);
+    // Python can't locate its prefix from a macOS bundle executable.
+    const std::string pythonHome = Base::FileInfo::pathToString(
+        ApplicationDirectories::findBundleResources()
+    );
+    std::string pythonpath = Base::Interpreter().init(argc, argv, pythonHome);
     if (!pythonpath.empty())
         mConfig["PythonSearchPath"] = pythonpath;
     else
