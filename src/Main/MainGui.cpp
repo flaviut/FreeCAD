@@ -47,6 +47,7 @@
 
 // FreeCAD header
 #include <App/Application.h>
+#include <App/ApplicationDirectories.h>
 #include <App/CommandLine.h>
 #include <App/ProcessArguments.h>
 #include <Base/ConsoleObserver.h>
@@ -128,6 +129,25 @@ static void displayCritical(const QString& msg, bool preformatted = true)
     }
 }
 
+#if defined(FC_OS_MACOSX)
+// The bundled libraries look for these files at build machine paths.
+static void setBundleEnvironment()
+{
+    const auto resources = App::ApplicationDirectories::findBundleResources();
+    if (resources.empty()) {
+        return;
+    }
+
+    const std::string prefix = Base::FileInfo::pathToString(resources);
+    const std::string certificates = prefix + "/ssl/cacert.pem";
+    setenv("PREFIX", prefix.c_str(), 1);
+    setenv("FONTCONFIG_FILE", "/etc/fonts/fonts.conf", 1);
+    setenv("FONTCONFIG_PATH", "/etc/fonts", 1);
+    setenv("SSL_CERT_FILE", certificates.c_str(), 1);
+    setenv("GIT_SSL_CAINFO", certificates.c_str(), 1);
+}
+#endif
+
 static App::ProcessArguments captureProcessArguments(int argc, char** argv)
 {
 #if defined(FC_OS_WIN32)
@@ -165,6 +185,7 @@ int main(int argc, char** argv)
 #elif defined(FC_OS_MACOSX)
     (void)QLocale::system();
     putenv("PYTHONPATH=");
+    setBundleEnvironment();
 #elif defined(__MINGW32__)
     const char* mingw_prefix = getenv("MINGW_PREFIX");
     const char* py_home = getenv("PYTHONHOME");
