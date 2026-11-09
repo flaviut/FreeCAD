@@ -760,12 +760,55 @@ fs::path ApplicationDirectories::findHomePath(const char* sCall)
 #include <cstdlib>
 #include <sys/param.h>
 
+namespace {
+
+// Resolved path of the running executable, or empty on failure.
+fs::path executablePath()
+{
+    uint32_t sz = 0;
+    _NSGetExecutablePath(nullptr, &sz);
+
+    std::string buf(sz + 1, '\0');
+    if (_NSGetExecutablePath(buf.data(), &sz) != 0) {
+        return {};
+    }
+
+    std::array<char, PATH_MAX> resolved {};
+    if (!realpath(buf.c_str(), resolved.data())) {
+        return {};
+    }
+    return Base::FileInfo::stringToPath(resolved.data());
+}
+
+}  // namespace
+
+fs::path ApplicationDirectories::findBundleResources()
+{
+    // FreeCAD.app/Contents/MacOS/FreeCAD -> FreeCAD.app/Contents/Resources
+    const fs::path exeDir = executablePath().parent_path();
+    const fs::path contents = exeDir.parent_path();
+    if (exeDir.filename() != "MacOS" || contents.filename() != "Contents") {
+        return {};
+    }
+
+    const fs::path resources = contents / "Resources";
+    if (!fs::is_directory(resources)) {
+        return {};
+    }
+    return resources;
+}
+
 fs::path ApplicationDirectories::findHomePath(const char* sCall)
 {
     // If Python is initialized at this point, then we're being run from
     // MainPy.cpp, which hopefully rewrote argv[0] to point at the
     // FreeCAD shared library.
     if (!Py_IsInitialized()) {
+        // The bundle keeps the installation prefix apart from its executable.
+        if (const fs::path resources = findBundleResources(); !resources.empty()) {
+            return resources / "";
+        }
+
         uint32_t sz = 0;
 
         // function only returns "sz" if the first arg is too small to hold value
@@ -834,6 +877,13 @@ fs::path ApplicationDirectories::findHomePath(const char* sCall)
 
 #else
 # error "std::string ApplicationDirectories::findHomePath(const char*) not implemented"
+#endif
+
+#if !defined(FC_OS_MACOSX)
+fs::path ApplicationDirectories::findBundleResources()
+{
+    return {};
+}
 #endif
 
 std::tuple<int, int> ApplicationDirectories::extractVersionFromConfigMap(const std::map<std::string,std::string> &config)

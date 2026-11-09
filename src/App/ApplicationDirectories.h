@@ -55,6 +55,10 @@ namespace App {
         /// the configuration map prior to instantiating this class.
         static std::filesystem::path findHomePath(const char* sCall);
 
+        /// The Contents/Resources directory of the macOS app bundle holding the executable, or an
+        /// empty path when not running from a bundle. It is the installation prefix of the bundle.
+        static std::filesystem::path findBundleResources();
+
         /// "Home" here is the parent directory of the actual executable file being run. It is
         /// exposed here primarily for historical compatibility reasons, and new code should almost
         /// certainly NOT use this path for anything. See alternatives in the
