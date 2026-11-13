@@ -39,7 +39,6 @@
 #include <Gui/TextEdit.h>
 #include "../NumericLocale.h"
 #include "Translator.h"
-#include "PseudoTranslator.h"
 
 using namespace Gui;
 
@@ -491,7 +490,7 @@ void Translator::refresh()
 {
     if (d->activatedLanguage == pseudoLanguage) {
         if (d->translators.empty()) {
-            auto translator = new PseudoTranslator;
+            auto translator = createPseudoTranslator().release();
             d->translators.push_back(translator);
             qApp->installTranslator(translator);
         }

@@ -6,6 +6,7 @@
 #include <QTranslator>
 
 #include <Base/ServiceProvider.h>
+#include <Gui/Language/Translator.h>
 #include <Mod/TechDraw/App/TemplateTranslator.h>
 
 namespace
@@ -15,6 +16,11 @@ class TemplateTranslationService final: public TechDraw::TemplateTranslationServ
 public:
     QString translate(const QString& key, const QString& languageName) const override
     {
+        if (languageName == QLatin1String("English (Pseudo A)")) {
+            static const auto translator = Gui::Translator::createPseudoTranslator();
+            return translator->translate("TechDraw::TemplateTranslator", key.toUtf8().constData());
+        }
+
         static const QMap<QString, QString> locales {
             {QStringLiteral("English"), QStringLiteral("en")},
             {QStringLiteral("Afrikaans"), QStringLiteral("af")},

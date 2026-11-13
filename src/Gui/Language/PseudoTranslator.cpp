@@ -1,8 +1,9 @@
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
 #include <QRegularExpression>
+#include <QTranslator>
 
-#include "PseudoTranslator.h"
+#include "Translator.h"
 
 namespace
 {
@@ -85,51 +86,58 @@ QString expandText(const QString& text)
     return result;
 }
 
+class PseudoTranslator final: public QTranslator
+{
+    bool isEmpty() const override
+    {
+        // Qt needs a nonempty translator to send LanguageChange events.
+        return false;
+    }
+
+    QString translate(
+        const char* context,
+        const char* sourceText,
+        [[maybe_unused]] const char* disambiguation,
+        [[maybe_unused]] int n
+    ) const override
+    {
+        auto text = QString::fromUtf8(sourceText);
+        const auto scope = QLatin1String(context);
+        // These translations are machine-readable, not labels.
+        if (scope == QLatin1String("QShortcut") || scope == QLatin1String("QKeySequence")
+            || text == QLatin1String("QT_LAYOUT_DIRECTION")) {
+            return text;
+        }
+
+        // Leave markup, embedded code and file-filter syntax outside the markers.
+        static const QRegularExpression markup(
+            QStringLiteral(
+                // Complete style/script elements, including their contents.
+                R"(<(?:style|script)\b[^>]*>[\s\S]*?</(?:style|script)\s*>)"
+                // HTML comments and tags, allowing quoted angle brackets in attributes.
+                R"(|<!--[\s\S]*?-->|</?[a-zA-Z](?:[^<>"']|"[^"]*"|'[^']*')*>)"
+                // Declarations, processing instructions, file patterns and filter separators.
+                R"(|<![^>]*>|<\?[^>]*\?>|\((?:[*?][^\s()]*\s*)+\)|;;)"
+            ),
+            QRegularExpression::CaseInsensitiveOption
+        );
+
+        QString result;
+        qsizetype offset = 0;
+        auto matches = markup.globalMatch(text);
+        while (matches.hasNext()) {
+            const auto match = matches.next();
+            result += expandText(text.mid(offset, match.capturedStart() - offset));
+            result += match.captured();
+            offset = match.capturedEnd();
+        }
+        result += expandText(text.mid(offset));
+        return result;
+    }
+};
 }  // namespace
 
-bool Gui::PseudoTranslator::isEmpty() const
+std::unique_ptr<QTranslator> Gui::Translator::createPseudoTranslator()
 {
-    // Qt needs a nonempty translator to send LanguageChange events.
-    return false;
-}
-
-QString Gui::PseudoTranslator::translate(
-    const char* context,
-    const char* sourceText,
-    [[maybe_unused]] const char* disambiguation,
-    [[maybe_unused]] int n
-) const
-{
-    auto text = QString::fromUtf8(sourceText);
-    const auto scope = QLatin1String(context);
-    // These translations are machine-readable, not labels.
-    if (scope == QLatin1String("QShortcut") || scope == QLatin1String("QKeySequence")
-        || text == QLatin1String("QT_LAYOUT_DIRECTION")) {
-        return text;
-    }
-
-    // Leave markup, embedded code and file-filter syntax outside the markers.
-    static const QRegularExpression markup(
-        QStringLiteral(
-            // Complete style/script elements, including their contents.
-            R"(<(?:style|script)\b[^>]*>[\s\S]*?</(?:style|script)\s*>)"
-            // HTML comments and tags, allowing quoted angle brackets in attributes.
-            R"(|<!--[\s\S]*?-->|</?[a-zA-Z](?:[^<>"']|"[^"]*"|'[^']*')*>)"
-            // Declarations, processing instructions, file patterns and filter separators.
-            R"(|<![^>]*>|<\?[^>]*\?>|\((?:[*?][^\s()]*\s*)+\)|;;)"
-        ),
-        QRegularExpression::CaseInsensitiveOption
-    );
-
-    QString result;
-    qsizetype offset = 0;
-    auto matches = markup.globalMatch(text);
-    while (matches.hasNext()) {
-        const auto match = matches.next();
-        result += expandText(text.mid(offset, match.capturedStart() - offset));
-        result += match.captured();
-        offset = match.capturedEnd();
-    }
-    result += expandText(text.mid(offset));
-    return result;
+    return std::make_unique<PseudoTranslator>();
 }

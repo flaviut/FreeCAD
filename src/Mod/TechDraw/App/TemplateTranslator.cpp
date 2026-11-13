@@ -71,6 +71,7 @@ TechDrawExport const char* LanguageEnums[] = {
     "简体中文",    // Chinese Simplified
     "繁體中文",    // Chinese Traditional
     "한국어",      // Korean
+    "English (Pseudo A)",
     nullptr};
 
 QString TemplateTranslator::translate(const QString& key, const QString& languageName) const
