@@ -589,6 +589,11 @@ void Translator::installQMFiles(const QDir& dir, const char* locale)
     }
 }
 
+std::unique_ptr<QTranslator> Translator::createPseudoTranslator()
+{
+    return std::make_unique<PseudoTranslator>();
+}
+
 /**
  * This method checks for newly added (internal) .qm files which might be added at runtime. This
  * e.g. happens if a plugin gets loaded at runtime. For each newly added files that supports the
@@ -598,7 +603,7 @@ void Translator::refresh()
 {
     if (d->activatedLanguage == pseudoLanguage) {
         if (d->translators.empty()) {
-            auto translator = new PseudoTranslator;
+            auto translator = createPseudoTranslator().release();
             d->translators.push_back(translator);
             qApp->installTranslator(translator);
         }

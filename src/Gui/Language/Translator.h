@@ -33,6 +33,7 @@
 
 
 class QDir;
+class QTranslator;
 
 namespace Gui
 {
@@ -74,6 +75,8 @@ public:
     /// Destroys the instance
     static void destruct();
     //@}
+
+    static std::unique_ptr<QTranslator> createPseudoTranslator();
 
     /** Activates the specified language \a lang if available. */
     void activateLanguage(const char* lang);
